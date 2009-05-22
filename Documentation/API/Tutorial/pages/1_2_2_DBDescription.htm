@@ -1,0 +1,124 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html><!-- InstanceBegin template="/Templates/documentation_tutorialContent.dwt.php" codeOutsideHTMLIsLocked="false" -->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<!-- InstanceBeginEditable name="doctitle" -->
+<title>Untitled Document</title>
+<!-- InstanceEndEditable --><link href="../../../Data/CSS/documentation.css" rel="stylesheet" type="text/css">
+<!-- InstanceBeginEditable name="head" --><!-- InstanceEndEditable -->
+</head>
+
+<body>
+<center>
+<table width="680" border="0" cellspacing="0" cellpadding="0">
+    <tr>
+        <td><table width="100%"  border="0" cellspacing="0" cellpadding="0">
+    <tr>
+        <td><img src="../../../Images/page_header.gif"></td>
+		<td width="200">&nbsp;</td>
+    </tr>
+    <tr>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+    </tr>
+</table>
+</td>
+    </tr>
+    <tr>
+        <td bgcolor="#CCCCCC">&nbsp;</td>
+    </tr>
+    <tr>
+        <td class="text_navbar"><? 
+			/*
+			 * Find the path to the Documentation Root ...
+			 */
+			$pathToRoot = ''; 
+			for ( $indx=0; $indx<20 && !file_exists( $pathToRoot.'Data/CSS/documentation.css'); $indx++ ) {
+				$pathToRoot .= '../';
+			}
+
+		echo '<a href="'.$pathToRoot.'index.php" target="_top">AI Doc</a> &gt; <a href="'.$pathToRoot.'/API/index.html">API</a>';
+			
+		?><!-- InstanceBeginEditable name="NavBar" --><a href="intro.htm">Tutorial</a> &gt; <a href="1_0_DataAccessManager.htm">Data
+                    Access Managers</a> &gt; <a href="1_2_0_Anatomy.htm">RowManager
+            Anatomy</a> &gt; DB Description <!-- InstanceEndEditable --></td>
+    </tr>
+	<tr><td>&nbsp;</td></tr>
+    <tr>
+        <td><table width="100%"  border="0" cellspacing="0" cellpadding="0">
+    <tr>
+        <td class="content_text"><!-- InstanceBeginEditable name="prevButtonTop" --><a href="1_2_1_Names.htm">Previous</a><!-- InstanceEndEditable --></td>
+        <td class="content_text"><div align="right"><!-- InstanceBeginEditable name="nextButtonTop" --><a href="1_2_3_Constructor.htm">Next</a><!-- InstanceEndEditable --></div></td>
+    </tr>
+</table>
+</td>
+    </tr>
+    <tr>
+        <td class="content_text" ><hr size="1" noshade >
+            <!-- InstanceBeginEditable name="Content" -->
+		<h1>RowManager Anatomy
+                - DB Description</h1>
+		<p class="content_text" >Since the RowManager needs to manage a DB table, we
+		    need to describe the DB table it manages:</p>
+		<p class="content_text" ><em><strong>Table Name:</strong></em></p>
+		<span class="sourcecodebox" > <pre>	//CONSTANTS:
+	/** The name of the DB Table this class manages. */
+    const DB_TABLE = 'tvaddicts_episode';</pre></span>
+		<p class="content_text" >(see the previous <a href="1_2_0_Anatomy.htm">note</a> about naming your DB tables) </p>
+		<p class="content_text" >&nbsp;</p>
+		<p class="content_text" ><em><strong>SQL Table Description:</strong></em></p>
+		<span class="sourcecodebox" > <pre>    /** The SQL description of the DB Table this class manages. */
+    /*
+     * episode_id [INTEGER]  Unique identifier (Primary Key)
+     * episode_title [STRING]  The title of the episode we love so much
+     */
+    const DB_TABLE_DESCRIPTION = " (
+  episode_id int(11) NOT NULL  auto_increment,
+  episode_title varchar(50) NOT NULL  default '',
+  PRIMARY KEY (episode_id)
+) TYPE=MyISAM";</pre></span>
+		<p class="content_text" >The RowManagers are used in setup scripts to create
+		    the DB tables for a module. the data here is simply the SQL description
+		    of that table. </p>
+		<p class="content_text" >&nbsp;</p>
+		<p class="content_text" ><em><strong>Fields in the Table:</strong></em></p>
+		<span class="sourcecodebox"><pre>/** The fields in the DB Table this class manages. */
+    const FIELD_LIST = 'episode_id,episode_title';</pre></span>
+        <p class="content_text" >This is a simple comma delimited list of all
+            the table columns a RowManager is going to work with.</p>
+        <p class="content_text" >&nbsp;</p>
+        <p class="content_text" ><em><strong>Identify the primary key for the
+                    table :</strong></em></p>
+        <span class="sourcecodebox" > <pre>/** The primary key field in the DB Table */<br>    const PRIMARYKEY_FIELD = 'episode_id';</pre></span>
+        <p class="content_text" >&nbsp;</p>
+		<p class="content_text" ><em><strong>XML keyword for an entry in this table:</strong></em></p>
+		<span class="sourcecodebox" > <pre>/** The XML node name for this entry. */<br>    const XML_NODE_NAME = <strong>'episode'</strong>;</pre></span>
+		<p class="content_text" >The RowManagers have a <span class="sourcecodebox">getXML()</span> function that returns
+		    the current instance of it's values in an XML format. The XML node
+		    name, is the name of the wrappers around this entry. For example,
+		    calling <span class="sourcecodebox">getXML()</span> from this <span class="sourcecodebox">RowManager_EpisodeManager</span> would result
+		    in:</p>
+		<span class="sourcecodebox" >
+		<pre>&lt;?xml version=&quot;1.0&quot;?&gt;
+&lt;<strong>episode</strong>&gt;
+   &lt;episode_id&gt;1&lt;/episode_id&gt;
+   &lt;episode_title&gt;Battlestar Galactica&lt;/episode_title&gt;
+&lt;/<strong>episode</strong>&gt;</pre>
+		</span>
+		<p class="content_text" >&nbsp;</p>
+		<!-- InstanceEndEditable -->
+            <hr size="1" noshade>
+		 </td>
+    </tr>
+	<tr><td><table width="100%"  border="0" cellspacing="0" cellpadding="0">
+    <tr>
+        <td class="content_text"><!-- InstanceBeginEditable name="prevButtonBottom" --><a href="1_2_1_Names.htm">Previous</a><!-- InstanceEndEditable --></td>
+        <td class="content_text"><div align="right"><!-- InstanceBeginEditable name="nextButtonBottom" --><a href="1_2_3_Constructor.htm">Next</a><!-- InstanceEndEditable --></div></td>
+    </tr>
+</table></td>
+	</tr>
+</table>
+</center>
+
+</body>
+<!-- InstanceEnd --></html>

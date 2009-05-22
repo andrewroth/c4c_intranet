@@ -1,0 +1,214 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html><!-- InstanceBegin template="/Templates/documentation_tutorialContent.dwt.php" codeOutsideHTMLIsLocked="false" -->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<!-- InstanceBeginEditable name="doctitle" -->
+<title>Untitled Document</title>
+<!-- InstanceEndEditable --><link href="../../../Data/CSS/documentation.css" rel="stylesheet" type="text/css">
+<!-- InstanceBeginEditable name="head" --><!-- InstanceEndEditable -->
+</head>
+
+<body>
+<center>
+<table width="680" border="0" cellspacing="0" cellpadding="0">
+    <tr>
+        <td><table width="100%"  border="0" cellspacing="0" cellpadding="0">
+    <tr>
+        <td><img src="../../../Images/page_header.gif"></td>
+		<td width="200">&nbsp;</td>
+    </tr>
+    <tr>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+    </tr>
+</table>
+</td>
+    </tr>
+    <tr>
+        <td bgcolor="#CCCCCC">&nbsp;</td>
+    </tr>
+    <tr>
+        <td class="text_navbar"><? 
+			/*
+			 * Find the path to the Documentation Root ...
+			 */
+			$pathToRoot = ''; 
+			for ( $indx=0; $indx<20 && !file_exists( $pathToRoot.'Data/CSS/documentation.css'); $indx++ ) {
+				$pathToRoot .= '../';
+			}
+
+		echo '<a href="'.$pathToRoot.'index.php" target="_top">AI Doc</a> &gt; <a href="'.$pathToRoot.'/API/index.html">API</a>';
+			
+		?><!-- InstanceBeginEditable name="NavBar" --><a href="intro.htm">Tutorial</a> &gt; <a href="6_0_PageDisplay.htm">PageDisplay
+            Objects</a> &gt; Variable Array &amp; Forms <!-- InstanceEndEditable --></td>
+    </tr>
+	<tr><td>&nbsp;</td></tr>
+    <tr>
+        <td><table width="100%"  border="0" cellspacing="0" cellpadding="0">
+    <tr>
+        <td class="content_text"><!-- InstanceBeginEditable name="prevButtonTop" --><a href="6_03_ValueArrayDisplayList.htm">Previous</a><!-- InstanceEndEditable --></td>
+        <td class="content_text"><div align="right"><!-- InstanceBeginEditable name="nextButtonTop" --><a href="6_05_PageDisplayList.htm">Next</a><!-- InstanceEndEditable --></div></td>
+    </tr>
+</table>
+</td>
+    </tr>
+    <tr>
+        <td class="content_text" ><hr size="1" noshade >
+            <!-- InstanceBeginEditable name="Content" -->
+		<h1>PageDisplay Objects
+                - Variable Array &amp; Forms </h1>
+		<p class="content_text" >Now lets convert our form examples to use a variable
+		    array as well.</p>
+		<p class="content_text" >Take a look at the given versions of the SeriesEdit
+		    scripts. </p>
+		<p class="content_text" ><em><strong>ex_SeriesEdit_array.php:</strong></em></p>
+		<span class="sourcecodebox" ><pre>
+// These variables are used to dynamically define the fields to display on 
+// the Form.  Just add another field to the $formFieldList (seperated by 
+// commas) to include it on your form. 
+$formFieldList = 'series_title';
+$formFields = explode( ',', $formFieldList);</pre></span>
+		<p class="content_text" >We add a description of the form fields we want to
+		    display: <span class="sourcecodebox">$formFieldList</span> and <span class="sourcecodebox">$formFields</span>. These operate much like
+		    the <span class="sourcecodebox">$displayFieldList</span> and <span class="sourcecodebox">$displayFields</span> did in our previous example.</p>
+		<p class="content_text" >&nbsp;</p>
+		<span class="sourcecodebox" ><pre>
+// now we have arrays for the formValues and errors
+$formValues = array();
+$errors = array();</pre></span>
+		<p class="content_text" >In addition, we add an array of $formValues, and $errors.</p>
+		<p class="content_text" >&nbsp;</p>
+		<span class="sourcecodebox" ><pre>
+// initialize the formValues from the data in the RowManager
+$formValues = $seriesManager->getArrayOfValues();</pre></span>
+		<p class="content_text" >When it is time to load our data, we start by initializing
+		    the <span class="sourcecodebox" >$formValues</span> to the current array of values from the RowManager.</p>
+		<p class="content_text" >&nbsp;</p>
+		<span class="sourcecodebox" ><pre>
+// if the form was submitted, then load Form Data:
+if ( isset( $_REQUEST['submit']) ) {
+
+	// step through each field
+	for ($indx=0; $indx&lt;count( $formFields ); $indx++) {
+	
+		$key = $formFields[ $indx ];
+		
+		// if field was found in form submission then
+		if ( isset( $_REQUEST[ $key ]) ) {
+			
+			// update formValues with data from form
+			$formValues[ $key ] = $_REQUEST[ $key ];
+		}
+	
+	}
+}</pre></span>
+		<p class="content_text" >If a form was submitted, we then update our formValues
+		    with the data from the form.</p>
+		<p class="content_text" >&nbsp;</p>
+		<span class="sourcecodebox" ><pre>
+// step through each field
+for ($indx=0; $indx&lt;count( $formFields ); $indx++) {
+
+	$key = $formFields[ $indx ];
+	
+	// if field is empty then
+	if ( $formValues[ $key ] == '') {
+		
+		// mark the error
+		$isValid = false;
+		$errors[ $key ] = $key.' can\'t be empty';
+	}
+	
+} // next field</pre></span>
+		<p class="content_text" >isDataValid() now steps through each <span class="sourcecodebox" >$formFields</span> and
+		    checks to make sure it is a valid value. If there is an error, then
+		    that error gets logged in the <span class="sourcecodebox">$errors</span> array.</p>
+		<p class="content_text" >&nbsp;</p>
+		<span class="sourcecodebox" ><pre>
+// load the RowManager with the data submitted from the form.
+$seriesManager->loadFromArray( $formValues );
+$seriesManager->updateDBTable();</pre></span>
+		<p class="content_text" >processData() now simply loads the formValues into
+		    the RowManager, and updates the table.</p>
+		<p class="content_text" >&nbsp;</p>
+		<span class="sourcecodebox" ><pre>
+$template->set( 'formFields', $formFields );
+$template->set( 'formValues', $formValues );
+$template->set( 'formErrors', $errors);</pre></span>
+		<p class="content_text" >getHTML() sends the additional data to the template. </p>
+		<p class="content_text" >&nbsp;</p>
+		<p class="content_text" ><em><strong>ex_SeriesEdit_array.tpl:</strong></em></p>
+		<span class="sourcecodebox" ><pre>
+// for each field
+for ($indx=0; $indx&lt;count( $formFields ); $indx++) {
+	$key = $formFields[ $indx ];
+	
+	// start Row
+	echo '&lt;tr>';
+	
+	// print Field Label
+	echo '&lt;td valign="top" >'.$key.'&lt;/td>';
+	
+	
+	// open Form Entry Column
+	echo '&lt;td valign="top" >';
+	
+	// print Form Entry 
+	echo '&lt;input name="'.$key.'" type="text" value="'.$formValues[ $key ].'" />';
+	
+	// if an error for this form Item exists, then display it:
+	if ( isset( $formErrors[ $key ] ) ) {
+		echo '&lt;br>&lt;span class="style1">'.$formErrors[$key].'&lt;/span>';
+	}
+	
+	// close Form Entry Column
+	echo '&lt;/td>';
+	
+	// close Row
+	echo '&lt;/tr>';
+	
+}</pre></span>
+		<p class="content_text" >The template file now simply steps through each given
+		    field, and displays a new table row with a form entry for each. If
+		    an error exists for a given field, then that is displayed under the
+		    textbox.</p>
+		<p class="content_text" >&nbsp;</p>
+		<p class="content_text" >Now, play this this example, and change the formFieldList
+		    to &quot;series_id,series_title&quot;. Run it again. Nifty!</p>
+		<p class="content_text" >Make sure you understand how these changes work, then
+		    update your EpisodeEdit script/template to match.</p>
+		<p class="content_text" >&nbsp; </p>
+		<h4>Notes:</h4>
+		<p class="content_text" >Just like in our last example, the common keys for
+		    all these new arrays is the list of db table column names you want to work
+		    with (listed in <span class="sourcecodebox">$formFieldList</span> ).</p>
+		<h4>&nbsp;</h4>
+		<span class="sourcecodebox" ></span>
+		<h4>Links To Code Examples</h4>
+		<table width="100%"  border="0" cellspacing="0" cellpadding="0">
+            <tr>
+                <td><a href="../6%20PageDisplay/ex_SeriesEdit_array.php"><img src="../../../Images/icn_filePHP.gif" width="24" height="31" border="0"></a></td>
+                <td><a href="../6%20PageDisplay/ex_SeriesEdit_array.tpl"><img src="../../../Images/icn_filePHP.gif" width="24" height="31" border="0"></a></td>
+            </tr>
+            <tr>
+                <td><a href="../6%20PageDisplay/ex_SeriesEdit_array.php">ex_SeriesEdit_array.php</a></td>
+                <td><a href="../6%20PageDisplay/ex_SeriesEdit_array.tpl">ex_SeriesEdit_array.php</a></td>
+            </tr>
+        </table>
+		<p class="content_text" >&nbsp;</p>
+            <!-- InstanceEndEditable -->
+            <hr size="1" noshade>
+		 </td>
+    </tr>
+	<tr><td><table width="100%"  border="0" cellspacing="0" cellpadding="0">
+    <tr>
+        <td class="content_text"><!-- InstanceBeginEditable name="prevButtonBottom" --><a href="6_03_ValueArrayDisplayList.htm">Previous</a><!-- InstanceEndEditable --></td>
+        <td class="content_text"><div align="right"><!-- InstanceBeginEditable name="nextButtonBottom" --><a href="6_05_PageDisplayList.htm">Next</a><!-- InstanceEndEditable --></div></td>
+    </tr>
+</table></td>
+	</tr>
+</table>
+</center>
+
+</body>
+<!-- InstanceEnd --></html>

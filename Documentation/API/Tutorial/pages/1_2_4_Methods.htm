@@ -1,0 +1,145 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html><!-- InstanceBegin template="/Templates/documentation_tutorialContent.dwt.php" codeOutsideHTMLIsLocked="false" -->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<!-- InstanceBeginEditable name="doctitle" -->
+<title>Untitled Document</title>
+<!-- InstanceEndEditable --><link href="../../../Data/CSS/documentation.css" rel="stylesheet" type="text/css">
+<!-- InstanceBeginEditable name="head" --><!-- InstanceEndEditable -->
+</head>
+
+<body>
+<center>
+<table width="680" border="0" cellspacing="0" cellpadding="0">
+    <tr>
+        <td><table width="100%"  border="0" cellspacing="0" cellpadding="0">
+    <tr>
+        <td><img src="../../../Images/page_header.gif"></td>
+		<td width="200">&nbsp;</td>
+    </tr>
+    <tr>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+    </tr>
+</table>
+</td>
+    </tr>
+    <tr>
+        <td bgcolor="#CCCCCC">&nbsp;</td>
+    </tr>
+    <tr>
+        <td class="text_navbar"><? 
+			/*
+			 * Find the path to the Documentation Root ...
+			 */
+			$pathToRoot = ''; 
+			for ( $indx=0; $indx<20 && !file_exists( $pathToRoot.'Data/CSS/documentation.css'); $indx++ ) {
+				$pathToRoot .= '../';
+			}
+
+		echo '<a href="'.$pathToRoot.'index.php" target="_top">AI Doc</a> &gt; <a href="'.$pathToRoot.'/API/index.html">API</a>';
+			
+		?><!-- InstanceBeginEditable name="NavBar" --><a href="intro.htm">Tutorial</a> &gt; <a href="1_0_DataAccessManager.htm">Data
+                    Access Managers</a> &gt; <a href="1_2_0_Anatomy.htm">RowManager
+            Anatomy</a> &gt; Methods <!-- InstanceEndEditable --></td>
+    </tr>
+	<tr><td>&nbsp;</td></tr>
+    <tr>
+        <td><table width="100%"  border="0" cellspacing="0" cellpadding="0">
+    <tr>
+        <td class="content_text"><!-- InstanceBeginEditable name="prevButtonTop" --><a href="1_2_3_Constructor.htm">Previous</a><!-- InstanceEndEditable --></td>
+        <td class="content_text"><div align="right"><!-- InstanceBeginEditable name="nextButtonTop" --><a href="1_3_0_BuildYourOwn.htm">Next</a><!-- InstanceEndEditable --></div></td>
+    </tr>
+</table>
+</td>
+    </tr>
+    <tr>
+        <td class="content_text" ><hr size="1" noshade >
+            <!-- InstanceBeginEditable name="Content" -->
+		<h1>RowManager Anatomy
+                - Methods </h1>
+		<p class="content_text" >Any good object will have methods available for you
+		    to work with it's data. Here we will show you how to use methods
+		    available for you to work with the Data in a RowManager.</p>
+		<p class="content_text" ><em><strong>Getters and Setter:</strong></em></p>
+		<span class="sourcecodebox" ><pre>
+	//************************************************************************
+	/**
+	 * function getTitle
+	 * &lt;pre>
+	 * Returns the title of this episode
+	 * &lt;/pre>
+	 * @return [STRING]
+	 */
+    function getTitle() 
+    {
+        return $this->getValueByFieldName( 'episode_title' );
+    }
+	
+	
+	
+	//************************************************************************
+	/**
+	 * function setTitle
+	 * &lt;pre>
+	 * Sets the title of this episode
+	 * &lt;/pre>
+	 * @param $title [STRING] The new episode title
+	 * @return [void]
+	 */
+    function setTitle( $title ) 
+    {
+        $this->setValueByFieldName( 'episode_title', $title );
+    }</pre></span>
+		<p class="content_text" >The parent RowManager class provides 2 methods for
+		    you to use when getting values and setting values:</p><ul>
+		             <li >getValueByFieldName(
+		             $columnName )</li>
+		             <li >setValueByFieldName( $columnName, $newValue )</li>
+		    </ul> 
+			<p>&nbsp;</p>
+		    <p><em><strong>Alternative Loading features:</strong></em></p>
+			<span class="sourcecodebox" ><pre>	//************************************************************************<br>	/**<br>	 * function loadByTitle<br>	 * &lt;pre&gt;<br>	 * Attempts to load this object by a given title<br>	 * &lt;/pre&gt;<br>	 * @param $title [STRING] A title to search for<br>	 * @return [BOOL]<br>	 */<br>    function loadByTitle( $title ) <br>    {<br>        $condition = 'episode_title=&quot;'.$title.'&quot;';<br>        return $this-&gt;loadByCondition( $condition );<br>    }</pre></span>
+		    <p>Sometimes it is desireable to load an object given another value other
+		        than the value of it's primary key. The parent RowManager provieds the following method:<ul><li>loadByCondition(
+		                $condition )</li>
+		        </ul>
+		        <p>The condition provided, is lierally used as the SQL WHERE clause. </p>
+                <p>&nbsp;</p>
+                <p><em><strong>Return the Label Field:</strong></em></p>
+				<span class="sourcecodebox" ><pre>	//************************************************************************<br>	/**<br>	 * function getLabelField<br>	 * &lt;pre&gt;<br>	 * Returns the value commonly used for displaying as a Label (Form Grid<br>	 * rows, Drop List Labels, etc...).<br>	 * &lt;/pre&gt;<br>	 * @return [STRING]<br>	 */<br>    function getLabelField() <br>    {<br>        return 'episode_title';<br>    }</pre></span>
+                <p>This is a <strong>required</strong> method. This method simply needs to return
+                    the columnName of the field to be used when displaying the
+                    entries of this table in a list. </p>
+                <h4>&nbsp;</h4>
+                <h4>Notes:</h4>
+                <p class="content_text" >We generally follow the programming conventions set
+		    out by the <a href="http://pear.php.net/manual/en/standards.php" target="_blank">PEAR</a> group.</p>
+                <p class="content_text" >getters and setter methods start with
+                    &quot;get&quot; and &quot;set&quot;</p>
+                <p class="content_text" >functions that return boolean values
+                    should be named with &quot;is&quot;, &quot;has&quot;, or another appropriate
+                    true / false phrase. Fore example: if you wanted to create
+                    a function that checks &quot;if this episode is Battlestar Galactica&quot;
+                    then your method would be <span class="sourcecodebox">isBSG()</span>,
+                    and you would call it: </p><span class="sourcecodebox" ><pre>
+	if ($episode-&gt;isBSG() ) {
+		echo 'Oh Yeah!&lt;br&gt;';
+	}</pre></span>
+                <p class="content_text" >&nbsp;</p>
+            <!-- InstanceEndEditable -->
+            <hr size="1" noshade>
+		 </td>
+    </tr>
+	<tr><td><table width="100%"  border="0" cellspacing="0" cellpadding="0">
+    <tr>
+        <td class="content_text"><!-- InstanceBeginEditable name="prevButtonBottom" --><a href="1_2_3_Constructor.htm">Previous</a><!-- InstanceEndEditable --></td>
+        <td class="content_text"><div align="right"><!-- InstanceBeginEditable name="nextButtonBottom" --><a href="1_3_0_BuildYourOwn.htm">Next</a><!-- InstanceEndEditable --></div></td>
+    </tr>
+</table></td>
+	</tr>
+</table>
+</center>
+
+</body>
+<!-- InstanceEnd --></html>

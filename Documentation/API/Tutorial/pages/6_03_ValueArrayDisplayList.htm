@@ -1,0 +1,176 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html><!-- InstanceBegin template="/Templates/documentation_tutorialContent.dwt.php" codeOutsideHTMLIsLocked="false" -->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<!-- InstanceBeginEditable name="doctitle" -->
+<title>Untitled Document</title>
+<!-- InstanceEndEditable --><link href="../../../Data/CSS/documentation.css" rel="stylesheet" type="text/css">
+<!-- InstanceBeginEditable name="head" --><!-- InstanceEndEditable -->
+</head>
+
+<body>
+<center>
+<table width="680" border="0" cellspacing="0" cellpadding="0">
+    <tr>
+        <td><table width="100%"  border="0" cellspacing="0" cellpadding="0">
+    <tr>
+        <td><img src="../../../Images/page_header.gif"></td>
+		<td width="200">&nbsp;</td>
+    </tr>
+    <tr>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+    </tr>
+</table>
+</td>
+    </tr>
+    <tr>
+        <td bgcolor="#CCCCCC">&nbsp;</td>
+    </tr>
+    <tr>
+        <td class="text_navbar"><? 
+			/*
+			 * Find the path to the Documentation Root ...
+			 */
+			$pathToRoot = ''; 
+			for ( $indx=0; $indx<20 && !file_exists( $pathToRoot.'Data/CSS/documentation.css'); $indx++ ) {
+				$pathToRoot .= '../';
+			}
+
+		echo '<a href="'.$pathToRoot.'index.php" target="_top">AI Doc</a> &gt; <a href="'.$pathToRoot.'/API/index.html">API</a>';
+			
+		?><!-- InstanceBeginEditable name="NavBar" --><a href="intro.htm">Tutorial</a> &gt; <a href="6_0_PageDisplay.htm">PageDisplay
+            Objects</a> &gt; Variable Array &amp; Display Lists <!-- InstanceEndEditable --></td>
+    </tr>
+	<tr><td>&nbsp;</td></tr>
+    <tr>
+        <td><table width="100%"  border="0" cellspacing="0" cellpadding="0">
+    <tr>
+        <td class="content_text"><!-- InstanceBeginEditable name="prevButtonTop" --><a href="#">Previous</a><!-- InstanceEndEditable --></td>
+        <td class="content_text"><div align="right"><!-- InstanceBeginEditable name="nextButtonTop" --><a href="6_04_ValueArrayForms.htm">Next</a><!-- InstanceEndEditable --></div></td>
+    </tr>
+</table>
+</td>
+    </tr>
+    <tr>
+        <td class="content_text" ><hr size="1" noshade >
+            <!-- InstanceBeginEditable name="Content" -->
+		<h1>PageDisplay Objects
+                - Variable Array &amp; Display Lists </h1>
+		<p class="content_text" >Starting to feel like it is getting a little tedious
+		    to declare each variable you use as a seperate variable? Getting
+		    tired of adding in a &quot;global VariableX;&quot; to each function? Well so
+		    were we ...</p>
+		<p class="content_text" >Now we are going to condense all our variables we
+		    use on a web page into a single array. </p>
+		<p class="content_text" >Examine the changes made to the SeriesList 
+		    scripts below. </p>
+		<p class="content_text" ><em><strong>ex_SeriesList_array.php:</strong></em></p>
+		<span class="sourcecodebox" ><pre>
+// These variables are used to dynamically define the fields to display on 
+// the output display list.  Just add another field to the $displayFieldList
+// (seperated by commas) to include it on your form. 
+$displayFieldList = 'series_title';
+$displayFields = explode( ',', $displayFieldList);</pre></span>
+		<p class="content_text" >We added 2 new variables for describing the fields
+		    from the RowManager we are interested in displaying in our list.
+		    The first variable <span class="sourcecodebox">$displayFieldList</span> is
+		    only used in building the
+		    <span class="sourcecodebox">$displayFields[]</span> array.</p>
+		<p class="content_text" >&nbsp;</p>
+		<span class="sourcecodebox" ><pre>
+// the Row manager can return an array of columnName=>values
+$allValues = $series->getArrayOfValues();</pre></span>
+		<p class="content_text" >The load data routine is modified to pull out the
+		    values from the RowManager in array form.</p>
+		<p class="content_text" >&nbsp;</p>
+		<span class="sourcecodebox" ><pre>
+// now go through each element in our displayFields array and pull 
+// out the ones we are interested in displaying
+$displayValues = array();
+for ($indx=0; $indx&lt;count( $displayFields ); $indx++) {
+	$key = $displayFields[ $indx ];
+	$displayValues[ $key ] = $allValues[ $key ]; 
+}
+
+// Now store the ARRAY of display data into our final display array
+$seriesArray[ $series->getID() ] = $displayValues;</pre></span>
+		<p class="content_text" >Then we step through each of the fields we listed
+		    in our <span class="sourcecodebox">$displayFields</span> array and store those in the final <span class="sourcecodebox">$seriesArray</span>		    variable instead of just the title.</p>
+		<p class="content_text" >&nbsp;</p>
+		<span class="sourcecodebox" ><pre>
+$template->set( 'showFields', $displayFields);</pre></span>
+		<p class="content_text" >finally we have to pass the list of desired fields
+		    to the template so it can know what to load. </p>
+		<p class="content_text" >&nbsp;</p>
+		<p class="content_text" ><em><strong>ex_SeriesList_array.tpl:</strong></em></p>
+		<span class="sourcecodebox" ><pre>
+&lt;table width="300" border="0" cellspacing="2" cellpadding="2">
+ &lt;tr>
+&lt;?php
+
+	// Now for each desired field to display, print out the header
+	for ($indx=0; $indx&lt;count( $showFields ); $indx++) {
+		echo '&lt;td bgcolor="#666666">&lt;span class="text_white">'.$showFields[ $indx ].'&lt;/span>&lt;/td>';
+	}
+
+	// Next be sure to add an additional column for the Edit links
+?>
+	 &lt;td bgcolor="#666666">&nbsp;&lt;/td>
+ &lt;/tr></pre></span>
+		<p class="content_text" >Here we update the section that displays the headers
+		    to dynamically display a header for each given <span class="sourcecodebox">$displayFields</span> (called
+		        <span class="sourcecodebox">$showFields</span> in the template) entry. </p>
+		<p class="content_text" >&nbsp;</p>
+		<span class="sourcecodebox" ><pre>
+// for each requested field to display, print out that column data
+for ($indx=0; $indx&lt;count( $showFields ); $indx++) {
+
+	$key = $showFields[ $indx ];
+	
+	echo '&lt;td>' . $value[ $key ] . '&lt;/td>';
+
+}</pre></span>
+		<p class="content_text" >Then we take the values stored in the <span class="sourcecodebox">$seriesList</span>		    array and print out each requested field.</p>
+		<p class="content_text" >&nbsp;</p>
+		<p class="content_text" >What? Still not convinced how useful this is?</p>
+		<p class="content_text" >Try this: change the <span class="sourcecodebox">$displayFieldList</span> to <span class="sourcecodebox">'series_id,series_title'</span>		    and run the script.</p>
+		<p class="content_text" >Nice huh?</p>
+		<p class="content_text" >Now convert your Episode List to this same format.</p>
+		<p class="content_text" >&nbsp;</p>
+		<h4>Note:</h4>
+		<p class="content_text" >Notice that the order you list the elements in the
+		    <span class="sourcecodebox">$displayFileList</span> is the order they get displayed in the list. </p>
+		<p class="content_text" >We now work by listing out the db table column names
+		    in our <span class="sourcecodebox">$displayFileList</span> variable. We do this since this is how they
+		    will be looked up in the array returned from the RowManager. </p>
+		<h4>&nbsp;</h4>
+		<span class="sourcecodebox" ></span>
+		<h4>Links To Code Examples</h4>
+		<table width="100%"  border="0" cellspacing="0" cellpadding="0">
+            <tr>
+                <td><a href="../6%20PageDisplay/ex_SeriesList_array.php"><img src="../../../Images/icn_filePHP.gif" width="24" height="31" border="0"></a></td>
+                <td><a href="../6%20PageDisplay/ex_SeriesList_array.tpl"><img src="../../../Images/icn_filePHP.gif" width="24" height="31" border="0"></a></td>
+            </tr>
+            <tr>
+                <td><a href="../6%20PageDisplay/ex_SeriesList_array.php">ex_SeriesList_array.php</a></td>
+                <td><a href="../6%20PageDisplay/ex_SeriesList_array.tpl">ex_SeriesList_array.tpl</a></td>
+            </tr>
+        </table>
+		<p class="content_text" >&nbsp;</p>
+            <!-- InstanceEndEditable -->
+            <hr size="1" noshade>
+		 </td>
+    </tr>
+	<tr><td><table width="100%"  border="0" cellspacing="0" cellpadding="0">
+    <tr>
+        <td class="content_text"><!-- InstanceBeginEditable name="prevButtonBottom" --><a href="#">Previous</a><!-- InstanceEndEditable --></td>
+        <td class="content_text"><div align="right"><!-- InstanceBeginEditable name="nextButtonBottom" --><a href="6_04_ValueArrayForms.htm">Next</a><!-- InstanceEndEditable --></div></td>
+    </tr>
+</table></td>
+	</tr>
+</table>
+</center>
+
+</body>
+<!-- InstanceEnd --></html>

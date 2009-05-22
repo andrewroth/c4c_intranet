@@ -1,0 +1,275 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html><!-- InstanceBegin template="/Templates/documentation_tutorialContent.dwt.php" codeOutsideHTMLIsLocked="false" -->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<!-- InstanceBeginEditable name="doctitle" -->
+<title>Untitled Document</title>
+<!-- InstanceEndEditable --><link href="../../../Data/CSS/documentation.css" rel="stylesheet" type="text/css">
+<!-- InstanceBeginEditable name="head" --><!-- InstanceEndEditable -->
+</head>
+
+<body>
+<center>
+<table width="680" border="0" cellspacing="0" cellpadding="0">
+    <tr>
+        <td><table width="100%"  border="0" cellspacing="0" cellpadding="0">
+    <tr>
+        <td><img src="../../../Images/page_header.gif"></td>
+		<td width="200">&nbsp;</td>
+    </tr>
+    <tr>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+    </tr>
+</table>
+</td>
+    </tr>
+    <tr>
+        <td bgcolor="#CCCCCC">&nbsp;</td>
+    </tr>
+    <tr>
+        <td class="text_navbar"><? 
+			/*
+			 * Find the path to the Documentation Root ...
+			 */
+			$pathToRoot = ''; 
+			for ( $indx=0; $indx<20 && !file_exists( $pathToRoot.'Data/CSS/documentation.css'); $indx++ ) {
+				$pathToRoot .= '../';
+			}
+
+		echo '<a href="'.$pathToRoot.'index.php" target="_top">AI Doc</a> &gt; <a href="'.$pathToRoot.'/API/index.html">API</a>';
+			
+		?><!-- InstanceBeginEditable name="NavBar" --><a href="intro.htm">Tutorial</a> &gt; <a href="7_00_PageController.htm">AppController
+            Objects</a> &gt; The Missing Pages <!-- InstanceEndEditable --></td>
+    </tr>
+	<tr><td>&nbsp;</td></tr>
+    <tr>
+        <td><table width="100%"  border="0" cellspacing="0" cellpadding="0">
+    <tr>
+        <td class="content_text"><!-- InstanceBeginEditable name="prevButtonTop" --><a href="7_04_Object.htm">Previous</a><!-- InstanceEndEditable --></td>
+        <td class="content_text"><div align="right"><!-- InstanceBeginEditable name="nextButtonTop" --><a href="7_06_PutAllTogether.htm">Next</a><!-- InstanceEndEditable --></div></td>
+    </tr>
+</table>
+</td>
+    </tr>
+    <tr>
+        <td class="content_text" ><hr size="1" noshade >
+            <!-- InstanceBeginEditable name="Content" -->
+		<h1>AppController Objects
+                - The Missing Pages </h1>
+		<p class="content_text" >Up till now, we've kept the examples limited to pretty
+		    basic functionality: listing the data in a table, and allowing you
+		    to Edit an entry.</p>
+		<p class="content_text" >Now we will fill in the missing capabilities of being
+		    able to add a new series, and delete a series.</p>
+		<p class="content_text" >Save the attached files to your Testing directory.
+		    Run the 05_ex_tvAddicts.php script and see the new capabilities.</p>
+		<p class="content_text" >Now, let's look at the changes that were introduced
+		    in these files:</p>
+		<p class="content_text" ><em><strong>05_app_tvAddicts.php:</strong></em></p>
+		<span class="sourcecodebox" ><pre>
+    /** const PAGE    The QueryString Page parameter. */
+        const PAGE = "P";
+        const PAGE_SERIESADD = 'SA';
+        const PAGE_SERIESDEL = 'SD';
+        const PAGE_SERIESEDIT = 'SE';
+        const PAGE_SERIESLIST = 'SL';</pre></span>
+		<p class="content_text" >We start off by adding new page constants for our
+		    new Edit &amp; Delete pages.</p>
+		<p class="content_text" >&nbsp;</p>
+		<span class="sourcecodebox" ><pre>
+		// now descide which PageDisplay object to load
+        switch( $page ) {
+        
+            case moduleTVAddicts::PAGE_SERIESADD:
+                $this->loadSeriesAdd();
+                break;
+                
+            case moduleTVAddicts::PAGE_SERIESDEL:
+                $this->loadSeriesDel();
+                break;
+                 
+            case moduleTVAddicts::PAGE_SERIESEDIT:
+                $this->loadSeriesEdit();
+                break;</pre></span>
+		<p class="content_text" >The loadData() method now has entries for each of
+		    the new page constants when choosing which page to load, and each
+		    page now has it's own load function.</p>
+		<p class="content_text" >&nbsp;</p>
+		<span class="sourcecodebox" ><pre>
+        // our script is now responsible to know about the links of the 
+        // application. So it creates an array of links for the template
+        // to use.
+        $newValues = $this->stateVariables;
+        $newValues[ moduleTVAddicts::PAGE ] = moduleTVAddicts::PAGE_SERIESEDIT;
+        $links[ 'edit' ] = $this->getCallBack( $newValues, moduleTVAddicts::SERIES_ID );
+        
+        $newValues[ moduleTVAddicts::PAGE ] = moduleTVAddicts::PAGE_SERIESDEL;
+        $links[ 'del' ] = $this->getCallBack( $newValues, moduleTVAddicts::SERIES_ID );
+        
+        $newValues[ moduleTVAddicts::PAGE ] = moduleTVAddicts::PAGE_SERIESADD;
+        $links[ 'add' ] = $this->getCallBack( $newValues );
+        
+        $this->pageDisplay->setLinks( $links );</pre></span>
+		<p class="content_text" >The loadSeriesList() method now has additional links
+		    being added to it for the Delete and Add functions.</p>
+		<p class="content_text" >&nbsp;</p>
+		<span class="sourcecodebox" ><pre>
+    //************************************************************************
+    /**
+     * function loadSeriesAdd
+     * &lt;pre>
+     * This routine loads the SeriesAdd page in the pageDisplay Object.
+     * &lt;/pre>
+     * @return [void]
+     */
+    function loadSeriesAdd() {
+        
+        // mark the value of the call back 
+        $formAction = $this-&gt;getCallBack();
+        $this->pageDisplay = new page_SeriesAdd( '', null, $formAction );
+    
+    }</pre></span>
+		<p class="content_text" >The loadSeriesAdd() method doesn't need to send in
+		    a seriesID value to the PageDisplay object, because on an add function,
+		    we don't need to iniitlize the data from a row in the DB.</p>
+		<p class="content_text" >&nbsp;</p>
+		<span class="sourcecodebox" ><pre>
+    //************************************************************************
+    /**
+     * function loadSeriesDel
+     * &lt;pre>
+     * This routine loads the SeriesDel page in the pageDisplay Object.
+     * &lt;/pre>
+     * @return [void]
+     */
+    function loadSeriesDel() {
+        
+        // mark the value of the call back 
+        $formAction = $this-&gt;getCallBack();
+        $this->pageDisplay = new page_SeriesDel( '', null, $formAction, $this->stateVariables[ moduleTVAddicts::SERIES_ID ] );
+    }</pre></span>
+		<p class="content_text" >The loadSeriesDel() method however, does need ot send
+		    in a seriesID value to the PageDisplay object, because it needs to
+		    now which entry to delete.</p>
+		<p class="content_text" >&nbsp;</p>
+		<p class="content_text" ><em><strong>page_SeriesAdd.php:<br>
+		    page_SeriesAdd.tpl:</strong></em></p>
+		<p class="content_text" >These pages follow the page_SeriesEdit.php &amp; page_SeriesEdit.tpl
+		    files. The main difference being that the page_SeriesEdit PageDisplay
+		    object needs to initialize it's data from a row in the DB, the page_SeriesAdd
+		    PageDisplay object does not.</p>
+		<p class="content_text" >Also, notice that the templates are almost exactly
+		    the same, but with different Titles. (This should get you to thinking
+		    about making a single/generic template for displaying form data so
+		    we don't have to make a template for each and every form page...
+		    )</p>
+		<p class="content_text" >&nbsp;</p>
+		<p class="content_text" ><em><strong>page_SeriesDel.php:<br>
+		    page_SeriesDel.tpl:</strong></em></p>
+		<p class="content_text" >The Delete page works somewhat like an edit page.</p>
+		<p class="content_text" >&nbsp;</p>
+		<span class="sourcecodebox" ><pre>
+ function __construct($pathModuleRoot, $viewer, $formAction, $initID ) 
+    {
+        // save the passed in parameters
+        $this->pathModuleRoot = $pathModuleRoot;
+        $this->viewer = $viewer;
+        $this->formAction = $formAction;
+        
+        // now get array of fields we want to work with
+        $this->formFields = explode( ',', page_SeriesDel::FORM_FIELDS);
+        
+        // create a RowManager initialized with the requested row
+        $this->dataManager = new RowManager_SeriesManager( $initID );
+        
+        $this->formValues = $this->dataManager->getArrayOfValues();
+
+        
+        $this->shouldDelete = false;
+        
+    }</pre></span>
+		<p class="content_text" >The constructor still needs to load up a RowManager
+		    with the row you want to delete. This way we can dispaly the information,
+		    and then ask for a confirmation.</p>
+		<p class="content_text" >&nbsp;</p>
+		<span class="sourcecodebox" ><pre>
+    //************************************************************************
+    /**
+     * function loadFromForm
+     * &lt;pre>
+     * Loads the data from the submitted form.
+     * &lt;/pre>
+     * @return [void]
+     */
+    function loadFromForm() 
+    {
+        // On a Delete Confirmation, all we are concerned with is the value of
+        // the submit button
+        if ( isset($_REQUEST['Submit']) ) {
+        
+            if ( $_REQUEST[ 'Submit' ] == 'Yes') {
+                $this->shouldDelete = true;
+            }
+        
+        }        
+    } // end loadFromForm()</pre></span>
+		<p class="content_text" >In  loadFromForm() we are only concerned with which
+		    button was pushed. </p>
+		<p class="content_text" >&nbsp;</p>
+		<span class="sourcecodebox" ><pre>
+    //************************************************************************
+    /**
+     * function processData
+     * &lt;pre>
+     * Processes the data for this form.
+     * &lt;/pre>
+     * @return [void]
+     */
+    function processData() 
+    {
+
+        if ( $this->shouldDelete ) {
+            $this->dataManager->deleteEntry();
+        }
+                
+    } // end processData()</pre></span>
+		<p class="content_text" >In processData() we perform the deletion if that
+		    is what was indicated by the form. </p>
+		<p class="content_text" >&nbsp; </p>
+<h4>Links To Code Examples</h4>
+		<table width="100%"  border="0" cellspacing="0" cellpadding="0">
+            <tr>
+                <td><a href="../7%20PageController/05_ex_tvAddicts.php"><img src="../../../Images/icn_filePHP.gif" width="24" height="31" border="0"></a></td>
+                <td><a href="../7%20PageController/05_app_tvAddicts.php"><img src="../../../Images/icn_filePHP.gif" width="24" height="31" border="0"></a></td>
+            	<td><a href="../7%20PageController/page_SeriesAdd.php"><img src="../../../Images/icn_filePHP.gif" width="24" height="31" border="0"></a></td>
+                <td><a href="../7%20PageController/page_SeriesAdd.tpl"><img src="../../../Images/icn_filePHP.gif" width="24" height="31" border="0"></a></td>
+				<td><a href="../7%20PageController/page_SeriesDel.php"><img src="../../../Images/icn_filePHP.gif" width="24" height="31" border="0"></a></td>
+                <td><a href="../7%20PageController/page_SeriesDel.tpl"><img src="../../../Images/icn_filePHP.gif" width="24" height="31" border="0"></a></td>
+			</tr>
+            <tr>
+                <td><a href="../7%20PageController/05_ex_tvAddicts.php">05_ex_tvAddicts.php</a></td>
+                <td><a href="../7%20PageController/05_app_tvAddicts.php">05_app_tvAddicts.php</a></td>
+				<td><a href="../7%20PageController/page_SeriesAdd.php">page_SeriesAdd.php</a></td>
+                <td><a href="../7%20PageController/page_SeriesAdd.tpl">page_SeriesAdd.tpl</a></td>
+				<td><a href="../7%20PageController/page_SeriesDel.php">page_SeriesDel.php</a></td>
+                <td><a href="../7%20PageController/page_SeriesDel.tpl">page_SeriesDel.tpl</a></td>
+            </tr>
+        </table>
+		<p class="content_text" >&nbsp;</p>
+            <!-- InstanceEndEditable -->
+            <hr size="1" noshade>
+		 </td>
+    </tr>
+	<tr><td><table width="100%"  border="0" cellspacing="0" cellpadding="0">
+    <tr>
+        <td class="content_text"><!-- InstanceBeginEditable name="prevButtonBottom" --><a href="7_04_Object.htm">Previous</a><!-- InstanceEndEditable --></td>
+        <td class="content_text"><div align="right"><!-- InstanceBeginEditable name="nextButtonBottom" --><a href="7_06_PutAllTogether.htm">Next</a><!-- InstanceEndEditable --></div></td>
+    </tr>
+</table></td>
+	</tr>
+</table>
+</center>
+
+</body>
+<!-- InstanceEnd --></html>

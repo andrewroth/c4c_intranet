@@ -1,0 +1,67 @@
+{\rtf1\mac\ansicpg10000\cocoartf824\cocoasubrtf110
+{\fonttbl\f0\fswiss\fcharset77 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww9000\viewh8400\viewkind0
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ql\qnatural\pardirnatural
+
+\f0\fs24 \cf0 AI Web API Tutorial\
+---------------------------\
+\
+// Learning Row Managers \
+1) use preexisting Row manager Example\
+\
+2) look at how code of preexisting Row manager works\
+\
+3) build own Row Manager to manage a new table\
+\
+4) Design a Web Page to show a form, and receive form data & use manager to store form data\
+\
+// Learning List Iterators\
+5) Create new page to display a list of items in your table (use a List Iterator)\
+\
+// Learning Templates\
+5) Use a Template to display the form & Display Lists\
+\
+Add in error checking to form\
+Template needs to display errors under the Form Items\
+\
+\
+\
+// Learning QueryString passing\
+ ) have the display list give links to edit an individual entry in your form page.\
+\
+// Learning Page Flow & Page Content Objects\
+8) Rework your Pages to group data into loadData, processData, getHTML() functions.\
+\
+8b) create an isDataValid() to contain all your error checking\
+\
+8c) simplify variable tracking by consolidating values into arrays ...\
+\
+9) Create a controller page that decides which set of load, process, prepareDisplay info is to be run\
+-> have controller page return to display list after form is finished processing\
+\
+a) rewrite QueryString loading Fns to use built in $this->getQSValue() \
+b) have form page automatically revert back to display list after a successful processing of data\
+b) add a getCallBack ()\
+\
+\
+10) Rework your Controller page into a PageContent Object\
+\
+Need: script to setup their PageContent Object\
+\
+11) Plug your Page Content Object into the Site (add a module entry and put your code into the modules directory)\
+( use this time to explore the Page Object as well)\
+\
+\
+// Multilingual Manager\
+ Create a multilingual manager object and \
+\
+// Learning our Templates\
+7) Rework your Form Templates to use XML Data from your Row Manager\
+\
+ ) Rework your Display List Template to use XML Data from the ListIterator object\
+\
+) Rework page to use the FormSingle Template\
+) Rework page to use DisplayList Template\
+) Add a delete link  to Display List\
+) Add a Delete Confirmation Page to your system}

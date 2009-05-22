@@ -1,0 +1,122 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html><!-- InstanceBegin template="/Templates/documentation_tutorialContent.dwt.php" codeOutsideHTMLIsLocked="false" -->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<!-- InstanceBeginEditable name="doctitle" -->
+<title>Untitled Document</title>
+<!-- InstanceEndEditable --><link href="../../../Data/CSS/documentation.css" rel="stylesheet" type="text/css">
+<!-- InstanceBeginEditable name="head" --><!-- InstanceEndEditable -->
+</head>
+
+<body>
+<center>
+<table width="680" border="0" cellspacing="0" cellpadding="0">
+    <tr>
+        <td><table width="100%"  border="0" cellspacing="0" cellpadding="0">
+    <tr>
+        <td><img src="../../../Images/page_header.gif"></td>
+		<td width="200">&nbsp;</td>
+    </tr>
+    <tr>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+    </tr>
+</table>
+</td>
+    </tr>
+    <tr>
+        <td bgcolor="#CCCCCC">&nbsp;</td>
+    </tr>
+    <tr>
+        <td class="text_navbar"><? 
+			/*
+			 * Find the path to the Documentation Root ...
+			 */
+			$pathToRoot = ''; 
+			for ( $indx=0; $indx<20 && !file_exists( $pathToRoot.'Data/CSS/documentation.css'); $indx++ ) {
+				$pathToRoot .= '../';
+			}
+
+		echo '<a href="'.$pathToRoot.'index.php" target="_top">AI Doc</a> &gt; <a href="'.$pathToRoot.'/API/index.html">API</a>';
+			
+		?><!-- InstanceBeginEditable name="NavBar" --><a href="intro.htm">Tutorial</a> &gt; Modules <!-- InstanceEndEditable --></td>
+    </tr>
+	<tr><td>&nbsp;</td></tr>
+    <tr>
+        <td><table width="100%"  border="0" cellspacing="0" cellpadding="0">
+    <tr>
+        <td class="content_text"><!-- InstanceBeginEditable name="prevButtonTop" --><a href="7_08_CompletePicture.htm">Previous</a><!-- InstanceEndEditable --></td>
+        <td class="content_text"><div align="right"><!-- InstanceBeginEditable name="nextButtonTop" --><a href="8_01_SiteLayout.htm">Next</a><!-- InstanceEndEditable --></div></td>
+    </tr>
+</table>
+</td>
+    </tr>
+    <tr>
+        <td class="content_text" ><hr size="1" noshade >
+            <!-- InstanceBeginEditable name="Content" -->
+            <h1>Modules</h1>
+		    <p class="content_text" >Now that you have a full fledged application that
+		        tracks your TV Addiction, we will see how to make your application
+		        plug into the supplied framework as a &quot;Module&quot;. </p>
+		    <p class="content_text" >When we are done, you will no longer need the
+		        controller scripts to drive your application, the framework will
+		        do that for you.</p>
+		    <p class="content_text" >In order for us to understand how modules work,
+		        we need to first understand how our PageObject operates.</p>
+		    <p class="content_text" ><em><strong>PageObject:</strong></em></p>
+		    <p class="content_text" >In our previous discussion of <a href="7_00_PageController.htm">AppControllers</a>,
+		        we talked about the differences between PageDisplay Objects and
+		        the AppController Object:</p>
+		    <p class="content_text" ><em>A PageDisplay object is primarily responsible
+		        for answering &quot;What data needs to be displayed on this page?&quot; However
+		        a PageDisplay object doesn't know about other PageDisplay objects,
+		        or when they should be displayed. </em></p>
+		    <p class="content_text" ><em>An AppController Object is primarily responsible
+		        for deciding &quot;Which page in my application is to be displayed
+		        now?&quot; It knows about all the different pages in an application
+		        and when each should be displayed. In this way, the AppController
+		        maintains the state of your application. </em></p>
+		    <p class="content_text" >The Page Object is primarily responsible for deciding
+		        &quot;Which Application is to be displayed now?&quot; It knows about all
+		        the applications installed on the site, and is able to direct
+		        the viewer to the proper application. In addition, it also manages
+		        some of the security features of making sure a viewer is properly
+		        logged in before allowing them to view an application. </p>
+		    <p class="content_text" >An updated diagram of the objects would look like
+		        :</p>
+		    <p class="content_text" ><img src="../images/8_0_PageObject.gif" width="600" height="600"></p>
+		    <p class="content_text" >Now would be a good time to browse through the
+		        code of the site's <a href="../../../../index.php">index.php</a> and <a href="../../../../objects/Page.php">Page.php</a>:</p>
+		    <p class="content_text" ><em><strong>index.php:</strong></em></p>
+		    <p class="content_text" >This script now simply loads the site objects,
+		        creates a new Page object, then runs the Page-&gt;start() method.
+		        All the rest of the processing is controlled by the start() method. </p>
+		    <p class="content_text" >&nbsp;</p>
+		    <p class="content_text" ><em><strong>Page.php:</strong></em></p>
+		    <p class="content_text" >Most of the real work done here is done in the
+		        start() method. The ultimate goal of this method is to figure
+		        out which of the site's AppControllers to load, load it, drive
+		        it through the loadData(), processData() and prepareDisplayData()
+		        methods, then create the site template and generate the output
+		        to send back to the viewer's browser. It is much like the final
+		        controller script that you had in your previous examples.</p>
+		    <p class="content_text" >&nbsp; </p>
+		    <p class="content_text" >If all this makes sense, then it is time to continue
+		            on with making our module....</p>
+		    <h4>&nbsp;</h4>
+		<!-- InstanceEndEditable -->
+            <hr size="1" noshade>
+		 </td>
+    </tr>
+	<tr><td><table width="100%"  border="0" cellspacing="0" cellpadding="0">
+    <tr>
+        <td class="content_text"><!-- InstanceBeginEditable name="prevButtonBottom" --><a href="7_08_CompletePicture.htm">Previous</a><!-- InstanceEndEditable --></td>
+        <td class="content_text"><div align="right"><!-- InstanceBeginEditable name="nextButtonBottom" --><a href="8_01_SiteLayout.htm">Next</a><!-- InstanceEndEditable --></div></td>
+    </tr>
+</table></td>
+	</tr>
+</table>
+</center>
+
+</body>
+<!-- InstanceEnd --></html>

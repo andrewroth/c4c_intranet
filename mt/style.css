@@ -1,0 +1,263 @@
+body
+{
+	margin: 0;
+	padding: 0;
+	font-family: Arial;
+	font-size: 10pt;
+	background: #132c5a;
+	background: #132c5a url('/mt/images/background.png') repeat-x;
+}
+
+#header
+{
+	width: 100%;
+	height: 100px;
+	background: white;
+	border-bottom: solid black 4px;
+	margin: 0;
+	padding-top: 5px;
+	padding-left: 5px;
+}
+
+#header .logo
+{
+	margin-top: 18px;
+	margin-right: 10px;
+	float: right;
+}
+
+#header .nav
+{
+	float: left;
+}
+
+#header .nav .links
+{
+	text-decoration: none;
+}
+
+#background
+{
+	height: 100%;
+}
+
+#content
+{
+	margin: 10px auto;
+	padding: 5px;
+	width: 950px;
+	background: white;
+	border: 1px solid black;
+}
+
+.mt_evt
+{
+	float: left;
+	overflow: auto;
+	width: 950px;
+}
+
+.selected
+{
+	background: #99AAFF;
+	border: 1px solid #0066AA;
+}
+
+.hover
+{
+	cursor: pointer;
+}
+
+.title
+{
+	font-weight: bold;
+	font-size: 10pt;
+	text-decoration: none;
+}
+
+.ui-dialog-container
+{
+	background: white;
+}
+
+.ui-dialog-titlebar
+{
+	background: white;
+	height: 25px;
+	padding: 5px;
+	padding-bottom: 0px;
+	border-bottom: 1px solid black;
+	cursor: move;
+	font-weight: bold;
+	font-size: 12pt;
+}
+
+.ui-dialog-titlebar
+{
+	/* display: none; */
+}
+
+.ui-dialog-titlebar-close
+{
+	float: right;
+	text-decoration: none;
+	width: 16px;
+	height: 16px;
+	position:absolute;
+	top: 6px;
+	right: 7px;
+	cursor: default;
+}
+
+.ui-dialog-titlebar-close-hover
+{
+	
+}
+
+.ui-dialog-content
+{
+	margin: 5px;
+	overflow: auto;
+}
+
+
+.ui-dialog-buttonpane 
+{
+
+}
+
+.event_list, .user_list
+{
+	padding-left: 10px;
+	margin-right: 10px;
+	margin-top: 5px;
+	width: auto;
+	clear: none;
+	float: left;
+}
+
+.event_list .hover,
+.user_list .hover,
+.job .hover
+{
+	color: #333333;
+}
+
+.event_list .event_item_name,
+.user_list .user_item
+{
+	
+}
+
+.event_list .event_item_role,
+.user_list .user_item_roles,
+.job .job_spots_left
+{
+	padding-left: 20px;
+	margin-bottom: 5px;
+	font-size: 8pt;
+}
+
+.job .job_spots_left
+{
+	padding-left: 5px;
+	padding-right: 3px;
+	clear: none;
+	display: inline;
+}
+
+.event_container .event_workload_title
+{
+	display: inline;
+}
+
+.event_container 
+{
+	clear: both;
+	display: block;
+	width: 1400px;
+}
+
+.job_container
+{
+	margin: 10px;
+	margin-left: 20px;
+	width: 200px;
+	float: left;
+}
+
+.job_container .title
+{
+	font-weight: bold;
+	text-decoration: underline;
+	font-size: 12pt;
+}
+
+.job_set
+{
+	margin-left: 5px;
+}
+
+.job_set .title
+{
+	text-decoration: none;
+	font-size: 10pt;
+	margin-top: 8px;
+}
+
+.job
+{
+	padding-left: 5px;
+}
+
+.footer
+{
+	clear: both;
+}
+
+.user_list
+{
+	float: left;
+	clear: left;
+}
+
+.admin_panel .job input,
+.admin_panel .event_container .event_workload_title,
+.admin_panel .user_info .event_container .event_motd
+{
+	display: none;
+}
+
+.sending
+{
+	color: orange;
+	background: url("images/working.gif") no-repeat left center;
+}
+
+.sending input
+{
+	visibility: hidden;
+}
+
+.sent
+{
+	color: green;
+}
+
+.error_sending
+{
+	color: red;
+}
+
+.staff_panel .perma_locked
+{
+	text-decoration: line-through;
+	display: none;
+}
+
+/*ui-resizable
+ui-resizable-handle
+ui-resizable-disabled
+ui-resizable-autohide
+ui-resizable-n, ui-resizable-s, ui-resizable-e, ui-resizable-w, ui-resizable-se, ui-resizable-sw, ui-resizable-nw, ui-resizable-ne : specific styles for the various resize handles. */
+	

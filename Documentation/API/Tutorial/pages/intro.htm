@@ -1,0 +1,69 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html><!-- InstanceBegin template="/Templates/documentation_index.dwt.php" codeOutsideHTMLIsLocked="false" -->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<!-- InstanceBeginEditable name="doctitle" -->
+<title>Untitled Document</title>
+<!-- InstanceEndEditable --><link href="../../../Data/CSS/documentation.css" rel="stylesheet" type="text/css">
+<!-- InstanceBeginEditable name="head" --><!-- InstanceEndEditable -->
+</head>
+
+<body>
+<center>
+<table width="680" border="0" cellspacing="0" cellpadding="0">
+    <tr>
+        <td><table width="100%"  border="0" cellspacing="0" cellpadding="0">
+    <tr>
+        <td><img src="../../../Images/page_header.gif"></td>
+		<td width="200">&nbsp;</td>
+    </tr>
+    <tr>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+    </tr>
+</table>
+</td>
+    </tr>
+    <tr>
+        <td bgcolor="#CCCCCC">&nbsp;</td>
+    </tr>
+    <tr>
+        <td class="text_navbar"><? 
+			/*
+			 * Find the path to the Documentation Root ...
+			 */
+			$pathToRoot = ''; 
+			for ( $indx=0; $indx<20 && !file_exists( $pathToRoot.'Data/CSS/documentation.css'); $indx++ ) {
+				$pathToRoot .= '../';
+			}
+
+		echo '<a href="'.$pathToRoot.'index.php" target="_top">AI Doc</a> &gt; <a href="'.$pathToRoot.'/API/index.html">API</a>';
+			
+		?><!-- InstanceBeginEditable name="NavBar" -->Tutorial<!-- InstanceEndEditable --></td>
+    </tr>
+    <tr>
+        <td>&nbsp;</td>
+    </tr>
+    <tr>
+        <td class="content_text" ><!-- InstanceBeginEditable name="Content" -->
+        <h1>Intro</h1>
+		<p>Welcome to the API tutorial. Here we will attempt to provide an easy to
+		    use method of becoming accustomed to the programming tools we have
+		    developed for building our web applications. This tutorial will step
+		    you through a simple process of designing a basic web application
+		    from scratch. In the process we will slowly introduce tools we use
+		    to handle the operations of operating a web page. As you progress
+		    through the tutorial, don't be surprised if you will be asked to
+		    rewrite a page you develped previously, using a new tool we are introducing.
+		    By the end, your new application will be a fully functional module
+		    for our existing framework.</p>
+		<p><a href="1_0_DataAccessManager.htm">Lets begin ... </a></p>
+        <!-- InstanceEndEditable -->
+		</td>
+    </tr>
+</table>
+
+</center>
+
+</body>
+<!-- InstanceEnd --></html>

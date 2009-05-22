@@ -1,0 +1,261 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html><!-- InstanceBegin template="/Templates/documentation_tutorialContent.dwt.php" codeOutsideHTMLIsLocked="false" -->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<!-- InstanceBeginEditable name="doctitle" -->
+<title>Untitled Document</title>
+<!-- InstanceEndEditable --><link href="../../../Data/CSS/documentation.css" rel="stylesheet" type="text/css">
+<!-- InstanceBeginEditable name="head" --><!-- InstanceEndEditable -->
+</head>
+
+<body>
+<center>
+<table width="680" border="0" cellspacing="0" cellpadding="0">
+    <tr>
+        <td><table width="100%"  border="0" cellspacing="0" cellpadding="0">
+    <tr>
+        <td><img src="../../../Images/page_header.gif"></td>
+		<td width="200">&nbsp;</td>
+    </tr>
+    <tr>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+    </tr>
+</table>
+</td>
+    </tr>
+    <tr>
+        <td bgcolor="#CCCCCC">&nbsp;</td>
+    </tr>
+    <tr>
+        <td class="text_navbar"><? 
+			/*
+			 * Find the path to the Documentation Root ...
+			 */
+			$pathToRoot = ''; 
+			for ( $indx=0; $indx<20 && !file_exists( $pathToRoot.'Data/CSS/documentation.css'); $indx++ ) {
+				$pathToRoot .= '../';
+			}
+
+		echo '<a href="'.$pathToRoot.'index.php" target="_top">AI Doc</a> &gt; <a href="'.$pathToRoot.'/API/index.html">API</a>';
+			
+		?><!-- InstanceBeginEditable name="NavBar" --><a href="intro.htm">Tutorial</a> &gt; <a href="7_00_PageController.htm">AppController
+            Objects</a> &gt; Link Columns<!-- InstanceEndEditable --></td>
+    </tr>
+	<tr><td>&nbsp;</td></tr>
+    <tr>
+        <td><table width="100%"  border="0" cellspacing="0" cellpadding="0">
+    <tr>
+        <td class="content_text"><!-- InstanceBeginEditable name="prevButtonTop" --><a href="7_06_PutAllTogether.htm">Previous</a><!-- InstanceEndEditable --></td>
+        <td class="content_text"><div align="right"><!-- InstanceBeginEditable name="nextButtonTop" --><a href="7_08_CompletePicture.htm">Next</a><!-- InstanceEndEditable --></div></td>
+    </tr>
+</table>
+</td>
+    </tr>
+    <tr>
+        <td class="content_text" ><hr size="1" noshade >
+            <!-- InstanceBeginEditable name="Content" -->
+		<h1>AppController -
+                Link Columns </h1>
+		<p class="content_text" >Before we continue on, lets introduce you to another
+		    nifty little construct: the Link column.</p>
+		<p class="content_text" >Suppose we want the ability to see the seasons associated
+		    with each series we are tracking. What we want is an additional column
+		    in our display table that links us to the page where we show you
+		    the seasons of a certain series. We want a Link Column.</p>
+		<p class="content_text" >Copy the attached files to your testing directory.
+		    Make sure you have a SeasonManager RowManager (that you should have
+		    built back in an <a href="1_3_0_BuildYourOwn.htm">earlier</a> step). Make
+		    sure your SeasonManager supports a setSeriesID() method.</p>
+		<p class="content_text" >Run it to
+		        see how they operate.</p>
+		<p class="content_text" >Let's take a look at the changes:</p>
+		<p class="content_text" ><em><strong>07_app_tvAddicts.php:</strong></em></p>
+		<span class="sourcecodebox" ><pre>
+//	CONSTANTS:
+        
+    /** const PAGE    The QueryString Page parameter. */
+        const PAGE = "P";
+        const PAGE_SERIESADD = 'SA';
+        const PAGE_SERIESDEL = 'SD';
+        const PAGE_SERIESEDIT = 'SE';
+        const PAGE_SERIESLIST = 'SL';
+        const PAGE_SEASONLIST = 'SnL';</pre></span>
+		<p class="content_text" >We add a new constant for the seasonList page.</p>
+		<p class="content_text" >&nbsp;</p>
+		<span class="sourcecodebox" ><pre>
+    //************************************************************************
+    /**
+     * function loadSeasonList
+     * &lt;pre>
+     * This routine loads the SeasonList page in the pageDisplay Object.
+     * &lt;/pre>
+     * @return [void]
+     */
+    function loadSeasonList() {
+        
+        // Create our nifty new PageDisplay object
+        // The constructor acts like our old loadData() 
+        $this->pageDisplay = new page_SeasonList( '', null, '', $this->stateVariables[ moduleTVAddicts::SERIES_ID ]);
+    
+    }</pre></span>
+		<p class="content_text" >We add a new loadSeasonList() method. Notice that
+		    the 4th parameter is the seriesID state variable. The SeasonList
+		    will need to know which tv series we are wanting to view the season
+		    information for. </p>
+		<p class="content_text" >&nbsp;</p>
+		<span class="sourcecodebox" ><pre>
+    //************************************************************************
+    /**
+     * function loadSeriesList
+     * &lt;pre>
+     * This routine loads the SeriesList page in the pageDisplay Object.
+     * &lt;/pre>
+     * @return [void]
+     */
+    function loadSeriesList() {
+        
+        // Create our nifty new PageDisplay object
+        // The constructor acts like our old loadData() 
+        $this->pageDisplay = new page_SeriesList( '', null, '');
+        
+        // our script is now responsible to know about the links of the 
+        // application. So it creates an array of links for the template
+        // to use.
+        $newValues = $this->stateVariables;
+        $newValues[ moduleTVAddicts::PAGE ] = moduleTVAddicts::PAGE_SERIESEDIT;
+        $links[ 'edit' ] = $this->getCallBack( $newValues, moduleTVAddicts::SERIES_ID );
+        
+        $newValues[ moduleTVAddicts::PAGE ] = moduleTVAddicts::PAGE_SERIESDEL;
+        $links[ 'del' ] = $this->getCallBack( $newValues, moduleTVAddicts::SERIES_ID );
+        
+        $newValues[ moduleTVAddicts::PAGE ] = moduleTVAddicts::PAGE_SERIESADD;
+        $links[ 'add' ] = $this->getCallBack( $newValues );
+        
+        $newValues[ moduleTVAddicts::PAGE ] = moduleTVAddicts::PAGE_SEASONLIST;
+        $links[ 'linkSeason' ] = $this->getCallBack( $newValues, moduleTVAddicts::SERIES_ID );
+        
+        $this->pageDisplay->setLinks( $links );
+    
+    }		
+
+}</pre></span>
+		<p class="content_text" >The loadSeriesList() method now includes a link to
+		    the new season list page. This page is stored in the links array
+		    as &quot;linkSeason&quot;. Notice how the ending of this link includes the
+		    SERIES_ID field at the end. Just like an Edit page, the new list
+		    page will need to know which season entries to pull that are related
+		    to the given series_id. </p>
+		<p class="content_text" >&nbsp;</p>
+		<p class="content_text" ><strong><em>07_page_SeriesList.tpl:</em></strong></p>
+		<span class="sourcecodebox" ><pre>
+&lt;h1>Current Seasons for &lt;? echo $seriesName; ?&gt;:&lt;/h1></pre></span>
+		<p class="content_text" >We now add in the name of the Series we are viewing
+		    as part of the header.</p>
+		<p class="content_text" >&nbsp;</p>
+		<span class="sourcecodebox" ><pre>
+        // Print out a header for each LinkColumn
+        for ($indx=0; $indx&lt;count($linkColumns); $indx++) {
+        
+            echo '&lt;td bgcolor="#666666">&lt;span class="text_white">'.$linkColumns[ $indx ]['title'].'&lt;/span>&lt;/td>';
+        }</pre></span>
+		<p class="content_text" >When displaying the header columns, we now check for
+		    the existance of link columns and add their title if they exist.</p>
+		<p class="content_text" >&nbsp;</p>
+		<span class="sourcecodebox" ><pre>
+        // for each linkColumn 
+        for( $indx=0; $indx&lt;count($linkColumns); $indx++) {
+            
+            $columnEntry = $linkColumns[ $indx ];
+            $label = $columnEntry[ 'label' ];
+            $link = $columnEntry[ 'link' ];
+            $fieldName = $columnEntry[ 'field' ];
+            
+            $data = '&lt;a href="'.$link.$value[ $fieldName ].'"&gt;'.$label.'&lt;/a&gt;';
+            echo '&lt;td &gt;'.$data."&lt;/td&gt;\n";
+        }</pre></span>
+		<p class="content_text" >When displaying the row information, we add in an
+		    additional column of data, with the current row ID tacked onto the
+		    linkColumn link.</p>
+		<p class="content_text" >&nbsp;</p>
+		<p class="content_text" ><strong><em>page_SeriesList.php:</em></strong></p>
+		<span class="sourcecodebox" ><pre>
+	//************************************************************************
+	/**
+	 * function addLinkColumn
+	 * &lt;pre>
+	 * Adds a value to the linkColumn array.
+	 * &lt;/pre>
+	 * @param $title [STRING] The label to display for the column title
+	 * @param $label [STRING] The label to display for the link
+	 * @param $link  [STRING] the href value for the link
+	 * @param $fieldName [STRING] the name of the field used to complete 
+	 * the link
+	 * @return [void]
+	 */
+    function addLinkColumn($title, $label, $link, $fieldName ) 
+    {
+        $entry = array();
+        $entry[ 'title' ] = $title;
+        $entry[ 'label' ] = $label;
+        $entry[ 'link' ] = $link;
+        $entry[ 'field' ] = $fieldName;
+        
+        $this->linkColumns[] = $entry;
+    }</pre></span>
+		<p class="content_text" >Our PageDisplay object now includes a method for creating
+		    a link column entry. Notice that each entry contains a title, label,
+		    link, and fieldName. The Title is what will be displayed in the table
+		    column header. The label is the value that gets displayed for each
+		    row in that column. The link is the href value to be used to jump
+		    to the next page. It is usually one of the unfinished links that
+		    is waiting to be completed with unique information based on the Row
+		    data that it is on. The fieldName is the fieldName of the data used
+		    to complete the link.</p>
+		<p class="content_text" >&nbsp;</p>
+		<span class="sourcecodebox" ><pre>
+        // store the Link Column information
+        $title = 'Seasons';
+        $label = "view";
+        $link = $this->linkValues[ 'linkSeason' ];
+        $fieldName = 'series_id';
+        $this->addLinkColumn($title, $label, $link, $fieldName );
+        $this->template->set( 'linkColumns', $this->linkColumns );</pre></span>
+		<p class="content_text" >The getHTML() routine now fills out the linkColumn
+		    information and passes it to our template. </p>
+		<p class="content_text" >&nbsp;</p>
+
+		<h4>Links To Code Examples</h4>
+		<table width="100%"  border="0" cellspacing="0" cellpadding="0">
+            <tr>
+                <td><a href="../7%20PageController/07_ex_tvAddicts.php"><img src="../../../Images/icn_filePHP.gif" width="24" height="31" border="0"></a></td>
+                <td><a href="../7%20PageController/07_page_SeriesList.tpl"><img src="../../../Images/icn_filePHP.gif" width="24" height="31" border="0"></a></td>
+				<td><a href="../7%20PageController/07_app_tvAddicts.php"><img src="../../../Images/icn_filePHP.gif" width="24" height="31" border="0"></a></td>
+                <td><a href="../7%20PageController/page_SeriesList.php"><img src="../../../Images/icn_filePHP.gif" width="24" height="31" border="0"></a></td>
+				<td><a href="../7%20PageController/page_SeasonList.php"><img src="../../../Images/icn_filePHP.gif" width="24" height="31" border="0"></a></td>
+            </tr>
+            <tr>
+                <td><a href="../7%20PageController/07_ex_tvAddicts.php">07_ex_tvAddicts.php</a></td>
+                <td><a href="../7%20PageController/07_page_SeriesList.tpl">07_page_SeriesList.tpl</a></td>
+				<td><a href="../7%20PageController/07_app_tvAddicts.php">07_app_tvAddicts.php</a></td>
+                <td><a href="../7%20PageController/page_SeriesList.php">page_SeriesList.php</a></td>
+				<td><a href="../7%20PageController/page_SeasonList.php">page_SeasonList.php</a></td>
+            </tr>
+        </table>
+		<p class="content_text" >&nbsp;</p>
+            <!-- InstanceEndEditable -->
+            <hr size="1" noshade>
+		 </td>
+    </tr>
+	<tr><td><table width="100%"  border="0" cellspacing="0" cellpadding="0">
+    <tr>
+        <td class="content_text"><!-- InstanceBeginEditable name="prevButtonBottom" --><a href="7_06_PutAllTogether.htm">Previous</a><!-- InstanceEndEditable --></td>
+        <td class="content_text"><div align="right"><!-- InstanceBeginEditable name="nextButtonBottom" --><a href="7_08_CompletePicture.htm">Next</a><!-- InstanceEndEditable --></div></td>
+    </tr>
+</table></td>
+	</tr>
+</table>
+</center>
+
+</body>
+<!-- InstanceEnd --></html>

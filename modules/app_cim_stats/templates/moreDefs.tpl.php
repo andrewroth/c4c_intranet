@@ -1,0 +1,3 @@
+<p class="text">MDA Exposures:  Number of people exposed to the Gospel during an event specifically targeting an MDA.</p>
+
+<p class="text">Campus Stats, Exposures:  Number of people exposed to the Gospel through campus events other than MDA events or media events or literature distribution.</p><p class="text">Spiritual Multipliers:  1. Being Discipled. 2. Growing in Personal Walk. 3. Leading others in Personal Evangelism. 4. Leading Others in the Word. </p>

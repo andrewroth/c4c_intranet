@@ -1,0 +1,251 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html><!-- InstanceBegin template="/Templates/documentation_tutorialContent.dwt.php" codeOutsideHTMLIsLocked="false" -->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<!-- InstanceBeginEditable name="doctitle" -->
+<title>Tutorial > Multilingual > DB Layout</title>
+<!-- InstanceEndEditable --><link href="../../../Data/CSS/documentation.css" rel="stylesheet" type="text/css">
+<!-- InstanceBeginEditable name="head" --><!-- InstanceEndEditable -->
+</head>
+
+<body>
+<center>
+<table width="680" border="0" cellspacing="0" cellpadding="0">
+    <tr>
+        <td><table width="100%"  border="0" cellspacing="0" cellpadding="0">
+    <tr>
+        <td><img src="../../../Images/page_header.gif"></td>
+		<td width="200">&nbsp;</td>
+    </tr>
+    <tr>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+    </tr>
+</table>
+</td>
+    </tr>
+    <tr>
+        <td bgcolor="#CCCCCC">&nbsp;</td>
+    </tr>
+    <tr>
+        <td class="text_navbar"><? 
+			/*
+			 * Find the path to the Documentation Root ...
+			 */
+			$pathToRoot = ''; 
+			for ( $indx=0; $indx<20 && !file_exists( $pathToRoot.'Data/CSS/documentation.css'); $indx++ ) {
+				$pathToRoot .= '../';
+			}
+
+		echo '<a href="'.$pathToRoot.'index.php" target="_top">AI Doc</a> &gt; <a href="'.$pathToRoot.'/API/index.html">API</a>';
+			
+		?><!-- InstanceBeginEditable name="NavBar" --><a href="intro.htm">Tutorial</a> &gt; <a href="9_00_Multilingual.htm">Multilingual</a> > DB Layout<!-- InstanceEndEditable --></td>
+    </tr>
+	<tr><td>&nbsp;</td></tr>
+    <tr>
+        <td><table width="100%"  border="0" cellspacing="0" cellpadding="0">
+    <tr>
+        <td class="content_text"><!-- InstanceBeginEditable name="prevButtonTop" --><a href="#">Previous</a><!-- InstanceEndEditable --></td>
+        <td class="content_text"><div align="right"><!-- InstanceBeginEditable name="nextButtonTop" --><a href="9_02_ObjectInterface.htm">Next</a><!-- InstanceEndEditable --></div></td>
+    </tr>
+</table>
+</td>
+    </tr>
+    <tr>
+        <td class="content_text" ><hr size="1" noshade >
+            <!-- InstanceBeginEditable name="Content" -->
+		<h1>Multilingual - DB Layout </h1>
+		<p class="content_text" >Lets take a look at the layout of the Multilingual
+		    Database tables.</p>
+		<p class="content_text" >In it's original design, this system was a repository
+		    for all the labels that appeared on the pages of an application.
+		    These labels are first organized by application (an application is
+		    assumed to be a &quot;series&quot; of pages). To keep track of the available
+		    applications we have the <em>site_multilingual_series</em> table:</p>
+		<table width="196" height="52" border="1" cellpadding="0" cellspacing="0">
+            <tr>
+                <td colspan="2"><strong>site_multilingual_series</strong></td>
+            </tr>
+            <tr>
+                <td >series_id</td>
+                <td >series_key</td>
+            </tr>
+            <tr>
+                <td>int (11) </td>
+                <td>varchar(50)</td>
+            </tr>
+        </table>
+		<br>
+		<table width="100%"  border="0" cellspacing="2" cellpadding="2">
+            <tr valign="top">
+                <td><div align="left"><strong>series_id</strong></div></td>
+                <td><div align="left">Is the primary key for this table.</div></td>
+            </tr>
+            <tr valign="top">
+                <td><div align="left"><strong>series_key</strong></div></td>
+                <td><div align="left">Is a unique textual key for identifying
+                        the application we are looking up. Usually this value
+                        is defined by an AppController's <em>MULTILINGUAL_SERIES_KEY </em>constant.
+                        The value of this field is usually the name of your AppController
+                        ( module<em>[ModuleName]</em> ). </div></td>
+            </tr>
+        </table>
+		<p class="content_text" >&nbsp;</p>
+		<p class="content_text" >Within an application we have a series of pages. To
+		        track these pages we have the <em>site_multilingual_page</em> table:</p>
+		<table width="225" height="52" border="1" cellpadding="0" cellspacing="0">
+            <tr>
+                <td colspan="3"><strong>site_multilingual_page</strong></td>
+            </tr>
+            <tr>
+                <td >page_id</td>
+                <td >series_id</td>
+                <td >page_key</td>
+            </tr>
+            <tr>
+                <td>int (11) </td>
+                <td>int (11) </td>
+                <td>varchar (50) </td>
+            </tr>
+        </table>
+		<br>
+		<table width="100%"  border="0" cellspacing="2" cellpadding="2">
+            <tr valign="top">
+                <td><div align="left"><strong>page_id</strong></div></td>
+                <td><div align="left">Is the primary key for this table.</div></td>
+            </tr>
+            <tr valign="top">
+                <td><div align="left"><strong>series_id</strong></div></td>
+                <td><div align="left">Foreign Key linking a page to the application
+                        (or Series) it is apart of. </div></td>
+            </tr>
+            <tr valign="top">
+                <td><strong>page_key</strong></td>
+                <td>A unique (within an application) textual key representing
+                    a page of labels to display. A PageDisplay object is responsible
+                    for pulling the data together for displaying on a page. This
+                    includes the labels as well. Therefore we have our PageDisplay
+                    objects define a <em>MULTILINGUAL_PAGE_KEY</em> constant used to lookup
+                    the page of labels. </td>
+            </tr>
+        </table>
+		<p class="content_text" >&nbsp;</p>
+		<p class="content_text" >Once you have a page defined, then you can list the
+		    labels on that page. The <em>site_multilingual_labels</em> table tracks the
+		    actual labels defined:</p>
+		<table width="90%" height="52" border="1" cellpadding="0" cellspacing="0">
+            <tr>
+                <td colspan="6"><strong>site_multilingual_label</strong></td>
+            </tr>
+            <tr>
+                <td >label_id</td>
+                <td >page_id</td>
+                <td >language_id</td>
+                <td >label_key</td>
+                <td >label_label</td>
+                <td >label_moddate</td>
+            </tr>
+            <tr>
+                <td>int (11) </td>
+                <td>int (11) </td>
+                <td>int (11) </td>
+                <td>varchar (50) </td>
+                <td>text</td>
+                <td>timestamp</td>
+            </tr>
+        </table><br>
+		<table width="100%"  border="0" cellspacing="2" cellpadding="2">
+            <tr valign="top">
+                <td><div align="left"><strong>label_id</strong></div></td>
+                <td><div align="left">Is the primary key for this table.</div></td>
+            </tr>
+            <tr valign="top">
+                <td><div align="left"><strong>page_id</strong></div></td>
+                <td><div align="left">Foreign Key linking a label to the page
+                         it is apart of. </div></td>
+            </tr>
+            <tr valign="top">
+                <td><strong>language_id</strong></td>
+                <td>Indicates which language this label represents. The languages
+                    are defined in the accountadmin_language table. Each viewer
+                    is linked to a preferred language, and that value is used
+                    to indicate which version of a label to display. </td>
+            </tr>
+            <tr valign="top">
+                <td><strong>label_key</strong></td>
+                <td>A unique key (per page) indicating which label to display.
+                    By convention, the key is usually in brackets. For example,
+                    the Key for the Title on a page might be &quot;[Title]&quot;. </td>
+            </tr>
+            <tr valign="top">
+                <td><strong>label_label</strong></td>
+                <td>The actual label to display on the page. </td>
+            </tr>
+            <tr valign="top">
+                <td><strong>label_moddate</strong></td>
+                <td>The timestamp of when this label was last modified. This
+                    value is usually used when trying to import or synchronize
+                    sets of labels. Labels with newer timestamps will overwrite
+                    labels with older timestamps. </td>
+            </tr>
+        </table>
+		
+		
+		<p class="content_text" >&nbsp; </p>
+		<p class="content_text" >Finnally, we have a translation table used to indicate
+		    when a label has been changed so the translators can make a new translation
+		    of it in the other languages. This is tracked in the site_multilingual_xlation
+		    table:</p>
+		<table width="225" height="52" border="1" cellpadding="0" cellspacing="0">
+            <tr>
+                <td colspan="3"><strong>site_multilingual_xlation</strong></td>
+            </tr>
+            <tr>
+                <td >xlation_id</td>
+                <td >label_id</td>
+                <td >language_id</td>
+            </tr>
+            <tr>
+                <td>int (11) </td>
+                <td>int (11) </td>
+                <td>int (11) </td>
+            </tr>
+        </table><br>
+		<table width="100%"  border="0" cellspacing="2" cellpadding="2">
+            <tr valign="top">
+                <td><div align="left"><strong>xlation_id</strong></div></td>
+                <td><div align="left">Is the primary key for this table.</div></td>
+            </tr>
+            <tr valign="top">
+                <td><div align="left"><strong>label_id</strong></div></td>
+                <td><div align="left">Foreign Key marking which label has been
+                        modified </div></td>
+            </tr>
+            <tr valign="top">
+                <td><strong>language_id</strong></td>
+                <td>Indicates which language needs translating. For example,
+                    if a change has been made to an english label, then you should
+                    see an entry in this table for each of the other languages
+                    on the site linking back to that english label </td>
+            </tr>
+        </table>
+		<p class="content_text" >&nbsp;</p>
+		<p class="content_text" >If all this makes sense, then lets move on to the
+		    next step ... </p>
+
+            <!-- InstanceEndEditable -->
+            <hr size="1" noshade>
+		 </td>
+    </tr>
+	<tr><td><table width="100%"  border="0" cellspacing="0" cellpadding="0">
+    <tr>
+        <td class="content_text"><!-- InstanceBeginEditable name="prevButtonBottom" --><a href="#">Previous</a><!-- InstanceEndEditable --></td>
+        <td class="content_text"><div align="right"><!-- InstanceBeginEditable name="nextButtonBottom" --><a href="9_02_ObjectInterface.htm">Next</a><!-- InstanceEndEditable --></div></td>
+    </tr>
+</table></td>
+	</tr>
+</table>
+</center>
+
+</body>
+<!-- InstanceEnd --></html>

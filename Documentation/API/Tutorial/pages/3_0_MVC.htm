@@ -1,0 +1,91 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html><!-- InstanceBegin template="/Templates/documentation_tutorialContent.dwt.php" codeOutsideHTMLIsLocked="false" -->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<!-- InstanceBeginEditable name="doctitle" -->
+<title>Untitled Document</title>
+<!-- InstanceEndEditable --><link href="../../../Data/CSS/documentation.css" rel="stylesheet" type="text/css">
+<!-- InstanceBeginEditable name="head" --><!-- InstanceEndEditable -->
+</head>
+
+<body>
+<center>
+<table width="680" border="0" cellspacing="0" cellpadding="0">
+    <tr>
+        <td><table width="100%"  border="0" cellspacing="0" cellpadding="0">
+    <tr>
+        <td><img src="../../../Images/page_header.gif"></td>
+		<td width="200">&nbsp;</td>
+    </tr>
+    <tr>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+    </tr>
+</table>
+</td>
+    </tr>
+    <tr>
+        <td bgcolor="#CCCCCC">&nbsp;</td>
+    </tr>
+    <tr>
+        <td class="text_navbar"><? 
+			/*
+			 * Find the path to the Documentation Root ...
+			 */
+			$pathToRoot = ''; 
+			for ( $indx=0; $indx<20 && !file_exists( $pathToRoot.'Data/CSS/documentation.css'); $indx++ ) {
+				$pathToRoot .= '../';
+			}
+
+		echo '<a href="'.$pathToRoot.'index.php" target="_top">AI Doc</a> &gt; <a href="'.$pathToRoot.'/API/index.html">API</a>';
+			
+		?><!-- InstanceBeginEditable name="NavBar" --><a href="intro.htm">Tutorial</a> &gt; Model
+                View Controller <!-- InstanceEndEditable --></td>
+    </tr>
+	<tr><td>&nbsp;</td></tr>
+    <tr>
+        <td><table width="100%"  border="0" cellspacing="0" cellpadding="0">
+    <tr>
+        <td class="content_text"><!-- InstanceBeginEditable name="prevButtonTop" --><a href="2_1_NowYouDoIt.htm">Previous</a><!-- InstanceEndEditable --></td>
+        <td class="content_text"><div align="right"><!-- InstanceBeginEditable name="nextButtonTop" --><a href="4_0_Templates.htm">Next</a><!-- InstanceEndEditable --></div></td>
+    </tr>
+</table>
+</td>
+    </tr>
+    <tr>
+        <td class="content_text" ><hr size="1" noshade >
+            <!-- InstanceBeginEditable name="Content" -->
+            <h1>Model View Controller (MVC) </h1>
+		    <p class="content_text" >Let's take a break for a second and talk about
+		        &quot;WHY&quot; we are making RowManagers and ListIterators.</p>
+		    <p class="content_text" >Model View Controller, is a way of breaking up
+		        the design of your program into more logical pieces. Rather than
+		        try to explain it here, I'll simply refer you other great explanations
+		        on the web: <a href="http://ootips.org/mvc-pattern.html" target="_blank">ooTips</a>, <a href="http://www.google.com/search?client=safari&rls=en&q=Model+View+Controller&ie=UTF-8&oe=UTF-8" target="_blank">googleList</a> </p>
+		    <p class="content_text" >The important thing to note, is that we are attempting
+		        to incorporate MVC into the design of our framework. In our design,
+		        RowManagers and ListIterators fit into the Model portion of the
+		        MVC design. </p>
+		    <p class="content_text" >Any part of your program that wants to access
+		        the data in a DB table, needs to go through a RowManager. We
+		        should not find randome SQL statments strewn about in your code.		        </p>
+		    <p class="content_text" >(after doing that for 4 years and trying to maintain
+		        systems like this, I'm now a firm believer ... use the RowManagers)</p>
+		    <p class="content_text" >Next we going to talk a little about the View
+		        portions of MVC ... </p>
+		    <h4>&nbsp;</h4>
+		<!-- InstanceEndEditable --><hr size="1" noshade>
+		 </td>
+    </tr>
+	<tr><td><table width="100%"  border="0" cellspacing="0" cellpadding="0">
+    <tr>
+        <td class="content_text"><!-- InstanceBeginEditable name="prevButtonBottom" --><a href="2_1_NowYouDoIt.htm">Previous</a><!-- InstanceEndEditable --></td>
+        <td class="content_text"><div align="right"><!-- InstanceBeginEditable name="nextButtonBottom" --><a href="4_0_Templates.htm">Next</a><!-- InstanceEndEditable --></div></td>
+    </tr>
+</table></td>
+	</tr>
+</table>
+</center>
+
+</body>
+<!-- InstanceEnd --></html>

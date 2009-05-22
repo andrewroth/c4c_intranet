@@ -1,0 +1,156 @@
+<?php
+
+
+// This is the default path adjustment if pages reside in the top of your directory.
+// If pages fall into subdirectories of your static directory, add an additional '../' 
+// for each subdirectory you page resides in.
+
+$PathToRoot = '../../'; 
+
+// Replace this with the directory path to your page.
+// (make sure it ends with a '/' ) 
+$PageDirectory	= 'Static/Test/';
+
+// Replace this with the name of your page.
+$PageName	= 'index.php';
+
+//require($PathToRoot."General/gen_Includes.php");
+require($PathToRoot."General/gen_Defines.php");
+require($PathToRoot."Classes/class_DisplayObject.php");
+require($PathToRoot."Classes/class_Table.php");
+require($PathToRoot."Classes/class_Database.php");
+require($PathToRoot."Classes/class_Viewer.php");
+require($PathToRoot."Classes/class_Page.php");
+require($PathToRoot."Classes/class_Forms.php");
+require($PathToRoot."Classes/class_MultiLingual.php");
+require($PathToRoot."Classes/class_CMS.php");
+require($PathToRoot."Classes/class_Subscription.php");
+require($PathToRoot."Classes/class_LinkTool.php");
+require($PathToRoot."Classes/class_Section.php");
+require($PathToRoot."Classes/class_AIWebPage.php");
+require($PathToRoot."Classes/class_NavBar.php");
+require($PathToRoot."Tools/tools_Sessions.php");
+require($PathToRoot."Tools/tools_Querystring.php");
+require($PathToRoot."Tools/tools_Unicode.php");
+require($PathToRoot."Tools/tools_Debug.php");
+
+$ThisPage = new AIWebPage( $PageName, $PageDirectory, $PathToRoot );
+
+?>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<!-- TemplateInfo codeOutsideHTMLIsLocked="false" -->
+<!-- TemplateBeginEditable name="doctitle" -->
+<title>Asia Impact | Local Leaders Kit</title>
+<!-- TemplateEndEditable --> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<?php
+echo '<link href="'.$PathToRoot.'Data/CSS/CascadeMenu.css" rel="stylesheet">';
+echo '<link href="'.$PathToRoot.'Data/CSS/pageElements.css" rel="stylesheet" type="text/css">';
+echo '<script language="javascript" src="'.$PathToRoot.'Data/SCRIPTS/JScript/CascadeMenu.jsp">';
+echo '</script>';
+
+?>
+<script language="JavaScript" type="text/JavaScript">
+<!--
+function MM_preloadImages() { //v3.0
+  var d=document; if(d.images){ if(!d.MM_p) d.MM_p=new Array();
+    var i,j=d.MM_p.length,a=MM_preloadImages.arguments; for(i=0; i<a.length; i++)
+    if (a[i].indexOf("#")!=0){ d.MM_p[j]=new Image; d.MM_p[j++].src=a[i];}}
+}
+
+function MM_swapImgRestore() { //v3.0
+  var i,x,a=document.MM_sr; for(i=0;a&&i<a.length&&(x=a[i])&&x.oSrc;i++) x.src=x.oSrc;
+}
+
+function MM_findObj(n, d) { //v4.01
+  var p,i,x;  if(!d) d=document; if((p=n.indexOf("?"))>0&&parent.frames.length) {
+    d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
+  if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
+  for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=MM_findObj(n,d.layers[i].document);
+  if(!x && d.getElementById) x=d.getElementById(n); return x;
+}
+
+function MM_swapImage() { //v3.0
+  var i,j=0,x,a=MM_swapImage.arguments; document.MM_sr=new Array; for(i=0;i<(a.length-2);i+=3)
+   if ((x=MM_findObj(a[i]))!=null){document.MM_sr[j++]=x; if(!x.oSrc) x.oSrc=x.src; x.src=a[i+2];}
+}
+//-->
+</script>
+<!-- TemplateBeginEditable name="head" --><!-- TemplateEndEditable --> 
+</head>
+<body bgcolor="#FFFFFF" text="#000000" link="#003366" vlink="#003366" alink="#CCCCCC" leftmargin="3" topmargin="8" bottommargin="8"  marginwidth="0" marginheight="0" OnLoad="InitMenu();MM_preloadImages('<?php echo $PathToRoot; ?>images/chinese-on.jpg','<?php echo $PathToRoot; ?>images/korean-on.jpg','<?php echo $PathToRoot; ?>images/english-on.jpg')" Onclick="HideMenu(menuBar)" ID="Bdy">
+<table width="750" height="100%" border="0" align="center" cellpadding="0" cellspacing="0">
+  <tr valign="top"> 
+    <td width="750" height="113" colspan="5" valign="bottom" background="<?php echo $PathToRoot; ?>Images/AIhead2.jpg"><div align="left"> 
+        <table width="100%" cellpadding="0" cellspacing="0">
+		<tr><td width="1" ><img src="<?php echo $PathToRoot; ?>Images/space.gif" width="1" height="113"></td>
+		<td><table width="100%" height="100%" border="0">
+          <tr> 
+            <td height="43" colspan="2" valign="top"><div align="right" class="footer">&nbsp;</div></td>
+          </tr>
+          <tr> 
+            <td height="44" colspan="2" valign="bottom" class="pageTitle"><div align="right"><!-- TemplateBeginEditable name="Title" -->Page 
+                Title/Section Name Goes Here<!-- TemplateEndEditable --></div></td>
+          </tr>
+          <tr> 
+            <td> 
+              <!--BEGIN MENUBAR-->
+              <?php 
+			  // Put Your PHP Code here for displaying a User's Menu Bar'
+			  $TempMenuBar = new NavBar( $ThisPage->Viewer->ViewerID, $ThisPage->Viewer->LanguageID, $ThisPage->PathToRootDir);
+			  echo $TempMenuBar->Draw();
+			  ?>
+              <!--END MENUBAR-->
+            </td>
+            <td><div align="right"><?php 
+			$LanguageMenu =  $ThisPage->BuildLanguageMenu();
+			echo $LanguageMenu;
+			?></div></td>
+          </tr>
+        </table>
+        </td>
+		</tr>
+		</table></div></td>
+  </tr>
+  <tr valign="top"> 
+    <td width="1" bgcolor="223450"><?php echo '<img src="'.$PathToRoot.'images/space.gif" width="1" height="1">'; ?></td>
+    <td width="748"> 
+      <table width="100%" height="100%" border="0" cellpadding="6" cellspacing="6">
+        <tr> 
+          <td height="30" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+              <tr> 
+                <td valign="baseline"><!-- TemplateBeginEditable name="heading" --><span class="heading">Heading<font color="#FFFFFF" size="5" face="Arial, Helvetica, sans-serif"></font></span><font color="#FFFFFF" size="5" face="Arial, Helvetica, sans-serif"> 
+                  </font><!-- TemplateEndEditable --></td>
+                <td> <div align="right"></div>
+                  <div align="right"></div>
+                  <div align="right"></div></td>
+              </tr>
+            </table>
+            <hr width="100%" size="1" noshade color="#223450"> </td>
+        </tr>
+        <tr>  
+          <td valign="top"><p class="text"><!-- TemplateBeginEditable name="Content" -->Content goes here</p><!-- TemplateEndEditable --></td>
+          </tr>
+        <tr> 
+          <td valign="bottom"> <hr size="1" noshade color="223450"> 
+            <div align="center" class="smallText"></div></td>
+        </tr>
+      </table>
+      
+    </td>
+    <td width="1" bgcolor="223450"><?php echo '<img src="'.$PathToRoot.'images/space.gif" width="1" height="1">'; ?></td>
+  </tr>
+  <tr valign="bottom" bgcolor="223450"> 
+    <td height="25" colspan="5"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+        <tr> 
+          <td width="10%" valign="bottom"><?php echo '<img src="'.$PathToRoot.'images/bl.jpg" width="6" height="6">'; ?></td>
+          <td height="25" valign="middle">&nbsp;</td>
+          <td width="10%" height="100%" valign="bottom"><div align="right"><?php echo '<img src="'.$PathToRoot.'images/br.jpg" width="6" height="6">'; ?></div></td>
+        </tr>
+      </table></td>
+  </tr>
+</table>
+</body>
+</html>

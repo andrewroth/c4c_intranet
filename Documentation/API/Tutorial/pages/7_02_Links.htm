@@ -1,0 +1,210 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html><!-- InstanceBegin template="/Templates/documentation_tutorialContent.dwt.php" codeOutsideHTMLIsLocked="false" -->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<!-- InstanceBeginEditable name="doctitle" -->
+<title>Untitled Document</title>
+<!-- InstanceEndEditable --><link href="../../../Data/CSS/documentation.css" rel="stylesheet" type="text/css">
+<!-- InstanceBeginEditable name="head" --><!-- InstanceEndEditable -->
+</head>
+
+<body>
+<center>
+<table width="680" border="0" cellspacing="0" cellpadding="0">
+    <tr>
+        <td><table width="100%"  border="0" cellspacing="0" cellpadding="0">
+    <tr>
+        <td><img src="../../../Images/page_header.gif"></td>
+		<td width="200">&nbsp;</td>
+    </tr>
+    <tr>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+    </tr>
+</table>
+</td>
+    </tr>
+    <tr>
+        <td bgcolor="#CCCCCC">&nbsp;</td>
+    </tr>
+    <tr>
+        <td class="text_navbar"><? 
+			/*
+			 * Find the path to the Documentation Root ...
+			 */
+			$pathToRoot = ''; 
+			for ( $indx=0; $indx<20 && !file_exists( $pathToRoot.'Data/CSS/documentation.css'); $indx++ ) {
+				$pathToRoot .= '../';
+			}
+
+		echo '<a href="'.$pathToRoot.'index.php" target="_top">AI Doc</a> &gt; <a href="'.$pathToRoot.'/API/index.html">API</a>';
+			
+		?><!-- InstanceBeginEditable name="NavBar" --><a href="intro.htm">Tutorial</a> &gt; <a href="7_00_PageController.htm">AppController
+            Objects</a> &gt; Links <!-- InstanceEndEditable --></td>
+    </tr>
+	<tr><td>&nbsp;</td></tr>
+    <tr>
+        <td><table width="100%"  border="0" cellspacing="0" cellpadding="0">
+    <tr>
+        <td class="content_text"><!-- InstanceBeginEditable name="prevButtonTop" --><a href="7_01_WhichPage.htm">Previous</a><!-- InstanceEndEditable --></td>
+        <td class="content_text"><div align="right"><!-- InstanceBeginEditable name="nextButtonTop" --><a href="7_03_Transitions.htm">Next</a><!-- InstanceEndEditable --></div></td>
+    </tr>
+</table>
+</td>
+    </tr>
+    <tr>
+        <td class="content_text" ><hr size="1" noshade >
+            <!-- InstanceBeginEditable name="Content" -->
+		<h1>AppController Objects
+                - Links </h1>
+		<p class="content_text" >Before our application gets too large and the amount
+		    of our state variables grows to be quite messy, we will introduce
+		    some changes designed to minimize the fuss necessary when handling
+		    large numbers of state variables.</p>
+		<p class="content_text" >Remember that we said it was the responsibility of
+		    the conroller script to know about the different pages in an application.
+		    As a result, it is this script's responsibility to create the links
+		    that transition your application from one page to another.</p>
+		<p class="content_text" >The changes we introduce in this step of the tutorial
+		    will provide some basic tools to make building these links easier.</p>
+		<p class="content_text" >To begin with, copy the attached file to your testing
+		    directory.</p>
+		<p class="content_text" >Let's take a look as some of the changes to the previous
+		    code:</p>
+		<p class="content_text" ><em><strong>ex_tvAddicts_links.php:</strong></em></p>
+		<span class="sourcecodebox" ><pre>
+// PAGE is the querystring variable used for indicating which page to display
+define( 'PAGE', 'page' );
+...
+// SERIESID is the querystring variable used for indicating which series we are
+// to edit.
+define( 'SERIES_ID', 'seriesID' );</pre></span>
+		<p class="content_text" >Each state variable tracked in the system will have
+		    it's own defined constants.</p>
+		<p class="content_text" >&nbsp;</p>
+		<span class="sourcecodebox" ><pre>
+/*
+ * Define An Array to hold all the State Variable Values
+ */
+$stateVariables = array();</pre></span>
+		<p class="content_text" >Now we create a  single array that will hold
+		    all of the state variable information as $key=&gt;$value pairs. The
+		    $key will be defined constants representing that state variable. </p>
+		<p class="content_text" >&nbsp;</p>
+		<span class="sourcecodebox" ><pre>
+//************************************************************************
+/**
+ * function getCallBack
+ * &lt;pre>
+ * This routine parses through all the given stateVariables and produces
+ * a link with these values on the querystring.
+ * &lt;/pre>
+ * @param $currentValues [ARRAY](optional) array of stateVariable info
+ * @param $endingFieldAssignment [STRING](optional) Name of field to have
+ * as ending field assignment.
+ * @return [STRING]
+ */
+function getCallBack( $currentValues=null, $endingFieldAssignment='' ) {
+    global $stateVariables;
+    
+    if (is_null( $currentValues ) ) {
+        $currentValues = $stateVariables;
+    }
+
+    // compile every stateVariable that has a value set 
+    $queryString = '';
+    foreach( $currentValues as $key=>$value) {
+    
+        // don't include paramters used for endingFieldAssignment
+        if ( ($value != '' ) && ($endingFieldAssignment != $key)) {
+        
+            // add it to the QueryString
+            if ($queryString != '' ) {
+                $queryString .= '&';
+            }
+            $queryString.= $key.'='.$value;
+        }
+    }
+    
+    // Now piece together the callback string
+    $callBack = 'ex_tvAddicts_links.php';
+    if ($queryString != '' ) {
+        $callBack .= '?'.$queryString;
+    }
+    
+    // if an ending Field assignment is requested then
+    if ($endingFieldAssignment != '' ) {
+    
+        // figure out if we need to add an additional parameter marker or
+        // querystring marker
+        if ( $queryString != '' ) {
+            $callBack .= '&';
+        } else {
+            $callBack .= '?';
+        }
+        
+        // add requested ending field assignment
+        $callBack.=$endingFieldAssignment.'=';
+    }
+    
+    // return the Call Back Link
+    return $callBack;
+
+}</pre></span>
+		<p class="content_text" >A new function called getCallBack() is now available.
+		    It's job is to parse through all the given stateVariables and produce
+		    a link with these values on the querystring. Notice the additional
+		    parameter: $endingFieldAssignment. Sometimes our links (like Edit
+		    and Delete links) will want to have an unfinished &quot;&amp;stateVariable=&quot;
+		    on the end. Just send the name of the parameter here and it will
+		    be added.</p>
+		<p class="content_text" >&nbsp;</p><span class="sourcecodebox" ><pre>
+    case PAGE_SERIESEDIT:
+        // mark the value of the call back 
+        $formAction = getCallBack();
+        
+        // Create our nifty new PageDisplay object
+        // The constructor acts like our old loadData() 
+        $pageDisplay = new page_SeriesEdit( '', null, $formAction, $stateVariables[ SERIES_ID ] );
+        break;
+</pre></span>
+		<p class="content_text" >Notice how the formAction variable in the loading
+		    of the SeriesEdit page is changed. It simply requests a link with
+		    the current state of the system recorded on it. </p>
+		<p class="content_text" >&nbsp;</p>
+		<span class="sourcecodebox" ><pre>
+$newValues = $stateVariables;
+$newValues[ PAGE ] = PAGE_SERIESEDIT;
+$links[ 'edit' ] = getCallBack( $newValues, SERIES_ID );
+$pageDisplay->setLinks( $links );</pre></span>
+		<p class="content_text" >The SeriesList page is changed as well. It requests
+		    a new PAGE value, and an ending field assignment for the SERIES_ID
+		    field.</p>
+		<h4>&nbsp;</h4>
+		<span class="sourcecodebox" ></span>
+		<h4>Links To Code Examples</h4>
+		<table width="100%"  border="0" cellspacing="0" cellpadding="0">
+            <tr>
+                <td><a href="../7%20PageController/ex_tvAddicts_links.php"><img src="../../../Images/icn_filePHP.gif" width="24" height="31" border="0"></a></td>
+                </tr>
+            <tr>
+                <td><a href="../7%20PageController/ex_tvAddicts_links.php">ex_tvAddicts_links.php</a></td>
+                </tr>
+        </table>
+		<p class="content_text" >&nbsp;</p>
+            <!-- InstanceEndEditable -->
+            <hr size="1" noshade>
+		 </td>
+    </tr>
+	<tr><td><table width="100%"  border="0" cellspacing="0" cellpadding="0">
+    <tr>
+        <td class="content_text"><!-- InstanceBeginEditable name="prevButtonBottom" --><a href="7_01_WhichPage.htm">Previous</a><!-- InstanceEndEditable --></td>
+        <td class="content_text"><div align="right"><!-- InstanceBeginEditable name="nextButtonBottom" --><a href="7_03_Transitions.htm">Next</a><!-- InstanceEndEditable --></div></td>
+    </tr>
+</table></td>
+	</tr>
+</table>
+</center>
+
+</body>
+<!-- InstanceEnd --></html>

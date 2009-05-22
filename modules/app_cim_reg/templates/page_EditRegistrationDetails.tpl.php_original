@@ -1,0 +1,322 @@
+<?
+/*
+ * regPersonDetails.tpl.php
+ *
+ * This template displays a Single Entry form.  This type of form displays
+ * a row for each field is is gathering data for. Each row has a label, and
+ * a form item.
+ *
+ * Required Template Variables:
+ *  $formAction :   The action for the submitted form.
+ *  $dataFieldList :    Array of fields processed by this form.
+ *  $formFieldType :    Array of field Types for each of the given fields
+ *
+ *
+ *  $eventName - textual description of the event being signed up for
+ *  $form - an FormHelper object that contains all the necessary data
+ */
+
+// TODO figure out what to do with this
+$buttonText = "Next >";
+
+$templateTools = new TemplateTools();
+
+// Initialize the row color
+$rowColor = "";
+//  $templateTools->swapBGColor( $rowColor);
+
+// This template displays a Title & Instr field by default.  If you don't 
+// want them displayed, then you send ($disableHeading = true) to the 
+// template.
+// Now check to see if the disableHeading param has been sent
+if (!isset( $disableHeading ) ) {
+
+    // if not default it to false
+    $disableHeading = false;
+}
+
+// if we are to display the heading ...
+if (!$disableHeading) {
+
+
+?>
+<p><class="heading"><? echo $labels->Label('[Title]'); ?></span></p>
+<p><class="text"><? echo $labels->Label('[Instr]'); ?></span></p>
+<?
+    echo '<span class="text"><a href="'.$continueLink.'">'.$labels->Label('[Continue]').'</a></span>';
+    
+
+} // end if !disableHeading
+
+// Any other special instructions etc...
+if ( isset( $specialInfo ) )
+{
+    echo $specialInfo;
+}
+
+?>
+<hr>
+
+<table width="100%" border="0">
+    
+    <tr><td colspan="5" class="smallbold"><? echo $eventName; ?></td></tr>
+    <tr>
+        <td colspan="4" class="smallbold"><? echo $labels->Label('[FinanicalInfo]'); ?></td>
+        <td class="smallbold"><? echo $labels->Label('[PersonalInfo]'); ?></td>
+    </tr>
+    <tr>
+          <td valign="top">
+            <table border="0">
+                <tr><td class="smalltext" colspan="2"><? echo $labels->Label('[BasePriceThisReg]'); ?></td></tr>
+                
+                <tr><td class="smallbold"><? echo $labels->Label('[Total]'); ?></td><td class="smallbold"><? echo $basePriceForThisGuy; ?></td></tr>
+                <tr><td class="smalltext" colspan="2">&nbsp;</td></tr>
+                
+                <tr><td class="smalltext" colspan="2"><? echo $labels->Label('[Scholarships]'); ?> <a href="#Scholarships"><? echo $labels->Label('[Add]'); ?></a> | <a href="#Scholarships"><? echo $labels->Label('[Edit]'); ?></a></td></tr>
+                <?
+                foreach ( $scholarshipArray as $key=>$oneSchol ) 
+                {
+                    echo "<tr>";
+                        echo "<td class=\"smalltext\">";
+                            echo $oneSchol['scholarship_sourceDesc'] . ' ' .$oneSchol['scholarship_sourceAcct'];
+                        echo "</td>";
+                        echo "<td class=\"smalltext\">";
+                            echo $oneSchol['scholarship_amount'];
+                        echo "</td>";
+                    echo "</tr>";
+                }
+                ?>
+                
+                <tr><td class="smallbold"><? echo $labels->Label('[Total]'); ?></td><td class="smallbold"><? echo $scholarshipTotal; ?></td></tr>
+                <tr><td class="smalltext" colspan="2">&nbsp;</td></tr>
+                
+                <tr><td class="smalltext" colspan="2"><? echo $labels->Label('[CashTransactions]'); ?> <a href="<? echo $addCashLink;?>"><? echo $labels->Label('[Add]'); ?></a> | <a href="#CashTrans"><? echo $labels->Label('[Edit]'); ?></a></td></tr>
+                <?
+                foreach( $cashTransArray as $cashKey=>$cashValue )
+                {
+                    echo '<tr><td class="smalltext">'.$labels->Label('[PayTo]'). ' '. $cashValue['cashtransaction_staffName'] . ' $' .$cashValue['cashtransaction_amtPaid'].'</td><td class="smalltext">';
+                    $amount = 0;
+                    if ( $cashValue['cashtransaction_recd'] == 1 )
+                    {
+                        $amount = $cashValue['cashtransaction_amtPaid'];
+                    }
+                    echo $amount.'</td></tr>';
+                }
+                
+                ?>
+                <tr><td class="smallbold"><? echo $labels->Label('[Total]'); ?></td><td class="smallbold"><? echo $cashTotal; ?></td></tr>
+                <tr><td class="smalltext" colspan="2">&nbsp;</td></tr>
+                
+                <tr><td class="smalltext" colspan="2"><? echo $labels->Label('[CCTransactions]'); ?> <a href="<? echo $addCCLink;?>"><? echo $labels->Label('[Add]'); ?></a></td></tr>
+                <?
+                foreach( $ccTransArray as $ccKey=>$ccValue )
+                {
+                    echo '<tr><td class="smalltext">'.$ccValue['cctransaction_cardName'].'</td><td class="smalltext">'.$ccValue['cctransaction_amount'].'</td></tr>';
+                    
+                }
+                
+                ?>
+                <tr><td class="smallbold"><? echo $labels->Label('[Total]'); ?></td><td class="smallbold"><? echo $ccTotal; ?></td></tr>
+                <tr><td class="smalltext" colspan="2">&nbsp;</td></tr>
+                
+                <tr><td class="smallbold"><? echo $labels->Label('[BalanceOwing]'); ?></td><td class="smallbold"><? echo $basePriceForThisGuy-$scholarshipTotal-$cashTotal-$ccTotal; ?></td></tr>
+            </table>
+        </td>
+        <td width="20">&nbsp;</td>
+        <td valign="top">
+            <table border="0">
+                <tr><td class="smalltext" colspan="2"><? echo $labels->Label('[RulesApplied]'); ?></td></tr>
+                <tr><td class="smalltext"><? echo $labels->Label('[EventBasePrice]'); ?></td><td class="smalltext"><? echo $eventBasePrice;?></td></tr>
+                <?
+                
+                // first print out the rules the computer has applied
+                foreach( $priceRules as $key=>$ruleApplied )
+                {
+                    echo '<tr><td class="smalltext">'. $ruleApplied['pricerules_desc'] .'</td><td class="smalltext">'.$ruleApplied['pricerules_discount'].'</td></tr>';   
+                }
+                ?>
+                <tr><td class="smalltext" colspan="2">&nbsp;</td></tr>
+            </table>
+          
+          </td>
+          <td width="20">&nbsp;</td>
+          <td valign="top">
+              <span class="smalltext">
+                    <table border="0">
+                        <tr>
+                            <td colspan="3" class="smallbold"><? echo $person['person_fname'] . " " . $person['person_lname'] ?></td>
+                        </tr>
+                        <tr>
+                            <td colspan="3" class="smalltext"><? echo $list_campus_id[ $person['campus_id'] ] ?></td>
+                        </tr>
+                        <tr>
+                            <td colspan="3" class="smalltext"><? echo $person['person_email'] ?></td>
+                        </tr>
+                        <tr>
+                            <td colspan="3" class="smalltext"><? echo $list_gender_id[ $person['gender_id'] ] ?></td>
+                        </tr>
+                        <!-- spacer -->
+                        <tr><td colspan="3">&nbsp;</td></tr>
+                        <!-- end spacer -->
+                        <tr>
+                            <td>
+                                <table height="100%" width="100%" border="1" cellpadding="0" cellspacing="0">
+                                    <tr style="background-color:#EAF3FF"><td>
+                                        <span class="smalltext">
+                                        <? echo $labels->Label('[formLabel_person_local_addr]')?>
+                                        </span>
+                                    </tr></td>
+                                    <tr><td>
+                                        <span class="smalltext">
+                                        <? echo $person['person_local_addr'] ?> <br>
+                                        <? echo $person['person_local_city'] . ", " . $list_province_id[ $person['person_local_province_id'] ] ?> <br>
+                                        <? echo $person['person_local_pc'] ?> <br>
+                                        </span>
+                                    </tr></td>
+                                    <tr><td>
+                                        <span class="smalltext">
+                                        &nbsp;<? echo $person['person_local_phone'] ?>
+                                        </span>
+                                    </tr></td>
+                                </table>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>&nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <table width="100%" border="1" cellpadding="0" cellspacing="0">
+                                    <tr style="background-color:#EAF3FF"><td>
+                                        <span class="smalltext">
+                                        <? echo $labels->Label('[formLabel_person_addr]')?>
+                                        </span>
+                                    </tr></td>
+                                    <tr><td>
+                                        <span class="smalltext">
+                                        <? echo $person['person_addr'] ?> <br>
+                                        <? echo $person['person_city'] . ", " . $list_province_id[ $person['province_id'] ] ?> <br>
+                                        <? echo $person['person_pc'] ?> <br>
+                                        </span>
+                                    </tr></td>
+                                    <tr><td>
+                                        <span class="smalltext">
+                                        <? echo $person['person_phone'] ?>
+                                        </span>
+                                    </tr></td>
+                                </table>
+                            </td>
+                        </tr>
+                    </table>
+                </span>
+          </td>
+    </tr>
+    
+</table>
+
+<span class="smalltext"><? echo $labels->Label('[EventSpecificInfo]'); ?></span><br/>
+<span class="smalltext"><? echo $labels->Label('[EventDesc]'). ': <b>'. $eventName.'</b>'; ?><br/></span>
+
+
+<p class="smalltext"><b><? echo $labels->Label('[DepositInfo]'); ?></b>  <span class="go"><? echo $updateDepositInfo;?></span><br/>
+<hr>
+    <span class="smalltext">
+    <form name="Form" id="Form" method="post" action="<?=$formAction;?>">
+        <input name="Process" type="hidden" id="Process" value="T" />
+        <input name="WhichForm" type="hidden" id="" value="Deposit" />
+        <?
+            if ( $cashDepositRecd )
+            {
+                $checkedText = '';
+                if ( $cashTransaction['cashtransaction_recd']  )
+                {
+                    $checkedText = 'checked';
+                }
+                echo $labels->Label('[DepositType]') . ': CASH<br/>';
+                echo $labels->Label('[WillPay]') . ': <input type="text" name="cashtransaction_staffName" value="'.$cashTransaction['cashtransaction_staffName'].'" /><br/>';
+                echo $labels->Label('[Recd]') . ': <input type="checkbox" name="cashtransaction_recd" '.$checkedText.' /><br/>';
+                echo $labels->Label('[AmountPaid]'). ': <input type="text" name="cashtransaction_amtPaid" value="'.$cashTransaction['cashtransaction_amtPaid'].'" /><br/>';
+            }
+            else if ( $ccDepositRecd )
+            {
+                echo $labels->Label('[DepositType]') . ': CC<br/>';
+                echo 'Credit card deposits are being processed by HQ.<br/>';
+            }
+            else 
+            {
+                echo $labels->Label('[DepositType]') . ': <span class="error">ERROR! An error occurs when someone fails to complete all the steps of the registration process.  This is not easily fixed.  Please have the person re-register (or note their information above and below and re-register them yourself.  To delete the registrant, click <a href="'.$delLink.'">here</a>.</span><br/>';
+            }
+        ?>
+        <br/>
+        <div align="left"><input name="formSubmit" type="submit" value="<? echo $labels->Label('[Update]')  ?>" /></div>
+    </form>
+    </span>
+</p>
+
+<p class="smalltext"><b><? echo $labels->Label('[EventInfo]'); ?></b>  <span class="go"><? echo $updateEventInfo;?></span>
+    <? 
+    
+        echo $formOneContent;
+    
+    ?>
+</p>
+
+<hr>
+
+<!-- Scholarship section. -->
+<p class="smalltext"><a name="Scholarships"><? echo $labels->Label('[ScholarshipInfo]'); ?></a> <span class="go"><? echo $updateScholarshipInfo;?></span><br/>
+
+<?
+
+    echo $formTwoContent;
+
+?>
+
+
+<blockquote>
+	<table height="100%" width="100%" border="1" cellpadding="0" cellspacing="0">
+		<tr style="background-color:#EAF3FF">
+			<td><span class="smalltext"><? echo $labels->Label('[SourceDesc]'); ?></span></td>
+			<td><span class="smalltext"><? echo $labels->Label('[AccountNum]'); ?></span></td>
+			<td><span class="smalltext"><? echo $labels->Label('[Amount]'); ?></span></td>
+			<td><span class="smalltext"><? echo $labels->Label('[Delete]'); ?></span></td>
+		</tr>
+		<?
+		foreach ( $scholarshipArray as $key=>$oneSchol ) 
+		{
+			echo "<tr>";
+				echo "<td class=\"smalltext\">";
+				    echo $oneSchol['scholarship_sourceDesc'].'&nbsp;';
+				echo "</td>";
+				echo "<td class=\"smalltext\">";
+				    echo $oneSchol['scholarship_sourceAcct'].'&nbsp;';
+				echo "</td>";
+				echo "<td class=\"smalltext\">";
+				    echo $oneSchol['scholarship_amount'].'&nbsp;';
+				echo "</td>";
+				echo "<td class=\"smalltext\">";
+				    echo '<a href="'.$oneSchol['delLink'].'">'.$labels->Label('[Delete]').'</a>';
+				echo "</td>";
+			echo "</tr>";
+		}
+		?>
+	</table>
+</blockquote>
+</p>
+
+
+<?
+
+    
+?>
+</td>
+</tr>
+</table>
+<hr>
+<?
+    echo '<span class="text"><a href="'.$continueLink.'">'.$labels->Label('[Continue]').'</a></span>';
+?>
+
+
+    
+    

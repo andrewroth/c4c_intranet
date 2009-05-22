@@ -1,0 +1,411 @@
+
+		Weekly Report ID,1-1 Sp Conv,1-1 Sp Conv (Std),1-1 Gos Pres,1-1 Gos Pres (Std),1-1 HS Pres,1-1 HS Pres (Std),Follow-up Completed,Follow-up Completed (Std),Staff ID,Week ID,Campus ID,Jesus Video,MDA,Other EV Mat,RLK,SIQ,Notes,Campus Desc,Campus Short,Account Group ID,Week End Date,Person ID,First Name,Last Name,Phone,Email,Addr,City,Province ID,Postal Code,Gender ID,Assignment ID,Local Phone,Local Addr,Local City,Local Postal Code,Local Province ID
+        1,0,0,0,0,0,0,0,0,1,17,54,0,0,0,0,0,,University of Toronto,UofT,10,2006-09-09,283,Russ,Martin,519 886.7759,russ.martin@rogers.com,433A Bairstow Crescent,Waterloo,1,N2K 2H7,1,207,,,,,0
+        2,2,0,0,1,0,0,0,0,88,17,46,0,0,0,0,0,,McMaster University,MAC,10,2006-09-09,1670,kelly,yen,,kelly.yen@c4c.ca,,,0,,0,0,,,,,0
+        3,6,10,0,3,0,0,0,0,100,18,51,0,0,0,1880,1500,,University of Guelph,UofG,10,2006-09-16,1682,graham,watt,,graham.watt@c4c.ca,,,0,,0,0,,,,,0
+        4,1,0,1,0,0,0,0,0,96,18,51,0,0,0,0,0,,University of Guelph,UofG,10,2006-09-16,1678,vanessa,strickland,,vanessa.strickland@c4c.ca,,,0,,0,0,,,,,0
+        5,5,0,2,0,0,0,0,0,99,18,51,0,0,0,0,0,,University of Guelph,UofG,10,2006-09-16,1681,kirsten,alm,,kirsten.alm@c4c.ca,,,0,,0,0,,,,,0
+        6,2,0,0,0,0,0,0,0,97,17,51,0,0,0,0,0,,University of Guelph,UofG,10,2006-09-09,1679,jamie,strickland,,jamie.strickland@c4c.ca,,,0,,0,0,,,,,0
+        7,7,0,1,0,0,0,0,0,95,17,1,0,0,0,0,0,,University of Waterloo,UW,10,2006-09-09,1677,allan,self,,allan.self@c4c.ca,,,0,,0,0,,,,,0
+        8,2,5,0,0,0,0,0,0,100,17,51,0,0,0,1880,1500,,University of Guelph,UofG,10,2006-09-09,1682,graham,watt,,graham.watt@c4c.ca,,,0,,0,0,,,,,0
+        9,3,6,1,1,2,5,0,0,92,17,1,0,0,0,0,0,,University of Waterloo,UW,10,2006-09-09,1674,sean,cullen,,sean.cullen@c4c.ca,,,0,,0,0,,,,,0
+        10,1,4,0,0,1,0,0,0,92,18,1,0,0,0,0,0,,University of Waterloo,UW,10,2006-09-16,1674,sean,cullen,,sean.cullen@c4c.ca,,,0,,0,0,,,,,0
+        11,0,0,0,0,0,0,0,0,87,17,46,0,0,0,0,0,,McMaster University,MAC,10,2006-09-09,1669,mc,yen,,mc.yen@c4c.ca,,,0,,0,0,,,,,0
+        12,0,0,0,0,0,0,0,0,94,17,1,0,0,0,0,0,,University of Waterloo,UW,10,2006-09-09,1676,natalie,self,,natalie.self@c4c.ca,,,0,,0,0,,,,,0
+        13,5,0,1,0,0,0,0,0,138,17,7,0,0,0,0,0,,University of Alberta,UofA,11,2006-09-09,1720,chris,polachic,,chris.polachic@c4c.ca,,,0,,0,0,,,,,0
+        14,6,0,2,0,1,0,0,0,72,18,57,0,0,0,0,0,,York University,York,10,2006-09-16,1654,steve,strongitharm,,steve.strongitharm@c4c.ca,,,0,,0,0,,,,,0
+        15,0,0,2,0,0,0,0,0,69,18,54,0,0,0,0,0,,University of Toronto,UofT,10,2006-09-16,1651,janette,doerksen,,janette.doerksen@c4c.ca,,,0,,0,0,,,,,0
+        16,0,0,0,0,0,0,0,0,69,17,54,0,0,0,0,0,,University of Toronto,UofT,10,2006-09-09,1651,janette,doerksen,,janette.doerksen@c4c.ca,,,0,,0,0,,,,,0
+        17,8,0,2,0,0,0,0,0,126,17,68,0,0,0,0,0,,University of Saskatchewan,UofS,11,2006-09-09,1708,charlotte,martin,,charlotte.martin@c4c.ca,,,0,,0,0,,,,,0
+        18,4,0,0,0,1,0,0,0,130,17,68,0,0,0,0,0,,University of Saskatchewan,UofS,11,2006-09-09,1712,brent,trickett,,brent.trickett@c4c.ca,,,0,,0,0,,,,,0
+        19,0,0,0,0,0,0,0,0,1,18,54,0,0,0,0,0,,University of Toronto,UofT,10,2006-09-16,283,Russ,Martin,519 886.7759,russ.martin@rogers.com,433A Bairstow Crescent,Waterloo,1,N2K 2H7,1,207,,,,,0
+        20,0,0,0,0,0,0,0,0,117,18,64,0,0,0,0,0,,Universite de Sherbrooke,UdeS,12,2006-09-16,1699,john,wiersma,,john.wiersma@c4c.ca,,,0,,0,0,,,,,0
+        21,1,1,1,0,0,0,0,0,1,18,49,0,0,0,0,0,,Ryerson University,Ryerson,10,2006-09-16,283,Russ,Martin,519 886.7759,russ.martin@rogers.com,433A Bairstow Crescent,Waterloo,1,N2K 2H7,1,207,,,,,0
+        22,2,0,3,0,0,0,0,0,67,18,54,0,0,0,0,0,,University of Toronto,UofT,10,2006-09-16,1649,archie,kenyon,,archie.kenyon@c4c.ca,,,0,,0,0,,,,,0
+        23,2,4,1,5,0,0,0,0,67,18,57,0,0,0,0,0,,York University,York,10,2006-09-16,1649,archie,kenyon,,archie.kenyon@c4c.ca,,,0,,0,0,,,,,0
+        24,2,0,1,0,0,0,0,0,68,18,49,0,0,0,0,0,,Ryerson University,Ryerson,10,2006-09-16,1650,terra,leavens,,terra.leavens@c4c.ca,,,0,,0,0,,,,,0
+        25,1,0,1,0,0,0,0,0,68,18,57,0,0,0,0,0,,York University,York,10,2006-09-16,1650,terra,leavens,,terra.leavens@c4c.ca,,,0,,0,0,,,,,0
+        26,0,0,1,0,0,0,0,0,87,18,46,0,0,0,0,0,,McMaster University,MAC,10,2006-09-16,1669,mc,yen,,mc.yen@c4c.ca,,,0,,0,0,,,,,0
+        27,7,8,4,3,2,1,0,0,129,17,68,0,0,0,0,0,,University of Saskatchewan,UofS,11,2006-09-09,1711,jill,wenger,,jill.wenger@c4c.ca,,,0,,0,0,,,,,0
+        28,7,5,4,0,3,1,0,0,129,18,68,0,0,0,0,0,,University of Saskatchewan,UofS,11,2006-09-16,1711,jill,wenger,,jill.wenger@c4c.ca,,,0,,0,0,,,,,0
+        29,6,22,2,14,2,3,0,0,130,19,68,0,0,0,0,0,,University of Saskatchewan,UofS,11,2006-09-23,1712,brent,trickett,,brent.trickett@c4c.ca,,,0,,0,0,,,,,0
+        30,0,0,0,0,0,0,0,0,147,17,19,0,0,0,0,0,,University of British Columbia,UBC,11,2006-09-09,1729,peggy,porter,,peggy.porter@c4c.ca,,,0,,0,0,,,,,0
+        31,0,0,0,0,0,0,0,0,147,18,19,0,0,0,0,0,,University of British Columbia,UBC,11,2006-09-16,1729,peggy,porter,,peggy.porter@c4c.ca,,,0,,0,0,,,,,0
+        32,6,0,5,0,0,0,1,0,126,18,68,0,0,0,0,0,,University of Saskatchewan,UofS,11,2006-09-16,1708,charlotte,martin,,charlotte.martin@c4c.ca,,,0,,0,0,,,,,0
+        33,0,3,0,0,1,0,0,0,75,18,2,0,0,0,0,0,,University of Western Ontario,UWO,10,2006-09-16,1657,dawn,humphrey,,dawn.humphrey@c4c.ca,,,0,,0,0,,,,,0
+        34,1,0,0,0,0,0,0,0,74,18,2,0,0,0,0,0,,University of Western Ontario,UWO,10,2006-09-16,1656,eric,humphrey,,eric.humphrey@c4c.ca,,,0,,0,0,,,,,0
+        35,5,0,2,1,2,0,0,0,76,18,2,0,0,0,0,0,,University of Western Ontario,UWO,10,2006-09-16,1658,jennifer,clarke,,jennifer.clarke@c4c.ca,,,0,,0,0,,,,,0
+        36,4,0,0,0,3,0,0,0,77,18,2,0,0,0,0,0,,University of Western Ontario,UWO,10,2006-09-16,1659,ben,jolliffe,,ben.jolliffe@c4c.ca,,,0,,0,0,,,,,0
+        37,0,0,4,0,0,0,0,0,127,17,68,0,0,0,0,0,,University of Saskatchewan,UofS,11,2006-09-09,1709,julie,tang,,julie.tang@c4c.ca,,,0,,0,0,,,,,0
+        38,2,0,4,0,2,0,0,0,127,18,68,0,0,0,0,0,,University of Saskatchewan,UofS,11,2006-09-16,1709,julie,tang,,julie.tang@c4c.ca,,,0,,0,0,,,,,0
+        39,0,0,1,0,4,0,0,0,84,18,37,0,0,0,0,0,,Dalhousie University,Dal,10,2006-09-16,1666,kelley,myles,,kelley.myles@c4c.ca,,,0,,0,0,,,,,0
+        40,0,0,0,3,0,4,0,0,84,19,37,0,0,0,0,0,,Dalhousie University,Dal,10,2006-09-23,1666,kelley,myles,,kelley.myles@c4c.ca,,,0,,0,0,,,,,0
+        41,1,1,1,0,0,0,0,0,83,18,37,0,0,0,0,0,,Dalhousie University,Dal,10,2006-09-16,1665,matthew,rice,,matthew.rice@c4c.ca,,,0,,0,0,,,,,0
+        42,5,2,1,0,0,0,0,0,85,19,37,0,0,0,0,0,,Dalhousie University,Dal,10,2006-09-23,1667,deborah,wong,,deborah.wong@c4c.ca,,,0,,0,0,,,,,0
+        43,1,0,1,0,2,0,0,0,82,19,37,0,0,0,130,0,Society Shopping Gala,Dalhousie University,Dal,10,2006-09-23,1664,josh,wong,,josh.wong@c4c.ca,,,0,,0,0,,,,,0
+        44,2,2,3,0,1,0,0,0,138,18,7,0,0,1,0,0,,University of Alberta,UofA,11,2006-09-16,1720,chris,polachic,,chris.polachic@c4c.ca,,,0,,0,0,,,,,0
+        45,0,0,1,0,0,0,11,0,94,18,1,0,0,0,0,0,,University of Waterloo,UW,10,2006-09-16,1676,natalie,self,,natalie.self@c4c.ca,,,0,,0,0,,,,,0
+        46,0,0,0,0,0,0,0,0,1,19,54,0,0,0,0,0,,University of Toronto,UofT,10,2006-09-23,283,Russ,Martin,519 886.7759,russ.martin@rogers.com,433A Bairstow Crescent,Waterloo,1,N2K 2H7,1,207,,,,,0
+        47,0,0,0,0,0,0,0,0,118,19,65,0,0,0,0,0,,Universite Laval,Laval,12,2006-09-23,1700,cassandra,collin,,cassandra.collin@c4c.ca,,,0,,0,0,,,,,0
+        48,9,0,2,0,4,0,1,0,135,19,7,0,0,0,0,0,,University of Alberta,UofA,11,2006-09-23,1717,tiffany,smith,,tiffany.smith@c4c.ca,,,0,,0,0,,,,,0
+        49,5,0,0,0,0,0,0,0,146,17,19,0,0,0,0,0,,University of British Columbia,UBC,11,2006-09-09,1728,wendy,broadwood,,wendy.broadwood@c4c.ca,,,0,,0,0,,,,,0
+        50,2,0,1,0,1,0,0,0,146,18,19,0,0,0,0,0,,University of British Columbia,UBC,11,2006-09-16,1728,wendy,broadwood,,wendy.broadwood@c4c.ca,,,0,,0,0,,,,,0
+        51,4,0,0,0,0,0,0,0,146,19,19,0,0,0,0,0,,University of British Columbia,UBC,11,2006-09-23,1728,wendy,broadwood,,wendy.broadwood@c4c.ca,,,0,,0,0,,,,,0
+        52,2,4,0,1,0,0,0,0,100,19,51,0,0,0,0,0,,University of Guelph,UofG,10,2006-09-23,1682,graham,watt,,graham.watt@c4c.ca,,,0,,0,0,,,,,0
+        53,0,0,0,0,0,0,0,0,82,18,40,0,0,0,400,0,Estimate for now...,Saint Mary's University,SMU,10,2006-09-16,1664,josh,wong,,josh.wong@c4c.ca,,,0,,0,0,,,,,0
+        54,1,0,0,0,0,0,0,0,82,20,37,0,0,0,0,0,,Dalhousie University,Dal,10,2006-09-30,1664,josh,wong,,josh.wong@c4c.ca,,,0,,0,0,,,,,0
+        55,5,0,1,0,1,0,0,0,83,19,37,0,0,0,0,220,,Dalhousie University,Dal,10,2006-09-23,1665,matthew,rice,,matthew.rice@c4c.ca,,,0,,0,0,,,,,0
+        56,0,1,0,0,0,0,0,0,84,20,37,0,0,0,0,0,,Dalhousie University,Dal,10,2006-09-30,1666,kelley,myles,,kelley.myles@c4c.ca,,,0,,0,0,,,,,0
+        57,2,2,0,0,0,0,0,0,85,20,37,0,0,0,0,0,,Dalhousie University,Dal,10,2006-09-30,1667,deborah,wong,,deborah.wong@c4c.ca,,,0,,0,0,,,,,0
+        58,0,1,0,0,0,0,0,0,125,20,24,0,0,0,0,0,,University of Manitoba,UofM,11,2006-09-30,1707,kevin,huska,,kevin.huska@c4c.ca,,,0,,0,0,,,,,0
+        59,3,0,1,0,0,0,1,0,126,19,68,0,0,0,0,0,,University of Saskatchewan,UofS,11,2006-09-23,1708,charlotte,martin,,charlotte.martin@c4c.ca,,,0,,0,0,,,,,0
+        60,0,0,0,1,0,0,0,0,87,19,46,0,0,0,0,0,,McMaster University,MAC,10,2006-09-23,1669,mc,yen,,mc.yen@c4c.ca,,,0,,0,0,,,,,0
+        61,0,0,0,0,0,0,0,0,87,20,46,0,0,0,0,0,,McMaster University,MAC,10,2006-09-30,1669,mc,yen,,mc.yen@c4c.ca,,,0,,0,0,,,,,0
+        62,2,0,1,0,0,0,0,0,113,20,62,0,0,0,60,60,Marie-Victorin,Universite de Montreal,UdeM,12,2006-09-30,1695,andy,smits,,andy.smits@c4c.ca,,,0,,0,0,,,,,0
+        63,0,0,0,0,0,0,0,0,113,19,61,0,0,0,200,200,,McGill University,McGill,12,2006-09-23,1695,andy,smits,,andy.smits@c4c.ca,,,0,,0,0,,,,,0
+        64,0,0,0,0,0,0,0,0,113,17,61,0,0,0,400,500,,McGill University,McGill,12,2006-09-09,1695,andy,smits,,andy.smits@c4c.ca,,,0,,0,0,,,,,0
+        65,0,0,0,0,0,0,0,0,113,17,73,0,0,0,300,300,,Concordia University,Concordia,12,2006-09-09,1695,andy,smits,,andy.smits@c4c.ca,,,0,,0,0,,,,,0
+        66,0,0,0,0,0,0,0,0,113,17,62,0,0,0,300,300,UdeM Metro stop, Jean Brillant
+,Universite de Montreal,UdeM,12,2006-09-09,1695,andy,smits,,andy.smits@c4c.ca,,,0,,0,0,,,,,0
+        67,0,0,1,0,3,0,0,0,107,20,73,0,0,0,0,0,,Concordia University,Concordia,12,2006-09-30,1689,brad,morrice,,brad.morrice@c4c.ca,,,0,,0,0,,,,,0
+        68,0,0,0,0,1,0,0,0,107,20,62,0,0,0,0,0,,Universite de Montreal,UdeM,12,2006-09-30,1689,brad,morrice,,brad.morrice@c4c.ca,,,0,,0,0,,,,,0
+        69,0,0,1,0,2,0,0,0,114,20,73,0,0,0,0,0,,Concordia University,Concordia,12,2006-09-30,1696,dorrie,block,,dorrie.block@c4c.ca,,,0,,0,0,,,,,0
+        70,0,0,7,0,3,0,0,0,114,20,62,0,0,0,0,0,,Universite de Montreal,UdeM,12,2006-09-30,1696,dorrie,block,,dorrie.block@c4c.ca,,,0,,0,0,,,,,0
+        71,0,0,7,0,3,0,0,0,114,20,61,0,0,0,0,0,,McGill University,McGill,12,2006-09-30,1696,dorrie,block,,dorrie.block@c4c.ca,,,0,,0,0,,,,,0
+        72,0,7,1,1,0,0,0,0,125,17,24,0,0,0,1260,1637,We handed out 1260 RLKs, and 1000 Freezees over two days, Sept 5-6th.  759 people left contact info.  210 mem and 266 women wanted Dgs, and 140 men and 143 women did not want Dgs, but something evangelistic.,University of Manitoba,UofM,11,2006-09-09,1707,kevin,huska,,kevin.huska@c4c.ca,,,0,,0,0,,,,,0
+        73,0,13,4,3,0,0,0,0,125,18,24,1,4,4,0,0,IBK gave out a Jesus Film, and did some exposures with his international students Learning English Bible Study.,University of Manitoba,UofM,11,2006-09-16,1707,kevin,huska,,kevin.huska@c4c.ca,,,0,,0,0,,,,,0
+        74,0,10,1,2,0,0,0,0,125,19,24,0,0,0,0,0,,University of Manitoba,UofM,11,2006-09-23,1707,kevin,huska,,kevin.huska@c4c.ca,,,0,,0,0,,,,,0
+        75,0,0,1,1,0,0,0,0,88,18,46,0,0,0,0,0,,McMaster University,MAC,10,2006-09-16,1670,kelly,yen,,kelly.yen@c4c.ca,,,0,,0,0,,,,,0
+        76,0,0,0,1,0,0,0,0,88,20,46,0,0,0,0,0,,McMaster University,MAC,10,2006-09-30,1670,kelly,yen,,kelly.yen@c4c.ca,,,0,,0,0,,,,,0
+        77,0,0,1,0,0,0,0,0,88,19,46,0,0,0,0,0,,McMaster University,MAC,10,2006-09-23,1670,kelly,yen,,kelly.yen@c4c.ca,,,0,,0,0,,,,,0
+        78,5,2,1,1,1,0,0,0,121,20,65,0,0,0,0,0,,Universite Laval,Laval,12,2006-09-30,1703,paul,malicki,,paul.malicki@c4c.ca,,,0,,0,0,,,,,0
+        79,0,3,0,1,2,0,0,0,120,20,65,0,0,0,0,0,,Universite Laval,Laval,12,2006-09-30,1702,marie-france,lamarche,,marie-france.lamarche@c4c.ca,,,0,,0,0,,,,,0
+        80,0,0,0,0,0,0,0,0,118,20,65,0,0,0,0,0,,Universite Laval,Laval,12,2006-09-30,1700,cassandra,collin,,cassandra.collin@c4c.ca,,,0,,0,0,,,,,0
+        81,4,6,3,2,5,0,0,0,119,20,65,0,0,0,0,0,,Universite Laval,Laval,12,2006-09-30,1701,marilyne,lemay,,marilyne.lemay@c4c.ca,,,0,,0,0,,,,,0
+        82,5,0,1,0,0,0,0,0,116,17,64,0,0,0,0,0,,Universite de Sherbrooke,UdeS,12,2006-09-09,1698,selene,lau,,selene.lau@c4c.ca,,,0,,0,0,,,,,0
+        83,3,2,1,0,0,0,0,0,116,18,64,0,0,0,0,0,,Universite de Sherbrooke,UdeS,12,2006-09-16,1698,selene,lau,,selene.lau@c4c.ca,,,0,,0,0,,,,,0
+        84,3,2,0,0,0,0,0,0,116,19,64,0,0,0,0,0,,Universite de Sherbrooke,UdeS,12,2006-09-23,1698,selene,lau,,selene.lau@c4c.ca,,,0,,0,0,,,,,0
+        85,2,2,2,3,0,0,0,0,116,20,64,0,0,0,0,0,,Universite de Sherbrooke,UdeS,12,2006-09-30,1698,selene,lau,,selene.lau@c4c.ca,,,0,,0,0,,,,,0
+        86,4,2,1,0,0,0,0,0,100,20,51,0,0,0,0,0,,University of Guelph,UofG,10,2006-09-30,1682,graham,watt,,graham.watt@c4c.ca,,,0,,0,0,,,,,0
+        87,4,18,4,8,0,0,0,0,100,21,51,0,0,0,0,33,,University of Guelph,UofG,10,2006-10-07,1682,graham,watt,,graham.watt@c4c.ca,,,0,,0,0,,,,,0
+        88,3,0,3,0,0,0,0,0,95,18,1,0,0,0,0,0,,University of Waterloo,UW,10,2006-09-16,1677,allan,self,,allan.self@c4c.ca,,,0,,0,0,,,,,0
+        89,0,0,0,0,4,0,0,0,95,20,1,0,0,0,0,0,,University of Waterloo,UW,10,2006-09-30,1677,allan,self,,allan.self@c4c.ca,,,0,,0,0,,,,,0
+        90,0,0,0,0,0,0,0,0,148,16,19,0,0,0,0,0,,University of British Columbia,UBC,11,2006-09-02,1730,corey,porter,,corey.porter@c4c.ca,,,0,,0,0,,,,,0
+        91,5,10,1,2,1,0,0,0,148,17,19,0,0,0,1000,15,,University of British Columbia,UBC,11,2006-09-09,1730,corey,porter,,corey.porter@c4c.ca,,,0,,0,0,,,,,0
+        92,5,15,3,5,1,3,0,0,148,18,19,0,0,0,0,0,,University of British Columbia,UBC,11,2006-09-16,1730,corey,porter,,corey.porter@c4c.ca,,,0,,0,0,,,,,0
+        93,5,18,3,5,2,4,0,0,148,19,19,0,0,0,0,0,,University of British Columbia,UBC,11,2006-09-23,1730,corey,porter,,corey.porter@c4c.ca,,,0,,0,0,,,,,0
+        94,4,12,2,3,1,2,0,0,148,20,19,0,0,0,0,0,,University of British Columbia,UBC,11,2006-09-30,1730,corey,porter,,corey.porter@c4c.ca,,,0,,0,0,,,,,0
+        95,0,0,0,0,0,0,0,0,147,20,19,0,0,0,0,0,,University of British Columbia,UBC,11,2006-09-30,1729,peggy,porter,,peggy.porter@c4c.ca,,,0,,0,0,,,,,0
+        96,0,0,0,0,0,0,0,0,147,19,19,0,0,0,0,0,,University of British Columbia,UBC,11,2006-09-23,1729,peggy,porter,,peggy.porter@c4c.ca,,,0,,0,0,,,,,0
+        97,12,4,0,1,0,2,0,0,95,21,1,0,0,0,0,0,,University of Waterloo,UW,10,2006-10-07,1677,allan,self,,allan.self@c4c.ca,,,0,,0,0,,,,,0
+        98,2,3,0,0,0,0,0,0,88,21,46,0,0,0,0,0,,McMaster University,MAC,10,2006-10-07,1670,kelly,yen,,kelly.yen@c4c.ca,,,0,,0,0,,,,,0
+        99,2,6,3,3,2,1,0,0,136,18,7,0,0,0,0,0,,University of Alberta,UofA,11,2006-09-16,1718,melanie,joy,,melanie.joy@c4c.ca,,,0,,0,0,,,,,0
+        100,0,0,1,0,3,0,0,0,136,19,7,0,0,0,0,0,,University of Alberta,UofA,11,2006-09-23,1718,melanie,joy,,melanie.joy@c4c.ca,,,0,,0,0,,,,,0
+        101,3,2,9,3,1,0,0,0,136,21,7,0,0,0,0,0,,University of Alberta,UofA,11,2006-10-07,1718,melanie,joy,,melanie.joy@c4c.ca,,,0,,0,0,,,,,0
+        102,3,9,3,7,0,5,0,0,125,21,24,0,0,0,0,0,,University of Manitoba,UofM,11,2006-10-07,1707,kevin,huska,,kevin.huska@c4c.ca,,,0,,0,0,,,,,0
+        103,3,2,1,1,0,0,0,0,80,21,40,0,0,0,0,0,,Saint Mary's University,SMU,10,2006-10-07,1662,chris,harman,,chris.harman@c4c.ca,,,0,,0,0,,,,,0
+        104,0,0,0,0,0,0,0,0,80,17,40,0,0,0,0,0,,Saint Mary's University,SMU,10,2006-09-09,1662,chris,harman,,chris.harman@c4c.ca,,,0,,0,0,,,,,0
+        105,2,0,1,0,0,0,0,0,70,21,54,0,0,0,0,0,,University of Toronto,UofT,10,2006-10-07,1652,joseph,choi,,joseph.choi@c4c.ca,,,0,,0,0,,,,,0
+        106,6,0,1,0,0,0,0,0,70,21,49,0,0,0,0,0,,Ryerson University,Ryerson,10,2006-10-07,1652,joseph,choi,,joseph.choi@c4c.ca,,,0,,0,0,,,,,0
+        107,4,0,0,0,0,0,0,0,1,21,54,0,0,0,0,0,,University of Toronto,UofT,10,2006-10-07,283,Russ,Martin,519 886.7759,russ.martin@rogers.com,433A Bairstow Crescent,Waterloo,1,N2K 2H7,1,207,,,,,0
+        108,1,0,1,0,0,0,0,0,1,21,49,0,0,0,0,0,,Ryerson University,Ryerson,10,2006-10-07,283,Russ,Martin,519 886.7759,russ.martin@rogers.com,433A Bairstow Crescent,Waterloo,1,N2K 2H7,1,207,,,,,0
+        109,1,5,2,17,0,0,0,0,69,21,54,0,0,0,0,0,,University of Toronto,UofT,10,2006-10-07,1651,janette,doerksen,,janette.doerksen@c4c.ca,,,0,,0,0,,,,,0
+        110,3,0,8,0,1,0,0,0,69,21,57,0,0,0,0,0,,York University,York,10,2006-10-07,1651,janette,doerksen,,janette.doerksen@c4c.ca,,,0,,0,0,,,,,0
+        111,0,0,3,3,0,0,0,0,67,19,54,0,0,0,0,0,,University of Toronto,UofT,10,2006-09-23,1649,archie,kenyon,,archie.kenyon@c4c.ca,,,0,,0,0,,,,,0
+        112,2,3,1,3,1,0,0,0,67,19,57,0,0,0,0,0,,York University,York,10,2006-09-23,1649,archie,kenyon,,archie.kenyon@c4c.ca,,,0,,0,0,,,,,0
+        113,1,5,1,8,80,0,0,0,67,20,57,0,0,0,0,0,,York University,York,10,2006-09-30,1649,archie,kenyon,,archie.kenyon@c4c.ca,,,0,,0,0,,,,,0
+        114,1,1,1,1,0,0,0,0,67,20,54,0,0,0,0,0,,University of Toronto,UofT,10,2006-09-30,1649,archie,kenyon,,archie.kenyon@c4c.ca,,,0,,0,0,,,,,0
+        115,1,0,2,2,0,0,0,0,67,21,54,0,0,0,0,0,,University of Toronto,UofT,10,2006-10-07,1649,archie,kenyon,,archie.kenyon@c4c.ca,,,0,,0,0,,,,,0
+        116,1,3,6,2,0,0,0,0,67,21,57,0,0,0,0,0,,York University,York,10,2006-10-07,1649,archie,kenyon,,archie.kenyon@c4c.ca,,,0,,0,0,,,,,0
+        117,5,2,3,2,0,0,0,0,71,21,54,0,0,0,0,0,,University of Toronto,UofT,10,2006-10-07,1653,stephanie,bourque,,stephanie.bourque@c4c.ca,,,0,,0,0,,,,,0
+        118,2,0,0,0,2,0,0,0,118,21,65,0,0,0,0,0,,Universite Laval,Laval,12,2006-10-07,1700,cassandra,collin,,cassandra.collin@c4c.ca,,,0,,0,0,,,,,0
+        119,2,3,0,1,0,0,0,0,119,21,65,0,0,0,0,0,,Universite Laval,Laval,12,2006-10-07,1701,marilyne,lemay,,marilyne.lemay@c4c.ca,,,0,,0,0,,,,,0
+        120,1,2,1,1,0,0,0,0,120,21,65,0,0,0,0,0,,Universite Laval,Laval,12,2006-10-07,1702,marie-france,lamarche,,marie-france.lamarche@c4c.ca,,,0,,0,0,,,,,0
+        121,2,4,1,2,0,0,0,0,121,21,65,0,0,0,0,0,,Universite Laval,Laval,12,2006-10-07,1703,paul,malicki,,paul.malicki@c4c.ca,,,0,,0,0,,,,,0
+        122,3,0,1,0,0,0,1,0,126,20,68,0,0,0,0,0,,University of Saskatchewan,UofS,11,2006-09-30,1708,charlotte,martin,,charlotte.martin@c4c.ca,,,0,,0,0,,,,,0
+        123,2,0,0,1,0,0,0,0,126,21,68,0,0,1,0,0,Gave away a case for Christ book,University of Saskatchewan,UofS,11,2006-10-07,1708,charlotte,martin,,charlotte.martin@c4c.ca,,,0,,0,0,,,,,0
+        124,4,0,1,0,0,0,0,0,91,18,1,0,0,0,0,0,,University of Waterloo,UW,10,2006-09-16,1673,nancy,cullen,,nancy.cullen@c4c.ca,,,0,,0,0,,,,,0
+        125,1,0,0,0,2,0,0,0,91,19,1,0,0,0,0,0,,University of Waterloo,UW,10,2006-09-23,1673,nancy,cullen,,nancy.cullen@c4c.ca,,,0,,0,0,,,,,0
+        126,1,0,0,0,0,0,0,0,91,20,1,0,0,0,0,0,,University of Waterloo,UW,10,2006-09-30,1673,nancy,cullen,,nancy.cullen@c4c.ca,,,0,,0,0,,,,,0
+        127,2,0,1,0,0,0,0,0,91,21,1,0,0,0,0,0,,University of Waterloo,UW,10,2006-10-07,1673,nancy,cullen,,nancy.cullen@c4c.ca,,,0,,0,0,,,,,0
+        128,2,0,3,0,0,0,0,0,95,22,1,0,0,0,0,0,,University of Waterloo,UW,10,2006-10-14,1677,allan,self,,allan.self@c4c.ca,,,0,,0,0,,,,,0
+        129,1,2,0,2,0,0,0,0,138,19,7,0,0,0,0,0,,University of Alberta,UofA,11,2006-09-23,1720,chris,polachic,,chris.polachic@c4c.ca,,,0,,0,0,,,,,0
+        130,1,3,0,2,0,0,0,0,138,20,7,0,0,0,0,0,,University of Alberta,UofA,11,2006-09-30,1720,chris,polachic,,chris.polachic@c4c.ca,,,0,,0,0,,,,,0
+        131,5,7,4,6,0,0,0,0,138,21,7,0,0,0,0,0,,University of Alberta,UofA,11,2006-10-07,1720,chris,polachic,,chris.polachic@c4c.ca,,,0,,0,0,,,,,0
+        132,10,8,4,2,0,2,0,0,85,22,37,0,0,0,0,0,,Dalhousie University,Dal,10,2006-10-14,1667,deborah,wong,,deborah.wong@c4c.ca,,,0,,0,0,,,,,0
+        133,6,0,1,0,0,0,0,0,96,19,51,0,0,0,0,0,,University of Guelph,UofG,10,2006-09-23,1678,vanessa,strickland,,vanessa.strickland@c4c.ca,,,0,,0,0,,,,,0
+        134,5,0,1,0,1,0,0,0,96,20,51,0,0,0,0,0,,University of Guelph,UofG,10,2006-09-30,1678,vanessa,strickland,,vanessa.strickland@c4c.ca,,,0,,0,0,,,,,0
+        135,4,1,2,0,0,0,0,0,96,21,51,0,0,0,0,0,,University of Guelph,UofG,10,2006-10-07,1678,vanessa,strickland,,vanessa.strickland@c4c.ca,,,0,,0,0,,,,,0
+        136,1,1,1,0,0,0,0,0,96,22,51,0,0,0,0,0,,University of Guelph,UofG,10,2006-10-14,1678,vanessa,strickland,,vanessa.strickland@c4c.ca,,,0,,0,0,,,,,0
+        137,0,0,0,0,0,0,0,0,148,22,19,0,0,0,0,0,,University of British Columbia,UBC,11,2006-10-14,1730,corey,porter,,corey.porter@c4c.ca,,,0,,0,0,,,,,0
+        138,7,15,3,7,0,0,0,0,148,21,19,0,0,0,0,0,,University of British Columbia,UBC,11,2006-10-07,1730,corey,porter,,corey.porter@c4c.ca,,,0,,0,0,,,,,0
+        139,4,0,1,0,3,0,0,0,130,20,68,0,0,0,0,0,,University of Saskatchewan,UofS,11,2006-09-30,1712,brent,trickett,,brent.trickett@c4c.ca,,,0,,0,0,,,,,0
+        140,5,0,1,0,4,0,0,0,130,21,68,0,0,0,0,0,,University of Saskatchewan,UofS,11,2006-10-07,1712,brent,trickett,,brent.trickett@c4c.ca,,,0,,0,0,,,,,0
+        141,2,0,0,0,4,0,0,0,130,22,68,0,0,0,0,0,,University of Saskatchewan,UofS,11,2006-10-14,1712,brent,trickett,,brent.trickett@c4c.ca,,,0,,0,0,,,,,0
+        142,10,0,0,0,0,0,0,0,132,17,8,0,0,0,0,0,,University of Calgary,UofC,11,2006-09-09,1714,wendy,chien,,wendy.chien@c4c.ca,,,0,,0,0,,,,,0
+        143,5,0,0,0,0,0,0,0,132,18,8,0,0,0,0,0,,University of Calgary,UofC,11,2006-09-16,1714,wendy,chien,,wendy.chien@c4c.ca,,,0,,0,0,,,,,0
+        144,7,0,1,0,0,0,0,0,132,19,8,0,0,0,0,0,,University of Calgary,UofC,11,2006-09-23,1714,wendy,chien,,wendy.chien@c4c.ca,,,0,,0,0,,,,,0
+        145,6,0,1,0,0,0,0,0,132,20,8,0,0,0,0,0,,University of Calgary,UofC,11,2006-09-30,1714,wendy,chien,,wendy.chien@c4c.ca,,,0,,0,0,,,,,0
+        146,1,0,0,0,0,0,0,0,75,21,2,0,0,0,0,0,,University of Western Ontario,UWO,10,2006-10-07,1657,dawn,humphrey,,dawn.humphrey@c4c.ca,,,0,,0,0,,,,,0
+        147,4,0,0,0,2,0,0,0,132,21,8,0,0,0,0,0,,University of Calgary,UofC,11,2006-10-07,1714,wendy,chien,,wendy.chien@c4c.ca,,,0,,0,0,,,,,0
+        148,4,0,3,2,0,0,0,0,74,19,2,0,0,0,0,0,,University of Western Ontario,UWO,10,2006-09-23,1656,eric,humphrey,,eric.humphrey@c4c.ca,,,0,,0,0,,,,,0
+        149,3,0,3,0,0,0,0,0,74,20,2,0,0,0,0,0,,University of Western Ontario,UWO,10,2006-09-30,1656,eric,humphrey,,eric.humphrey@c4c.ca,,,0,,0,0,,,,,0
+        150,0,0,5,0,0,0,0,0,74,21,2,0,0,0,0,0,,University of Western Ontario,UWO,10,2006-10-07,1656,eric,humphrey,,eric.humphrey@c4c.ca,,,0,,0,0,,,,,0
+        151,35,0,12,0,4,0,0,0,77,19,2,0,0,0,0,0,,University of Western Ontario,UWO,10,2006-09-23,1659,ben,jolliffe,,ben.jolliffe@c4c.ca,,,0,,0,0,,,,,0
+        152,6,0,4,0,4,0,0,0,77,20,2,0,0,0,0,0,,University of Western Ontario,UWO,10,2006-09-30,1659,ben,jolliffe,,ben.jolliffe@c4c.ca,,,0,,0,0,,,,,0
+        153,5,0,5,0,0,0,0,0,77,21,2,0,0,0,0,0,,University of Western Ontario,UWO,10,2006-10-07,1659,ben,jolliffe,,ben.jolliffe@c4c.ca,,,0,,0,0,,,,,0
+        154,5,0,6,1,1,0,0,0,76,21,2,0,0,0,0,0,,University of Western Ontario,UWO,10,2006-10-07,1658,jennifer,clarke,,jennifer.clarke@c4c.ca,,,0,,0,0,,,,,0
+        155,0,0,0,0,0,0,0,0,76,22,2,0,0,0,0,0,,University of Western Ontario,UWO,10,2006-10-14,1658,jennifer,clarke,,jennifer.clarke@c4c.ca,,,0,,0,0,,,,,0
+        156,2,0,0,0,0,0,0,0,75,20,2,0,0,0,0,0,,University of Western Ontario,UWO,10,2006-09-30,1657,dawn,humphrey,,dawn.humphrey@c4c.ca,,,0,,0,0,,,,,0
+        157,15,0,0,0,1,0,0,0,76,19,2,0,0,0,0,0,,University of Western Ontario,UWO,10,2006-09-23,1658,jennifer,clarke,,jennifer.clarke@c4c.ca,,,0,,0,0,,,,,0
+        158,3,2,3,1,0,1,0,0,134,21,8,0,0,0,0,0,,University of Calgary,UofC,11,2006-10-07,1716,shawn,cain,,shawn.cain@c4c.ca,,,0,,0,0,,,,,0
+        159,3,1,1,0,0,0,0,0,134,20,8,0,0,0,0,0,,University of Calgary,UofC,11,2006-09-30,1716,shawn,cain,,shawn.cain@c4c.ca,,,0,,0,0,,,,,0
+        160,2,0,2,0,0,0,0,0,134,19,8,0,0,0,0,0,,University of Calgary,UofC,11,2006-09-23,1716,shawn,cain,,shawn.cain@c4c.ca,,,0,,0,0,,,,,0
+        161,0,0,0,0,0,0,0,0,134,22,8,0,0,0,0,0,,University of Calgary,UofC,11,2006-10-14,1716,shawn,cain,,shawn.cain@c4c.ca,,,0,,0,0,,,,,0
+        162,0,0,0,0,0,0,0,0,134,17,8,0,0,0,1600,1500,,University of Calgary,UofC,11,2006-09-09,1716,shawn,cain,,shawn.cain@c4c.ca,,,0,,0,0,,,,,0
+        163,1,0,1,0,0,0,0,0,134,18,8,0,0,0,0,0,,University of Calgary,UofC,11,2006-09-16,1716,shawn,cain,,shawn.cain@c4c.ca,,,0,,0,0,,,,,0
+        164,8,4,2,0,1,0,0,0,133,19,8,0,0,0,0,0,,University of Calgary,UofC,11,2006-09-23,1715,mindy,aechtner,,mindy.aechtner@c4c.ca,,,0,,0,0,,,,,0
+        165,5,4,2,1,0,0,0,0,133,22,8,0,0,0,0,0,,University of Calgary,UofC,11,2006-10-14,1715,mindy,aechtner,,mindy.aechtner@c4c.ca,,,0,,0,0,,,,,0
+        166,5,0,2,0,0,0,0,0,146,20,19,0,0,0,0,0,,University of British Columbia,UBC,11,2006-09-30,1728,wendy,broadwood,,wendy.broadwood@c4c.ca,,,0,,0,0,,,,,0
+        167,2,0,1,0,1,0,0,0,146,21,19,0,0,0,0,0,,University of British Columbia,UBC,11,2006-10-07,1728,wendy,broadwood,,wendy.broadwood@c4c.ca,,,0,,0,0,,,,,0
+        168,9,15,5,4,0,0,0,0,100,22,51,0,0,0,0,0,,University of Guelph,UofG,10,2006-10-14,1682,graham,watt,,graham.watt@c4c.ca,,,0,,0,0,,,,,0
+        169,15,12,0,10,0,0,0,0,100,21,46,0,0,0,0,0,,McMaster University,MAC,10,2006-10-07,1682,graham,watt,,graham.watt@c4c.ca,,,0,,0,0,,,,,0
+        170,3,4,2,2,0,0,0,0,116,21,64,0,0,0,0,0,,Universite de Sherbrooke,UdeS,12,2006-10-07,1698,selene,lau,,selene.lau@c4c.ca,,,0,,0,0,,,,,0
+        171,1,5,1,2,3,0,0,0,92,19,1,0,0,0,0,0,,University of Waterloo,UW,10,2006-09-23,1674,sean,cullen,,sean.cullen@c4c.ca,,,0,,0,0,,,,,0
+        172,1,5,0,1,1,0,0,0,92,20,1,0,0,0,0,0,,University of Waterloo,UW,10,2006-09-30,1674,sean,cullen,,sean.cullen@c4c.ca,,,0,,0,0,,,,,0
+        173,1,16,1,2,0,3,0,0,92,21,1,0,0,0,0,0,,University of Waterloo,UW,10,2006-10-07,1674,sean,cullen,,sean.cullen@c4c.ca,,,0,,0,0,,,,,0
+        174,4,4,4,0,1,0,0,0,92,22,1,0,0,0,0,0,,University of Waterloo,UW,10,2006-10-14,1674,sean,cullen,,sean.cullen@c4c.ca,,,0,,0,0,,,,,0
+        175,3,3,1,2,1,0,0,0,129,20,68,0,0,0,0,0,,University of Saskatchewan,UofS,11,2006-09-30,1711,jill,wenger,,jill.wenger@c4c.ca,,,0,,0,0,,,,,0
+        176,4,3,2,2,1,0,0,0,129,21,68,0,0,0,0,0,,University of Saskatchewan,UofS,11,2006-10-07,1711,jill,wenger,,jill.wenger@c4c.ca,,,0,,0,0,,,,,0
+        177,3,6,1,2,4,1,0,0,149,18,68,0,0,0,0,0,,University of Saskatchewan,UofS,11,2006-09-16,1731,rod,alm,,rod.alm@c4c.ca,,,0,,0,0,,,,,0
+        178,5,8,3,4,3,4,0,0,149,18,70,0,0,0,0,0,,Regional / National,Reg/Nat,13,2006-09-16,1731,rod,alm,,rod.alm@c4c.ca,,,0,,0,0,,,,,0
+        179,2,4,1,3,1,2,0,0,149,19,68,0,0,0,0,0,,University of Saskatchewan,UofS,11,2006-09-23,1731,rod,alm,,rod.alm@c4c.ca,,,0,,0,0,,,,,0
+        180,2,6,1,3,1,2,0,0,149,20,68,0,65,0,0,0,U of S Huskies Football Team Meeting. All 65 men present in locker room. Steve Cornish shared his testimony with a clear Gospel in it. Rod spoke on "3 Misconceptions Men Have About Faith". 45 men signed up for personal information on comment cards.,University of Saskatchewan,UofS,11,2006-09-30,1731,rod,alm,,rod.alm@c4c.ca,,,0,,0,0,,,,,0
+        181,2,4,1,3,4,1,0,0,149,21,68,0,28,0,0,0,U of S Huskies Hockey Team. 28 men present. Rod spoke on "3 Misconceptions Men Have About Faith". 20 men signed up for personal information about the message.,University of Saskatchewan,UofS,11,2006-10-07,1731,rod,alm,,rod.alm@c4c.ca,,,0,,0,0,,,,,0
+        182,1,0,3,0,0,0,0,0,84,21,37,0,0,0,0,0,,Dalhousie University,Dal,10,2006-10-07,1666,kelley,myles,,kelley.myles@c4c.ca,,,0,,0,0,,,,,0
+        183,5,0,4,0,0,0,0,0,139,22,14,0,0,0,0,0,,Simon Fraser University,SFU,11,2006-10-14,1721,gary,stevenson,,gary.stevenson@c4c.ca,,,0,,0,0,,,,,0
+        184,0,6,0,3,0,0,0,0,87,21,46,0,0,0,0,0,,McMaster University,MAC,10,2006-10-07,1669,mc,yen,,mc.yen@c4c.ca,,,0,,0,0,,,,,0
+        185,0,0,0,0,1,0,1,0,88,22,46,0,0,0,0,0,,McMaster University,MAC,10,2006-10-14,1670,kelly,yen,,kelly.yen@c4c.ca,,,0,,0,0,,,,,0
+        186,1,0,0,0,1,0,0,0,127,19,68,0,0,0,0,0,,University of Saskatchewan,UofS,11,2006-09-23,1709,julie,tang,,julie.tang@c4c.ca,,,0,,0,0,,,,,0
+        187,1,0,1,0,0,0,0,0,127,20,68,0,0,0,0,0,,University of Saskatchewan,UofS,11,2006-09-30,1709,julie,tang,,julie.tang@c4c.ca,,,0,,0,0,,,,,0
+        188,1,0,1,0,0,0,0,0,127,21,68,0,0,0,0,0,,University of Saskatchewan,UofS,11,2006-10-07,1709,julie,tang,,julie.tang@c4c.ca,,,0,,0,0,,,,,0
+        189,3,0,2,0,0,0,0,0,71,22,54,0,0,0,0,0,,University of Toronto,UofT,10,2006-10-14,1653,stephanie,bourque,,stephanie.bourque@c4c.ca,,,0,,0,0,,,,,0
+        190,1,0,1,0,0,0,0,0,71,22,49,0,0,0,0,0,,Ryerson University,Ryerson,10,2006-10-14,1653,stephanie,bourque,,stephanie.bourque@c4c.ca,,,0,,0,0,,,,,0
+        191,0,0,1,0,0,0,0,0,80,22,40,0,0,0,0,0,,Saint Mary's University,SMU,10,2006-10-14,1662,chris,harman,,chris.harman@c4c.ca,,,0,,0,0,,,,,0
+        192,0,0,1,0,0,0,0,0,70,22,54,0,0,0,0,0,,University of Toronto,UofT,10,2006-10-14,1652,joseph,choi,,joseph.choi@c4c.ca,,,0,,0,0,,,,,0
+        193,1,22,0,11,0,5,2,0,68,22,57,0,0,0,0,0,,York University,York,10,2006-10-14,1650,terra,leavens,,terra.leavens@c4c.ca,,,0,,0,0,,,,,0
+        194,0,0,0,0,0,0,0,0,68,22,49,0,0,0,0,0,,Ryerson University,Ryerson,10,2006-10-14,1650,terra,leavens,,terra.leavens@c4c.ca,,,0,,0,0,,,,,0
+        195,5,0,1,0,0,0,0,0,113,22,61,0,0,0,0,0,,McGill University,McGill,12,2006-10-14,1695,andy,smits,,andy.smits@c4c.ca,,,0,,0,0,,,,,0
+        196,2,0,2,0,0,0,0,0,113,22,73,0,0,0,0,0,,Concordia University,Concordia,12,2006-10-14,1695,andy,smits,,andy.smits@c4c.ca,,,0,,0,0,,,,,0
+        197,2,0,2,0,0,0,0,0,113,22,62,0,0,0,0,0,,Universite de Montreal,UdeM,12,2006-10-14,1695,andy,smits,,andy.smits@c4c.ca,,,0,,0,0,,,,,0
+        198,0,0,0,0,0,0,0,0,113,21,62,0,0,0,80,80,HEC,Universite de Montreal,UdeM,12,2006-10-07,1695,andy,smits,,andy.smits@c4c.ca,,,0,,0,0,,,,,0
+        199,5,0,3,0,1,0,1,0,126,22,68,0,0,0,0,0,,University of Saskatchewan,UofS,11,2006-10-14,1708,charlotte,martin,,charlotte.martin@c4c.ca,,,0,,0,0,,,,,0
+        200,0,2,0,0,0,0,0,0,87,23,46,0,0,0,0,0,,McMaster University,MAC,10,2006-10-21,1669,mc,yen,,mc.yen@c4c.ca,,,0,,0,0,,,,,0
+        201,1,0,1,0,0,0,0,0,107,21,73,0,0,0,0,0,,Concordia University,Concordia,12,2006-10-07,1689,brad,morrice,,brad.morrice@c4c.ca,,,0,,0,0,,,,,0
+        202,1,1,1,1,0,0,0,0,107,22,73,0,0,0,0,0,,Concordia University,Concordia,12,2006-10-14,1689,brad,morrice,,brad.morrice@c4c.ca,,,0,,0,0,,,,,0
+        203,5,0,0,0,0,0,2,0,164,22,14,0,0,0,0,0,,Simon Fraser University,SFU,11,2006-10-14,1746,becca,fowler,,becca.fowler@c4c.ca,,,0,,0,0,,,,,0
+        204,0,0,2,0,12,0,0,0,114,23,73,0,0,0,0,0,,Concordia University,Concordia,12,2006-10-21,1696,dorrie,block,,dorrie.block@c4c.ca,,,0,,0,0,,,,,0
+        205,0,0,12,6,0,0,0,0,114,23,61,0,0,0,0,0,,McGill University,McGill,12,2006-10-21,1696,dorrie,block,,dorrie.block@c4c.ca,,,0,,0,0,,,,,0
+        206,0,0,4,5,0,0,0,0,114,23,62,0,0,0,0,0,,Universite de Montreal,UdeM,12,2006-10-21,1696,dorrie,block,,dorrie.block@c4c.ca,,,0,,0,0,,,,,0
+        207,0,0,7,1,5,0,0,0,110,22,61,0,0,0,0,0,,McGill University,McGill,12,2006-10-14,1692,john,bellingham,,john.bellingham@c4c.ca,,,0,,0,0,,,,,0
+        208,4,0,2,0,0,0,0,0,110,22,62,0,0,0,0,0,,Universite de Montreal,UdeM,12,2006-10-14,1692,john,bellingham,,john.bellingham@c4c.ca,,,0,,0,0,,,,,0
+        209,0,1,2,0,0,0,0,0,110,17,61,0,0,0,0,0,,McGill University,McGill,12,2006-09-09,1692,john,bellingham,,john.bellingham@c4c.ca,,,0,,0,0,,,,,0
+        210,5,3,0,0,0,0,0,0,110,18,61,0,0,0,0,0,,McGill University,McGill,12,2006-09-16,1692,john,bellingham,,john.bellingham@c4c.ca,,,0,,0,0,,,,,0
+        211,4,0,0,0,0,0,0,0,110,19,61,0,0,3,1,0,Gave 1 Real Life Kit to Karan and 3 More than a carpenter books to Jim, Phillip and Jean Michel at Alpha,McGill University,McGill,12,2006-09-23,1692,john,bellingham,,john.bellingham@c4c.ca,,,0,,0,0,,,,,0
+        212,5,0,3,0,0,0,0,0,110,20,61,0,0,0,0,0,,McGill University,McGill,12,2006-09-30,1692,john,bellingham,,john.bellingham@c4c.ca,,,0,,0,0,,,,,0
+        213,3,3,5,0,0,0,0,0,110,21,61,0,0,0,0,0,,McGill University,McGill,12,2006-10-07,1692,john,bellingham,,john.bellingham@c4c.ca,,,0,,0,0,,,,,0
+        214,0,0,0,0,0,0,0,0,110,23,61,0,0,0,0,0,Fady (one of my disciples) brought Bibles to Clubs night.  We gave out about 10 New Testaments away in English French and Arabic,McGill University,McGill,12,2006-10-21,1692,john,bellingham,,john.bellingham@c4c.ca,,,0,,0,0,,,,,0
+        215,0,0,0,0,0,0,0,0,110,17,62,0,0,0,0,0,,Universite de Montreal,UdeM,12,2006-09-09,1692,john,bellingham,,john.bellingham@c4c.ca,,,0,,0,0,,,,,0
+        216,0,0,0,0,0,0,0,0,110,18,62,0,0,0,0,0,,Universite de Montreal,UdeM,12,2006-09-16,1692,john,bellingham,,john.bellingham@c4c.ca,,,0,,0,0,,,,,0
+        217,2,0,0,0,0,0,0,0,110,19,62,0,0,0,0,0,,Universite de Montreal,UdeM,12,2006-09-23,1692,john,bellingham,,john.bellingham@c4c.ca,,,0,,0,0,,,,,0
+        218,1,5,1,1,0,1,0,1,125,22,24,0,0,0,0,0,,University of Manitoba,UofM,11,2006-10-14,1707,kevin,huska,,kevin.huska@c4c.ca,,,0,,0,0,,,,,0
+        219,5,3,2,2,4,5,0,0,149,22,68,0,0,0,0,0,,University of Saskatchewan,UofS,11,2006-10-14,1731,rod,alm,,rod.alm@c4c.ca,,,0,,0,0,,,,,0
+        220,5,12,2,2,0,2,1,3,143,18,70,0,0,0,0,0,,Regional / National,Reg/Nat,13,2006-09-16,1725,jonathan,lee,,jonathan.lee@c4c.ca,,,0,,0,0,,,,,0
+        221,8,9,1,7,0,0,0,1,143,19,70,0,0,0,0,0,,Regional / National,Reg/Nat,13,2006-09-23,1725,jonathan,lee,,jonathan.lee@c4c.ca,,,0,,0,0,,,,,0
+        222,4,6,1,3,0,0,0,1,143,20,70,0,0,0,0,0,,Regional / National,Reg/Nat,13,2006-09-30,1725,jonathan,lee,,jonathan.lee@c4c.ca,,,0,,0,0,,,,,0
+        223,4,7,1,3,0,0,0,0,143,21,70,0,0,0,0,0,,Regional / National,Reg/Nat,13,2006-10-07,1725,jonathan,lee,,jonathan.lee@c4c.ca,,,0,,0,0,,,,,0
+        224,4,9,1,2,0,0,5,0,143,22,70,0,0,0,0,0,,Regional / National,Reg/Nat,13,2006-10-14,1725,jonathan,lee,,jonathan.lee@c4c.ca,,,0,,0,0,,,,,0
+        225,1,0,0,0,0,0,0,0,108,20,61,0,0,0,0,0,,McGill University,McGill,12,2006-09-30,1690,tara,arseneau,,tara.arseneau@c4c.ca,,,0,,0,0,,,,,0
+        226,2,0,2,0,0,0,0,0,108,21,61,0,0,0,0,0,,McGill University,McGill,12,2006-10-07,1690,tara,arseneau,,tara.arseneau@c4c.ca,,,0,,0,0,,,,,0
+        227,4,0,3,0,0,0,0,0,108,21,62,0,0,0,0,0,,Universite de Montreal,UdeM,12,2006-10-07,1690,tara,arseneau,,tara.arseneau@c4c.ca,,,0,,0,0,,,,,0
+        228,1,0,2,0,1,0,0,0,127,22,68,0,0,0,0,0,,University of Saskatchewan,UofS,11,2006-10-14,1709,julie,tang,,julie.tang@c4c.ca,,,0,,0,0,,,,,0
+        229,14,0,3,0,0,0,0,0,99,23,51,0,0,0,0,0,,University of Guelph,UofG,10,2006-10-21,1681,kirsten,alm,,kirsten.alm@c4c.ca,,,0,,0,0,,,,,0
+        230,2,0,1,1,0,0,0,0,99,23,46,0,0,0,0,0,,McMaster University,MAC,10,2006-10-21,1681,kirsten,alm,,kirsten.alm@c4c.ca,,,0,,0,0,,,,,0
+        231,1,0,2,0,1,0,0,0,84,22,37,0,0,0,0,0,,Dalhousie University,Dal,10,2006-10-14,1666,kelley,myles,,kelley.myles@c4c.ca,,,0,,0,0,,,,,0
+        232,0,0,1,2,0,0,0,0,67,23,54,0,0,0,1,0,,University of Toronto,UofT,10,2006-10-21,1649,archie,kenyon,,archie.kenyon@c4c.ca,,,0,,0,0,,,,,0
+        233,0,0,1,0,0,0,0,0,69,23,54,0,0,0,0,0,,University of Toronto,UofT,10,2006-10-21,1651,janette,doerksen,,janette.doerksen@c4c.ca,,,0,,0,0,,,,,0
+        234,0,2,2,20,0,0,0,0,67,23,57,0,0,0,1,0,,York University,York,10,2006-10-21,1649,archie,kenyon,,archie.kenyon@c4c.ca,,,0,,0,0,,,,,0
+        235,1,0,0,0,0,0,0,0,1,23,54,0,0,0,0,0,,University of Toronto,UofT,10,2006-10-21,283,Russ,Martin,519 886.7759,russ.martin@rogers.com,433A Bairstow Crescent,Waterloo,1,N2K 2H7,1,207,,,,,0
+        236,2,1,2,1,0,0,0,0,69,23,57,0,0,0,0,0,,York University,York,10,2006-10-21,1651,janette,doerksen,,janette.doerksen@c4c.ca,,,0,,0,0,,,,,0
+        237,1,0,1,2,0,0,0,0,67,22,54,0,0,0,0,0,,University of Toronto,UofT,10,2006-10-14,1649,archie,kenyon,,archie.kenyon@c4c.ca,,,0,,0,0,,,,,0
+        238,1,0,0,0,0,0,0,0,70,23,54,0,0,0,0,0,,University of Toronto,UofT,10,2006-10-21,1652,joseph,choi,,joseph.choi@c4c.ca,,,0,,0,0,,,,,0
+        239,5,0,2,0,0,0,0,0,71,16,57,0,0,0,0,0,,York University,York,10,2006-09-02,1653,stephanie,bourque,,stephanie.bourque@c4c.ca,,,0,,0,0,,,,,0
+        240,0,0,1,0,0,0,0,0,69,22,54,0,0,0,0,0,,University of Toronto,UofT,10,2006-10-14,1651,janette,doerksen,,janette.doerksen@c4c.ca,,,0,,0,0,,,,,0
+        241,0,0,2,1,2,0,0,0,68,23,57,0,0,0,0,0,,York University,York,10,2006-10-21,1650,terra,leavens,,terra.leavens@c4c.ca,,,0,,0,0,,,,,0
+        242,0,4,1,3,0,0,0,0,67,22,57,0,0,0,0,0,,York University,York,10,2006-10-14,1649,archie,kenyon,,archie.kenyon@c4c.ca,,,0,,0,0,,,,,0
+        243,0,0,2,0,0,0,0,0,70,23,49,0,0,0,0,0,,Ryerson University,Ryerson,10,2006-10-21,1652,joseph,choi,,joseph.choi@c4c.ca,,,0,,0,0,,,,,0
+        244,0,0,2,0,0,0,0,0,69,22,57,0,0,0,0,0,,York University,York,10,2006-10-14,1651,janette,doerksen,,janette.doerksen@c4c.ca,,,0,,0,0,,,,,0
+        245,5,0,0,0,0,0,0,0,71,17,54,0,0,0,0,0,,University of Toronto,UofT,10,2006-09-09,1653,stephanie,bourque,,stephanie.bourque@c4c.ca,,,0,,0,0,,,,,0
+        246,0,0,0,0,30,0,0,0,69,20,54,0,0,0,0,0,,University of Toronto,UofT,10,2006-09-30,1651,janette,doerksen,,janette.doerksen@c4c.ca,,,0,,0,0,,,,,0
+        247,5,0,2,0,0,0,0,0,71,17,49,0,0,0,0,0,,Ryerson University,Ryerson,10,2006-09-09,1653,stephanie,bourque,,stephanie.bourque@c4c.ca,,,0,,0,0,,,,,0
+        248,0,0,0,0,0,0,0,0,69,20,57,0,0,0,0,0,,York University,York,10,2006-09-30,1651,janette,doerksen,,janette.doerksen@c4c.ca,,,0,,0,0,,,,,0
+        249,1,0,0,0,30,0,0,0,1,23,49,0,0,0,0,0,,Ryerson University,Ryerson,10,2006-10-21,283,Russ,Martin,519 886.7759,russ.martin@rogers.com,433A Bairstow Crescent,Waterloo,1,N2K 2H7,1,207,,,,,0
+        250,0,0,3,0,0,0,0,0,69,19,54,0,0,0,0,0,,University of Toronto,UofT,10,2006-09-23,1651,janette,doerksen,,janette.doerksen@c4c.ca,,,0,,0,0,,,,,0
+        251,3,0,4,0,0,0,0,0,72,23,57,0,0,0,0,0,,York University,York,10,2006-10-21,1654,steve,strongitharm,,steve.strongitharm@c4c.ca,,,0,,0,0,,,,,0
+        252,2,0,0,0,0,0,0,0,69,19,57,0,0,0,0,0,,York University,York,10,2006-09-23,1651,janette,doerksen,,janette.doerksen@c4c.ca,,,0,,0,0,,,,,0
+        253,4,0,3,0,0,0,0,0,71,18,49,0,0,0,0,0,,Ryerson University,Ryerson,10,2006-09-16,1653,stephanie,bourque,,stephanie.bourque@c4c.ca,,,0,,0,0,,,,,0
+        254,0,0,0,0,3,0,0,0,68,23,49,0,0,0,0,0,,Ryerson University,Ryerson,10,2006-10-21,1650,terra,leavens,,terra.leavens@c4c.ca,,,0,,0,0,,,,,0
+        255,0,0,0,0,0,0,0,0,68,16,49,0,0,0,0,0,,Ryerson University,Ryerson,10,2006-09-02,1650,terra,leavens,,terra.leavens@c4c.ca,,,0,,0,0,,,,,0
+        256,0,0,0,0,0,0,0,0,69,18,57,0,0,0,0,0,,York University,York,10,2006-09-16,1651,janette,doerksen,,janette.doerksen@c4c.ca,,,0,,0,0,,,,,0
+        257,3,0,2,0,0,0,0,0,71,18,54,0,0,0,0,0,,University of Toronto,UofT,10,2006-09-16,1653,stephanie,bourque,,stephanie.bourque@c4c.ca,,,0,,0,0,,,,,0
+        258,0,0,0,0,0,0,0,0,68,17,49,0,0,0,0,0,,Ryerson University,Ryerson,10,2006-09-09,1650,terra,leavens,,terra.leavens@c4c.ca,,,0,,0,0,,,,,0
+        259,0,0,0,0,0,0,0,0,69,17,57,0,0,0,0,0,,York University,York,10,2006-09-09,1651,janette,doerksen,,janette.doerksen@c4c.ca,,,0,,0,0,,,,,0
+        260,0,0,0,0,0,0,0,0,68,19,49,0,0,0,0,0,,Ryerson University,Ryerson,10,2006-09-23,1650,terra,leavens,,terra.leavens@c4c.ca,,,0,,0,0,,,,,0
+        261,0,0,0,0,0,0,0,0,68,20,49,0,0,0,0,0,,Ryerson University,Ryerson,10,2006-09-30,1650,terra,leavens,,terra.leavens@c4c.ca,,,0,,0,0,,,,,0
+        262,2,0,1,0,1,0,0,0,71,23,54,0,0,0,0,0,,University of Toronto,UofT,10,2006-10-21,1653,stephanie,bourque,,stephanie.bourque@c4c.ca,,,0,,0,0,,,,,0
+        263,0,0,0,0,0,0,0,0,68,16,57,0,0,0,0,0,,York University,York,10,2006-09-02,1650,terra,leavens,,terra.leavens@c4c.ca,,,0,,0,0,,,,,0
+        264,0,0,0,0,0,0,0,0,68,17,57,0,0,0,0,0,,York University,York,10,2006-09-09,1650,terra,leavens,,terra.leavens@c4c.ca,,,0,,0,0,,,,,0
+        265,0,0,0,0,0,0,0,0,68,19,57,0,0,0,0,0,,York University,York,10,2006-09-23,1650,terra,leavens,,terra.leavens@c4c.ca,,,0,,0,0,,,,,0
+        266,0,0,0,0,0,0,0,0,68,20,57,0,0,0,0,0,,York University,York,10,2006-09-30,1650,terra,leavens,,terra.leavens@c4c.ca,,,0,,0,0,,,,,0
+        267,0,0,0,0,0,0,0,0,68,21,57,0,0,0,0,0,,York University,York,10,2006-10-07,1650,terra,leavens,,terra.leavens@c4c.ca,,,0,,0,0,,,,,0
+        268,3,0,10,0,0,0,0,0,71,19,49,0,0,0,0,0,,Ryerson University,Ryerson,10,2006-09-23,1653,stephanie,bourque,,stephanie.bourque@c4c.ca,,,0,,0,0,,,,,0
+        269,3,0,0,0,0,0,0,0,71,19,54,0,0,0,0,0,,University of Toronto,UofT,10,2006-09-23,1653,stephanie,bourque,,stephanie.bourque@c4c.ca,,,0,,0,0,,,,,0
+        270,0,0,0,0,0,0,0,0,1,20,49,0,0,0,0,0,,Ryerson University,Ryerson,10,2006-09-30,283,Russ,Martin,519 886.7759,russ.martin@rogers.com,433A Bairstow Crescent,Waterloo,1,N2K 2H7,1,207,,,,,0
+        271,1,0,0,0,0,0,0,0,1,22,49,0,0,0,0,0,,Ryerson University,Ryerson,10,2006-10-14,283,Russ,Martin,519 886.7759,russ.martin@rogers.com,433A Bairstow Crescent,Waterloo,1,N2K 2H7,1,207,,,,,0
+        272,1,0,2,0,0,0,0,0,71,20,54,0,0,0,0,0,,University of Toronto,UofT,10,2006-09-30,1653,stephanie,bourque,,stephanie.bourque@c4c.ca,,,0,,0,0,,,,,0
+        273,0,0,0,0,0,0,0,0,1,20,54,0,0,0,0,0,,University of Toronto,UofT,10,2006-09-30,283,Russ,Martin,519 886.7759,russ.martin@rogers.com,433A Bairstow Crescent,Waterloo,1,N2K 2H7,1,207,,,,,0
+        274,2,0,3,0,0,0,0,0,71,20,49,0,0,0,0,0,,Ryerson University,Ryerson,10,2006-09-30,1653,stephanie,bourque,,stephanie.bourque@c4c.ca,,,0,,0,0,,,,,0
+        275,0,0,0,0,0,0,0,0,1,17,49,0,0,0,0,0,,Ryerson University,Ryerson,10,2006-09-09,283,Russ,Martin,519 886.7759,russ.martin@rogers.com,433A Bairstow Crescent,Waterloo,1,N2K 2H7,1,207,,,,,0
+        276,0,0,0,0,0,0,0,0,1,19,49,0,0,0,0,0,,Ryerson University,Ryerson,10,2006-09-23,283,Russ,Martin,519 886.7759,russ.martin@rogers.com,433A Bairstow Crescent,Waterloo,1,N2K 2H7,1,207,,,,,0
+        277,0,0,1,0,0,0,0,0,71,21,49,0,0,0,0,0,,Ryerson University,Ryerson,10,2006-10-07,1653,stephanie,bourque,,stephanie.bourque@c4c.ca,,,0,,0,0,,,,,0
+        278,0,0,1,0,0,0,0,0,71,23,49,0,0,0,0,0,,Ryerson University,Ryerson,10,2006-10-21,1653,stephanie,bourque,,stephanie.bourque@c4c.ca,,,0,,0,0,,,,,0
+        279,15,4,5,2,1,0,0,0,135,21,7,0,0,0,0,0,,University of Alberta,UofA,11,2006-10-07,1717,tiffany,smith,,tiffany.smith@c4c.ca,,,0,,0,0,,,,,0
+        280,12,6,2,0,0,0,0,0,135,22,7,0,0,0,0,0,,University of Alberta,UofA,11,2006-10-14,1717,tiffany,smith,,tiffany.smith@c4c.ca,,,0,,0,0,,,,,0
+        281,24,10,6,2,3,0,0,0,135,23,7,0,0,0,0,0,,University of Alberta,UofA,11,2006-10-21,1717,tiffany,smith,,tiffany.smith@c4c.ca,,,0,,0,0,,,,,0
+        282,0,0,3,0,0,0,0,0,107,23,62,0,0,0,0,0,,Universite de Montreal,UdeM,12,2006-10-21,1689,brad,morrice,,brad.morrice@c4c.ca,,,0,,0,0,,,,,0
+        283,1,0,3,0,0,0,0,0,107,23,61,0,0,0,0,0,,McGill University,McGill,12,2006-10-21,1689,brad,morrice,,brad.morrice@c4c.ca,,,0,,0,0,,,,,0
+        284,50,250,3,5,0,0,0,0,100,24,51,0,0,779,0,0,381 is the number of viewings of the Does God exist article on doesgodexist.ca as of the day of the event.  214 is the number of viewings of Who did Jesus think he was anyways.  189 is teh number of viewings of the truth behind tolerance.  Real right or wrong = 97.    people who never hear = 88.  The unique visitors as of Oct 19th was 2500.,University of Guelph,UofG,10,2006-10-28,1682,graham,watt,,graham.watt@c4c.ca,,,0,,0,0,,,,,0
+        285,1,200,1,0,0,0,0,0,100,24,46,0,0,0,0,0,,McMaster University,MAC,10,2006-10-28,1682,graham,watt,,graham.watt@c4c.ca,,,0,,0,0,,,,,0
+        286,2,8,2,2,6,0,0,0,119,23,65,0,0,0,0,0,,Universite Laval,Laval,12,2006-10-21,1701,marilyne,lemay,,marilyne.lemay@c4c.ca,,,0,,0,0,,,,,0
+        287,0,0,0,0,2,0,0,0,126,23,68,0,0,0,0,0,,University of Saskatchewan,UofS,11,2006-10-21,1708,charlotte,martin,,charlotte.martin@c4c.ca,,,0,,0,0,,,,,0
+        288,0,0,0,0,0,0,0,0,100,23,51,0,0,901,0,0,this is the number of downloads of the porn nation talk from last year.  Over 800 of tehm have happened since last February.  The event happened Nov 2005.  But the majority of downloads have happened in the last 6 monthes.,University of Guelph,UofG,10,2006-10-21,1682,graham,watt,,graham.watt@c4c.ca,,,0,,0,0,,,,,0
+        289,1,0,1,0,1,0,0,0,164,24,14,0,0,0,0,0,,Simon Fraser University,SFU,11,2006-10-28,1746,becca,fowler,,becca.fowler@c4c.ca,,,0,,0,0,,,,,0
+        290,2,0,2,0,4,0,0,0,127,23,68,0,0,0,0,0,,University of Saskatchewan,UofS,11,2006-10-21,1709,julie,tang,,julie.tang@c4c.ca,,,0,,0,0,,,,,0
+        291,0,2,1,1,0,0,0,0,99,24,51,0,0,0,0,0,,University of Guelph,UofG,10,2006-10-28,1681,kirsten,alm,,kirsten.alm@c4c.ca,,,0,,0,0,,,,,0
+        292,4,1,1,0,3,1,0,0,69,24,54,0,0,0,0,0,,University of Toronto,UofT,10,2006-10-28,1651,janette,doerksen,,janette.doerksen@c4c.ca,,,0,,0,0,,,,,0
+        293,0,4,1,1,0,2,0,0,69,24,57,0,0,0,0,0,,York University,York,10,2006-10-28,1651,janette,doerksen,,janette.doerksen@c4c.ca,,,0,,0,0,,,,,0
+        294,0,0,0,1,0,0,0,0,67,24,54,0,0,0,0,0,,University of Toronto,UofT,10,2006-10-28,1649,archie,kenyon,,archie.kenyon@c4c.ca,,,0,,0,0,,,,,0
+        295,1,0,0,0,0,0,0,0,70,24,49,0,0,0,0,0,,Ryerson University,Ryerson,10,2006-10-28,1652,joseph,choi,,joseph.choi@c4c.ca,,,0,,0,0,,,,,0
+        296,0,0,0,0,0,0,0,0,1,24,54,0,0,0,0,0,,University of Toronto,UofT,10,2006-10-28,283,Russ,Martin,519 886.7759,russ.martin@rogers.com,433A Bairstow Crescent,Waterloo,1,N2K 2H7,1,207,,,,,0
+        297,0,3,3,7,0,0,0,0,67,24,57,0,0,0,0,0,,York University,York,10,2006-10-28,1649,archie,kenyon,,archie.kenyon@c4c.ca,,,0,,0,0,,,,,0
+        298,0,0,0,0,2,0,0,0,68,24,49,0,0,0,0,0,,Ryerson University,Ryerson,10,2006-10-28,1650,terra,leavens,,terra.leavens@c4c.ca,,,0,,0,0,,,,,0
+        299,1,0,0,0,0,0,0,0,71,24,54,0,0,0,0,0,,University of Toronto,UofT,10,2006-10-28,1653,stephanie,bourque,,stephanie.bourque@c4c.ca,,,0,,0,0,,,,,0
+        300,0,1,1,0,0,0,0,0,1,24,49,0,0,0,0,0,,Ryerson University,Ryerson,10,2006-10-28,283,Russ,Martin,519 886.7759,russ.martin@rogers.com,433A Bairstow Crescent,Waterloo,1,N2K 2H7,1,207,,,,,0
+        301,0,4,0,0,4,5,0,0,68,24,57,0,0,0,0,0,,York University,York,10,2006-10-28,1650,terra,leavens,,terra.leavens@c4c.ca,,,0,,0,0,,,,,0
+        302,1,0,2,0,1,0,0,0,71,24,49,0,0,0,0,0,,Ryerson University,Ryerson,10,2006-10-28,1653,stephanie,bourque,,stephanie.bourque@c4c.ca,,,0,,0,0,,,,,0
+        303,2,0,5,0,0,0,0,0,72,24,57,0,0,0,0,0,,York University,York,10,2006-10-28,1654,steve,strongitharm,,steve.strongitharm@c4c.ca,,,0,,0,0,,,,,0
+        304,5,8,3,4,0,0,0,0,121,24,65,0,0,0,0,0,,Universite Laval,Laval,12,2006-10-28,1703,paul,malicki,,paul.malicki@c4c.ca,,,0,,0,0,,,,,0
+        305,2,9,1,0,0,0,0,0,119,24,65,0,0,0,0,0,,Universite Laval,Laval,12,2006-10-28,1701,marilyne,lemay,,marilyne.lemay@c4c.ca,,,0,,0,0,,,,,0
+        306,2,0,1,0,2,0,0,0,118,24,65,0,0,0,0,0,,Universite Laval,Laval,12,2006-10-28,1700,cassandra,collin,,cassandra.collin@c4c.ca,,,0,,0,0,,,,,0
+        307,3,11,1,6,0,0,0,2,143,76,70,0,0,0,0,0,,Regional / National,Reg/Nat,13,2007-10-27,1725,jonathan,lee,,jonathan.lee@c4c.ca,,,0,,0,0,,,,,0
+        308,3,0,1,0,0,0,0,0,127,24,68,0,0,0,0,0,,University of Saskatchewan,UofS,11,2006-10-28,1709,julie,tang,,julie.tang@c4c.ca,,,0,,0,0,,,,,0
+        309,0,0,3,0,0,0,0,0,115,17,64,0,0,0,0,0,,Universite de Sherbrooke,UdeS,12,2006-09-09,1697,erika,davies,,erika.davies@c4c.ca,,,0,,0,0,,,,,0
+        310,1,0,8,0,0,0,0,0,115,16,64,0,0,0,0,0,,Universite de Sherbrooke,UdeS,12,2006-09-02,1697,erika,davies,,erika.davies@c4c.ca,,,0,,0,0,,,,,0
+        311,6,0,3,0,0,0,0,0,115,18,64,0,0,0,0,0,,Universite de Sherbrooke,UdeS,12,2006-09-16,1697,erika,davies,,erika.davies@c4c.ca,,,0,,0,0,,,,,0
+        312,1,0,4,0,0,0,0,0,115,19,64,0,0,0,0,0,,Universite de Sherbrooke,UdeS,12,2006-09-23,1697,erika,davies,,erika.davies@c4c.ca,,,0,,0,0,,,,,0
+        313,2,0,3,0,0,0,0,0,115,20,64,0,0,0,0,0,,Universite de Sherbrooke,UdeS,12,2006-09-30,1697,erika,davies,,erika.davies@c4c.ca,,,0,,0,0,,,,,0
+        314,3,0,7,0,0,0,0,0,115,21,64,0,0,0,0,0,,Universite de Sherbrooke,UdeS,12,2006-10-07,1697,erika,davies,,erika.davies@c4c.ca,,,0,,0,0,,,,,0
+        315,2,0,3,0,0,0,0,0,115,22,64,0,0,0,0,0,,Universite de Sherbrooke,UdeS,12,2006-10-14,1697,erika,davies,,erika.davies@c4c.ca,,,0,,0,0,,,,,0
+        316,2,0,1,0,0,0,0,0,95,23,1,0,0,0,0,0,,University of Waterloo,UW,10,2006-10-21,1677,allan,self,,allan.self@c4c.ca,,,0,,0,0,,,,,0
+        317,0,0,0,0,0,0,0,0,92,25,1,0,0,0,0,0,,University of Waterloo,UW,10,2006-11-04,1674,sean,cullen,,sean.cullen@c4c.ca,,,0,,0,0,,,,,0
+        318,0,0,0,0,0,0,0,0,95,24,1,0,0,0,0,0,,University of Waterloo,UW,10,2006-10-28,1677,allan,self,,allan.self@c4c.ca,,,0,,0,0,,,,,0
+        319,1,5,3,1,0,0,0,0,92,23,1,0,0,0,0,0,,University of Waterloo,UW,10,2006-10-21,1674,sean,cullen,,sean.cullen@c4c.ca,,,0,,0,0,,,,,0
+        320,0,0,2,0,3,0,0,0,92,24,1,0,0,0,0,0,,University of Waterloo,UW,10,2006-10-28,1674,sean,cullen,,sean.cullen@c4c.ca,,,0,,0,0,,,,,0
+        321,2,2,0,2,0,0,0,0,116,22,64,0,0,0,0,0,,Universite de Sherbrooke,UdeS,12,2006-10-14,1698,selene,lau,,selene.lau@c4c.ca,,,0,,0,0,,,,,0
+        322,3,2,0,2,0,0,0,0,116,25,64,0,0,0,0,0,,Universite de Sherbrooke,UdeS,12,2006-11-04,1698,selene,lau,,selene.lau@c4c.ca,,,0,,0,0,,,,,0
+        323,3,1,4,0,4,0,0,0,164,25,14,0,0,0,0,0,,Simon Fraser University,SFU,11,2006-11-04,1746,becca,fowler,,becca.fowler@c4c.ca,,,0,,0,0,,,,,0
+        324,0,0,3,0,0,0,0,0,114,25,61,0,0,0,0,0,,McGill University,McGill,12,2006-11-04,1696,dorrie,block,,dorrie.block@c4c.ca,,,0,,0,0,,,,,0
+        325,2,0,0,0,0,0,0,0,126,24,68,0,0,0,0,0,,University of Saskatchewan,UofS,11,2006-10-28,1708,charlotte,martin,,charlotte.martin@c4c.ca,,,0,,0,0,,,,,0
+        326,2,2,1,0,1,0,0,0,138,22,7,0,0,1,0,0,,University of Alberta,UofA,11,2006-10-14,1720,chris,polachic,,chris.polachic@c4c.ca,,,0,,0,0,,,,,0
+        327,4,2,3,0,0,0,0,0,138,23,7,0,0,1,0,0,,University of Alberta,UofA,11,2006-10-21,1720,chris,polachic,,chris.polachic@c4c.ca,,,0,,0,0,,,,,0
+        328,0,0,1,0,0,0,0,0,138,24,7,0,0,1,0,0,,University of Alberta,UofA,11,2006-10-28,1720,chris,polachic,,chris.polachic@c4c.ca,,,0,,0,0,,,,,0
+        329,0,0,1,0,0,0,0,0,107,24,73,0,0,0,0,0,,Concordia University,Concordia,12,2006-10-28,1689,brad,morrice,,brad.morrice@c4c.ca,,,0,,0,0,,,,,0
+        330,1,0,0,0,0,0,0,0,107,25,73,0,0,0,0,0,,Concordia University,Concordia,12,2006-11-04,1689,brad,morrice,,brad.morrice@c4c.ca,,,0,,0,0,,,,,0
+        331,0,0,1,0,0,0,0,0,107,25,62,0,0,0,0,0,,Universite de Montreal,UdeM,12,2006-11-04,1689,brad,morrice,,brad.morrice@c4c.ca,,,0,,0,0,,,,,0
+        332,6,2,2,0,1,0,0,0,96,23,51,0,0,0,0,0,,University of Guelph,UofG,10,2006-10-21,1678,vanessa,strickland,,vanessa.strickland@c4c.ca,,,0,,0,0,,,,,0
+        333,2,0,0,0,0,0,0,0,96,24,51,0,0,0,0,0,,University of Guelph,UofG,10,2006-10-28,1678,vanessa,strickland,,vanessa.strickland@c4c.ca,,,0,,0,0,,,,,0
+        334,2,1,0,0,0,0,0,0,96,25,51,0,0,0,0,0,,University of Guelph,UofG,10,2006-11-04,1678,vanessa,strickland,,vanessa.strickland@c4c.ca,,,0,,0,0,,,,,0
+        335,1,0,2,0,0,0,0,0,69,25,54,0,0,0,0,0,,University of Toronto,UofT,10,2006-11-04,1651,janette,doerksen,,janette.doerksen@c4c.ca,,,0,,0,0,,,,,0
+        336,1,0,0,0,0,0,0,0,70,25,49,0,5,0,0,0,Hockey night in Canada outreach with 25 Christians and 5 non-Christians in attendence, hosted by Russ and Joe C.,Ryerson University,Ryerson,10,2006-11-04,1652,joseph,choi,,joseph.choi@c4c.ca,,,0,,0,0,,,,,0
+        337,0,1,1,0,0,0,0,0,67,25,54,0,0,0,0,0,,University of Toronto,UofT,10,2006-11-04,1649,archie,kenyon,,archie.kenyon@c4c.ca,,,0,,0,0,,,,,0
+        338,0,5,0,3,0,0,0,0,67,25,57,0,0,0,0,0,,York University,York,10,2006-11-04,1649,archie,kenyon,,archie.kenyon@c4c.ca,,,0,,0,0,,,,,0
+        339,0,0,0,0,0,0,0,0,69,25,57,0,0,0,0,0,,York University,York,10,2006-11-04,1651,janette,doerksen,,janette.doerksen@c4c.ca,,,0,,0,0,,,,,0
+        340,0,0,0,0,0,0,0,0,68,25,49,0,0,0,0,0,,Ryerson University,Ryerson,10,2006-11-04,1650,terra,leavens,,terra.leavens@c4c.ca,,,0,,0,0,,,,,0
+        341,3,15,0,4,0,7,0,0,68,25,57,0,0,0,0,0,,York University,York,10,2006-11-04,1650,terra,leavens,,terra.leavens@c4c.ca,,,0,,0,0,,,,,0
+        342,3,2,1,0,0,0,0,0,97,18,51,0,0,0,0,0,,University of Guelph,UofG,10,2006-09-16,1679,jamie,strickland,,jamie.strickland@c4c.ca,,,0,,0,0,,,,,0
+        343,0,2,0,0,0,0,0,0,1,25,54,0,0,0,0,0,,University of Toronto,UofT,10,2006-11-04,283,Russ,Martin,519 886.7759,russ.martin@rogers.com,433A Bairstow Crescent,Waterloo,1,N2K 2H7,1,207,,,,,0
+        344,0,1,0,0,0,0,0,0,1,25,49,0,0,0,0,0,,Ryerson University,Ryerson,10,2006-11-04,283,Russ,Martin,519 886.7759,russ.martin@rogers.com,433A Bairstow Crescent,Waterloo,1,N2K 2H7,1,207,,,,,0
+        345,2,3,3,0,0,0,0,0,97,19,51,0,0,0,0,0,,University of Guelph,UofG,10,2006-09-23,1679,jamie,strickland,,jamie.strickland@c4c.ca,,,0,,0,0,,,,,0
+        346,2,0,1,0,0,0,0,0,71,25,54,0,0,0,0,0,,University of Toronto,UofT,10,2006-11-04,1653,stephanie,bourque,,stephanie.bourque@c4c.ca,,,0,,0,0,,,,,0
+        347,1,0,1,0,0,0,0,0,71,25,49,0,0,0,0,0,,Ryerson University,Ryerson,10,2006-11-04,1653,stephanie,bourque,,stephanie.bourque@c4c.ca,,,0,,0,0,,,,,0
+        348,2,1,1,0,0,0,0,0,97,20,51,0,0,0,0,0,,University of Guelph,UofG,10,2006-09-30,1679,jamie,strickland,,jamie.strickland@c4c.ca,,,0,,0,0,,,,,0
+        349,2,2,2,0,0,0,0,0,97,21,51,0,0,0,0,0,,University of Guelph,UofG,10,2006-10-07,1679,jamie,strickland,,jamie.strickland@c4c.ca,,,0,,0,0,,,,,0
+        350,1,2,2,0,0,0,0,0,97,22,51,0,0,0,0,0,,University of Guelph,UofG,10,2006-10-14,1679,jamie,strickland,,jamie.strickland@c4c.ca,,,0,,0,0,,,,,0
+        351,1,3,1,0,3,0,0,0,97,23,51,0,0,0,0,0,,University of Guelph,UofG,10,2006-10-21,1679,jamie,strickland,,jamie.strickland@c4c.ca,,,0,,0,0,,,,,0
+        352,3,1,2,1,0,0,0,0,97,24,51,0,0,0,0,0,,University of Guelph,UofG,10,2006-10-28,1679,jamie,strickland,,jamie.strickland@c4c.ca,,,0,,0,0,,,,,0
+        353,3,3,0,1,1,0,0,0,133,25,8,0,0,0,0,0,,University of Calgary,UofC,11,2006-11-04,1715,mindy,aechtner,,mindy.aechtner@c4c.ca,,,0,,0,0,,,,,0
+        354,0,4,0,3,1,0,0,0,99,25,51,0,0,0,0,0,,University of Guelph,UofG,10,2006-11-04,1681,kirsten,alm,,kirsten.alm@c4c.ca,,,0,,0,0,,,,,0
+        355,3,1,1,1,0,0,0,0,99,25,46,0,0,0,0,0,,McMaster University,MAC,10,2006-11-04,1681,kirsten,alm,,kirsten.alm@c4c.ca,,,0,,0,0,,,,,0
+        356,2,7,0,2,0,0,0,0,143,26,70,0,0,0,0,0,,Regional / National,Reg/Nat,13,2006-11-11,1725,jonathan,lee,,jonathan.lee@c4c.ca,,,0,,0,0,,,,,0
+        357,0,6,1,4,0,0,0,0,80,23,40,0,0,0,0,0,,Saint Mary's University,SMU,10,2006-10-21,1662,chris,harman,,chris.harman@c4c.ca,,,0,,0,0,,,,,0
+        358,0,6,0,2,0,5,0,0,80,26,40,0,0,0,0,0,,Saint Mary's University,SMU,10,2006-11-11,1662,chris,harman,,chris.harman@c4c.ca,,,0,,0,0,,,,,0
+        359,0,0,1,8,1,0,0,0,114,26,61,0,0,0,0,0,,McGill University,McGill,12,2006-11-11,1696,dorrie,block,,dorrie.block@c4c.ca,,,0,,0,0,,,,,0
+        360,0,0,0,0,2,2,1,0,126,25,68,0,0,0,0,0,,University of Saskatchewan,UofS,11,2006-11-04,1708,charlotte,martin,,charlotte.martin@c4c.ca,,,0,,0,0,,,,,0
+        361,1,0,3,0,0,0,0,0,84,23,37,0,0,0,0,0,,Dalhousie University,Dal,10,2006-10-21,1666,kelley,myles,,kelley.myles@c4c.ca,,,0,,0,0,,,,,0
+        362,4,1,1,0,1,0,0,0,84,24,37,0,0,0,0,0,,Dalhousie University,Dal,10,2006-10-28,1666,kelley,myles,,kelley.myles@c4c.ca,,,0,,0,0,,,,,0
+        363,3,0,1,0,0,0,0,0,84,25,37,0,0,0,0,0,,Dalhousie University,Dal,10,2006-11-04,1666,kelley,myles,,kelley.myles@c4c.ca,,,0,,0,0,,,,,0
+        364,4,0,1,0,0,0,0,0,69,26,54,0,15,0,0,0,Narnia Outreach at Trinity, 15 non-C4C people came and heard a clear gospel presentation and a personal testimony.,University of Toronto,UofT,10,2006-11-11,1651,janette,doerksen,,janette.doerksen@c4c.ca,,,0,,0,0,,,,,0
+        365,0,5,0,5,0,1,0,0,69,26,57,0,0,0,0,0,,York University,York,10,2006-11-11,1651,janette,doerksen,,janette.doerksen@c4c.ca,,,0,,0,0,,,,,0
+        366,0,0,2,4,1,0,0,0,134,24,8,0,0,0,0,0,,University of Calgary,UofC,11,2006-10-28,1716,shawn,cain,,shawn.cain@c4c.ca,,,0,,0,0,,,,,0
+        367,3,0,5,0,0,0,0,0,74,23,2,0,0,0,0,0,,University of Western Ontario,UWO,10,2006-10-21,1656,eric,humphrey,,eric.humphrey@c4c.ca,,,0,,0,0,,,,,0
+        368,2,0,3,0,0,0,0,0,74,25,2,0,0,0,0,0,,University of Western Ontario,UWO,10,2006-11-04,1656,eric,humphrey,,eric.humphrey@c4c.ca,,,0,,0,0,,,,,0
+        369,0,58,0,33,0,5,0,0,74,24,2,0,0,0,0,0,,University of Western Ontario,UWO,10,2006-10-28,1656,eric,humphrey,,eric.humphrey@c4c.ca,,,0,,0,0,,,,,0
+        370,2,0,3,0,0,0,0,0,76,23,2,0,0,0,0,0,,University of Western Ontario,UWO,10,2006-10-21,1658,jennifer,clarke,,jennifer.clarke@c4c.ca,,,0,,0,0,,,,,0
+        371,2,0,0,0,0,0,0,0,76,24,2,0,0,0,0,0,,University of Western Ontario,UWO,10,2006-10-28,1658,jennifer,clarke,,jennifer.clarke@c4c.ca,,,0,,0,0,,,,,0
+        372,2,0,1,0,0,0,0,0,76,25,2,0,0,0,0,0,,University of Western Ontario,UWO,10,2006-11-04,1658,jennifer,clarke,,jennifer.clarke@c4c.ca,,,0,,0,0,,,,,0
+        373,6,0,3,0,0,0,0,0,77,23,2,0,0,0,0,0,,University of Western Ontario,UWO,10,2006-10-21,1659,ben,jolliffe,,ben.jolliffe@c4c.ca,,,0,,0,0,,,,,0
+        374,6,0,1,0,0,0,0,0,77,24,2,0,0,0,0,0,,University of Western Ontario,UWO,10,2006-10-28,1659,ben,jolliffe,,ben.jolliffe@c4c.ca,,,0,,0,0,,,,,0
+        375,5,0,3,0,0,0,0,0,77,25,2,0,0,0,0,0,,University of Western Ontario,UWO,10,2006-11-04,1659,ben,jolliffe,,ben.jolliffe@c4c.ca,,,0,,0,0,,,,,0
+        376,0,0,0,0,0,0,0,0,88,23,46,0,0,0,0,0,,McMaster University,MAC,10,2006-10-21,1670,kelly,yen,,kelly.yen@c4c.ca,,,0,,0,0,,,,,0
+        377,0,0,0,0,0,0,0,0,88,24,46,0,0,0,0,0,,McMaster University,MAC,10,2006-10-28,1670,kelly,yen,,kelly.yen@c4c.ca,,,0,,0,0,,,,,0
+        378,0,0,0,0,0,0,0,0,88,25,46,0,0,0,0,0,,McMaster University,MAC,10,2006-11-04,1670,kelly,yen,,kelly.yen@c4c.ca,,,0,,0,0,,,,,0
+        379,0,1,2,0,1,0,0,0,164,26,14,0,0,0,0,0,,Simon Fraser University,SFU,11,2006-11-11,1746,becca,fowler,,becca.fowler@c4c.ca,,,0,,0,0,,,,,0
+        380,1,0,3,0,0,0,0,0,107,26,73,0,0,0,0,0,,Concordia University,Concordia,12,2006-11-11,1689,brad,morrice,,brad.morrice@c4c.ca,,,0,,0,0,,,,,0
+        381,0,0,1,0,0,0,0,0,107,26,62,0,0,0,0,0,,Universite de Montreal,UdeM,12,2006-11-11,1689,brad,morrice,,brad.morrice@c4c.ca,,,0,,0,0,,,,,0
+        382,0,0,0,0,0,0,0,0,91,25,1,0,0,0,0,0,,University of Waterloo,UW,10,2006-11-04,1673,nancy,cullen,,nancy.cullen@c4c.ca,,,0,,0,0,,,,,0
+        383,0,0,0,0,0,0,0,0,88,26,46,0,0,0,0,0,,McMaster University,MAC,10,2006-11-11,1670,kelly,yen,,kelly.yen@c4c.ca,,,0,,0,0,,,,,0
+        384,7,6,5,3,2,1,0,0,130,23,68,0,0,0,0,0,,University of Saskatchewan,UofS,11,2006-10-21,1712,brent,trickett,,brent.trickett@c4c.ca,,,0,,0,0,,,,,0
+        385,2,0,2,0,3,0,0,0,130,24,68,0,0,0,0,0,,University of Saskatchewan,UofS,11,2006-10-28,1712,brent,trickett,,brent.trickett@c4c.ca,,,0,,0,0,,,,,0
+        386,4,0,3,0,3,0,0,0,130,25,68,0,0,0,0,0,,University of Saskatchewan,UofS,11,2006-11-04,1712,brent,trickett,,brent.trickett@c4c.ca,,,0,,0,0,,,,,0
+        387,5,0,4,0,1,0,0,0,130,26,68,0,0,0,0,0,,University of Saskatchewan,UofS,11,2006-11-11,1712,brent,trickett,,brent.trickett@c4c.ca,,,0,,0,0,,,,,0
+        388,7,1,0,1,2,1,0,0,126,26,68,0,0,0,0,0,,University of Saskatchewan,UofS,11,2006-11-11,1708,charlotte,martin,,charlotte.martin@c4c.ca,,,0,,0,0,,,,,0
+        389,4,0,1,0,0,0,0,0,95,26,1,0,0,0,0,0,,University of Waterloo,UW,10,2006-11-11,1677,allan,self,,allan.self@c4c.ca,,,0,,0,0,,,,,0
+        390,5,0,1,0,0,0,0,0,95,25,1,0,0,0,0,0,,University of Waterloo,UW,10,2006-11-04,1677,allan,self,,allan.self@c4c.ca,,,0,,0,0,,,,,0
+        391,0,1,1,0,3,0,0,0,97,25,51,0,0,0,0,0,,University of Guelph,UofG,10,2006-11-04,1679,jamie,strickland,,jamie.strickland@c4c.ca,,,0,,0,0,,,,,0
+        392,0,2,0,3,0,0,0,0,87,26,46,0,0,0,0,0,,McMaster University,MAC,10,2006-11-11,1669,mc,yen,,mc.yen@c4c.ca,,,0,,0,0,,,,,0
+        393,1,2,2,0,0,1,0,0,93,25,51,0,0,0,0,0,,University of Guelph,UofG,10,2006-11-04,1675,trevor,andres,,trevor.andres@c4c.ca,,,0,,0,0,,,,,0
+        394,0,0,0,1,0,0,0,0,99,26,51,0,0,0,0,0,,University of Guelph,UofG,10,2006-11-11,1681,kirsten,alm,,kirsten.alm@c4c.ca,,,0,,0,0,,,,,0
+        395,3,7,1,2,0,0,0,0,119,26,65,0,0,0,0,0,,Universite Laval,Laval,12,2006-11-11,1701,marilyne,lemay,,marilyne.lemay@c4c.ca,,,0,,0,0,,,,,0
+        396,0,0,0,0,0,0,0,0,113,27,73,0,0,0,0,0,,Concordia University,Concordia,12,2006-11-18,1695,andy,smits,,andy.smits@c4c.ca,,,0,,0,0,,,,,0
+        397,0,0,1,1,0,0,0,0,93,26,51,0,0,0,1,0,,University of Guelph,UofG,10,2006-11-11,1675,trevor,andres,,trevor.andres@c4c.ca,,,0,,0,0,,,,,0
+        398,2,0,3,0,0,0,0,0,110,24,61,0,0,0,0,0,,McGill University,McGill,12,2006-10-28,1692,john,bellingham,,john.bellingham@c4c.ca,,,0,,0,0,,,,,0
+        399,1,0,2,0,0,0,0,0,110,24,62,0,0,0,0,0,,Universite de Montreal,UdeM,12,2006-10-28,1692,john,bellingham,,john.bellingham@c4c.ca,,,0,,0,0,,,,,0
+        400,0,0,3,0,0,0,0,0,110,26,62,0,0,0,0,0,,Universite de Montreal,UdeM,12,2006-11-11,1692,john,bellingham,,john.bellingham@c4c.ca,,,0,,0,0,,,,,0
+        401,0,0,3,0,0,0,0,0,110,25,61,0,0,0,0,0,,McGill University,McGill,12,2006-11-04,1692,john,bellingham,,john.bellingham@c4c.ca,,,0,,0,0,,,,,0
+        402,0,0,2,0,0,0,0,0,110,25,62,0,0,0,0,0,,Universite de Montreal,UdeM,12,2006-11-04,1692,john,bellingham,,john.bellingham@c4c.ca,,,0,,0,0,,,,,0
+        403,1,0,4,0,0,0,0,0,84,26,37,0,0,0,0,0,,Dalhousie University,Dal,10,2006-11-11,1666,kelley,myles,,kelley.myles@c4c.ca,,,0,,0,0,,,,,0
+        404,3,0,0,0,0,0,0,0,1,27,54,0,0,0,0,0,,University of Toronto,UofT,10,2006-11-18,283,Russ,Martin,519 886.7759,russ.martin@rogers.com,433A Bairstow Crescent,Waterloo,1,N2K 2H7,1,207,,,,,0
+        405,1,0,0,0,0,0,0,0,1,27,49,0,0,0,0,0,,Ryerson University,Ryerson,10,2006-11-18,283,Russ,Martin,519 886.7759,russ.martin@rogers.com,433A Bairstow Crescent,Waterloo,1,N2K 2H7,1,207,,,,,0
+        406,0,0,0,0,0,0,0,0,1,26,54,0,0,0,0,0,,University of Toronto,UofT,10,2006-11-11,283,Russ,Martin,519 886.7759,russ.martin@rogers.com,433A Bairstow Crescent,Waterloo,1,N2K 2H7,1,207,,,,,0
+        407,0,0,0,0,0,0,0,0,1,26,49,0,0,0,0,0,,Ryerson University,Ryerson,10,2006-11-11,283,Russ,Martin,519 886.7759,russ.martin@rogers.com,433A Bairstow Crescent,Waterloo,1,N2K 2H7,1,207,,,,,0
+    

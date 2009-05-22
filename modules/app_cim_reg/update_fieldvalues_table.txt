@@ -1,0 +1,5 @@
+- added timestamp column to 'fieldvalues' table
+alter table cim_reg_fieldvalues add column fieldvalues_modTime TIMESTAMP NOT NULL DEFAULT NOW() ON UPDATE NOW()
+UPDATE `cim_reg_fieldvalues` SET `fieldvalues_modTime` = now( ) WHERE `fieldvalues_id` >0	
+	
+test: update cim_reg_fieldvalues set fieldvalues_value = 'NEW' where fieldvalues_id = 18

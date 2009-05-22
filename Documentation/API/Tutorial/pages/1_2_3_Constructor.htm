@@ -1,0 +1,145 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html><!-- InstanceBegin template="/Templates/documentation_tutorialContent.dwt.php" codeOutsideHTMLIsLocked="false" -->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<!-- InstanceBeginEditable name="doctitle" -->
+<title>Untitled Document</title>
+<!-- InstanceEndEditable --><link href="../../../Data/CSS/documentation.css" rel="stylesheet" type="text/css">
+<!-- InstanceBeginEditable name="head" --><!-- InstanceEndEditable -->
+</head>
+
+<body>
+<center>
+<table width="680" border="0" cellspacing="0" cellpadding="0">
+    <tr>
+        <td><table width="100%"  border="0" cellspacing="0" cellpadding="0">
+    <tr>
+        <td><img src="../../../Images/page_header.gif"></td>
+		<td width="200">&nbsp;</td>
+    </tr>
+    <tr>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+    </tr>
+</table>
+</td>
+    </tr>
+    <tr>
+        <td bgcolor="#CCCCCC">&nbsp;</td>
+    </tr>
+    <tr>
+        <td class="text_navbar"><? 
+			/*
+			 * Find the path to the Documentation Root ...
+			 */
+			$pathToRoot = ''; 
+			for ( $indx=0; $indx<20 && !file_exists( $pathToRoot.'Data/CSS/documentation.css'); $indx++ ) {
+				$pathToRoot .= '../';
+			}
+
+		echo '<a href="'.$pathToRoot.'index.php" target="_top">AI Doc</a> &gt; <a href="'.$pathToRoot.'/API/index.html">API</a>';
+			
+		?><!-- InstanceBeginEditable name="NavBar" --><a href="intro.htm">Tutorial</a> &gt; <a href="1_0_DataAccessManager.htm">Data
+                    Access Managers</a> &gt; <a href="1_2_0_Anatomy.htm">RowManager
+            Anatomy</a> &gt; Constructor <!-- InstanceEndEditable --></td>
+    </tr>
+	<tr><td>&nbsp;</td></tr>
+    <tr>
+        <td><table width="100%"  border="0" cellspacing="0" cellpadding="0">
+    <tr>
+        <td class="content_text"><!-- InstanceBeginEditable name="prevButtonTop" --><a href="1_2_2_DBDescription.htm">Previous</a><!-- InstanceEndEditable --></td>
+        <td class="content_text"><div align="right"><!-- InstanceBeginEditable name="nextButtonTop" --><a href="1_2_4_Methods.htm">Next</a><!-- InstanceEndEditable --></div></td>
+    </tr>
+</table>
+</td>
+    </tr>
+    <tr>
+        <td class="content_text" ><hr size="1" noshade >
+            <!-- InstanceBeginEditable name="Content" -->
+		<h1>RowManager Anatomy
+                - Constructor </h1>
+		<p class="content_text" >Now lets take a look at the constructor of your RowManager:</p>
+		<span class="sourcecodebox" >
+		<pre>
+	//CLASS CONSTRUCTOR
+	//************************************************************************
+	/**
+	 * function __construct
+	 * &lt;pre>
+	 * Initialize this object.
+	 * &lt;/pre>
+	 * @param $initID [INTEGER] The unique id of the episode we are managing.
+	 * @return [void]
+	 */
+    function __construct( $initID=-1 ) 
+    {
+    
+        $dbTableName = RowManager_EpisodeManager::DB_TABLE;
+        $fieldList = RowManager_EpisodeManager::FIELD_LIST;
+        $primaryKeyField = RowManager_EpisodeManager::PRIMARYKEY_FIELD;
+        $primaryKeyValue = $initID;
+        
+        if (( $initID != -1 ) && ( $initID != '' )) {
+        
+            $condition = $primaryKeyField . '=' . $primaryKeyValue;
+            
+        } else {
+            $condition = '';
+        }
+        $xmlNodeName = RowManager_EpisodeManager::XML_NODE_NAME;
+        parent::__construct( $dbTableName, $fieldList, $primaryKeyField, $primaryKeyValue, $condition, $xmlNodeName);
+        
+        $this->dbDescription = RowManager_EpisodeManager::DB_TABLE_DESCRIPTION;
+        
+        if ($this->isLoaded() == false) {
+        
+            // uncomment this line if you want the Manager to automatically 
+            // create a new entry if the given info doesn't exist.
+            // $this->createNewEntry();
+        }
+    }</pre>
+		</span>
+		<p class="content_text" >For the most part, the code in the constructor is
+		    generic and doesn't change for different RowManagers (there are a
+		    few exceptions).</p>
+		<p class="content_text" >&nbsp;</p>
+		<p class="content_text" ><em><strong>Init Value:</strong></em></p>
+		<span class="sourcecodebox" ><pre>
+	function __construct( $initID=-1 ) 
+    {</pre></span>
+	<p class="content_text" >A single initialization value is provided to indicate
+		    the value of the primary key you want to automatically load into
+		    your RowManager. It that value is not provided, then the RowManager
+		    is empty.</p>
+		<p class="content_text" >&nbsp;</p>
+		<p class="content_text" ><em><strong>Auto Creating:</strong></em></p>
+		<span class="sourcecodebox" ><pre>
+        if ($this->isLoaded() == false) {
+        
+            // uncomment this line if you want the Manager to automatically 
+            // create a new entry if the given info doesn't exist.
+            // $this->createNewEntry();
+        }</pre></span>
+		<p class="content_text" >The final if() statement in the constructor is used
+		    for those instances when it is desirable for a RowManager to automatically
+		    create an entry in the DB. If that is not appropriate for your application,
+		    you can remove this portion.</p>
+		<p class="content_text" >&nbsp;</p>
+		<p class="content_text" >&nbsp;</p>
+		<p class="content_text" >&nbsp;</p>
+            <!-- InstanceEndEditable -->
+            <hr size="1" noshade>
+		 </td>
+    </tr>
+	<tr><td><table width="100%"  border="0" cellspacing="0" cellpadding="0">
+    <tr>
+        <td class="content_text"><!-- InstanceBeginEditable name="prevButtonBottom" --><a href="1_2_2_DBDescription.htm">Previous</a><!-- InstanceEndEditable --></td>
+        <td class="content_text"><div align="right"><!-- InstanceBeginEditable name="nextButtonBottom" --><a href="1_2_4_Methods.htm">Next</a><!-- InstanceEndEditable --></div></td>
+    </tr>
+</table></td>
+	</tr>
+</table>
+</center>
+
+</body>
+<!-- InstanceEnd --></html>

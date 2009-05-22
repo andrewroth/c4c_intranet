@@ -1,0 +1,259 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html><!-- InstanceBegin template="/Templates/documentation_tutorialContent.dwt.php" codeOutsideHTMLIsLocked="false" -->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<!-- InstanceBeginEditable name="doctitle" -->
+<title>Untitled Document</title>
+<!-- InstanceEndEditable --><link href="../../../Data/CSS/documentation.css" rel="stylesheet" type="text/css">
+<!-- InstanceBeginEditable name="head" --><!-- InstanceEndEditable -->
+</head>
+
+<body>
+<center>
+<table width="680" border="0" cellspacing="0" cellpadding="0">
+    <tr>
+        <td><table width="100%"  border="0" cellspacing="0" cellpadding="0">
+    <tr>
+        <td><img src="../../../Images/page_header.gif"></td>
+		<td width="200">&nbsp;</td>
+    </tr>
+    <tr>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+    </tr>
+</table>
+</td>
+    </tr>
+    <tr>
+        <td bgcolor="#CCCCCC">&nbsp;</td>
+    </tr>
+    <tr>
+        <td class="text_navbar"><? 
+			/*
+			 * Find the path to the Documentation Root ...
+			 */
+			$pathToRoot = ''; 
+			for ( $indx=0; $indx<20 && !file_exists( $pathToRoot.'Data/CSS/documentation.css'); $indx++ ) {
+				$pathToRoot .= '../';
+			}
+
+		echo '<a href="'.$pathToRoot.'index.php" target="_top">AI Doc</a> &gt; <a href="'.$pathToRoot.'/API/index.html">API</a>';
+			
+		?><!-- InstanceBeginEditable name="NavBar" --><a href="intro.htm">Tutorial</a> &gt; <a href="6_0_PageDisplay.htm">PageDisplay
+            Objects</a> &gt; initial Object <!-- InstanceEndEditable --></td>
+    </tr>
+	<tr><td>&nbsp;</td></tr>
+    <tr>
+        <td><table width="100%"  border="0" cellspacing="0" cellpadding="0">
+    <tr>
+        <td class="content_text"><!-- InstanceBeginEditable name="prevButtonTop" --><a href="#">Previous</a><!-- InstanceEndEditable --></td>
+        <td class="content_text"><div align="right"><!-- InstanceBeginEditable name="nextButtonTop" --><a href="6_06_PageDisplayList.htm">Next</a><!-- InstanceEndEditable --></div></td>
+    </tr>
+</table>
+</td>
+    </tr>
+    <tr>
+        <td class="content_text" ><hr size="1" noshade >
+            <!-- InstanceBeginEditable name="Content" -->
+		<h1>PageDisplay Objects
+                - initial Object </h1>
+		<p class="content_text" >Now that you have the basic flow of the page operations
+		    down, lets make a first pass at a PageDisplay object. </p>
+		<p class="content_text" >Copy the files below to your Testing directory. Make
+		    sure to copy the page_SeriesList.tpl template into a subdirectory
+		    named &quot;templates&quot; in your testing directory.</p>
+		<p class="content_text" >Lets cover some of the changes:</p>
+		<p class="content_text" ><em><strong>ex_SeriesList_obj.php:</strong></em></p>
+		<span class="sourcecodebox" ><pre>
+require( 'page_SeriesList.php' );
+
+
+// Create our nifty new PageDisplay object
+// The constructor acts like our old loadData() 
+$pageDisplay = new page_SeriesList( '', null, '');</pre></span>
+		<p class="content_text" >This file is still the controlling script that drives
+		    your application. However, instead of defining all the actions in
+		    it's own functions, we will use our nifty new page_SeriesList() object.
+		    <em>(note: the 3 parameters ... we'll talke about that later )</em> </p>
+		<p class="content_text" >&nbsp; </p>
+		<span class="sourcecodebox" ><pre>// our script is now responsible to know about the links of the <br>// application. So it creates an array of links for the template<br>// to use.<br>$links[ 'edit' ] = 'ex_SeriesEdit_obj.php?seriesID=';<br>$pageDisplay-&gt;setLinks( $links );</pre></span>
+		<p class="content_text" >Since the controlling script is responsible for knowing
+		    about the links in an application, we pull out the link generation
+		    here, and use a new method on our PageDisplay Object ( <span class="sourcecodebox" >setLinks()</span>
+		    ) to pass the link info to it.</p>
+		<p class="content_text" >&nbsp;</p>
+		<span class="sourcecodebox" ><pre>
+// only need to check for form operations if this was a form Submission
+if ( isset( $_REQUEST['submit']) ) {
+
+    // if the form data was valid
+    if ( $pageDisplay->isDataValid() ) {
+    
+        // then process the data
+        $pageDisplay->processData();
+    }
+}
+
+// now display the HTML
+echo $pageDisplay->getHTML();</pre></span>
+		<p class="content_text" >The basic flow of the application remains the same,
+		    with the script driving the pageDisplay Object's methods for <span class="sourcecodebox">isDataValid()</span>,
+		    <span class="sourcecodebox">processData()</span>, and <span class="sourcecodebox">getHTML()</span>. Note: your PageDisplay object 
+			doesn't actually define a isDataValid() or processData() methods. It doesn't need them since they are used on pages with 
+			form submission data, so your script never actually tries to call this on your SeriesList object.</p>
+		<p class="content_text" >&nbsp;</p>
+		<p class="content_text" ><em><strong>page_SeriesList.php:</strong></em></p>
+		<span class="sourcecodebox" ><pre>class  page_SeriesList {</pre></span>
+		<p class="content_text" >Our new PageDisplay object.</p>
+		<p class="content_text" >&nbsp;</p>
+		<span class="sourcecodebox" ><pre>//CONSTANTS:
+	
+/** The list of fields to be displayed */
+const DISPLAY_FIELDS = 'series_title';</pre></span>
+		<p class="content_text" >We still need to define which fields of the DB table
+		    we want to use. Now we define it as part of the object.</p>
+		<p class="content_text" >&nbsp;</p>
+		<span class="sourcecodebox" ><pre>
+//VARIABLES:
+
+/** @var [OBJECT] The viewer object. */
+protected $viewer;
+
+/** @var [STRING] The path to this module's root directory. */
+protected $pathModuleRoot;
+
+/** @var [OBJECT] The object for generating the data list. */
+protected $listManager;</pre></span>
+		<p class="content_text" >These 3 member variables are common for operating
+		    a page. $viewer and $pathModuleRoot will be explained later. $listManager
+		    is a variable for the ListIterator we will use for the display.</p>
+		<p class="content_text" >&nbsp;</p>
+		<span class="sourcecodebox" ><pre>
+function __construct($pathModuleRoot, $viewer, $sortBy ) 
+{
+
+	$this->pathModuleRoot = $pathModuleRoot;
+	$this->viewer = $viewer;
+	
+	if ( $sortBy=='' )
+	{
+		$sortBy ='series_title';
+	}
+	
+	$seriesManager = new RowManager_SeriesManager();
+	$seriesManager->setSortOrder( $sortBy );
+	$this->listManager = $seriesManager->getListIterator();
+	 
+}</pre></span>
+		<p class="content_text" >The constructor() has become our basic loadData()
+		    method. Here all the data needed for the operation of the page is
+		    pulled together for our use. Notice the $sortBy parameter. This is
+		    a parameter we will use for telling the pageDisplay object how to
+		    sort the data in the list. RowManagers have a setSortOrder() method
+		    for responding to this. </p>
+		<p class="content_text" >&nbsp;</p>
+		<span class="sourcecodebox" ><pre>
+function getHTML() 
+{
+
+	// Make a new Template object
+	$path = $this->pathModuleRoot.'templates/';
+	$this->template = new Template( $path );
+	
+	
+	// store the field names being displayed
+	$fieldNames = explode(',', page_SeriesList::DISPLAY_FIELDS);
+	$this->template->set( 'dataFieldList', $fieldNames);
+	
+	
+	// store the link values
+	// $this->linkValues[ 'view' ] = 'add/new/href/data/here';
+	$this->template->set( 'linkValues', $this->linkValues );
+	
+	
+	// store Data to display as an Array
+	$this->template->set( 'dataList', $this->listManager->getDataList() );
+
+	 
+	// now load and return the template HTML
+	return $this->template->fetch( 'page_SeriesList.tpl' );
+	
+}</pre></span>
+		<p class="content_text" >The getHTML() routine is almose identical to the ones
+		    in our previous scripts, but the names of the form variables have
+		    been changed. Notice also that the Template() object takes a path
+		    to the location of the templates. We are now storing our templates
+		    in a seperate directory named &quot;templates&quot; to keep the folder from
+		    being too cluttered with files (too late, I know). </p>
+		<p class="content_text" >&nbsp;</p>
+		<p class="content_text" ><em><strong>page_SeriesList.tpl:</strong></em></p>
+		<span class="sourcecodebox"><pre>// if an edit link was provided then
+if ( isset( $linkValues['edit'] ) ) {
+    
+    // add on an extra column for the edit links
+    echo '&lt;td bgcolor="#666666"&gt;&nbsp;&lt;/td&gt;';
+}</pre></span>
+        <p class="content_text" >Other than change the names of our internal variables, the main change we made to the template is to conditionally show the edit link only if it was provided in the <span class="sourcecodebox">$linkValues</span> array. Since our new PageDisplay object no longer controls that, we can't be sure it will be there.</p>
+        <p class="content_text" >&nbsp;</p>
+        <h4>Your Turn: </h4>
+		<p class="content_text" >Once you understand the changes to the provided files,
+		    modify your files for the EpisodeList to have the same features. </p>
+		<p class="content_text" >&nbsp; </p>
+		<h4>Notes:</h4>
+		<p class="content_text" >OK, a few words about the variables passed into the
+		    constructor:</p>
+		<p class="content_text" ><em><strong>$pathModuleRoot:</strong></em></p>
+		<p class="content_text" >This variable is the path from your current location,
+		    to the location of your modules root directory. Most of the links
+		    in your application will be based from the &quot;root&quot; directory of your
+		    module/application. So if you have a custom template, or image, files
+		    to download, etc... the links to these items will be specified as
+		    starting in your module's root directory. All you need to do is add
+		    the path to your resources onto the $pathModuleRoot value. </p>
+		<p class="content_text" >The calling
+		        script is expected to pass in the additional path modifications
+		    for the $pathModuleRoot value. </p>
+		<p class="content_text" >&nbsp;</p>
+		<p class="content_text" ><em><strong>$viewer:</strong></em></p>
+		<p class="content_text" >This is a sitewide object that is responsible for
+		    managing information about the viewer of the page. It contains their
+		    language preferences, their login status, permissions, etc... Very
+		    useful in an application.</p>
+		<p class="content_text" >&nbsp;</p>
+		<p class="content_text" ><em><strong>$sortBy:</strong></em></p>
+		<p class="content_text" >Many of our sitewide templates offer the ability to
+		    resort data in a list. The requested sort fields
+		    will be passed back in this variable. This variable is simply passed
+		    on to the RowManager of the page, and the RowManager will then resort
+		    it's list accordingly. </p>
+		<p class="content_text" >&nbsp;</p>
+		<h4>Links To Code Examples</h4>
+		<table width="100%"  border="0" cellspacing="0" cellpadding="0">
+            <tr>
+                <td><a href="../6%20PageDisplay/ex_SeriesList_obj.php"><img src="../../../Images/icn_filePHP.gif" width="24" height="31" border="0"></a></td>
+                <td><a href="../6%20PageDisplay/page_SeriesList.php"><img src="../../../Images/icn_filePHP.gif" width="24" height="31" border="0"></a></td>
+                <td><a href="../6%20PageDisplay/page_SeriesList.tpl"><img src="../../../Images/icn_filePHP.gif" width="24" height="31" border="0"></a></td>
+			</tr>
+            <tr>
+                <td><a href="../6%20PageDisplay/ex_SeriesList_obj.php">ex_SeriesList_obj.php</a></td>
+                <td><a href="../6%20PageDisplay/page_SeriesList.php">page_SeriesList.php</a></td>
+				<td><a href="../6%20PageDisplay/page_SeriesList.tpl">page_SeriesList.tpl</a></td>
+            </tr>
+        </table>
+		<p class="content_text" >&nbsp;</p>
+            <!-- InstanceEndEditable -->
+            <hr size="1" noshade>
+		 </td>
+    </tr>
+	<tr><td><table width="100%"  border="0" cellspacing="0" cellpadding="0">
+    <tr>
+        <td class="content_text"><!-- InstanceBeginEditable name="prevButtonBottom" --><a href="#">Previous</a><!-- InstanceEndEditable --></td>
+        <td class="content_text"><div align="right"><!-- InstanceBeginEditable name="nextButtonBottom" --><a href="6_06_PageDisplayList.htm">Next</a><!-- InstanceEndEditable --></div></td>
+    </tr>
+</table></td>
+	</tr>
+</table>
+</center>
+
+</body>
+<!-- InstanceEnd --></html>

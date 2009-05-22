@@ -1,0 +1,193 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html><!-- InstanceBegin template="/Templates/documentation_tutorialContent.dwt.php" codeOutsideHTMLIsLocked="false" -->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<!-- InstanceBeginEditable name="doctitle" -->
+<title>Untitled Document</title>
+<!-- InstanceEndEditable --><link href="../../../Data/CSS/documentation.css" rel="stylesheet" type="text/css">
+<!-- InstanceBeginEditable name="head" --><!-- InstanceEndEditable -->
+</head>
+
+<body>
+<center>
+<table width="680" border="0" cellspacing="0" cellpadding="0">
+    <tr>
+        <td><table width="100%"  border="0" cellspacing="0" cellpadding="0">
+    <tr>
+        <td><img src="../../../Images/page_header.gif"></td>
+		<td width="200">&nbsp;</td>
+    </tr>
+    <tr>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+    </tr>
+</table>
+</td>
+    </tr>
+    <tr>
+        <td bgcolor="#CCCCCC">&nbsp;</td>
+    </tr>
+    <tr>
+        <td class="text_navbar"><? 
+			/*
+			 * Find the path to the Documentation Root ...
+			 */
+			$pathToRoot = ''; 
+			for ( $indx=0; $indx<20 && !file_exists( $pathToRoot.'Data/CSS/documentation.css'); $indx++ ) {
+				$pathToRoot .= '../';
+			}
+
+		echo '<a href="'.$pathToRoot.'index.php" target="_top">AI Doc</a> &gt; <a href="'.$pathToRoot.'/API/index.html">API</a>';
+			
+		?><!-- InstanceBeginEditable name="NavBar" --><a href="intro.htm">Tutorial</a> &gt; <a href="7_00_PageController.htm">AppController
+            Objects</a> &gt; Transitions <!-- InstanceEndEditable --></td>
+    </tr>
+	<tr><td>&nbsp;</td></tr>
+    <tr>
+        <td><table width="100%"  border="0" cellspacing="0" cellpadding="0">
+    <tr>
+        <td class="content_text"><!-- InstanceBeginEditable name="prevButtonTop" --><a href="7_02_Links.htm">Previous</a><!-- InstanceEndEditable --></td>
+        <td class="content_text"><div align="right"><!-- InstanceBeginEditable name="nextButtonTop" --><a href="#">Next</a><!-- InstanceEndEditable --></div></td>
+    </tr>
+</table>
+</td>
+    </tr>
+    <tr>
+        <td class="content_text" ><hr size="1" noshade >
+            <!-- InstanceBeginEditable name="Content" -->
+		<h1>AppController Objects
+                - Transitions </h1>
+		<p class="content_text" >Now it is time to look at some of the more interesting
+		    capabilities of our controller script: the ability to transition
+		    between pages.</p>
+		<p class="content_text" >In our current example, we have a list of series we
+		    track, and an edit page to edit the name of the series. Now we want
+		    to have the Edit page automatically jump back to the list page if
+		    everything is successfully updated.</p>
+		<p class="content_text" >Save the attached file to your testing directory,
+		    and look at the changes for this step:</p>
+		<p class="content_text" ><em><strong>ex_tvAddicts_trans.php:</strong></em></p>
+		<span class="sourcecodebox" ><pre>
+//************************************************************************
+/**
+ * function loadSeriesEdit
+ * &lt;pre>
+ * This routine loads the SeriesEdit page in the pageDisplay Object.
+ * &lt;/pre>
+ * @return [void]
+ */
+function loadSeriesEdit() {
+    global $pageDisplay;
+    
+    // mark the value of the call back 
+    $formAction = getCallBack();
+    
+    // Create our nifty new PageDisplay object
+    // The constructor acts like our old loadData() 
+    $pageDisplay = new page_SeriesEdit( '', null, $formAction, $stateVariables[ SERIES_ID ] );
+
+}
+
+
+
+//************************************************************************
+/**
+ * function loadSeriesList
+ * &lt;pre>
+ * This routine loads the SeriesList page in the pageDisplay Object.
+ * &lt;/pre>
+ * @return [void]
+ */
+function loadSeriesList() {
+    global $pageDisplay;
+    
+    // Create our nifty new PageDisplay object
+    // The constructor acts like our old loadData() 
+    $pageDisplay = new page_SeriesList( '', null, '');
+    
+    // our script is now responsible to know about the links of the 
+    // application. So it creates an array of links for the template
+    // to use.
+    $newValues = $stateVariables;
+    $newValues[ PAGE ] = PAGE_SERIESEDIT;
+    $links[ 'edit' ] = getCallBack( $newValues, SERIES_ID );
+    $pageDisplay->setLinks( $links );
+
+}</pre></span>
+		<p class="content_text" >For convinience, we have taken the code to actually
+		    load the pageDisplay object with the SeriesList and SeriesEdit pages
+		    and put it into their own respective functions.</p>
+		<p class="content_text" >&nbsp;</p>
+		<span class="sourcecodebox" ><pre>
+// now descide which PageDisplay object to load
+switch( $stateVariables[ PAGE ] ) {
+        
+    case PAGE_SERIESEDIT:
+        loadSeriesEdit();
+        break;
+        
+    case PAGE_SERIESLIST:
+    default:
+        loadSeriesList();
+        break;
+}</pre></span>
+		<p class="content_text" >The loading of the initial pages now calls those functions
+		    to make the initial page load happen.</p>
+		<p class="content_text" >&nbsp;</p>
+		<span class="sourcecodebox" ><pre>
+/*
+ * Process the Data
+ */
+
+// only need to processData() if this was a form Submission
+if ( isset( $_REQUEST['submit']) ) {
+
+    // if the form data was valid
+    if ( $pageDisplay->isDataValid() ) {
+    
+        // then process the data
+        $pageDisplay->processData();
+        
+        // now perform any automatic jumps to new pages here
+        switch( $stateVariables[ PAGE ] ) {
+        
+            case PAGE_SERIESEDIT:
+                loadSeriesList();
+                break;
+        
+        }
+    }
+}</pre></span>
+		<p class="content_text" >Now, once we have successfully processed the data
+		    from a form submission, we check to see if the current page is the
+		    SeriesEdit page. If so, then we reload the pageDisplay object with
+		    the SeriesList page before going on to the displayHTML portion of
+		    the cycle. </p>
+		<h4>&nbsp;</h4>
+		<span class="sourcecodebox" ></span>
+		<h4>Links To Code Examples</h4>
+		<table width="100%"  border="0" cellspacing="0" cellpadding="0">
+            <tr>
+                <td><a href="../7%20PageController/ex_tvAddicts_trans.php"><img src="../../../Images/icn_filePHP.gif" width="24" height="31" border="0"></a></td>
+                </tr>
+            <tr>
+                <td><a href="../7%20PageController/ex_tvAddicts_trans.php">ex_tvAddicts_trans.php</a></td>
+                </tr>
+        </table>
+		<p class="content_text" >&nbsp;</p>
+            <!-- InstanceEndEditable -->
+            <hr size="1" noshade>
+		 </td>
+    </tr>
+	<tr><td><table width="100%"  border="0" cellspacing="0" cellpadding="0">
+    <tr>
+        <td class="content_text"><!-- InstanceBeginEditable name="prevButtonBottom" --><a href="7_02_Links.htm">Previous</a><!-- InstanceEndEditable --></td>
+        <td class="content_text"><div align="right"><!-- InstanceBeginEditable name="nextButtonBottom" --><a href="#">Next</a><!-- InstanceEndEditable --></div></td>
+    </tr>
+</table></td>
+	</tr>
+</table>
+</center>
+
+</body>
+<!-- InstanceEnd --></html>

@@ -1,0 +1,203 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html><!-- InstanceBegin template="/Templates/documentation_tutorialContent.dwt.php" codeOutsideHTMLIsLocked="false" -->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<!-- InstanceBeginEditable name="doctitle" -->
+<title>Tutorial > Multilingual > Object Interface</title>
+<!-- InstanceEndEditable --><link href="../../../Data/CSS/documentation.css" rel="stylesheet" type="text/css">
+<!-- InstanceBeginEditable name="head" --><!-- InstanceEndEditable -->
+</head>
+
+<body>
+<center>
+<table width="680" border="0" cellspacing="0" cellpadding="0">
+    <tr>
+        <td><table width="100%"  border="0" cellspacing="0" cellpadding="0">
+    <tr>
+        <td><img src="../../../Images/page_header.gif"></td>
+		<td width="200">&nbsp;</td>
+    </tr>
+    <tr>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+    </tr>
+</table>
+</td>
+    </tr>
+    <tr>
+        <td bgcolor="#CCCCCC">&nbsp;</td>
+    </tr>
+    <tr>
+        <td class="text_navbar"><? 
+			/*
+			 * Find the path to the Documentation Root ...
+			 */
+			$pathToRoot = ''; 
+			for ( $indx=0; $indx<20 && !file_exists( $pathToRoot.'Data/CSS/documentation.css'); $indx++ ) {
+				$pathToRoot .= '../';
+			}
+
+		echo '<a href="'.$pathToRoot.'index.php" target="_top">AI Doc</a> &gt; <a href="'.$pathToRoot.'/API/index.html">API</a>';
+			
+		?><!-- InstanceBeginEditable name="NavBar" --><a href="intro.htm">Tutorial</a> &gt; <a href="9_00_Multilingual.htm">Multilingual</a> > Object
+                Interface <!-- InstanceEndEditable --></td>
+    </tr>
+	<tr><td>&nbsp;</td></tr>
+    <tr>
+        <td><table width="100%"  border="0" cellspacing="0" cellpadding="0">
+    <tr>
+        <td class="content_text"><!-- InstanceBeginEditable name="prevButtonTop" --><a href="9_01_DBLayout.htm">Previous</a><!-- InstanceEndEditable --></td>
+        <td class="content_text"><div align="right"><!-- InstanceBeginEditable name="nextButtonTop" --><a href="#">Next</a><!-- InstanceEndEditable --></div></td>
+    </tr>
+</table>
+</td>
+    </tr>
+    <tr>
+        <td class="content_text" ><hr size="1" noshade >
+            <!-- InstanceBeginEditable name="Content" -->
+		<h1>Multilingual - Object Interface </h1>
+		<p class="content_text" >Now lets take a look at the objects provided for accessing
+		    the labels.</p>
+		<p class="content_text" >As you might expect by now, there are a series of
+		    RowManagers provided for accessing the information in each individual
+		    table. But there is also a single multilingual manager object provided
+		    as your interface into the system. </p>
+		<h4><em><strong>Adding labels:</strong></em></h4>
+		<p class="content_text" >As in any operation with the multilingual label system,
+		    you will need to define a Series &amp; Page context for your operations.
+		    In the case of adding a label, you will also want to make sure the
+		    Series &amp; Page are properly added as well. The following code illustrates
+		    how you can add a set of labels to the system:</p>
+		<span class="sourcecodebox" >
+		<pre>
+$labelManager = new MultilingualManager();
+$labelManager->addSeries( moduleTVAddicts::MULTILINGUAL_SERIES_KEY);
+$labelManager->addPage(page_SeriesList::MULTILINGUAL_PAGE_KEY);
+$labelManager->addLabel( "[Title]", "TV Addicts", "en" );
+</pre>
+		</span>
+		<p class="content_text" >There are 3 methods used in creating labels:</p>
+		<table width="80%"  border="0" cellspacing="2" cellpadding="1">
+            <tr>
+                <td colspan="2" scope="col"><div align="left"><strong>addSeries( </strong><em>$seriesKey</em>                        <strong>)</strong> </div></td>
+                </tr>
+            <tr valign="top">
+                <td><em>$seriesKey</em></td>
+                <td>A unique textual key representing the Application/Series
+                    of pages. </td>
+            </tr>
+            <tr valign="top">
+                <td colspan="2"><p>If the supplied $seriesKey doesn't exist, then
+                        it will be created in the site_multilingual_series table.
+                        Then this series is the default series for the remaining
+                        operations until a new series context is specified. </p>
+                    <p>If the supplied $seriesKey does exist, then that series
+                        is selected and used for the following operations. </p></td>
+                </tr>
+        </table><br>
+		<table width="80%"  border="0" cellspacing="2" cellpadding="1">
+            <tr>
+                <td colspan="2" scope="col"><div align="left"><strong>addPage( </strong><em>$pageKey</em> <strong>)</strong> </div></td>
+            </tr>
+            <tr valign="top">
+                <td><em>$pageKey</em></td>
+                <td>A unique textual key representing the Page of the current
+                    series. </td>
+            </tr>
+            <tr valign="top">
+                <td colspan="2"><p>If the supplied <em>$pageKey</em> doesn't
+                        exist, then it will be created in the site_multilingual_page
+                        table. Then this page is the default page for the
+                        remaining operations until a new page context is specified. </p>
+                        <p>If the supplied <em>$pageKey</em> does exist, then
+                            that page is selected and used for the following
+                            operations. </p></td>
+            </tr>
+        </table>
+		<br>
+		<table width="80%"  border="0" cellspacing="2" cellpadding="1">
+            <tr>
+                <td colspan="2" scope="col"><div align="left"><strong>addLabel( </strong><em>$labelKey</em>,
+                        <em>$labelText</em>, <em>$languageKey</em> <strong>)</strong> </div></td>
+            </tr>
+            <tr valign="top">
+                <td><em>$labelKey</em></td>
+                <td>A unique textual key representing the Label to add. This
+                    will be the key we use to retrieve the label. </td>
+            </tr>
+			<tr valign="top">
+                <td><em>$labelText</em></td>
+                <td>The actual text for the label. This is what gets displayed. </td>
+            </tr>
+			<tr valign="top">
+                <td><em>$languageKey</em></td>
+                <td>The language key we use to indicate what language the supplied
+                    label is in. Note: this is not the language_id, but rather
+                    a more generic textual key representing the language. </td>
+            </tr>
+            <tr valign="top">
+                <td colspan="2"><p>This method expects that a Series &amp; Page context
+                        have already been created. When called, this method will
+                        create a new label for the given language.</p>
+                    <p>If this is the first label entered for this page with
+                        this $labelKey, then all the other language versions
+                        will be marked as needing translation. </p></td>
+            </tr>
+        </table>
+		<p class="content_text" >Suppose you want to add Titles and Instructions for
+		    multiple pages in your application:</p>
+		<span class="sourcecodebox" >
+		<pre>
+$labelManager = new MultilingualManager();
+$labelManager->addSeries( moduleTVAddicts::MULTILINGUAL_SERIES_KEY);
+
+$labelManager->addPage(page_SeriesList::MULTILINGUAL_PAGE_KEY);
+$labelManager->addLabel( "[Title]", "TV Addicts", "en" );
+$labelManager->addLabel( "[Instructions]", "Here we list all the addictive TV shows we watch faithfully every week.", "en" );
+
+$labelManager->addPage(page_SeriesAdd::MULTILINGUAL_PAGE_KEY);
+$labelManager->addLabel( "[Title]", "Add Series:", "en" );
+$labelManager->addLabel( "[Instructions]", "Fill out this form to add another highly addictive TV show to our list.", "en" );
+</pre>
+		</span>
+		<p class="content_text" >&nbsp; </p>
+		<h4 ><em><strong>Retrieving Labels:</strong></em></h4>
+		<p class="content_text" >Of course, what we are really interested in is how
+		    to retrieve our labels for displaying on a web page. The following
+		    code would be used by a PageDisplay object to put together the necessary
+		    labels for the page:</p>
+		<span class="sourcecodebox" ><pre>
+$languageID = $viewer->getLanguageID();
+$seriesKey = moduleTVAddicts::MULTILINGUAL_SERIES_KEY;
+$pageKey = page_SeriesList::MULTILINGUAL_PAGE_KEY;
+$this->labels = new MultilingualManager( $languageID, $seriesKey, $pageKey );</pre></span>
+		<p class="content_text" >Now $this-&gt;labels holds all the labels for the SeriesList
+		    page that is part of your TVAddicts module. To retrieve a label from
+		    that page, you would simply do this:</p>
+		<span class="sourcecodebox" ><pre>
+$title = $this->labels->getLabel( '[Title]' );
+</pre></span>
+		<p class="content_text" >If there is a language translation for the key '[Title]'
+		    in the DB, it returns that text. If it can't find the request language
+		    version, it will then attempt to give you an alternate version of
+		    the text. If the requested key '[Title]' isn't found in the DB, then
+		    it just returns the key ('[Title]') as the value.</p>
+		<p class="content_text" >If all this makes sense, then lets continue and make
+		    your own ... </p>
+		<p class="content_text" >&nbsp;</p>
+            <!-- InstanceEndEditable -->
+            <hr size="1" noshade>
+		 </td>
+    </tr>
+	<tr><td><table width="100%"  border="0" cellspacing="0" cellpadding="0">
+    <tr>
+        <td class="content_text"><!-- InstanceBeginEditable name="prevButtonBottom" --><a href="9_01_DBLayout.htm">Previous</a><!-- InstanceEndEditable --></td>
+        <td class="content_text"><div align="right"><!-- InstanceBeginEditable name="nextButtonBottom" --><a href="#">Next</a><!-- InstanceEndEditable --></div></td>
+    </tr>
+</table></td>
+	</tr>
+</table>
+</center>
+
+</body>
+<!-- InstanceEnd --></html>

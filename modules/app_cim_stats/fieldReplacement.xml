@@ -1,0 +1,73 @@
+<IndividualPRC>
+    <campus_id>Campus ID</campus_id>
+    <campus_desc>Campus Desc</campus_desc>
+    <campus_shortDesc>Campus Short</campus_shortDesc>
+    <accountgroup_id>AccountGroupID</accountgroup_id>
+    <prc_id>PRC ID</prc_id>
+    <prc_firstName>First Name</prc_firstName>
+    <prcMethod_id>Method ID</prcMethod_id>
+    <prc_witnessName>Witness Name</prc_witnessName>
+    <prc_notes>Notes</prc_notes>
+    <prc_7upCompleted>Follow-up Completed</prc_7upCompleted>
+    <semester_id>Semester ID</semester_id>
+    <prc_7upStarted>Follow-up Started</prc_7upStarted>
+    <prc_date>Date</prc_date>
+    <semester_desc>Semester Desc</semester_desc>
+    <prcMethod_desc>Method Desc</prcMethod_desc>
+</IndividualPRC>
+
+
+<IndividualWeek>
+    <weeklyReport_id>Weekly Report ID</weeklyReport_id>
+    <weeklyReport_1on1SpConv>1-1 Sp Conv</weeklyReport_1on1SpConv>
+    <weeklyReport_1on1SpConvStd>1-1 Sp Conv (Std)</weeklyReport_1on1SpConvStd>
+    <weeklyReport_1on1GosPres>1-1 Gos Pres</weeklyReport_1on1GosPres>
+    <weeklyReport_1on1GosPresStd>1-1 Gos Pres (Std)</weeklyReport_1on1GosPresStd>
+    <weeklyReport_1on1HsPres>1-1 HS Pres</weeklyReport_1on1HsPres>
+    <weeklyReport_1on1HsPresStd>1-1 HS Pres (Std)</weeklyReport_1on1HsPresStd>
+    <weeklyReport_7upCompleted>Follow-up Completed</weeklyReport_7upCompleted>
+    <weeklyReport_7upCompletedStd>Follow-up Completed (Std)</weeklyReport_7upCompletedStd>
+    <staff_id>Staff ID</staff_id>
+    <week_id>Week ID</week_id>
+    <campus_id>Campus ID</campus_id>
+    <weeklyReport_cjVideo>Jesus Video</weeklyReport_cjVideo>
+    <weeklyReport_mda>MDA</weeklyReport_mda>
+    <weeklyReport_otherEVMats>Other EV Mat</weeklyReport_otherEVMats>
+    <weeklyReport_rlk>RLK</weeklyReport_rlk>
+    <weeklyReport_siq>SIQ</weeklyReport_siq>
+    <weeklyReport_notes>Notes</weeklyReport_notes>
+    <campus_desc>Campus Desc</campus_desc>
+    <campus_shortDesc>Campus Short</campus_shortDesc>
+    <accountgroup_id>Account Group ID</accountgroup_id>
+    <week_endDate>Week End Date</week_endDate>
+    <person_id>Person ID</person_id>
+    <person_fname>First Name</person_fname>
+    <person_lname>Last Name</person_lname>
+    <person_phone>Phone</person_phone>
+    <person_email>Email</person_email>
+    <person_addr>Addr</person_addr>
+    <person_city>City</person_city>
+    <province_id>Province ID</province_id>
+    <person_pc>Postal Code</person_pc>
+    <gender_id>Gender ID</gender_id>
+    <assignment_id>Assignment ID</assignment_id>
+    <person_local_phone>Local Phone</person_local_phone>
+    <person_local_addr>Local Addr</person_local_addr>
+    <person_local_city>Local City</person_local_city>
+    <person_local_pc>Local Postal Code</person_local_pc>
+    <person_local_province_id>Local Province ID</person_local_province_id>
+</IndividualWeek>
+
+<Activity>
+    <morestats_id>More Stats ID</morestats_id>
+    <morestats_exp>Num Exposures</morestats_exp>
+    <morestats_notes>Notes</morestats_notes>
+    <week_id>Week ID</week_id>
+    <campus_id>Campus ID</campus_id>
+    <exposuretype_id>Exposure Type ID</exposuretype_id>
+    <campus_desc>Campus Desc</campus_desc>
+    <campus_shortDesc>Campus Short</campus_shortDesc>
+    <accountgroup_id>Account Group ID</accountgroup_id>
+    <week_endDate>Week End Date</week_endDate>
+    <exposuretype_desc>Exposure Type Desc</exposuretype_desc>
+</Activity>

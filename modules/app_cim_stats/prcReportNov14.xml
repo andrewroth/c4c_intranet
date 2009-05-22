@@ -1,0 +1,1419 @@
+<?xml version="1.0"?>
+<PRCReport>
+    <PRC_FOR_SEMESTER>
+        <IndividualPRC>
+            <campus_id><![CDATA[46]]></campus_id>
+            <campus_desc><![CDATA[McMaster University]]></campus_desc>
+            <campus_shortDesc><![CDATA[MAC]]></campus_shortDesc>
+            <accountgroup_id><![CDATA[10]]></accountgroup_id>
+            <prc_id><![CDATA[1]]></prc_id>
+            <prc_firstName><![CDATA[Li Xi]]></prc_firstName>
+            <prcMethod_id><![CDATA[2]]></prcMethod_id>
+            <prc_witnessName><![CDATA[Justin Lim]]></prc_witnessName>
+            <prc_notes><![CDATA[Li is a chinese student from China. Justin Lim shared KGP at the Frosh Week BBQ.]]></prc_notes>
+            <prc_7upCompleted><![CDATA[0]]></prc_7upCompleted>
+            <semester_id><![CDATA[1]]></semester_id>
+            <prc_7upStarted><![CDATA[0]]></prc_7upStarted>
+            <prc_date><![CDATA[2006-09-07]]></prc_date>
+            <semester_desc><![CDATA[Fall 2006]]></semester_desc>
+            <prcMethod_desc><![CDATA[Campus Wide Event]]></prcMethod_desc>
+        </IndividualPRC>
+        <IndividualPRC>
+            <campus_id><![CDATA[51]]></campus_id>
+            <campus_desc><![CDATA[University of Guelph]]></campus_desc>
+            <campus_shortDesc><![CDATA[UofG]]></campus_shortDesc>
+            <accountgroup_id><![CDATA[10]]></accountgroup_id>
+            <prc_id><![CDATA[2]]></prc_id>
+            <prc_firstName><![CDATA[Nathan]]></prc_firstName>
+            <prcMethod_id><![CDATA[2]]></prcMethod_id>
+            <prc_witnessName><![CDATA[Kirsten]]></prc_witnessName>
+            <prc_notes><![CDATA[apparently received Christ during a 'how to get better grades nad have more fun talk' that I gave.  Andrew Middleton is following up.]]></prc_notes>
+            <prc_7upCompleted><![CDATA[0]]></prc_7upCompleted>
+            <semester_id><![CDATA[1]]></semester_id>
+            <prc_7upStarted><![CDATA[1]]></prc_7upStarted>
+            <prc_date><![CDATA[2006-09-07]]></prc_date>
+            <semester_desc><![CDATA[Fall 2006]]></semester_desc>
+            <prcMethod_desc><![CDATA[Campus Wide Event]]></prcMethod_desc>
+        </IndividualPRC>
+        <IndividualPRC>
+            <campus_id><![CDATA[1]]></campus_id>
+            <campus_desc><![CDATA[University of Waterloo]]></campus_desc>
+            <campus_shortDesc><![CDATA[UW]]></campus_shortDesc>
+            <accountgroup_id><![CDATA[10]]></accountgroup_id>
+            <prc_id><![CDATA[3]]></prc_id>
+            <prc_firstName><![CDATA[Raphael]]></prc_firstName>
+            <prcMethod_id><![CDATA[12]]></prcMethod_id>
+            <prc_witnessName><![CDATA[Allan Self]]></prc_witnessName>
+            <prc_notes><![CDATA[He attended the first frosh week event at Waterloo.  After chatting with him a bit he expressed that he was trying to learn more about 'religous' stuff because he felt like he was missing something in his life.  We went through the 4 laws and he accepted Christ.]]></prc_notes>
+            <prc_7upCompleted><![CDATA[0]]></prc_7upCompleted>
+            <semester_id><![CDATA[1]]></semester_id>
+            <prc_7upStarted><![CDATA[0]]></prc_7upStarted>
+            <prc_date><![CDATA[2006-09-10]]></prc_date>
+            <semester_desc><![CDATA[Fall 2006]]></semester_desc>
+            <prcMethod_desc><![CDATA[Other]]></prcMethod_desc>
+        </IndividualPRC>
+        <IndividualPRC>
+            <campus_id><![CDATA[57]]></campus_id>
+            <campus_desc><![CDATA[York University]]></campus_desc>
+            <campus_shortDesc><![CDATA[York]]></campus_shortDesc>
+            <accountgroup_id><![CDATA[10]]></accountgroup_id>
+            <prc_id><![CDATA[4]]></prc_id>
+            <prc_firstName><![CDATA[Justin Chatlani]]></prc_firstName>
+            <prcMethod_id><![CDATA[1]]></prcMethod_id>
+            <prc_witnessName><![CDATA[Steve Strongitharm and Matt Hughes]]></prc_witnessName>
+            <prc_notes><![CDATA[Justin is a first year student in Bethune College. After praying to receive Christ he confirmed, "I thought about what I was saying very carefully and meant every word of it."]]></prc_notes>
+            <prc_7upCompleted><![CDATA[0]]></prc_7upCompleted>
+            <semester_id><![CDATA[1]]></semester_id>
+            <prc_7upStarted><![CDATA[0]]></prc_7upStarted>
+            <prc_date><![CDATA[2006-08-31]]></prc_date>
+            <semester_desc><![CDATA[Fall 2006]]></semester_desc>
+            <prcMethod_desc><![CDATA[Random Evangelism]]></prcMethod_desc>
+        </IndividualPRC>
+        <IndividualPRC>
+            <campus_id><![CDATA[57]]></campus_id>
+            <campus_desc><![CDATA[York University]]></campus_desc>
+            <campus_shortDesc><![CDATA[York]]></campus_shortDesc>
+            <accountgroup_id><![CDATA[10]]></accountgroup_id>
+            <prc_id><![CDATA[5]]></prc_id>
+            <prc_firstName><![CDATA[Brandon]]></prc_firstName>
+            <prcMethod_id><![CDATA[10]]></prcMethod_id>
+            <prc_witnessName><![CDATA[Andrew McKenzie]]></prc_witnessName>
+            <prc_notes></prc_notes>
+            <prc_7upCompleted><![CDATA[0]]></prc_7upCompleted>
+            <semester_id><![CDATA[1]]></semester_id>
+            <prc_7upStarted><![CDATA[0]]></prc_7upStarted>
+            <prc_date><![CDATA[2006-09-13]]></prc_date>
+            <semester_desc><![CDATA[Fall 2006]]></semester_desc>
+            <prcMethod_desc><![CDATA[SIQ Follow-up]]></prcMethod_desc>
+        </IndividualPRC>
+        <IndividualPRC>
+            <campus_id><![CDATA[57]]></campus_id>
+            <campus_desc><![CDATA[York University]]></campus_desc>
+            <campus_shortDesc><![CDATA[York]]></campus_shortDesc>
+            <accountgroup_id><![CDATA[10]]></accountgroup_id>
+            <prc_id><![CDATA[6]]></prc_id>
+            <prc_firstName><![CDATA[Ying]]></prc_firstName>
+            <prcMethod_id><![CDATA[10]]></prcMethod_id>
+            <prc_witnessName><![CDATA[Terra & Jenn Lewis]]></prc_witnessName>
+            <prc_notes><![CDATA[International Student]]></prc_notes>
+            <prc_7upCompleted><![CDATA[0]]></prc_7upCompleted>
+            <semester_id><![CDATA[1]]></semester_id>
+            <prc_7upStarted><![CDATA[1]]></prc_7upStarted>
+            <prc_date><![CDATA[2006-09-14]]></prc_date>
+            <semester_desc><![CDATA[Fall 2006]]></semester_desc>
+            <prcMethod_desc><![CDATA[SIQ Follow-up]]></prcMethod_desc>
+        </IndividualPRC>
+        <IndividualPRC>
+            <campus_id><![CDATA[68]]></campus_id>
+            <campus_desc><![CDATA[University of Saskatchewan]]></campus_desc>
+            <campus_shortDesc><![CDATA[UofS]]></campus_shortDesc>
+            <accountgroup_id><![CDATA[11]]></accountgroup_id>
+            <prc_id><![CDATA[7]]></prc_id>
+            <prc_firstName><![CDATA[Jessie]]></prc_firstName>
+            <prcMethod_id><![CDATA[10]]></prcMethod_id>
+            <prc_witnessName><![CDATA[Jill Wenger]]></prc_witnessName>
+            <prc_notes><![CDATA[Jessie comes from a mormon and united background, and her high school teacher had been sharing with her for a couple of years. She hadn't heard a clear explanation of the Gospel, but once she did, she decided she wanted to ask Christ into her life right away.  She is not super keen on follow up, so we'll keep contacting her and praying for her. ]]></prc_notes>
+            <prc_7upCompleted><![CDATA[0]]></prc_7upCompleted>
+            <semester_id><![CDATA[1]]></semester_id>
+            <prc_7upStarted><![CDATA[0]]></prc_7upStarted>
+            <prc_date><![CDATA[2006-09-13]]></prc_date>
+            <semester_desc><![CDATA[Fall 2006]]></semester_desc>
+            <prcMethod_desc><![CDATA[SIQ Follow-up]]></prcMethod_desc>
+        </IndividualPRC>
+        <IndividualPRC>
+            <campus_id><![CDATA[68]]></campus_id>
+            <campus_desc><![CDATA[University of Saskatchewan]]></campus_desc>
+            <campus_shortDesc><![CDATA[UofS]]></campus_shortDesc>
+            <accountgroup_id><![CDATA[11]]></accountgroup_id>
+            <prc_id><![CDATA[8]]></prc_id>
+            <prc_firstName><![CDATA[Julie Johnson]]></prc_firstName>
+            <prcMethod_id><![CDATA[1]]></prcMethod_id>
+            <prc_witnessName><![CDATA[Charlotte Martin]]></prc_witnessName>
+            <prc_notes></prc_notes>
+            <prc_7upCompleted><![CDATA[0]]></prc_7upCompleted>
+            <semester_id><![CDATA[1]]></semester_id>
+            <prc_7upStarted><![CDATA[0]]></prc_7upStarted>
+            <prc_date><![CDATA[2006-09-11]]></prc_date>
+            <semester_desc><![CDATA[Fall 2006]]></semester_desc>
+            <prcMethod_desc><![CDATA[Random Evangelism]]></prcMethod_desc>
+        </IndividualPRC>
+        <IndividualPRC>
+            <campus_id><![CDATA[68]]></campus_id>
+            <campus_desc><![CDATA[University of Saskatchewan]]></campus_desc>
+            <campus_shortDesc><![CDATA[UofS]]></campus_shortDesc>
+            <accountgroup_id><![CDATA[11]]></accountgroup_id>
+            <prc_id><![CDATA[9]]></prc_id>
+            <prc_firstName><![CDATA[Jaclyn Paslawski]]></prc_firstName>
+            <prcMethod_id><![CDATA[10]]></prcMethod_id>
+            <prc_witnessName><![CDATA[Julie Tang]]></prc_witnessName>
+            <prc_notes><![CDATA[Came from a Catholic upbringing but because of bad experience, left the church for past 6 years; started thinking about spiritual things when she moved away to start school.]]></prc_notes>
+            <prc_7upCompleted><![CDATA[0]]></prc_7upCompleted>
+            <semester_id><![CDATA[1]]></semester_id>
+            <prc_7upStarted><![CDATA[1]]></prc_7upStarted>
+            <prc_date><![CDATA[2006-09-07]]></prc_date>
+            <semester_desc><![CDATA[Fall 2006]]></semester_desc>
+            <prcMethod_desc><![CDATA[SIQ Follow-up]]></prcMethod_desc>
+        </IndividualPRC>
+        <IndividualPRC>
+            <campus_id><![CDATA[68]]></campus_id>
+            <campus_desc><![CDATA[University of Saskatchewan]]></campus_desc>
+            <campus_shortDesc><![CDATA[UofS]]></campus_shortDesc>
+            <accountgroup_id><![CDATA[11]]></accountgroup_id>
+            <prc_id><![CDATA[10]]></prc_id>
+            <prc_firstName><![CDATA[Dong Mei]]></prc_firstName>
+            <prcMethod_id><![CDATA[10]]></prcMethod_id>
+            <prc_witnessName><![CDATA[Julie Tang]]></prc_witnessName>
+            <prc_notes><![CDATA[Student from China finished Pharmacy program in China, wants to practice in Canada but encountering problems with enrolling in courses. Went to church while in Vancouver. ]]></prc_notes>
+            <prc_7upCompleted><![CDATA[0]]></prc_7upCompleted>
+            <semester_id><![CDATA[1]]></semester_id>
+            <prc_7upStarted><![CDATA[0]]></prc_7upStarted>
+            <prc_date><![CDATA[2006-09-06]]></prc_date>
+            <semester_desc><![CDATA[Fall 2006]]></semester_desc>
+            <prcMethod_desc><![CDATA[SIQ Follow-up]]></prcMethod_desc>
+        </IndividualPRC>
+        <IndividualPRC>
+            <campus_id><![CDATA[68]]></campus_id>
+            <campus_desc><![CDATA[University of Saskatchewan]]></campus_desc>
+            <campus_shortDesc><![CDATA[UofS]]></campus_shortDesc>
+            <accountgroup_id><![CDATA[11]]></accountgroup_id>
+            <prc_id><![CDATA[11]]></prc_id>
+            <prc_firstName><![CDATA[Brittney Bergen]]></prc_firstName>
+            <prcMethod_id><![CDATA[10]]></prcMethod_id>
+            <prc_witnessName><![CDATA[Julie Tang]]></prc_witnessName>
+            <prc_notes><![CDATA[Has started to go to church with a friend but wants to know God personally; father has also started going to church too.]]></prc_notes>
+            <prc_7upCompleted><![CDATA[0]]></prc_7upCompleted>
+            <semester_id><![CDATA[1]]></semester_id>
+            <prc_7upStarted><![CDATA[0]]></prc_7upStarted>
+            <prc_date><![CDATA[2006-09-12]]></prc_date>
+            <semester_desc><![CDATA[Fall 2006]]></semester_desc>
+            <prcMethod_desc><![CDATA[SIQ Follow-up]]></prcMethod_desc>
+        </IndividualPRC>
+        <IndividualPRC>
+            <campus_id><![CDATA[57]]></campus_id>
+            <campus_desc><![CDATA[York University]]></campus_desc>
+            <campus_shortDesc><![CDATA[York]]></campus_shortDesc>
+            <accountgroup_id><![CDATA[10]]></accountgroup_id>
+            <prc_id><![CDATA[15]]></prc_id>
+            <prc_firstName><![CDATA[Theresa]]></prc_firstName>
+            <prcMethod_id><![CDATA[10]]></prcMethod_id>
+            <prc_witnessName><![CDATA[Kristen White]]></prc_witnessName>
+            <prc_notes></prc_notes>
+            <prc_7upCompleted><![CDATA[0]]></prc_7upCompleted>
+            <semester_id><![CDATA[1]]></semester_id>
+            <prc_7upStarted><![CDATA[0]]></prc_7upStarted>
+            <prc_date><![CDATA[2006-09-21]]></prc_date>
+            <semester_desc><![CDATA[Fall 2006]]></semester_desc>
+            <prcMethod_desc><![CDATA[SIQ Follow-up]]></prcMethod_desc>
+        </IndividualPRC>
+        <IndividualPRC>
+            <campus_id><![CDATA[7]]></campus_id>
+            <campus_desc><![CDATA[University of Alberta]]></campus_desc>
+            <campus_shortDesc><![CDATA[UofA]]></campus_shortDesc>
+            <accountgroup_id><![CDATA[11]]></accountgroup_id>
+            <prc_id><![CDATA[16]]></prc_id>
+            <prc_firstName><![CDATA[Qi Yin]]></prc_firstName>
+            <prcMethod_id><![CDATA[10]]></prcMethod_id>
+            <prc_witnessName><![CDATA[Tiffany Smith]]></prc_witnessName>
+            <prc_notes><![CDATA[I met Qi on Thursday and she didn't even know who Jesus was at the beginning of our conversation. She is a grad student from Bejing and has a husband and daughter back home. She recieved a real life kit and wanted to know how to have a relationship with God. We dialogued for an hour and a half and she wanted to pray with me. She is now beginning to attend a church a friend of mine goes to that has worship in Mandarine, the church also offers a discipleship program that she is interested in attending.]]></prc_notes>
+            <prc_7upCompleted><![CDATA[1]]></prc_7upCompleted>
+            <semester_id><![CDATA[1]]></semester_id>
+            <prc_7upStarted><![CDATA[1]]></prc_7upStarted>
+            <prc_date><![CDATA[2006-09-14]]></prc_date>
+            <semester_desc><![CDATA[Fall 2006]]></semester_desc>
+            <prcMethod_desc><![CDATA[SIQ Follow-up]]></prcMethod_desc>
+        </IndividualPRC>
+        <IndividualPRC>
+            <campus_id><![CDATA[68]]></campus_id>
+            <campus_desc><![CDATA[University of Saskatchewan]]></campus_desc>
+            <campus_shortDesc><![CDATA[UofS]]></campus_shortDesc>
+            <accountgroup_id><![CDATA[11]]></accountgroup_id>
+            <prc_id><![CDATA[45]]></prc_id>
+            <prc_firstName><![CDATA[Ben Thunderchild]]></prc_firstName>
+            <prcMethod_id><![CDATA[10]]></prcMethod_id>
+            <prc_witnessName><![CDATA[Joe Wickenhauser]]></prc_witnessName>
+            <prc_notes></prc_notes>
+            <prc_7upCompleted><![CDATA[1]]></prc_7upCompleted>
+            <semester_id><![CDATA[1]]></semester_id>
+            <prc_7upStarted><![CDATA[1]]></prc_7upStarted>
+            <prc_date><![CDATA[2006-09-08]]></prc_date>
+            <semester_desc><![CDATA[Fall 2006]]></semester_desc>
+            <prcMethod_desc><![CDATA[SIQ Follow-up]]></prcMethod_desc>
+        </IndividualPRC>
+        <IndividualPRC>
+            <campus_id><![CDATA[68]]></campus_id>
+            <campus_desc><![CDATA[University of Saskatchewan]]></campus_desc>
+            <campus_shortDesc><![CDATA[UofS]]></campus_shortDesc>
+            <accountgroup_id><![CDATA[11]]></accountgroup_id>
+            <prc_id><![CDATA[46]]></prc_id>
+            <prc_firstName><![CDATA[Sourin Maboob]]></prc_firstName>
+            <prcMethod_id><![CDATA[4]]></prcMethod_id>
+            <prc_witnessName><![CDATA[Joe Wickenhauser]]></prc_witnessName>
+            <prc_notes><![CDATA[We have been praying for Joe's friend Sourin for a year. Joe completely shared his life with Sourin.]]></prc_notes>
+            <prc_7upCompleted><![CDATA[0]]></prc_7upCompleted>
+            <semester_id><![CDATA[1]]></semester_id>
+            <prc_7upStarted><![CDATA[1]]></prc_7upStarted>
+            <prc_date><![CDATA[2006-09-10]]></prc_date>
+            <semester_desc><![CDATA[Fall 2006]]></semester_desc>
+            <prcMethod_desc><![CDATA[Friendship Evangelism]]></prcMethod_desc>
+        </IndividualPRC>
+        <IndividualPRC>
+            <campus_id><![CDATA[51]]></campus_id>
+            <campus_desc><![CDATA[University of Guelph]]></campus_desc>
+            <campus_shortDesc><![CDATA[UofG]]></campus_shortDesc>
+            <accountgroup_id><![CDATA[10]]></accountgroup_id>
+            <prc_id><![CDATA[17]]></prc_id>
+            <prc_firstName><![CDATA[Eun]]></prc_firstName>
+            <prcMethod_id><![CDATA[1]]></prcMethod_id>
+            <prc_witnessName><![CDATA[Andrew Middleton and Shelly Chen]]></prc_witnessName>
+            <prc_notes><![CDATA[she is a Korean girl that they met in the cafeteria]]></prc_notes>
+            <prc_7upCompleted><![CDATA[0]]></prc_7upCompleted>
+            <semester_id><![CDATA[1]]></semester_id>
+            <prc_7upStarted><![CDATA[1]]></prc_7upStarted>
+            <prc_date><![CDATA[2006-09-19]]></prc_date>
+            <semester_desc><![CDATA[Fall 2006]]></semester_desc>
+            <prcMethod_desc><![CDATA[Random Evangelism]]></prcMethod_desc>
+        </IndividualPRC>
+        <IndividualPRC>
+            <campus_id><![CDATA[68]]></campus_id>
+            <campus_desc><![CDATA[University of Saskatchewan]]></campus_desc>
+            <campus_shortDesc><![CDATA[UofS]]></campus_shortDesc>
+            <accountgroup_id><![CDATA[11]]></accountgroup_id>
+            <prc_id><![CDATA[18]]></prc_id>
+            <prc_firstName><![CDATA[Ashleigh Okolita]]></prc_firstName>
+            <prcMethod_id><![CDATA[10]]></prcMethod_id>
+            <prc_witnessName><![CDATA[Charlotte Martin]]></prc_witnessName>
+            <prc_notes></prc_notes>
+            <prc_7upCompleted><![CDATA[0]]></prc_7upCompleted>
+            <semester_id><![CDATA[1]]></semester_id>
+            <prc_7upStarted><![CDATA[1]]></prc_7upStarted>
+            <prc_date><![CDATA[2006-09-12]]></prc_date>
+            <semester_desc><![CDATA[Fall 2006]]></semester_desc>
+            <prcMethod_desc><![CDATA[SIQ Follow-up]]></prcMethod_desc>
+        </IndividualPRC>
+        <IndividualPRC>
+            <campus_id><![CDATA[68]]></campus_id>
+            <campus_desc><![CDATA[University of Saskatchewan]]></campus_desc>
+            <campus_shortDesc><![CDATA[UofS]]></campus_shortDesc>
+            <accountgroup_id><![CDATA[11]]></accountgroup_id>
+            <prc_id><![CDATA[19]]></prc_id>
+            <prc_firstName><![CDATA[Brittney Elles]]></prc_firstName>
+            <prcMethod_id><![CDATA[10]]></prcMethod_id>
+            <prc_witnessName><![CDATA[Charlotte Martin]]></prc_witnessName>
+            <prc_notes></prc_notes>
+            <prc_7upCompleted><![CDATA[0]]></prc_7upCompleted>
+            <semester_id><![CDATA[1]]></semester_id>
+            <prc_7upStarted><![CDATA[1]]></prc_7upStarted>
+            <prc_date><![CDATA[2006-09-22]]></prc_date>
+            <semester_desc><![CDATA[Fall 2006]]></semester_desc>
+            <prcMethod_desc><![CDATA[SIQ Follow-up]]></prcMethod_desc>
+        </IndividualPRC>
+        <IndividualPRC>
+            <campus_id><![CDATA[46]]></campus_id>
+            <campus_desc><![CDATA[McMaster University]]></campus_desc>
+            <campus_shortDesc><![CDATA[MAC]]></campus_shortDesc>
+            <accountgroup_id><![CDATA[10]]></accountgroup_id>
+            <prc_id><![CDATA[20]]></prc_id>
+            <prc_firstName><![CDATA[Matthew King]]></prc_firstName>
+            <prcMethod_id><![CDATA[10]]></prcMethod_id>
+            <prc_witnessName><![CDATA[Kelly Yen]]></prc_witnessName>
+            <prc_notes></prc_notes>
+            <prc_7upCompleted><![CDATA[1]]></prc_7upCompleted>
+            <semester_id><![CDATA[1]]></semester_id>
+            <prc_7upStarted><![CDATA[1]]></prc_7upStarted>
+            <prc_date><![CDATA[2006-09-13]]></prc_date>
+            <semester_desc><![CDATA[Fall 2006]]></semester_desc>
+            <prcMethod_desc><![CDATA[SIQ Follow-up]]></prcMethod_desc>
+        </IndividualPRC>
+        <IndividualPRC>
+            <campus_id><![CDATA[46]]></campus_id>
+            <campus_desc><![CDATA[McMaster University]]></campus_desc>
+            <campus_shortDesc><![CDATA[MAC]]></campus_shortDesc>
+            <accountgroup_id><![CDATA[10]]></accountgroup_id>
+            <prc_id><![CDATA[21]]></prc_id>
+            <prc_firstName><![CDATA[Jennifer]]></prc_firstName>
+            <prcMethod_id><![CDATA[10]]></prcMethod_id>
+            <prc_witnessName><![CDATA[Jeremy Boyd]]></prc_witnessName>
+            <prc_notes><![CDATA[Ruth Thompson is going through follow up with her]]></prc_notes>
+            <prc_7upCompleted><![CDATA[0]]></prc_7upCompleted>
+            <semester_id><![CDATA[1]]></semester_id>
+            <prc_7upStarted><![CDATA[1]]></prc_7upStarted>
+            <prc_date><![CDATA[2006-09-11]]></prc_date>
+            <semester_desc><![CDATA[Fall 2006]]></semester_desc>
+            <prcMethod_desc><![CDATA[SIQ Follow-up]]></prcMethod_desc>
+        </IndividualPRC>
+        <IndividualPRC>
+            <campus_id><![CDATA[46]]></campus_id>
+            <campus_desc><![CDATA[McMaster University]]></campus_desc>
+            <campus_shortDesc><![CDATA[MAC]]></campus_shortDesc>
+            <accountgroup_id><![CDATA[10]]></accountgroup_id>
+            <prc_id><![CDATA[22]]></prc_id>
+            <prc_firstName><![CDATA[Justin]]></prc_firstName>
+            <prcMethod_id><![CDATA[10]]></prcMethod_id>
+            <prc_witnessName><![CDATA[Rony Kozman]]></prc_witnessName>
+            <prc_notes></prc_notes>
+            <prc_7upCompleted><![CDATA[0]]></prc_7upCompleted>
+            <semester_id><![CDATA[1]]></semester_id>
+            <prc_7upStarted><![CDATA[1]]></prc_7upStarted>
+            <prc_date><![CDATA[2006-09-13]]></prc_date>
+            <semester_desc><![CDATA[Fall 2006]]></semester_desc>
+            <prcMethod_desc><![CDATA[SIQ Follow-up]]></prcMethod_desc>
+        </IndividualPRC>
+        <IndividualPRC>
+            <campus_id><![CDATA[46]]></campus_id>
+            <campus_desc><![CDATA[McMaster University]]></campus_desc>
+            <campus_shortDesc><![CDATA[MAC]]></campus_shortDesc>
+            <accountgroup_id><![CDATA[10]]></accountgroup_id>
+            <prc_id><![CDATA[23]]></prc_id>
+            <prc_firstName><![CDATA[Catherine]]></prc_firstName>
+            <prcMethod_id><![CDATA[10]]></prcMethod_id>
+            <prc_witnessName><![CDATA[Amanda Wong and Selina Louka]]></prc_witnessName>
+            <prc_notes></prc_notes>
+            <prc_7upCompleted><![CDATA[0]]></prc_7upCompleted>
+            <semester_id><![CDATA[1]]></semester_id>
+            <prc_7upStarted><![CDATA[0]]></prc_7upStarted>
+            <prc_date><![CDATA[2006-09-12]]></prc_date>
+            <semester_desc><![CDATA[Fall 2006]]></semester_desc>
+            <prcMethod_desc><![CDATA[SIQ Follow-up]]></prcMethod_desc>
+        </IndividualPRC>
+        <IndividualPRC>
+            <campus_id><![CDATA[73]]></campus_id>
+            <campus_desc><![CDATA[Concordia University]]></campus_desc>
+            <campus_shortDesc><![CDATA[Concordia]]></campus_shortDesc>
+            <accountgroup_id><![CDATA[12]]></accountgroup_id>
+            <prc_id><![CDATA[24]]></prc_id>
+            <prc_firstName><![CDATA[Clifford Gunapalan]]></prc_firstName>
+            <prcMethod_id><![CDATA[2]]></prcMethod_id>
+            <prc_witnessName><![CDATA[Brad Morrice]]></prc_witnessName>
+            <prc_notes><![CDATA[came to DGE last year
+read Case For Christ over summer
+PRCd after reading gospel of John]]></prc_notes>
+            <prc_7upCompleted><![CDATA[0]]></prc_7upCompleted>
+            <semester_id><![CDATA[1]]></semester_id>
+            <prc_7upStarted><![CDATA[1]]></prc_7upStarted>
+            <prc_date><![CDATA[2006-09-13]]></prc_date>
+            <semester_desc><![CDATA[Fall 2006]]></semester_desc>
+            <prcMethod_desc><![CDATA[Campus Wide Event]]></prcMethod_desc>
+        </IndividualPRC>
+        <IndividualPRC>
+            <campus_id><![CDATA[24]]></campus_id>
+            <campus_desc><![CDATA[University of Manitoba]]></campus_desc>
+            <campus_shortDesc><![CDATA[UofM]]></campus_shortDesc>
+            <accountgroup_id><![CDATA[11]]></accountgroup_id>
+            <prc_id><![CDATA[25]]></prc_id>
+            <prc_firstName><![CDATA[Jason Wood]]></prc_firstName>
+            <prcMethod_id><![CDATA[10]]></prcMethod_id>
+            <prc_witnessName><![CDATA[Kevin Huska]]></prc_witnessName>
+            <prc_notes><![CDATA[SIQ follow up from a  Real Life Kit.  We met with 3 guys.  The other two wanted to be in a DG.  Jason Stayed after.  Tim and I shared the KGP booklet.  He prayed with us.  But since then he has not wanted to meet or do follow up.  Both Tim and i have called him several times to talk.]]></prc_notes>
+            <prc_7upCompleted><![CDATA[0]]></prc_7upCompleted>
+            <semester_id><![CDATA[1]]></semester_id>
+            <prc_7upStarted><![CDATA[0]]></prc_7upStarted>
+            <prc_date><![CDATA[2006-09-08]]></prc_date>
+            <semester_desc><![CDATA[Fall 2006]]></semester_desc>
+            <prcMethod_desc><![CDATA[SIQ Follow-up]]></prcMethod_desc>
+        </IndividualPRC>
+        <IndividualPRC>
+            <campus_id><![CDATA[24]]></campus_id>
+            <campus_desc><![CDATA[University of Manitoba]]></campus_desc>
+            <campus_shortDesc><![CDATA[UofM]]></campus_shortDesc>
+            <accountgroup_id><![CDATA[11]]></accountgroup_id>
+            <prc_id><![CDATA[26]]></prc_id>
+            <prc_firstName><![CDATA[Gaowei]]></prc_firstName>
+            <prcMethod_id><![CDATA[3]]></prcMethod_id>
+            <prc_witnessName><![CDATA[IBK]]></prc_witnessName>
+            <prc_notes><![CDATA[He is in IBKs English Bible Reading class, part of his International MDA]]></prc_notes>
+            <prc_7upCompleted><![CDATA[0]]></prc_7upCompleted>
+            <semester_id><![CDATA[1]]></semester_id>
+            <prc_7upStarted><![CDATA[1]]></prc_7upStarted>
+            <prc_date><![CDATA[2006-09-09]]></prc_date>
+            <semester_desc><![CDATA[Fall 2006]]></semester_desc>
+            <prcMethod_desc><![CDATA[MDA Outreach]]></prcMethod_desc>
+        </IndividualPRC>
+        <IndividualPRC>
+            <campus_id><![CDATA[24]]></campus_id>
+            <campus_desc><![CDATA[University of Manitoba]]></campus_desc>
+            <campus_shortDesc><![CDATA[UofM]]></campus_shortDesc>
+            <accountgroup_id><![CDATA[11]]></accountgroup_id>
+            <prc_id><![CDATA[27]]></prc_id>
+            <prc_firstName><![CDATA[Leo He]]></prc_firstName>
+            <prcMethod_id><![CDATA[10]]></prcMethod_id>
+            <prc_witnessName><![CDATA[Tim Bandfield]]></prc_witnessName>
+            <prc_notes><![CDATA[Leo picke up a RLK.  He filled out and SIQ.  Tim met him and shared the Gospel.  Tim has started meeting him for follow up]]></prc_notes>
+            <prc_7upCompleted><![CDATA[0]]></prc_7upCompleted>
+            <semester_id><![CDATA[1]]></semester_id>
+            <prc_7upStarted><![CDATA[1]]></prc_7upStarted>
+            <prc_date><![CDATA[2006-09-11]]></prc_date>
+            <semester_desc><![CDATA[Fall 2006]]></semester_desc>
+            <prcMethod_desc><![CDATA[SIQ Follow-up]]></prcMethod_desc>
+        </IndividualPRC>
+        <IndividualPRC>
+            <campus_id><![CDATA[24]]></campus_id>
+            <campus_desc><![CDATA[University of Manitoba]]></campus_desc>
+            <campus_shortDesc><![CDATA[UofM]]></campus_shortDesc>
+            <accountgroup_id><![CDATA[11]]></accountgroup_id>
+            <prc_id><![CDATA[28]]></prc_id>
+            <prc_firstName><![CDATA[Chen Hao]]></prc_firstName>
+            <prcMethod_id><![CDATA[10]]></prcMethod_id>
+            <prc_witnessName><![CDATA[Craig Milligan]]></prc_witnessName>
+            <prc_notes><![CDATA[RLK SIQ contact. Met and Shared KGP booklet.  He prayed]]></prc_notes>
+            <prc_7upCompleted><![CDATA[0]]></prc_7upCompleted>
+            <semester_id><![CDATA[1]]></semester_id>
+            <prc_7upStarted><![CDATA[1]]></prc_7upStarted>
+            <prc_date><![CDATA[2006-09-12]]></prc_date>
+            <semester_desc><![CDATA[Fall 2006]]></semester_desc>
+            <prcMethod_desc><![CDATA[SIQ Follow-up]]></prcMethod_desc>
+        </IndividualPRC>
+        <IndividualPRC>
+            <campus_id><![CDATA[24]]></campus_id>
+            <campus_desc><![CDATA[University of Manitoba]]></campus_desc>
+            <campus_shortDesc><![CDATA[UofM]]></campus_shortDesc>
+            <accountgroup_id><![CDATA[11]]></accountgroup_id>
+            <prc_id><![CDATA[29]]></prc_id>
+            <prc_firstName><![CDATA[Xinxing Wang]]></prc_firstName>
+            <prcMethod_id><![CDATA[10]]></prcMethod_id>
+            <prc_witnessName><![CDATA[Kevin Huska]]></prc_witnessName>
+            <prc_notes><![CDATA[RLK SIQ contact. Kevin met him, shared KGP booklet and he prayed.  ]]></prc_notes>
+            <prc_7upCompleted><![CDATA[0]]></prc_7upCompleted>
+            <semester_id><![CDATA[1]]></semester_id>
+            <prc_7upStarted><![CDATA[0]]></prc_7upStarted>
+            <prc_date><![CDATA[2006-09-13]]></prc_date>
+            <semester_desc><![CDATA[Fall 2006]]></semester_desc>
+            <prcMethod_desc><![CDATA[SIQ Follow-up]]></prcMethod_desc>
+        </IndividualPRC>
+        <IndividualPRC>
+            <campus_id><![CDATA[24]]></campus_id>
+            <campus_desc><![CDATA[University of Manitoba]]></campus_desc>
+            <campus_shortDesc><![CDATA[UofM]]></campus_shortDesc>
+            <accountgroup_id><![CDATA[11]]></accountgroup_id>
+            <prc_id><![CDATA[30]]></prc_id>
+            <prc_firstName><![CDATA[Farai]]></prc_firstName>
+            <prcMethod_id><![CDATA[10]]></prcMethod_id>
+            <prc_witnessName><![CDATA[Kevin Huska]]></prc_witnessName>
+            <prc_notes><![CDATA[RLK SIQ Contact.  We met.  I (Kevin) shared my testimony and asked if he had ever said that to God.  he said "No, but that is why I came to meet you."  That was on Thursday, he call the following monday to say that he did NOT want to meet to do follow up]]></prc_notes>
+            <prc_7upCompleted><![CDATA[0]]></prc_7upCompleted>
+            <semester_id><![CDATA[1]]></semester_id>
+            <prc_7upStarted><![CDATA[0]]></prc_7upStarted>
+            <prc_date><![CDATA[2006-09-21]]></prc_date>
+            <semester_desc><![CDATA[Fall 2006]]></semester_desc>
+            <prcMethod_desc><![CDATA[SIQ Follow-up]]></prcMethod_desc>
+        </IndividualPRC>
+        <IndividualPRC>
+            <campus_id><![CDATA[19]]></campus_id>
+            <campus_desc><![CDATA[University of British Columbia]]></campus_desc>
+            <campus_shortDesc><![CDATA[UBC]]></campus_shortDesc>
+            <accountgroup_id><![CDATA[11]]></accountgroup_id>
+            <prc_id><![CDATA[31]]></prc_id>
+            <prc_firstName><![CDATA[0]]></prc_firstName>
+            <prcMethod_id><![CDATA[12]]></prcMethod_id>
+            <prc_witnessName><![CDATA[0]]></prc_witnessName>
+            <prc_notes></prc_notes>
+            <prc_7upCompleted><![CDATA[0]]></prc_7upCompleted>
+            <semester_id><![CDATA[1]]></semester_id>
+            <prc_7upStarted><![CDATA[0]]></prc_7upStarted>
+            <prc_date><![CDATA[2006-09-01]]></prc_date>
+            <semester_desc><![CDATA[Fall 2006]]></semester_desc>
+            <prcMethod_desc><![CDATA[Other]]></prcMethod_desc>
+        </IndividualPRC>
+        <IndividualPRC>
+            <campus_id><![CDATA[19]]></campus_id>
+            <campus_desc><![CDATA[University of British Columbia]]></campus_desc>
+            <campus_shortDesc><![CDATA[UBC]]></campus_shortDesc>
+            <accountgroup_id><![CDATA[11]]></accountgroup_id>
+            <prc_id><![CDATA[32]]></prc_id>
+            <prc_firstName><![CDATA[Vic]]></prc_firstName>
+            <prcMethod_id><![CDATA[10]]></prcMethod_id>
+            <prc_witnessName><![CDATA[Corey Porter]]></prc_witnessName>
+            <prc_notes></prc_notes>
+            <prc_7upCompleted><![CDATA[0]]></prc_7upCompleted>
+            <semester_id><![CDATA[1]]></semester_id>
+            <prc_7upStarted><![CDATA[0]]></prc_7upStarted>
+            <prc_date><![CDATA[2006-09-11]]></prc_date>
+            <semester_desc><![CDATA[Fall 2006]]></semester_desc>
+            <prcMethod_desc><![CDATA[SIQ Follow-up]]></prcMethod_desc>
+        </IndividualPRC>
+        <IndividualPRC>
+            <campus_id><![CDATA[46]]></campus_id>
+            <campus_desc><![CDATA[McMaster University]]></campus_desc>
+            <campus_shortDesc><![CDATA[MAC]]></campus_shortDesc>
+            <accountgroup_id><![CDATA[10]]></accountgroup_id>
+            <prc_id><![CDATA[33]]></prc_id>
+            <prc_firstName><![CDATA[Ashley Anderson]]></prc_firstName>
+            <prcMethod_id><![CDATA[12]]></prcMethod_id>
+            <prc_witnessName><![CDATA[Amanda Wong]]></prc_witnessName>
+            <prc_notes><![CDATA[accepted Christ at Summit]]></prc_notes>
+            <prc_7upCompleted><![CDATA[0]]></prc_7upCompleted>
+            <semester_id><![CDATA[1]]></semester_id>
+            <prc_7upStarted><![CDATA[0]]></prc_7upStarted>
+            <prc_date><![CDATA[2006-09-30]]></prc_date>
+            <semester_desc><![CDATA[Fall 2006]]></semester_desc>
+            <prcMethod_desc><![CDATA[Other]]></prcMethod_desc>
+        </IndividualPRC>
+        <IndividualPRC>
+            <campus_id><![CDATA[46]]></campus_id>
+            <campus_desc><![CDATA[McMaster University]]></campus_desc>
+            <campus_shortDesc><![CDATA[MAC]]></campus_shortDesc>
+            <accountgroup_id><![CDATA[10]]></accountgroup_id>
+            <prc_id><![CDATA[36]]></prc_id>
+            <prc_firstName><![CDATA[Taehun]]></prc_firstName>
+            <prcMethod_id><![CDATA[12]]></prcMethod_id>
+            <prc_witnessName><![CDATA[Rony Kozman and Nick Orford]]></prc_witnessName>
+            <prc_notes><![CDATA[Rony's professor refered Taehun to Rony.]]></prc_notes>
+            <prc_7upCompleted><![CDATA[0]]></prc_7upCompleted>
+            <semester_id><![CDATA[1]]></semester_id>
+            <prc_7upStarted><![CDATA[0]]></prc_7upStarted>
+            <prc_date><![CDATA[2006-10-02]]></prc_date>
+            <semester_desc><![CDATA[Fall 2006]]></semester_desc>
+            <prcMethod_desc><![CDATA[Other]]></prcMethod_desc>
+        </IndividualPRC>
+        <IndividualPRC>
+            <campus_id><![CDATA[46]]></campus_id>
+            <campus_desc><![CDATA[McMaster University]]></campus_desc>
+            <campus_shortDesc><![CDATA[MAC]]></campus_shortDesc>
+            <accountgroup_id><![CDATA[10]]></accountgroup_id>
+            <prc_id><![CDATA[35]]></prc_id>
+            <prc_firstName><![CDATA[Matt/Emed]]></prc_firstName>
+            <prcMethod_id><![CDATA[12]]></prcMethod_id>
+            <prc_witnessName><![CDATA[Bahy Mehany]]></prc_witnessName>
+            <prc_notes><![CDATA[Muslim seeker from York who came to Summit.]]></prc_notes>
+            <prc_7upCompleted><![CDATA[0]]></prc_7upCompleted>
+            <semester_id><![CDATA[1]]></semester_id>
+            <prc_7upStarted><![CDATA[0]]></prc_7upStarted>
+            <prc_date><![CDATA[2006-10-01]]></prc_date>
+            <semester_desc><![CDATA[Fall 2006]]></semester_desc>
+            <prcMethod_desc><![CDATA[Other]]></prcMethod_desc>
+        </IndividualPRC>
+        <IndividualPRC>
+            <campus_id><![CDATA[46]]></campus_id>
+            <campus_desc><![CDATA[McMaster University]]></campus_desc>
+            <campus_shortDesc><![CDATA[MAC]]></campus_shortDesc>
+            <accountgroup_id><![CDATA[10]]></accountgroup_id>
+            <prc_id><![CDATA[37]]></prc_id>
+            <prc_firstName><![CDATA[Jessica]]></prc_firstName>
+            <prcMethod_id><![CDATA[1]]></prcMethod_id>
+            <prc_witnessName><![CDATA[Emily Terreberry and Karen King]]></prc_witnessName>
+            <prc_notes><![CDATA[1st year science student in commons]]></prc_notes>
+            <prc_7upCompleted><![CDATA[0]]></prc_7upCompleted>
+            <semester_id><![CDATA[1]]></semester_id>
+            <prc_7upStarted><![CDATA[0]]></prc_7upStarted>
+            <prc_date><![CDATA[2006-10-03]]></prc_date>
+            <semester_desc><![CDATA[Fall 2006]]></semester_desc>
+            <prcMethod_desc><![CDATA[Random Evangelism]]></prcMethod_desc>
+        </IndividualPRC>
+        <IndividualPRC>
+            <campus_id><![CDATA[7]]></campus_id>
+            <campus_desc><![CDATA[University of Alberta]]></campus_desc>
+            <campus_shortDesc><![CDATA[UofA]]></campus_shortDesc>
+            <accountgroup_id><![CDATA[11]]></accountgroup_id>
+            <prc_id><![CDATA[38]]></prc_id>
+            <prc_firstName><![CDATA[Heidi]]></prc_firstName>
+            <prcMethod_id><![CDATA[10]]></prcMethod_id>
+            <prc_witnessName><![CDATA[Mel and Amanda]]></prc_witnessName>
+            <prc_notes><![CDATA[Australian girl on exchange]]></prc_notes>
+            <prc_7upCompleted><![CDATA[0]]></prc_7upCompleted>
+            <semester_id><![CDATA[1]]></semester_id>
+            <prc_7upStarted><![CDATA[0]]></prc_7upStarted>
+            <prc_date><![CDATA[2006-09-12]]></prc_date>
+            <semester_desc><![CDATA[Fall 2006]]></semester_desc>
+            <prcMethod_desc><![CDATA[SIQ Follow-up]]></prcMethod_desc>
+        </IndividualPRC>
+        <IndividualPRC>
+            <campus_id><![CDATA[46]]></campus_id>
+            <campus_desc><![CDATA[McMaster University]]></campus_desc>
+            <campus_shortDesc><![CDATA[MAC]]></campus_shortDesc>
+            <accountgroup_id><![CDATA[10]]></accountgroup_id>
+            <prc_id><![CDATA[61]]></prc_id>
+            <prc_firstName><![CDATA[Jimmy]]></prc_firstName>
+            <prcMethod_id><![CDATA[1]]></prcMethod_id>
+            <prc_witnessName><![CDATA[David Heska]]></prc_witnessName>
+            <prc_notes></prc_notes>
+            <prc_7upCompleted><![CDATA[0]]></prc_7upCompleted>
+            <semester_id><![CDATA[1]]></semester_id>
+            <prc_7upStarted><![CDATA[0]]></prc_7upStarted>
+            <prc_date><![CDATA[2006-10-05]]></prc_date>
+            <semester_desc><![CDATA[Fall 2006]]></semester_desc>
+            <prcMethod_desc><![CDATA[Random Evangelism]]></prcMethod_desc>
+        </IndividualPRC>
+        <IndividualPRC>
+            <campus_id><![CDATA[40]]></campus_id>
+            <campus_desc><![CDATA[Saint Mary's University]]></campus_desc>
+            <campus_shortDesc><![CDATA[SMU]]></campus_shortDesc>
+            <accountgroup_id><![CDATA[10]]></accountgroup_id>
+            <prc_id><![CDATA[40]]></prc_id>
+            <prc_firstName><![CDATA[Fei Yan]]></prc_firstName>
+            <prcMethod_id><![CDATA[10]]></prcMethod_id>
+            <prc_witnessName><![CDATA[Matt Rice]]></prc_witnessName>
+            <prc_notes></prc_notes>
+            <prc_7upCompleted><![CDATA[1]]></prc_7upCompleted>
+            <semester_id><![CDATA[1]]></semester_id>
+            <prc_7upStarted><![CDATA[1]]></prc_7upStarted>
+            <prc_date><![CDATA[2006-09-12]]></prc_date>
+            <semester_desc><![CDATA[Fall 2006]]></semester_desc>
+            <prcMethod_desc><![CDATA[SIQ Follow-up]]></prcMethod_desc>
+        </IndividualPRC>
+        <IndividualPRC>
+            <campus_id><![CDATA[40]]></campus_id>
+            <campus_desc><![CDATA[Saint Mary's University]]></campus_desc>
+            <campus_shortDesc><![CDATA[SMU]]></campus_shortDesc>
+            <accountgroup_id><![CDATA[10]]></accountgroup_id>
+            <prc_id><![CDATA[41]]></prc_id>
+            <prc_firstName><![CDATA[Susan]]></prc_firstName>
+            <prcMethod_id><![CDATA[10]]></prcMethod_id>
+            <prc_witnessName><![CDATA[Sarah Hunter]]></prc_witnessName>
+            <prc_notes><![CDATA[This date is approximate]]></prc_notes>
+            <prc_7upCompleted><![CDATA[0]]></prc_7upCompleted>
+            <semester_id><![CDATA[1]]></semester_id>
+            <prc_7upStarted><![CDATA[1]]></prc_7upStarted>
+            <prc_date><![CDATA[2006-09-13]]></prc_date>
+            <semester_desc><![CDATA[Fall 2006]]></semester_desc>
+            <prcMethod_desc><![CDATA[SIQ Follow-up]]></prcMethod_desc>
+        </IndividualPRC>
+        <IndividualPRC>
+            <campus_id><![CDATA[57]]></campus_id>
+            <campus_desc><![CDATA[York University]]></campus_desc>
+            <campus_shortDesc><![CDATA[York]]></campus_shortDesc>
+            <accountgroup_id><![CDATA[10]]></accountgroup_id>
+            <prc_id><![CDATA[42]]></prc_id>
+            <prc_firstName><![CDATA[Tatum]]></prc_firstName>
+            <prcMethod_id><![CDATA[1]]></prcMethod_id>
+            <prc_witnessName><![CDATA[Janette and Sarah Blevins]]></prc_witnessName>
+            <prc_notes></prc_notes>
+            <prc_7upCompleted><![CDATA[0]]></prc_7upCompleted>
+            <semester_id><![CDATA[1]]></semester_id>
+            <prc_7upStarted><![CDATA[0]]></prc_7upStarted>
+            <prc_date><![CDATA[2006-10-04]]></prc_date>
+            <semester_desc><![CDATA[Fall 2006]]></semester_desc>
+            <prcMethod_desc><![CDATA[Random Evangelism]]></prcMethod_desc>
+        </IndividualPRC>
+        <IndividualPRC>
+            <campus_id><![CDATA[54]]></campus_id>
+            <campus_desc><![CDATA[University of Toronto]]></campus_desc>
+            <campus_shortDesc><![CDATA[UofT]]></campus_shortDesc>
+            <accountgroup_id><![CDATA[10]]></accountgroup_id>
+            <prc_id><![CDATA[43]]></prc_id>
+            <prc_firstName><![CDATA[Naria]]></prc_firstName>
+            <prcMethod_id><![CDATA[1]]></prcMethod_id>
+            <prc_witnessName><![CDATA[Camille Wong & Kim Menendez]]></prc_witnessName>
+            <prc_notes></prc_notes>
+            <prc_7upCompleted><![CDATA[0]]></prc_7upCompleted>
+            <semester_id><![CDATA[1]]></semester_id>
+            <prc_7upStarted><![CDATA[1]]></prc_7upStarted>
+            <prc_date><![CDATA[2006-10-03]]></prc_date>
+            <semester_desc><![CDATA[Fall 2006]]></semester_desc>
+            <prcMethod_desc><![CDATA[Random Evangelism]]></prcMethod_desc>
+        </IndividualPRC>
+        <IndividualPRC>
+            <campus_id><![CDATA[65]]></campus_id>
+            <campus_desc><![CDATA[Universite Laval]]></campus_desc>
+            <campus_shortDesc><![CDATA[Laval]]></campus_shortDesc>
+            <accountgroup_id><![CDATA[12]]></accountgroup_id>
+            <prc_id><![CDATA[44]]></prc_id>
+            <prc_firstName><![CDATA[Vincent Maul]]></prc_firstName>
+            <prcMethod_id><![CDATA[1]]></prcMethod_id>
+            <prc_witnessName><![CDATA[Gustavo Jim̩nez]]></prc_witnessName>
+            <prc_notes><![CDATA[Vincent est un anglo en 3i̬me ann̩e de FLS.  Il venait de recevoir un V3 il y a deux semaines avant.]]></prc_notes>
+            <prc_7upCompleted><![CDATA[0]]></prc_7upCompleted>
+            <semester_id><![CDATA[1]]></semester_id>
+            <prc_7upStarted><![CDATA[0]]></prc_7upStarted>
+            <prc_date><![CDATA[2006-10-02]]></prc_date>
+            <semester_desc><![CDATA[Fall 2006]]></semester_desc>
+            <prcMethod_desc><![CDATA[Random Evangelism]]></prcMethod_desc>
+        </IndividualPRC>
+        <IndividualPRC>
+            <campus_id><![CDATA[68]]></campus_id>
+            <campus_desc><![CDATA[University of Saskatchewan]]></campus_desc>
+            <campus_shortDesc><![CDATA[UofS]]></campus_shortDesc>
+            <accountgroup_id><![CDATA[11]]></accountgroup_id>
+            <prc_id><![CDATA[47]]></prc_id>
+            <prc_firstName><![CDATA[Galo]]></prc_firstName>
+            <prcMethod_id><![CDATA[10]]></prcMethod_id>
+            <prc_witnessName><![CDATA[Mark VandenHooven]]></prc_witnessName>
+            <prc_notes></prc_notes>
+            <prc_7upCompleted><![CDATA[0]]></prc_7upCompleted>
+            <semester_id><![CDATA[1]]></semester_id>
+            <prc_7upStarted><![CDATA[1]]></prc_7upStarted>
+            <prc_date><![CDATA[2006-10-03]]></prc_date>
+            <semester_desc><![CDATA[Fall 2006]]></semester_desc>
+            <prcMethod_desc><![CDATA[SIQ Follow-up]]></prcMethod_desc>
+        </IndividualPRC>
+        <IndividualPRC>
+            <campus_id><![CDATA[8]]></campus_id>
+            <campus_desc><![CDATA[University of Calgary]]></campus_desc>
+            <campus_shortDesc><![CDATA[UofC]]></campus_shortDesc>
+            <accountgroup_id><![CDATA[11]]></accountgroup_id>
+            <prc_id><![CDATA[48]]></prc_id>
+            <prc_firstName><![CDATA[Wu Fan]]></prc_firstName>
+            <prcMethod_id><![CDATA[10]]></prcMethod_id>
+            <prc_witnessName><![CDATA[Wendy Chien]]></prc_witnessName>
+            <prc_notes></prc_notes>
+            <prc_7upCompleted><![CDATA[0]]></prc_7upCompleted>
+            <semester_id><![CDATA[1]]></semester_id>
+            <prc_7upStarted><![CDATA[0]]></prc_7upStarted>
+            <prc_date><![CDATA[2006-09-26]]></prc_date>
+            <semester_desc><![CDATA[Fall 2006]]></semester_desc>
+            <prcMethod_desc><![CDATA[SIQ Follow-up]]></prcMethod_desc>
+        </IndividualPRC>
+        <IndividualPRC>
+            <campus_id><![CDATA[8]]></campus_id>
+            <campus_desc><![CDATA[University of Calgary]]></campus_desc>
+            <campus_shortDesc><![CDATA[UofC]]></campus_shortDesc>
+            <accountgroup_id><![CDATA[11]]></accountgroup_id>
+            <prc_id><![CDATA[49]]></prc_id>
+            <prc_firstName><![CDATA[Wen Ying]]></prc_firstName>
+            <prcMethod_id><![CDATA[10]]></prcMethod_id>
+            <prc_witnessName><![CDATA[Wendy Chien]]></prc_witnessName>
+            <prc_notes></prc_notes>
+            <prc_7upCompleted><![CDATA[0]]></prc_7upCompleted>
+            <semester_id><![CDATA[1]]></semester_id>
+            <prc_7upStarted><![CDATA[1]]></prc_7upStarted>
+            <prc_date><![CDATA[2006-10-05]]></prc_date>
+            <semester_desc><![CDATA[Fall 2006]]></semester_desc>
+            <prcMethod_desc><![CDATA[SIQ Follow-up]]></prcMethod_desc>
+        </IndividualPRC>
+        <IndividualPRC>
+            <campus_id><![CDATA[2]]></campus_id>
+            <campus_desc><![CDATA[University of Western Ontario]]></campus_desc>
+            <campus_shortDesc><![CDATA[UWO]]></campus_shortDesc>
+            <accountgroup_id><![CDATA[10]]></accountgroup_id>
+            <prc_id><![CDATA[50]]></prc_id>
+            <prc_firstName><![CDATA[Nun Guinhua]]></prc_firstName>
+            <prcMethod_id><![CDATA[10]]></prcMethod_id>
+            <prc_witnessName><![CDATA[Jennifer Clarke]]></prc_witnessName>
+            <prc_notes></prc_notes>
+            <prc_7upCompleted><![CDATA[0]]></prc_7upCompleted>
+            <semester_id><![CDATA[1]]></semester_id>
+            <prc_7upStarted><![CDATA[1]]></prc_7upStarted>
+            <prc_date><![CDATA[2006-10-11]]></prc_date>
+            <semester_desc><![CDATA[Fall 2006]]></semester_desc>
+            <prcMethod_desc><![CDATA[SIQ Follow-up]]></prcMethod_desc>
+        </IndividualPRC>
+        <IndividualPRC>
+            <campus_id><![CDATA[2]]></campus_id>
+            <campus_desc><![CDATA[University of Western Ontario]]></campus_desc>
+            <campus_shortDesc><![CDATA[UWO]]></campus_shortDesc>
+            <accountgroup_id><![CDATA[10]]></accountgroup_id>
+            <prc_id><![CDATA[51]]></prc_id>
+            <prc_firstName><![CDATA[?]]></prc_firstName>
+            <prcMethod_id><![CDATA[1]]></prcMethod_id>
+            <prc_witnessName><![CDATA[Veronica Pang]]></prc_witnessName>
+            <prc_notes></prc_notes>
+            <prc_7upCompleted><![CDATA[0]]></prc_7upCompleted>
+            <semester_id><![CDATA[1]]></semester_id>
+            <prc_7upStarted><![CDATA[1]]></prc_7upStarted>
+            <prc_date><![CDATA[2006-09-25]]></prc_date>
+            <semester_desc><![CDATA[Fall 2006]]></semester_desc>
+            <prcMethod_desc><![CDATA[Random Evangelism]]></prcMethod_desc>
+        </IndividualPRC>
+        <IndividualPRC>
+            <campus_id><![CDATA[2]]></campus_id>
+            <campus_desc><![CDATA[University of Western Ontario]]></campus_desc>
+            <campus_shortDesc><![CDATA[UWO]]></campus_shortDesc>
+            <accountgroup_id><![CDATA[10]]></accountgroup_id>
+            <prc_id><![CDATA[52]]></prc_id>
+            <prc_firstName><![CDATA[Tyler's Friend]]></prc_firstName>
+            <prcMethod_id><![CDATA[12]]></prcMethod_id>
+            <prc_witnessName><![CDATA[Tyler Roggie]]></prc_witnessName>
+            <prc_notes><![CDATA[From Clubs table]]></prc_notes>
+            <prc_7upCompleted><![CDATA[0]]></prc_7upCompleted>
+            <semester_id><![CDATA[1]]></semester_id>
+            <prc_7upStarted><![CDATA[1]]></prc_7upStarted>
+            <prc_date><![CDATA[2006-09-20]]></prc_date>
+            <semester_desc><![CDATA[Fall 2006]]></semester_desc>
+            <prcMethod_desc><![CDATA[Other]]></prcMethod_desc>
+        </IndividualPRC>
+        <IndividualPRC>
+            <campus_id><![CDATA[8]]></campus_id>
+            <campus_desc><![CDATA[University of Calgary]]></campus_desc>
+            <campus_shortDesc><![CDATA[UofC]]></campus_shortDesc>
+            <accountgroup_id><![CDATA[11]]></accountgroup_id>
+            <prc_id><![CDATA[53]]></prc_id>
+            <prc_firstName><![CDATA[Tony Hong]]></prc_firstName>
+            <prcMethod_id><![CDATA[4]]></prcMethod_id>
+            <prc_witnessName><![CDATA[Shawn]]></prc_witnessName>
+            <prc_notes><![CDATA[Tony is in an evangelistic Study with me and has come to faith after monthes of questions.He recently came to summit which was great for him.]]></prc_notes>
+            <prc_7upCompleted><![CDATA[0]]></prc_7upCompleted>
+            <semester_id><![CDATA[1]]></semester_id>
+            <prc_7upStarted><![CDATA[1]]></prc_7upStarted>
+            <prc_date><![CDATA[2006-10-07]]></prc_date>
+            <semester_desc><![CDATA[Fall 2006]]></semester_desc>
+            <prcMethod_desc><![CDATA[Friendship Evangelism]]></prcMethod_desc>
+        </IndividualPRC>
+        <IndividualPRC>
+            <campus_id><![CDATA[68]]></campus_id>
+            <campus_desc><![CDATA[University of Saskatchewan]]></campus_desc>
+            <campus_shortDesc><![CDATA[UofS]]></campus_shortDesc>
+            <accountgroup_id><![CDATA[11]]></accountgroup_id>
+            <prc_id><![CDATA[54]]></prc_id>
+            <prc_firstName><![CDATA[Tara]]></prc_firstName>
+            <prcMethod_id><![CDATA[10]]></prcMethod_id>
+            <prc_witnessName><![CDATA[Angelena Ng]]></prc_witnessName>
+            <prc_notes></prc_notes>
+            <prc_7upCompleted><![CDATA[0]]></prc_7upCompleted>
+            <semester_id><![CDATA[1]]></semester_id>
+            <prc_7upStarted><![CDATA[1]]></prc_7upStarted>
+            <prc_date><![CDATA[2005-09-08]]></prc_date>
+            <semester_desc><![CDATA[Fall 2006]]></semester_desc>
+            <prcMethod_desc><![CDATA[SIQ Follow-up]]></prcMethod_desc>
+        </IndividualPRC>
+        <IndividualPRC>
+            <campus_id><![CDATA[68]]></campus_id>
+            <campus_desc><![CDATA[University of Saskatchewan]]></campus_desc>
+            <campus_shortDesc><![CDATA[UofS]]></campus_shortDesc>
+            <accountgroup_id><![CDATA[11]]></accountgroup_id>
+            <prc_id><![CDATA[55]]></prc_id>
+            <prc_firstName><![CDATA[Jason]]></prc_firstName>
+            <prcMethod_id><![CDATA[10]]></prcMethod_id>
+            <prc_witnessName><![CDATA[Rod]]></prc_witnessName>
+            <prc_notes><![CDATA[First Year Orientation Contact]]></prc_notes>
+            <prc_7upCompleted><![CDATA[0]]></prc_7upCompleted>
+            <semester_id><![CDATA[1]]></semester_id>
+            <prc_7upStarted><![CDATA[1]]></prc_7upStarted>
+            <prc_date><![CDATA[2006-09-08]]></prc_date>
+            <semester_desc><![CDATA[Fall 2006]]></semester_desc>
+            <prcMethod_desc><![CDATA[SIQ Follow-up]]></prcMethod_desc>
+        </IndividualPRC>
+        <IndividualPRC>
+            <campus_id><![CDATA[70]]></campus_id>
+            <campus_desc><![CDATA[Regional / National]]></campus_desc>
+            <campus_shortDesc><![CDATA[Reg/Nat]]></campus_shortDesc>
+            <accountgroup_id><![CDATA[13]]></accountgroup_id>
+            <prc_id><![CDATA[56]]></prc_id>
+            <prc_firstName><![CDATA[Dakota]]></prc_firstName>
+            <prcMethod_id><![CDATA[10]]></prcMethod_id>
+            <prc_witnessName><![CDATA[Rod]]></prc_witnessName>
+            <prc_notes><![CDATA[First Year Engineering Student from Regina Studying at U of S]]></prc_notes>
+            <prc_7upCompleted><![CDATA[0]]></prc_7upCompleted>
+            <semester_id><![CDATA[1]]></semester_id>
+            <prc_7upStarted><![CDATA[0]]></prc_7upStarted>
+            <prc_date><![CDATA[2006-09-13]]></prc_date>
+            <semester_desc><![CDATA[Fall 2006]]></semester_desc>
+            <prcMethod_desc><![CDATA[SIQ Follow-up]]></prcMethod_desc>
+        </IndividualPRC>
+        <IndividualPRC>
+            <campus_id><![CDATA[68]]></campus_id>
+            <campus_desc><![CDATA[University of Saskatchewan]]></campus_desc>
+            <campus_shortDesc><![CDATA[UofS]]></campus_shortDesc>
+            <accountgroup_id><![CDATA[11]]></accountgroup_id>
+            <prc_id><![CDATA[57]]></prc_id>
+            <prc_firstName><![CDATA[Dakota]]></prc_firstName>
+            <prcMethod_id><![CDATA[10]]></prcMethod_id>
+            <prc_witnessName><![CDATA[Rod Alm]]></prc_witnessName>
+            <prc_notes><![CDATA[Dakota is a U of S First Year Engineering Student from Regina who signed up at First Year Orientation by taking a Real LIfe Kit and completing an SIQ. He came to The Edge, our weekly meeting and brought another Engineering student September 15th.]]></prc_notes>
+            <prc_7upCompleted><![CDATA[0]]></prc_7upCompleted>
+            <semester_id><![CDATA[1]]></semester_id>
+            <prc_7upStarted><![CDATA[1]]></prc_7upStarted>
+            <prc_date><![CDATA[2006-09-13]]></prc_date>
+            <semester_desc><![CDATA[Fall 2006]]></semester_desc>
+            <prcMethod_desc><![CDATA[SIQ Follow-up]]></prcMethod_desc>
+        </IndividualPRC>
+        <IndividualPRC>
+            <campus_id><![CDATA[14]]></campus_id>
+            <campus_desc><![CDATA[Simon Fraser University]]></campus_desc>
+            <campus_shortDesc><![CDATA[SFU]]></campus_shortDesc>
+            <accountgroup_id><![CDATA[11]]></accountgroup_id>
+            <prc_id><![CDATA[58]]></prc_id>
+            <prc_firstName><![CDATA[Alex]]></prc_firstName>
+            <prcMethod_id><![CDATA[10]]></prcMethod_id>
+            <prc_witnessName><![CDATA[Gary]]></prc_witnessName>
+            <prc_notes></prc_notes>
+            <prc_7upCompleted><![CDATA[0]]></prc_7upCompleted>
+            <semester_id><![CDATA[1]]></semester_id>
+            <prc_7upStarted><![CDATA[1]]></prc_7upStarted>
+            <prc_date><![CDATA[2006-09-19]]></prc_date>
+            <semester_desc><![CDATA[Fall 2006]]></semester_desc>
+            <prcMethod_desc><![CDATA[SIQ Follow-up]]></prcMethod_desc>
+        </IndividualPRC>
+        <IndividualPRC>
+            <campus_id><![CDATA[68]]></campus_id>
+            <campus_desc><![CDATA[University of Saskatchewan]]></campus_desc>
+            <campus_shortDesc><![CDATA[UofS]]></campus_shortDesc>
+            <accountgroup_id><![CDATA[11]]></accountgroup_id>
+            <prc_id><![CDATA[59]]></prc_id>
+            <prc_firstName><![CDATA[Anon.]]></prc_firstName>
+            <prcMethod_id><![CDATA[11]]></prcMethod_id>
+            <prc_witnessName><![CDATA[Everyhuskie.com]]></prc_witnessName>
+            <prc_notes></prc_notes>
+            <prc_7upCompleted><![CDATA[0]]></prc_7upCompleted>
+            <semester_id><![CDATA[1]]></semester_id>
+            <prc_7upStarted><![CDATA[0]]></prc_7upStarted>
+            <prc_date><![CDATA[2006-09-06]]></prc_date>
+            <semester_desc><![CDATA[Fall 2006]]></semester_desc>
+            <prcMethod_desc><![CDATA[Internet Contact]]></prcMethod_desc>
+        </IndividualPRC>
+        <IndividualPRC>
+            <campus_id><![CDATA[68]]></campus_id>
+            <campus_desc><![CDATA[University of Saskatchewan]]></campus_desc>
+            <campus_shortDesc><![CDATA[UofS]]></campus_shortDesc>
+            <accountgroup_id><![CDATA[11]]></accountgroup_id>
+            <prc_id><![CDATA[60]]></prc_id>
+            <prc_firstName><![CDATA[Anon.]]></prc_firstName>
+            <prcMethod_id><![CDATA[11]]></prcMethod_id>
+            <prc_witnessName><![CDATA[Everyhuskie.com]]></prc_witnessName>
+            <prc_notes></prc_notes>
+            <prc_7upCompleted><![CDATA[0]]></prc_7upCompleted>
+            <semester_id><![CDATA[1]]></semester_id>
+            <prc_7upStarted><![CDATA[0]]></prc_7upStarted>
+            <prc_date><![CDATA[2006-10-06]]></prc_date>
+            <semester_desc><![CDATA[Fall 2006]]></semester_desc>
+            <prcMethod_desc><![CDATA[Internet Contact]]></prcMethod_desc>
+        </IndividualPRC>
+        <IndividualPRC>
+            <campus_id><![CDATA[49]]></campus_id>
+            <campus_desc><![CDATA[Ryerson University]]></campus_desc>
+            <campus_shortDesc><![CDATA[Ryerson]]></campus_shortDesc>
+            <accountgroup_id><![CDATA[10]]></accountgroup_id>
+            <prc_id><![CDATA[62]]></prc_id>
+            <prc_firstName><![CDATA[Valantina Levermany]]></prc_firstName>
+            <prcMethod_id><![CDATA[12]]></prcMethod_id>
+            <prc_witnessName><![CDATA[Stephanie Bourque]]></prc_witnessName>
+            <prc_notes><![CDATA[Valantina's a girl from my DG who has been attending faithfully but has expressed doubts about having a relationship with God. We walked through the 4 Laws and a bunch of questions she had.  She's been searching for a while and was surprised to discover how "easy" it was to enter a relationship with Christ. She has a genuine desire to grow and learn how to be a "godly daughter of God." ]]></prc_notes>
+            <prc_7upCompleted><![CDATA[0]]></prc_7upCompleted>
+            <semester_id><![CDATA[1]]></semester_id>
+            <prc_7upStarted><![CDATA[1]]></prc_7upStarted>
+            <prc_date><![CDATA[2006-10-12]]></prc_date>
+            <semester_desc><![CDATA[Fall 2006]]></semester_desc>
+            <prcMethod_desc><![CDATA[Other]]></prcMethod_desc>
+        </IndividualPRC>
+        <IndividualPRC>
+            <campus_id><![CDATA[73]]></campus_id>
+            <campus_desc><![CDATA[Concordia University]]></campus_desc>
+            <campus_shortDesc><![CDATA[Concordia]]></campus_shortDesc>
+            <accountgroup_id><![CDATA[12]]></accountgroup_id>
+            <prc_id><![CDATA[63]]></prc_id>
+            <prc_firstName><![CDATA[Boris]]></prc_firstName>
+            <prcMethod_id><![CDATA[1]]></prcMethod_id>
+            <prc_witnessName><![CDATA[brad morrice]]></prc_witnessName>
+            <prc_notes><![CDATA[on a random, using 4 laws.]]></prc_notes>
+            <prc_7upCompleted><![CDATA[0]]></prc_7upCompleted>
+            <semester_id><![CDATA[1]]></semester_id>
+            <prc_7upStarted><![CDATA[0]]></prc_7upStarted>
+            <prc_date><![CDATA[2006-10-05]]></prc_date>
+            <semester_desc><![CDATA[Fall 2006]]></semester_desc>
+            <prcMethod_desc><![CDATA[Random Evangelism]]></prcMethod_desc>
+        </IndividualPRC>
+        <IndividualPRC>
+            <campus_id><![CDATA[61]]></campus_id>
+            <campus_desc><![CDATA[McGill University]]></campus_desc>
+            <campus_shortDesc><![CDATA[McGill]]></campus_shortDesc>
+            <accountgroup_id><![CDATA[12]]></accountgroup_id>
+            <prc_id><![CDATA[64]]></prc_id>
+            <prc_firstName><![CDATA[Phillip]]></prc_firstName>
+            <prcMethod_id><![CDATA[12]]></prcMethod_id>
+            <prc_witnessName><![CDATA[John B]]></prc_witnessName>
+            <prc_notes><![CDATA[Met with Phillip over coffee and shared the gospel with him along with Jim (one of my disciples).  Jim introduced me to Phillip .  He accepted Christ after 4 laws conv. and is coming to church and to Alpha.]]></prc_notes>
+            <prc_7upCompleted><![CDATA[0]]></prc_7upCompleted>
+            <semester_id><![CDATA[1]]></semester_id>
+            <prc_7upStarted><![CDATA[1]]></prc_7upStarted>
+            <prc_date><![CDATA[2006-09-04]]></prc_date>
+            <semester_desc><![CDATA[Fall 2006]]></semester_desc>
+            <prcMethod_desc><![CDATA[Other]]></prcMethod_desc>
+        </IndividualPRC>
+        <IndividualPRC>
+            <campus_id><![CDATA[24]]></campus_id>
+            <campus_desc><![CDATA[University of Manitoba]]></campus_desc>
+            <campus_shortDesc><![CDATA[UofM]]></campus_shortDesc>
+            <accountgroup_id><![CDATA[11]]></accountgroup_id>
+            <prc_id><![CDATA[65]]></prc_id>
+            <prc_firstName><![CDATA[Karen]]></prc_firstName>
+            <prcMethod_id><![CDATA[4]]></prcMethod_id>
+            <prc_witnessName><![CDATA[Yuan and Laura]]></prc_witnessName>
+            <prc_notes><![CDATA[She is Yuan's friend.  She has come out to a few parties and events.  She asked Yuan how she could become a Christian and Yuan took her to Laura.  ]]></prc_notes>
+            <prc_7upCompleted><![CDATA[0]]></prc_7upCompleted>
+            <semester_id><![CDATA[1]]></semester_id>
+            <prc_7upStarted><![CDATA[0]]></prc_7upStarted>
+            <prc_date><![CDATA[2006-10-10]]></prc_date>
+            <semester_desc><![CDATA[Fall 2006]]></semester_desc>
+            <prcMethod_desc><![CDATA[Friendship Evangelism]]></prcMethod_desc>
+        </IndividualPRC>
+        <IndividualPRC>
+            <campus_id><![CDATA[68]]></campus_id>
+            <campus_desc><![CDATA[University of Saskatchewan]]></campus_desc>
+            <campus_shortDesc><![CDATA[UofS]]></campus_shortDesc>
+            <accountgroup_id><![CDATA[11]]></accountgroup_id>
+            <prc_id><![CDATA[66]]></prc_id>
+            <prc_firstName><![CDATA[Kevin Vanweeyck]]></prc_firstName>
+            <prcMethod_id><![CDATA[4]]></prcMethod_id>
+            <prc_witnessName><![CDATA[Rod Alm]]></prc_witnessName>
+            <prc_notes><![CDATA[Kevin played rugby in High School with Cam Berg. Last year Kevin played internationally with Canada's Junior National Rugby Team. He is in first year U of S this year. Cam introduced him to Rod. We went through the Four Laws and Kevin readily accepted Christ as his Saviour and Lord. He joined Cam's D.G. that afternoon and attended The Edge on Campus Friday afternoon and the Athletes in Action meeting at Rod's Sunday night. He willingly testified to just coming to know Christ to the other athletes.]]></prc_notes>
+            <prc_7upCompleted><![CDATA[0]]></prc_7upCompleted>
+            <semester_id><![CDATA[1]]></semester_id>
+            <prc_7upStarted><![CDATA[1]]></prc_7upStarted>
+            <prc_date><![CDATA[2006-10-14]]></prc_date>
+            <semester_desc><![CDATA[Fall 2006]]></semester_desc>
+            <prcMethod_desc><![CDATA[Friendship Evangelism]]></prcMethod_desc>
+        </IndividualPRC>
+        <IndividualPRC>
+            <campus_id><![CDATA[51]]></campus_id>
+            <campus_desc><![CDATA[University of Guelph]]></campus_desc>
+            <campus_shortDesc><![CDATA[UofG]]></campus_shortDesc>
+            <accountgroup_id><![CDATA[10]]></accountgroup_id>
+            <prc_id><![CDATA[67]]></prc_id>
+            <prc_firstName><![CDATA[0]]></prc_firstName>
+            <prcMethod_id><![CDATA[12]]></prcMethod_id>
+            <prc_witnessName><![CDATA[0]]></prc_witnessName>
+            <prc_notes></prc_notes>
+            <prc_7upCompleted><![CDATA[0]]></prc_7upCompleted>
+            <semester_id><![CDATA[1]]></semester_id>
+            <prc_7upStarted><![CDATA[0]]></prc_7upStarted>
+            <prc_date><![CDATA[2006-10-21]]></prc_date>
+            <semester_desc><![CDATA[Fall 2006]]></semester_desc>
+            <prcMethod_desc><![CDATA[Other]]></prcMethod_desc>
+        </IndividualPRC>
+        <IndividualPRC>
+            <campus_id><![CDATA[46]]></campus_id>
+            <campus_desc><![CDATA[McMaster University]]></campus_desc>
+            <campus_shortDesc><![CDATA[MAC]]></campus_shortDesc>
+            <accountgroup_id><![CDATA[10]]></accountgroup_id>
+            <prc_id><![CDATA[68]]></prc_id>
+            <prc_firstName><![CDATA[Darshel]]></prc_firstName>
+            <prcMethod_id><![CDATA[1]]></prcMethod_id>
+            <prc_witnessName><![CDATA[Aban]]></prc_witnessName>
+            <prc_notes><![CDATA[I can\'t remember the girl\'s name right now.  I\'ll find out from Aban.]]></prc_notes>
+            <prc_7upCompleted><![CDATA[0]]></prc_7upCompleted>
+            <semester_id><![CDATA[1]]></semester_id>
+            <prc_7upStarted><![CDATA[0]]></prc_7upStarted>
+            <prc_date><![CDATA[2006-10-04]]></prc_date>
+            <semester_desc><![CDATA[Fall 2006]]></semester_desc>
+            <prcMethod_desc><![CDATA[Random Evangelism]]></prcMethod_desc>
+        </IndividualPRC>
+        <IndividualPRC>
+            <campus_id><![CDATA[57]]></campus_id>
+            <campus_desc><![CDATA[York University]]></campus_desc>
+            <campus_shortDesc><![CDATA[York]]></campus_shortDesc>
+            <accountgroup_id><![CDATA[10]]></accountgroup_id>
+            <prc_id><![CDATA[69]]></prc_id>
+            <prc_firstName><![CDATA[Jas Singh]]></prc_firstName>
+            <prcMethod_id><![CDATA[10]]></prcMethod_id>
+            <prc_witnessName><![CDATA[John Hood]]></prc_witnessName>
+            <prc_notes><![CDATA[Sikh background]]></prc_notes>
+            <prc_7upCompleted><![CDATA[0]]></prc_7upCompleted>
+            <semester_id><![CDATA[1]]></semester_id>
+            <prc_7upStarted><![CDATA[1]]></prc_7upStarted>
+            <prc_date><![CDATA[2006-10-17]]></prc_date>
+            <semester_desc><![CDATA[Fall 2006]]></semester_desc>
+            <prcMethod_desc><![CDATA[SIQ Follow-up]]></prcMethod_desc>
+        </IndividualPRC>
+        <IndividualPRC>
+            <campus_id><![CDATA[57]]></campus_id>
+            <campus_desc><![CDATA[York University]]></campus_desc>
+            <campus_shortDesc><![CDATA[York]]></campus_shortDesc>
+            <accountgroup_id><![CDATA[10]]></accountgroup_id>
+            <prc_id><![CDATA[70]]></prc_id>
+            <prc_firstName><![CDATA[Chris]]></prc_firstName>
+            <prcMethod_id><![CDATA[5]]></prcMethod_id>
+            <prc_witnessName><![CDATA[John Knight]]></prc_witnessName>
+            <prc_notes></prc_notes>
+            <prc_7upCompleted><![CDATA[0]]></prc_7upCompleted>
+            <semester_id><![CDATA[1]]></semester_id>
+            <prc_7upStarted><![CDATA[0]]></prc_7upStarted>
+            <prc_date><![CDATA[2006-10-12]]></prc_date>
+            <semester_desc><![CDATA[Fall 2006]]></semester_desc>
+            <prcMethod_desc><![CDATA[Investigative Bible Study]]></prcMethod_desc>
+        </IndividualPRC>
+        <IndividualPRC>
+            <campus_id><![CDATA[57]]></campus_id>
+            <campus_desc><![CDATA[York University]]></campus_desc>
+            <campus_shortDesc><![CDATA[York]]></campus_shortDesc>
+            <accountgroup_id><![CDATA[10]]></accountgroup_id>
+            <prc_id><![CDATA[71]]></prc_id>
+            <prc_firstName><![CDATA[Kate Lee]]></prc_firstName>
+            <prcMethod_id><![CDATA[4]]></prcMethod_id>
+            <prc_witnessName><![CDATA[Cheryl Li]]></prc_witnessName>
+            <prc_notes><![CDATA[I (Cheryl) met Kate back in highschool, but now we both go to York. Last week I bumped into her on the bus and got into a spiritual conversation, but because time ran short we scheduled to meet up this past Friday to continue talking. God has been working in her life for a while and has brought her to where she is now. Praise Him. This past Friday at her bus stop, she prayed to recieve Christ into her life! ]]></prc_notes>
+            <prc_7upCompleted><![CDATA[0]]></prc_7upCompleted>
+            <semester_id><![CDATA[1]]></semester_id>
+            <prc_7upStarted><![CDATA[0]]></prc_7upStarted>
+            <prc_date><![CDATA[2006-10-13]]></prc_date>
+            <semester_desc><![CDATA[Fall 2006]]></semester_desc>
+            <prcMethod_desc><![CDATA[Friendship Evangelism]]></prcMethod_desc>
+        </IndividualPRC>
+        <IndividualPRC>
+            <campus_id><![CDATA[7]]></campus_id>
+            <campus_desc><![CDATA[University of Alberta]]></campus_desc>
+            <campus_shortDesc><![CDATA[UofA]]></campus_shortDesc>
+            <accountgroup_id><![CDATA[11]]></accountgroup_id>
+            <prc_id><![CDATA[72]]></prc_id>
+            <prc_firstName><![CDATA[Erin]]></prc_firstName>
+            <prcMethod_id><![CDATA[1]]></prcMethod_id>
+            <prc_witnessName><![CDATA[Tiffany and Chris]]></prc_witnessName>
+            <prc_notes><![CDATA[Chris and I met Erin while she was eating dinner. I led the presentation and Chris helped claify and lead too. Erin comes from a catholic background, she is a single mom, and was moved to tears that she could have security in Jesus.]]></prc_notes>
+            <prc_7upCompleted><![CDATA[0]]></prc_7upCompleted>
+            <semester_id><![CDATA[1]]></semester_id>
+            <prc_7upStarted><![CDATA[1]]></prc_7upStarted>
+            <prc_date><![CDATA[2006-10-19]]></prc_date>
+            <semester_desc><![CDATA[Fall 2006]]></semester_desc>
+            <prcMethod_desc><![CDATA[Random Evangelism]]></prcMethod_desc>
+        </IndividualPRC>
+        <IndividualPRC>
+            <campus_id><![CDATA[46]]></campus_id>
+            <campus_desc><![CDATA[McMaster University]]></campus_desc>
+            <campus_shortDesc><![CDATA[MAC]]></campus_shortDesc>
+            <accountgroup_id><![CDATA[10]]></accountgroup_id>
+            <prc_id><![CDATA[73]]></prc_id>
+            <prc_firstName><![CDATA[Dylan Fernandez]]></prc_firstName>
+            <prcMethod_id><![CDATA[1]]></prcMethod_id>
+            <prc_witnessName><![CDATA[Bahy Mehany and John Doan]]></prc_witnessName>
+            <prc_notes></prc_notes>
+            <prc_7upCompleted><![CDATA[0]]></prc_7upCompleted>
+            <semester_id><![CDATA[1]]></semester_id>
+            <prc_7upStarted><![CDATA[0]]></prc_7upStarted>
+            <prc_date><![CDATA[2006-10-05]]></prc_date>
+            <semester_desc><![CDATA[Fall 2006]]></semester_desc>
+            <prcMethod_desc><![CDATA[Random Evangelism]]></prcMethod_desc>
+        </IndividualPRC>
+        <IndividualPRC>
+            <campus_id><![CDATA[46]]></campus_id>
+            <campus_desc><![CDATA[McMaster University]]></campus_desc>
+            <campus_shortDesc><![CDATA[MAC]]></campus_shortDesc>
+            <accountgroup_id><![CDATA[10]]></accountgroup_id>
+            <prc_id><![CDATA[74]]></prc_id>
+            <prc_firstName><![CDATA[Ange Bradshawe]]></prc_firstName>
+            <prcMethod_id><![CDATA[2]]></prcMethod_id>
+            <prc_witnessName><![CDATA[Emily Terreberry]]></prc_witnessName>
+            <prc_notes><![CDATA[campus wide event follow up]]></prc_notes>
+            <prc_7upCompleted><![CDATA[0]]></prc_7upCompleted>
+            <semester_id><![CDATA[1]]></semester_id>
+            <prc_7upStarted><![CDATA[0]]></prc_7upStarted>
+            <prc_date><![CDATA[2006-10-25]]></prc_date>
+            <semester_desc><![CDATA[Fall 2006]]></semester_desc>
+            <prcMethod_desc><![CDATA[Campus Wide Event]]></prcMethod_desc>
+        </IndividualPRC>
+        <IndividualPRC>
+            <campus_id><![CDATA[49]]></campus_id>
+            <campus_desc><![CDATA[Ryerson University]]></campus_desc>
+            <campus_shortDesc><![CDATA[Ryerson]]></campus_shortDesc>
+            <accountgroup_id><![CDATA[10]]></accountgroup_id>
+            <prc_id><![CDATA[75]]></prc_id>
+            <prc_firstName><![CDATA[Justin Morris]]></prc_firstName>
+            <prcMethod_id><![CDATA[10]]></prcMethod_id>
+            <prc_witnessName><![CDATA[Russ Martin]]></prc_witnessName>
+            <prc_notes><![CDATA[SIQ Follow-up after a number of meetings and studies he decided to accept Christ.]]></prc_notes>
+            <prc_7upCompleted><![CDATA[0]]></prc_7upCompleted>
+            <semester_id><![CDATA[1]]></semester_id>
+            <prc_7upStarted><![CDATA[1]]></prc_7upStarted>
+            <prc_date><![CDATA[2006-10-23]]></prc_date>
+            <semester_desc><![CDATA[Fall 2006]]></semester_desc>
+            <prcMethod_desc><![CDATA[SIQ Follow-up]]></prcMethod_desc>
+        </IndividualPRC>
+        <IndividualPRC>
+            <campus_id><![CDATA[65]]></campus_id>
+            <campus_desc><![CDATA[Universite Laval]]></campus_desc>
+            <campus_shortDesc><![CDATA[Laval]]></campus_shortDesc>
+            <accountgroup_id><![CDATA[12]]></accountgroup_id>
+            <prc_id><![CDATA[76]]></prc_id>
+            <prc_firstName><![CDATA[Marie-Eug̩nia]]></prc_firstName>
+            <prcMethod_id><![CDATA[13]]></prcMethod_id>
+            <prc_witnessName><![CDATA[Katia Moreau]]></prc_witnessName>
+            <prc_notes></prc_notes>
+            <prc_7upCompleted><![CDATA[0]]></prc_7upCompleted>
+            <semester_id><![CDATA[1]]></semester_id>
+            <prc_7upStarted><![CDATA[1]]></prc_7upStarted>
+            <prc_date><![CDATA[2006-10-10]]></prc_date>
+            <semester_desc><![CDATA[Fall 2006]]></semester_desc>
+            <prcMethod_desc><![CDATA[Real Like Kit]]></prcMethod_desc>
+        </IndividualPRC>
+        <IndividualPRC>
+            <campus_id><![CDATA[57]]></campus_id>
+            <campus_desc><![CDATA[York University]]></campus_desc>
+            <campus_shortDesc><![CDATA[York]]></campus_shortDesc>
+            <accountgroup_id><![CDATA[10]]></accountgroup_id>
+            <prc_id><![CDATA[77]]></prc_id>
+            <prc_firstName><![CDATA[Beth]]></prc_firstName>
+            <prcMethod_id><![CDATA[10]]></prcMethod_id>
+            <prc_witnessName><![CDATA[Cheryl Li]]></prc_witnessName>
+            <prc_notes><![CDATA[Beth filled out a SIQ at the beginning of the semester. Cheryl followed her up and shared the gospel with her.  Beth started attending Cheryl's DG as well as meeting with Cheryl to go through some seeker material.  This week Beth informed Cheryl that she prayed to recieve Christ. 
+Cheryl, Beth and Kate will be meeting for follow up.]]></prc_notes>
+            <prc_7upCompleted><![CDATA[0]]></prc_7upCompleted>
+            <semester_id><![CDATA[1]]></semester_id>
+            <prc_7upStarted><![CDATA[1]]></prc_7upStarted>
+            <prc_date><![CDATA[2006-10-26]]></prc_date>
+            <semester_desc><![CDATA[Fall 2006]]></semester_desc>
+            <prcMethod_desc><![CDATA[SIQ Follow-up]]></prcMethod_desc>
+        </IndividualPRC>
+        <IndividualPRC>
+            <campus_id><![CDATA[68]]></campus_id>
+            <campus_desc><![CDATA[University of Saskatchewan]]></campus_desc>
+            <campus_shortDesc><![CDATA[UofS]]></campus_shortDesc>
+            <accountgroup_id><![CDATA[11]]></accountgroup_id>
+            <prc_id><![CDATA[78]]></prc_id>
+            <prc_firstName><![CDATA[Nina Li]]></prc_firstName>
+            <prcMethod_id><![CDATA[4]]></prcMethod_id>
+            <prc_witnessName><![CDATA[Julie Tang]]></prc_witnessName>
+            <prc_notes></prc_notes>
+            <prc_7upCompleted><![CDATA[0]]></prc_7upCompleted>
+            <semester_id><![CDATA[1]]></semester_id>
+            <prc_7upStarted><![CDATA[0]]></prc_7upStarted>
+            <prc_date><![CDATA[2006-10-10]]></prc_date>
+            <semester_desc><![CDATA[Fall 2006]]></semester_desc>
+            <prcMethod_desc><![CDATA[Friendship Evangelism]]></prcMethod_desc>
+        </IndividualPRC>
+        <IndividualPRC>
+            <campus_id><![CDATA[57]]></campus_id>
+            <campus_desc><![CDATA[York University]]></campus_desc>
+            <campus_shortDesc><![CDATA[York]]></campus_shortDesc>
+            <accountgroup_id><![CDATA[10]]></accountgroup_id>
+            <prc_id><![CDATA[79]]></prc_id>
+            <prc_firstName><![CDATA[Erin MacMillan]]></prc_firstName>
+            <prcMethod_id><![CDATA[10]]></prcMethod_id>
+            <prc_witnessName><![CDATA[Nicoleta Bona]]></prc_witnessName>
+            <prc_notes></prc_notes>
+            <prc_7upCompleted><![CDATA[0]]></prc_7upCompleted>
+            <semester_id><![CDATA[1]]></semester_id>
+            <prc_7upStarted><![CDATA[1]]></prc_7upStarted>
+            <prc_date><![CDATA[2006-09-14]]></prc_date>
+            <semester_desc><![CDATA[Fall 2006]]></semester_desc>
+            <prcMethod_desc><![CDATA[SIQ Follow-up]]></prcMethod_desc>
+        </IndividualPRC>
+        <IndividualPRC>
+            <campus_id><![CDATA[54]]></campus_id>
+            <campus_desc><![CDATA[University of Toronto]]></campus_desc>
+            <campus_shortDesc><![CDATA[UofT]]></campus_shortDesc>
+            <accountgroup_id><![CDATA[10]]></accountgroup_id>
+            <prc_id><![CDATA[80]]></prc_id>
+            <prc_firstName><![CDATA[Christine Bontogon]]></prc_firstName>
+            <prcMethod_id><![CDATA[10]]></prcMethod_id>
+            <prc_witnessName><![CDATA[Janette Doerksen]]></prc_witnessName>
+            <prc_notes><![CDATA[Originally through SIQ, but has been to Summit, in a DG, etc.]]></prc_notes>
+            <prc_7upCompleted><![CDATA[0]]></prc_7upCompleted>
+            <semester_id><![CDATA[1]]></semester_id>
+            <prc_7upStarted><![CDATA[1]]></prc_7upStarted>
+            <prc_date><![CDATA[2006-10-30]]></prc_date>
+            <semester_desc><![CDATA[Fall 2006]]></semester_desc>
+            <prcMethod_desc><![CDATA[SIQ Follow-up]]></prcMethod_desc>
+        </IndividualPRC>
+        <IndividualPRC>
+            <campus_id><![CDATA[57]]></campus_id>
+            <campus_desc><![CDATA[York University]]></campus_desc>
+            <campus_shortDesc><![CDATA[York]]></campus_shortDesc>
+            <accountgroup_id><![CDATA[10]]></accountgroup_id>
+            <prc_id><![CDATA[81]]></prc_id>
+            <prc_firstName><![CDATA[Eli]]></prc_firstName>
+            <prcMethod_id><![CDATA[1]]></prcMethod_id>
+            <prc_witnessName><![CDATA[Cheryl Li and Hannah (from Eunice's Study)]]></prc_witnessName>
+            <prc_notes><![CDATA[Eli is a mature student who Cheryl and Hannah approached.  Spent over an hour going through the gospel slowly and then Eli prayed to recieve Christ.  Eli is from a non-practicing muslim background.]]></prc_notes>
+            <prc_7upCompleted><![CDATA[0]]></prc_7upCompleted>
+            <semester_id><![CDATA[1]]></semester_id>
+            <prc_7upStarted><![CDATA[0]]></prc_7upStarted>
+            <prc_date><![CDATA[2006-11-01]]></prc_date>
+            <semester_desc><![CDATA[Fall 2006]]></semester_desc>
+            <prcMethod_desc><![CDATA[Random Evangelism]]></prcMethod_desc>
+        </IndividualPRC>
+        <IndividualPRC>
+            <campus_id><![CDATA[40]]></campus_id>
+            <campus_desc><![CDATA[Saint Mary's University]]></campus_desc>
+            <campus_shortDesc><![CDATA[SMU]]></campus_shortDesc>
+            <accountgroup_id><![CDATA[10]]></accountgroup_id>
+            <prc_id><![CDATA[82]]></prc_id>
+            <prc_firstName><![CDATA[James]]></prc_firstName>
+            <prcMethod_id><![CDATA[4]]></prcMethod_id>
+            <prc_witnessName><![CDATA[John Brunet]]></prc_witnessName>
+            <prc_notes></prc_notes>
+            <prc_7upCompleted><![CDATA[0]]></prc_7upCompleted>
+            <semester_id><![CDATA[1]]></semester_id>
+            <prc_7upStarted><![CDATA[0]]></prc_7upStarted>
+            <prc_date><![CDATA[2006-10-19]]></prc_date>
+            <semester_desc><![CDATA[Fall 2006]]></semester_desc>
+            <prcMethod_desc><![CDATA[Friendship Evangelism]]></prcMethod_desc>
+        </IndividualPRC>
+        <IndividualPRC>
+            <campus_id><![CDATA[40]]></campus_id>
+            <campus_desc><![CDATA[Saint Mary's University]]></campus_desc>
+            <campus_shortDesc><![CDATA[SMU]]></campus_shortDesc>
+            <accountgroup_id><![CDATA[10]]></accountgroup_id>
+            <prc_id><![CDATA[83]]></prc_id>
+            <prc_firstName><![CDATA[Richard]]></prc_firstName>
+            <prcMethod_id><![CDATA[12]]></prcMethod_id>
+            <prc_witnessName><![CDATA[Chris Harman]]></prc_witnessName>
+            <prc_notes></prc_notes>
+            <prc_7upCompleted><![CDATA[0]]></prc_7upCompleted>
+            <semester_id><![CDATA[1]]></semester_id>
+            <prc_7upStarted><![CDATA[1]]></prc_7upStarted>
+            <prc_date><![CDATA[2006-10-17]]></prc_date>
+            <semester_desc><![CDATA[Fall 2006]]></semester_desc>
+            <prcMethod_desc><![CDATA[Other]]></prcMethod_desc>
+        </IndividualPRC>
+        <IndividualPRC>
+            <campus_id><![CDATA[57]]></campus_id>
+            <campus_desc><![CDATA[York University]]></campus_desc>
+            <campus_shortDesc><![CDATA[York]]></campus_shortDesc>
+            <accountgroup_id><![CDATA[10]]></accountgroup_id>
+            <prc_id><![CDATA[84]]></prc_id>
+            <prc_firstName><![CDATA[Foliar]]></prc_firstName>
+            <prcMethod_id><![CDATA[4]]></prcMethod_id>
+            <prc_witnessName><![CDATA[Sammi and Eva]]></prc_witnessName>
+            <prc_notes></prc_notes>
+            <prc_7upCompleted><![CDATA[0]]></prc_7upCompleted>
+            <semester_id><![CDATA[1]]></semester_id>
+            <prc_7upStarted><![CDATA[1]]></prc_7upStarted>
+            <prc_date><![CDATA[2006-11-05]]></prc_date>
+            <semester_desc><![CDATA[Fall 2006]]></semester_desc>
+            <prcMethod_desc><![CDATA[Friendship Evangelism]]></prcMethod_desc>
+        </IndividualPRC>
+        <IndividualPRC>
+            <campus_id><![CDATA[73]]></campus_id>
+            <campus_desc><![CDATA[Concordia University]]></campus_desc>
+            <campus_shortDesc><![CDATA[Concordia]]></campus_shortDesc>
+            <accountgroup_id><![CDATA[12]]></accountgroup_id>
+            <prc_id><![CDATA[85]]></prc_id>
+            <prc_firstName><![CDATA[Terry Takla]]></prc_firstName>
+            <prcMethod_id><![CDATA[1]]></prcMethod_id>
+            <prc_witnessName><![CDATA[brad morrice]]></prc_witnessName>
+            <prc_notes><![CDATA[lebanese, greek-orthodox. feels Protestant beliefs more accurate. PRC'd but had to leave shortly after. genuine? wanted to get plugged into Christian community. ]]></prc_notes>
+            <prc_7upCompleted><![CDATA[0]]></prc_7upCompleted>
+            <semester_id><![CDATA[1]]></semester_id>
+            <prc_7upStarted><![CDATA[0]]></prc_7upStarted>
+            <prc_date><![CDATA[2006-11-06]]></prc_date>
+            <semester_desc><![CDATA[Fall 2006]]></semester_desc>
+            <prcMethod_desc><![CDATA[Random Evangelism]]></prcMethod_desc>
+        </IndividualPRC>
+        <IndividualPRC>
+            <campus_id><![CDATA[46]]></campus_id>
+            <campus_desc><![CDATA[McMaster University]]></campus_desc>
+            <campus_shortDesc><![CDATA[MAC]]></campus_shortDesc>
+            <accountgroup_id><![CDATA[10]]></accountgroup_id>
+            <prc_id><![CDATA[86]]></prc_id>
+            <prc_firstName><![CDATA[Jessica]]></prc_firstName>
+            <prcMethod_id><![CDATA[11]]></prcMethod_id>
+            <prc_witnessName><![CDATA[everystudent.com]]></prc_witnessName>
+            <prc_notes><![CDATA[Lorne forwarded her contact info to MC. MC passed it on to Roslyn to follow up.]]></prc_notes>
+            <prc_7upCompleted><![CDATA[0]]></prc_7upCompleted>
+            <semester_id><![CDATA[1]]></semester_id>
+            <prc_7upStarted><![CDATA[0]]></prc_7upStarted>
+            <prc_date><![CDATA[2006-11-07]]></prc_date>
+            <semester_desc><![CDATA[Fall 2006]]></semester_desc>
+            <prcMethod_desc><![CDATA[Internet Contact]]></prcMethod_desc>
+        </IndividualPRC>
+        <IndividualPRC>
+            <campus_id><![CDATA[51]]></campus_id>
+            <campus_desc><![CDATA[University of Guelph]]></campus_desc>
+            <campus_shortDesc><![CDATA[UofG]]></campus_shortDesc>
+            <accountgroup_id><![CDATA[10]]></accountgroup_id>
+            <prc_id><![CDATA[87]]></prc_id>
+            <prc_firstName><![CDATA[Ellen]]></prc_firstName>
+            <prcMethod_id><![CDATA[2]]></prcMethod_id>
+            <prc_witnessName><![CDATA[Becky Mitts]]></prc_witnessName>
+            <prc_notes><![CDATA[follow up from Does God Exist Debate.  Ellen's a mainland Chinese student in ESL at Guelph.]]></prc_notes>
+            <prc_7upCompleted><![CDATA[0]]></prc_7upCompleted>
+            <semester_id><![CDATA[1]]></semester_id>
+            <prc_7upStarted><![CDATA[1]]></prc_7upStarted>
+            <prc_date><![CDATA[2006-11-10]]></prc_date>
+            <semester_desc><![CDATA[Fall 2006]]></semester_desc>
+            <prcMethod_desc><![CDATA[Campus Wide Event]]></prcMethod_desc>
+        </IndividualPRC>
+        <IndividualPRC>
+            <campus_id><![CDATA[14]]></campus_id>
+            <campus_desc><![CDATA[Simon Fraser University]]></campus_desc>
+            <campus_shortDesc><![CDATA[SFU]]></campus_shortDesc>
+            <accountgroup_id><![CDATA[11]]></accountgroup_id>
+            <prc_id><![CDATA[88]]></prc_id>
+            <prc_firstName><![CDATA[Nha Vy Dam]]></prc_firstName>
+            <prcMethod_id><![CDATA[1]]></prcMethod_id>
+            <prc_witnessName><![CDATA[Becca Fowler]]></prc_witnessName>
+            <prc_notes></prc_notes>
+            <prc_7upCompleted><![CDATA[0]]></prc_7upCompleted>
+            <semester_id><![CDATA[1]]></semester_id>
+            <prc_7upStarted><![CDATA[1]]></prc_7upStarted>
+            <prc_date><![CDATA[2006-11-10]]></prc_date>
+            <semester_desc><![CDATA[Fall 2006]]></semester_desc>
+            <prcMethod_desc><![CDATA[Random Evangelism]]></prcMethod_desc>
+        </IndividualPRC>
+    </PRC_FOR_SEMESTER>
+</PRCReport>

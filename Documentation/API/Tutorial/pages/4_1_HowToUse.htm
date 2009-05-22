@@ -1,0 +1,144 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html><!-- InstanceBegin template="/Templates/documentation_tutorialContent.dwt.php" codeOutsideHTMLIsLocked="false" -->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<!-- InstanceBeginEditable name="doctitle" -->
+<title>Untitled Document</title>
+<!-- InstanceEndEditable --><link href="../../../Data/CSS/documentation.css" rel="stylesheet" type="text/css">
+<!-- InstanceBeginEditable name="head" --><!-- InstanceEndEditable -->
+</head>
+
+<body>
+<center>
+<table width="680" border="0" cellspacing="0" cellpadding="0">
+    <tr>
+        <td><table width="100%"  border="0" cellspacing="0" cellpadding="0">
+    <tr>
+        <td><img src="../../../Images/page_header.gif"></td>
+		<td width="200">&nbsp;</td>
+    </tr>
+    <tr>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+    </tr>
+</table>
+</td>
+    </tr>
+    <tr>
+        <td bgcolor="#CCCCCC">&nbsp;</td>
+    </tr>
+    <tr>
+        <td class="text_navbar"><? 
+			/*
+			 * Find the path to the Documentation Root ...
+			 */
+			$pathToRoot = ''; 
+			for ( $indx=0; $indx<20 && !file_exists( $pathToRoot.'Data/CSS/documentation.css'); $indx++ ) {
+				$pathToRoot .= '../';
+			}
+
+		echo '<a href="'.$pathToRoot.'index.php" target="_top">AI Doc</a> &gt; <a href="'.$pathToRoot.'/API/index.html">API</a>';
+			
+		?><!-- InstanceBeginEditable name="NavBar" --><a href="intro.htm">Tutorial</a> &gt; <a href="4_0_Templates.htm">Templates</a>                &gt; How To Use <!-- InstanceEndEditable --></td>
+    </tr>
+	<tr><td>&nbsp;</td></tr>
+    <tr>
+        <td><table width="100%"  border="0" cellspacing="0" cellpadding="0">
+    <tr>
+        <td class="content_text"><!-- InstanceBeginEditable name="prevButtonTop" --><a href="4_0_Templates.htm">Previous</a><!-- InstanceEndEditable --></td>
+        <td class="content_text"><div align="right"><!-- InstanceBeginEditable name="nextButtonTop" --><a href="4_2_NowYouDoIt.htm">Next</a><!-- InstanceEndEditable --></div></td>
+    </tr>
+</table>
+</td>
+    </tr>
+    <tr>
+        <td class="content_text" ><hr size="1" noshade >
+            <!-- InstanceBeginEditable name="Content" -->
+            <h1>Templates - How To Use </h1>
+		    <p class="content_text" >Lets take a look at an earlier <a href="2_0_ListIterators.htm" target="_blank">example</a>.
+		        In using a ListIterator to display a list of all the data rows
+		        in a table, our example was a messy combo of php and html.</p>
+		    <p class="content_text" >Now let's convert that example to use a template
+		        to display the data. </p>
+		    <p class="content_text" >There are now 2 files, the controller page (<a href="../5%20Querystring/ex_SeriesList.php">ex_SeriesList.php</a>),
+		        and the template (<a href="../5%20Querystring/ex_SeriesList.tpl">ex_SeriesList.tpl</a>). The main job of the controller
+		        page is to gather the data needed to display the page. It then
+		        passes that info to the template. The template's job is to decide
+		        how the data is to be displayed. The code in the controller should
+		        have no html info in it at all. The conde in the template, should
+		        not know anything about databases, or other program variables,
+		        it only knows about the agreed upon data that was passed to it.</p>
+		    <p class="content_text" ><strong>ex_SeriesList.php :</strong></p>
+		    <p class="content_text" >The key new concepts here are creating a Template
+		        object:</p>
+			<span class="sourcecodebox" ><pre>
+// Now we create a Template object 
+// NOTE: (optional parameter is to set the path to your template file )
+// ex   $template = new Template( "path/to/template/files/here.php" );
+// if you don't set it, it assumes the template is in the same directory
+// as your script.
+//
+$template = new Template( );</pre></span>
+		    <p class="content_text" >Sending your data to the template:</p>
+			<span class="sourcecodebox" ><pre>
+// Now we pass/set the values of variables in the Template
+// 1st parameter is the name of the variable as it will be called in the template
+// 2nd parameter is the current variable that you want to pass in
+$template->set( 'seriesList', $seriesArray);</pre></span>
+		    <p class="content_text" >Retrieving the resulting HTML from your Template:</p>
+			<span class="sourcecodebox" ><pre>
+// now we get the HTML of the Template and display that for our page.
+echo $template->fetch( 'ex_SeriesList.tpl' );</pre></span>
+		    <p class="content_text" >&nbsp; </p>
+		    <p class="content_text" ><strong>ex_SeriesList.tpl</strong>:</p>
+		    <p class="content_text" >The template code is now a mixture of php and
+		        html. However there is no longer any references to database objects,
+		        or specific row managers for gathering data. All the data it
+		        references as the values passed into it by the calling script.</p>
+		    <p class="content_text" >&nbsp; </p>
+		    <h4>Notes:</h4>
+		<p class="content_text" >When dividing up tasks for designing pages, usually
+		    there is a coder responsible for creating the controller pages, and
+		    there is a designer responsible for designing the template for how
+		    the page looks. Before they can do their work, they both need to
+		    sit down and agree on the data that needs to be displayed on the
+		    page, and on the variable names that data will take in the template. </p>
+		<p class="content_text" >Then the coder's job becomes: &quot;How do I gather the
+		    necessary data and pass it to the template?&quot;</p>
+		<p class="content_text" >And the Template Designer's job becomes: &quot;How do I
+		    take the given data and display it?&quot;</p>
+		<p class="content_text" ><strong>template Names:</strong></p>
+		<p class="content_text" >Usually we try to keep the name of the template files
+		    the same as the name of the script calling it. The only difference
+		    might be to change the file extension to &quot;.tpl&quot; or to store them
+		    in a seperate directory. </p>
+		<h4>&nbsp;</h4>
+		<span class="sourcecodebox" ></span>
+		<h4>Links To Code Examples</h4>
+		<table width="100%"  border="0" cellspacing="0" cellpadding="0">
+            <tr>
+                <td><a href="../3%20Templates/ex_SeriesList.php"><img src="../../../Images/icn_filePHP.gif" width="24" height="31" border="0"></a></td>
+                <td><a href="../3%20Templates/ex_SeriesList.tpl"><img src="../../../Images/icn_filePHP.gif" width="24" height="31" border="0"></a></td>
+            </tr>
+            <tr>
+                <td><a href="../3%20Templates/ex_SeriesList.php">ex_SeriesList.php</a></td>
+                <td background="../5%20Querystring/ex_SeriesList.tpl"><a href="../3%20Templates/ex_SeriesList.tpl">ex_SeriesList.tpl</a></td>
+            </tr>
+        </table>
+		<p class="content_text" >&nbsp;</p>
+            <!-- InstanceEndEditable -->
+            <hr size="1" noshade>
+		 </td>
+    </tr>
+	<tr><td><table width="100%"  border="0" cellspacing="0" cellpadding="0">
+    <tr>
+        <td class="content_text"><!-- InstanceBeginEditable name="prevButtonBottom" --><a href="4_0_Templates.htm">Previous</a><!-- InstanceEndEditable --></td>
+        <td class="content_text"><div align="right"><!-- InstanceBeginEditable name="nextButtonBottom" --><a href="4_2_NowYouDoIt.htm">Next</a><!-- InstanceEndEditable --></div></td>
+    </tr>
+</table></td>
+	</tr>
+</table>
+</center>
+
+</body>
+<!-- InstanceEnd --></html>

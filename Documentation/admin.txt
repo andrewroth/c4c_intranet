@@ -1,0 +1,36 @@
+Here is how the structure or accounts and access works!
+
+1. Accounts
+	- each website user is called a viewer this is a record in the accountadmin_viewer table
+	- accounts are associated with a group (one of 9 regions in AI, or one of 4 regions in Canada)
+	- people with accountadmin_access may create accounts
+		- there are two levels of permission (either only for the group you are in, or for the whole site, 1=GroupPerm, 2=SitePerm)
+
+2. Access
+	- each viewer then has ACCESS to different areas of the site, namely which link appear on the NavBar
+	- First there are access categories (admin, positions, regional, etc...)
+	- within each of these categories is an ACCESS_GROUP
+	- viewers may be associated with many accessGroups.
+
+
+-------
+ACCOUNT GROUPS (9 regions)
+	- YRR
+	- SG
+	- MCR
+- admins are either for one group or the whole site
+
+ACCESS CATEGORIES
+	- Admin
+		| Stats Admin
+		| HRDB Admin
+	- Misc
+		| all
+		| hrdb
+	- Positions
+		| CIT
+		| Stats
+		| ACD
+	- Regional
+		| OPS
+		| Finance

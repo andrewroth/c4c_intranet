@@ -1,0 +1,18 @@
+****************
+Todo:
+- after staff weekly report go to indicated decisions
+- make sure to have yearly total on reports page
+
+****************
+Before Release:
+- take away ability to delete PRC Methods and Exposure Types
+- demo at staff conference (15 minutes)
+
+****************
+Future Releases:
+- somewhere to submit Winter Conference, Summit, project numbers by campus
+- definitions page
+- follow-up started button for PRCs
+- what to block off further stats from being entered once a week, or semester is 'closed'.
+- staff entering # of people in DGs and discipling
+- names of people challenged to Staff or STINT

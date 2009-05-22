@@ -1,0 +1,152 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html><!-- InstanceBegin template="/Templates/documentation_tutorialContent.dwt.php" codeOutsideHTMLIsLocked="false" -->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<!-- InstanceBeginEditable name="doctitle" -->
+<title>Untitled Document</title>
+<!-- InstanceEndEditable --><link href="../../../Data/CSS/documentation.css" rel="stylesheet" type="text/css">
+<!-- InstanceBeginEditable name="head" --><!-- InstanceEndEditable -->
+</head>
+
+<body>
+<center>
+<table width="680" border="0" cellspacing="0" cellpadding="0">
+    <tr>
+        <td><table width="100%"  border="0" cellspacing="0" cellpadding="0">
+    <tr>
+        <td><img src="../../../Images/page_header.gif"></td>
+		<td width="200">&nbsp;</td>
+    </tr>
+    <tr>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+    </tr>
+</table>
+</td>
+    </tr>
+    <tr>
+        <td bgcolor="#CCCCCC">&nbsp;</td>
+    </tr>
+    <tr>
+        <td class="text_navbar"><? 
+			/*
+			 * Find the path to the Documentation Root ...
+			 */
+			$pathToRoot = ''; 
+			for ( $indx=0; $indx<20 && !file_exists( $pathToRoot.'Data/CSS/documentation.css'); $indx++ ) {
+				$pathToRoot .= '../';
+			}
+
+		echo '<a href="'.$pathToRoot.'index.php" target="_top">AI Doc</a> &gt; <a href="'.$pathToRoot.'/API/index.html">API</a>';
+			
+		?><!-- InstanceBeginEditable name="NavBar" --><a href="intro.htm">Tutorial</a> &gt; <a href="1_0_DataAccessManager.htm">Data
+            Access Managers</a> &gt; <a href="1_1_0_RowManager.htm">RowManager</a> &gt; Add
+            New Entry To A Table <!-- InstanceEndEditable --></td>
+    </tr>
+	<tr><td>&nbsp;</td></tr>
+    <tr>
+        <td><table width="100%"  border="0" cellspacing="0" cellpadding="0">
+    <tr>
+        <td class="content_text"><!-- InstanceBeginEditable name="prevButtonTop" --><a href="1_1_0_RowManager.htm">Previous</a><!-- InstanceEndEditable --></td>
+        <td class="content_text"><div align="right"><!-- InstanceBeginEditable name="nextButtonTop" --><a href="1_1_2_UpdateEntry.htm">Next</a><!-- InstanceEndEditable --></div></td>
+    </tr>
+</table>
+</td>
+    </tr>
+    <tr>
+        <td class="content_text" ><hr size="1" noshade >
+            <!-- InstanceBeginEditable name="Content" -->
+            <h1>RowManager - Add New Entry To A Table </h1>
+		    <p class="content_text" >Lets take a look at how a RowManager object is
+		        used.</p>
+		    <p class="content_text" >The <span class="sourcecodebox">ex_RowManager.php</span> script takes you through
+		        an example of using an existing RowManger ( <span class="sourcecodebox">RowManager_ViewerManager</span>		        ) included in the framework.
+</p>
+		    <p class="content_text" >The job of the ViewerManager object is to manage
+		        the user login table for the site. The viewer table has the following
+		        format:</p>
+		    <table width="100%"  border="1" cellspacing="0" cellpadding="0">
+                <tr>
+                    <td>viewer_id</td>
+                    <td>accountgroup_id</td>
+					<td>language_id</td>
+                    <td>viewer_userID</td>
+                    <td>viewer_passWord</td>
+                    <td>viewer_isActive</td>
+                    <td>viewer_lastLogin</td>
+                </tr>
+                <tr>
+                    <td>&nbsp;</td>
+					<td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                </tr>
+            </table>
+		    <p class="content_text" >The script begins by including the specific site
+		        wide objects included in the framework, as well as the objects
+		        needed to operate the account administration tables:</p>
+		    <span class="sourcecodebox" > <pre>
+require("../General/gen_Includes.php");
+require("../modules/site_AccountAdmin/incl_accountadmin.php");</pre></span>
+
+<p class="content_text">Then it creates a new instance of the ViewerManager Object:</p>
+<span class="sourcecodebox" > <pre>$viewer = new RowManager_ViewerManager();</pre></span>
+<p class="content_text">It then fills in the details for a new account to be created:</p>
+<span class="sourcecodebox" > <pre>$viewer->setUserID( 'testUser' );
+$viewer->setPassWord( 'test' );
+$viewer->setIsActive( true );</pre></span>
+<p class="content_text">Finally it creates the new entry in your table :</p>
+<span class="sourcecodebox" > <pre>$viewer->createNewEntry();</pre></span>
+
+		    <p class="content_text" >At this point the viewer table will look like:</p>
+		    <table width="100%"  border="1" cellspacing="0" cellpadding="0">
+                <tr>
+                    <td>viewer_id</td>
+                    <td>accountgroup_id</td>
+					<td>language_id</td>
+                    <td>viewer_userID</td>
+                    <td>viewer_passWord</td>
+                    <td>viewer_isActive</td>
+                    <td>viewer_lastLogin</td>
+                </tr>
+                <tr>
+                    <td>1</td>
+					<td>0</td>
+                    <td>0</td>
+                    <td>testUser</td>
+                    <td>adkfiownevkdfnvo9sdek</td>
+                    <td>1</td>
+                    <td>0000-00-00</td>
+                </tr>
+            </table>
+			<p>&nbsp;</p>
+			<h4>Note:</h4>
+			<p class="content_text" >Notice the code around the createNewEntry() command:</p>
+			<span class="sourcecodebox" >
+			<pre>
+// Now Create a new row in the table based on the current values of this obj
+echo 'Primary Key before creating a new entry = '.$viewer->getID()."&lt;br&gt;";
+$viewer->createNewEntry();
+// Once an entry is created then the object's primary ID is set
+echo 'Primary Key after createNewEntry = '.$viewer->getID().'&lt;br&gt;';</pre></span>
+			<p class="content_text" >Each RowManager keeps track of the unique ID of the primary key of the table. That value can be referenced by the <span class="sourcecodebox">getID()</span> method. Before an entry is created, the primary key is not defined, but once it is created, it will be updated to reflect the new row.</p>
+		    <p class="content_text" >&nbsp;</p>
+            <!-- InstanceEndEditable -->
+            <hr size="1" noshade>
+		 </td>
+    </tr>
+	<tr><td><table width="100%"  border="0" cellspacing="0" cellpadding="0">
+    <tr>
+        <td class="content_text"><!-- InstanceBeginEditable name="prevButtonBottom" --><a href="1_1_0_RowManager.htm">Previous</a><!-- InstanceEndEditable --></td>
+        <td class="content_text"><div align="right"><!-- InstanceBeginEditable name="nextButtonBottom" --><a href="1_1_2_UpdateEntry.htm">Next</a><!-- InstanceEndEditable --></div></td>
+    </tr>
+</table></td>
+	</tr>
+</table>
+</center>
+
+</body>
+<!-- InstanceEnd --></html>

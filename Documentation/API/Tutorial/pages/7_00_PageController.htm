@@ -1,0 +1,98 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html><!-- InstanceBegin template="/Templates/documentation_tutorialContent.dwt.php" codeOutsideHTMLIsLocked="false" -->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<!-- InstanceBeginEditable name="doctitle" -->
+<title>Untitled Document</title>
+<!-- InstanceEndEditable --><link href="../../../Data/CSS/documentation.css" rel="stylesheet" type="text/css">
+<!-- InstanceBeginEditable name="head" --><!-- InstanceEndEditable -->
+</head>
+
+<body>
+<center>
+<table width="680" border="0" cellspacing="0" cellpadding="0">
+    <tr>
+        <td><table width="100%"  border="0" cellspacing="0" cellpadding="0">
+    <tr>
+        <td><img src="../../../Images/page_header.gif"></td>
+		<td width="200">&nbsp;</td>
+    </tr>
+    <tr>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+    </tr>
+</table>
+</td>
+    </tr>
+    <tr>
+        <td bgcolor="#CCCCCC">&nbsp;</td>
+    </tr>
+    <tr>
+        <td class="text_navbar"><? 
+			/*
+			 * Find the path to the Documentation Root ...
+			 */
+			$pathToRoot = ''; 
+			for ( $indx=0; $indx<20 && !file_exists( $pathToRoot.'Data/CSS/documentation.css'); $indx++ ) {
+				$pathToRoot .= '../';
+			}
+
+		echo '<a href="'.$pathToRoot.'index.php" target="_top">AI Doc</a> &gt; <a href="'.$pathToRoot.'/API/index.html">API</a>';
+			
+		?><!-- InstanceBeginEditable name="NavBar" --><a href="intro.htm">Tutorial</a> &gt; <a href="7_00_PageController.htm">AppController
+                    Objects </a><!-- InstanceEndEditable --></td>
+    </tr>
+	<tr><td>&nbsp;</td></tr>
+    <tr>
+        <td><table width="100%"  border="0" cellspacing="0" cellpadding="0">
+    <tr>
+        <td class="content_text"><!-- InstanceBeginEditable name="prevButtonTop" --><a href="6_06_PageDisplayList.htm">Previous</a><!-- InstanceEndEditable --></td>
+        <td class="content_text"><div align="right"><!-- InstanceBeginEditable name="nextButtonTop" --><a href="7_01_WhichPage.htm">Next</a><!-- InstanceEndEditable --></div></td>
+    </tr>
+</table>
+</td>
+    </tr>
+    <tr>
+        <td class="content_text" ><hr size="1" noshade >
+            <!-- InstanceBeginEditable name="Content" -->
+            <h1>AppController Objects </h1>
+		    <p class="content_text" >Now that we have been creating PageDisplay objects
+		        to control the display and operation of an individual page, it
+		        is time to turn our attention towards how to manage which page
+		        in an application gets displayed.</p>
+		    <p class="content_text" >In our previous examples, we have had a controller
+		        script for each of our pages. </p><img src="../images/7_0_ScriptControllers.gif" width="600" height="300">
+		    <p class="content_text" >In this section, we will step through
+		            the process of converting our controller scripts into a single
+		            (and you could say &quot;really nifty&quot;) application controller
+		            (AppController) object. </p>
+		    <p class="content_text" ><img src="../images/7_0_AppControllers.gif" width="600" height="300"></p>
+		    <p class="content_text" >A PageDisplay object is primarily responsible
+		        for answering &quot;What data needs to be displayed on this page?&quot;
+		        However a PageDisplay object doesn't know about other PageDisplay
+		        objects, or when they should be displayed. </p>
+		    <p class="content_text" >An
+		            AppController Object is primarily responsible for deciding
+		        &quot;Which page in my application is to be displayed now?&quot; It
+		        knows about all the different pages in an application and when
+		        each should be displayed. In this way, the AppController maintains
+		        the state of your application. </p>
+		    <p class="content_text" >Now that we know what an AppController object
+		        does ... lets make one! </p>
+		    <h4>&nbsp;</h4>
+		<!-- InstanceEndEditable -->
+            <hr size="1" noshade>
+		 </td>
+    </tr>
+	<tr><td><table width="100%"  border="0" cellspacing="0" cellpadding="0">
+    <tr>
+        <td class="content_text"><!-- InstanceBeginEditable name="prevButtonBottom" --><a href="6_06_PageDisplayList.htm">Previous</a><!-- InstanceEndEditable --></td>
+        <td class="content_text"><div align="right"><!-- InstanceBeginEditable name="nextButtonBottom" --><a href="7_01_WhichPage.htm">Next</a><!-- InstanceEndEditable --></div></td>
+    </tr>
+</table></td>
+	</tr>
+</table>
+</center>
+
+</body>
+<!-- InstanceEnd --></html>

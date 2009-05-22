@@ -1,0 +1,111 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html><!-- InstanceBegin template="/Templates/documentation_tutorialContent.dwt.php" codeOutsideHTMLIsLocked="false" -->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<!-- InstanceBeginEditable name="doctitle" -->
+<title>Untitled Document</title>
+<!-- InstanceEndEditable --><link href="../../../Data/CSS/documentation.css" rel="stylesheet" type="text/css">
+<!-- InstanceBeginEditable name="head" --><!-- InstanceEndEditable -->
+</head>
+
+<body>
+<center>
+<table width="680" border="0" cellspacing="0" cellpadding="0">
+    <tr>
+        <td><table width="100%"  border="0" cellspacing="0" cellpadding="0">
+    <tr>
+        <td><img src="../../../Images/page_header.gif"></td>
+		<td width="200">&nbsp;</td>
+    </tr>
+    <tr>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+    </tr>
+</table>
+</td>
+    </tr>
+    <tr>
+        <td bgcolor="#CCCCCC">&nbsp;</td>
+    </tr>
+    <tr>
+        <td class="text_navbar"><? 
+			/*
+			 * Find the path to the Documentation Root ...
+			 */
+			$pathToRoot = ''; 
+			for ( $indx=0; $indx<20 && !file_exists( $pathToRoot.'Data/CSS/documentation.css'); $indx++ ) {
+				$pathToRoot .= '../';
+			}
+
+		echo '<a href="'.$pathToRoot.'index.php" target="_top">AI Doc</a> &gt; <a href="'.$pathToRoot.'/API/index.html">API</a>';
+			
+		?><!-- InstanceBeginEditable name="NavBar" --><a href="intro.htm">Tutorial</a> &gt; <a href="6_0_PageDisplay.htm">PageDisplay
+            Objects</a> &gt; Page Flow <!-- InstanceEndEditable --></td>
+    </tr>
+	<tr><td>&nbsp;</td></tr>
+    <tr>
+        <td><table width="100%"  border="0" cellspacing="0" cellpadding="0">
+    <tr>
+        <td class="content_text"><!-- InstanceBeginEditable name="prevButtonTop" --><a href="6_0_PageDisplay.htm">Previous</a><!-- InstanceEndEditable --></td>
+        <td class="content_text"><div align="right"><!-- InstanceBeginEditable name="nextButtonTop" --><a href="6_02_IsDataValid.htm">Next</a><!-- InstanceEndEditable --></div></td>
+    </tr>
+</table>
+</td>
+    </tr>
+    <tr>
+        <td class="content_text" ><hr size="1" noshade >
+            <!-- InstanceBeginEditable name="Content" -->
+		<h1>PageDisplay Objects - Page Flow </h1>
+		<p class="content_text" >One of the biggest mental shifts about using our framework
+		    is getting used to grouping your code into 3 distinct phases: Loading
+		    Data, Processing Data, and Displaying HTML.</p>
+		<p class="content_text" ><strong>Loading Data:</strong></p>
+		<p class="content_text" >In this phase, your job is to attempt to load into
+		    memory, create any necessary objects, pull from the Database, any
+		    data you might need to carry out the actions of this web page. It
+		    isn't that you can't initialize a variable in other phases, but you
+		    want to make sure you get the big items here. If you want to initialize
+		    a piece of data, and are asking yourself, &quot;where do I put this?&quot;
+		    then put it in this phase.</p>
+		<p class="content_text" ><strong>Processing Data:</strong></p>
+		<p class="content_text" >This is the phase where you are actually doing the
+		    work of your page: updating db tables, crunching numbers, sending
+		    emails, etc... </p>
+		<p class="content_text" ><strong>Displaying HTML:</strong></p>
+		<p class="content_text" >This is the final phase where you generate the HTML
+		    output that displays the result of your page. </p>
+		<p class="content_text" >In a <a href="5_0_Querystring.htm">previous example</a>,
+		    you began to see the organization of the sample scripts into these
+		    phases. Now we are going to take these sample scripts, and formally
+		    put these phases into specific functions that drive these phases. </p>
+		<p class="content_text" >Take a look at the example code included below.</p>
+		<p class="content_text" >Now update your Episode scripts to work in the same
+		    manner. <span class="sourcecodebox" ></span>		</p>
+		<h4>Links To Code Examples</h4>
+		<table width="100%"  border="0" cellspacing="0" cellpadding="0">
+            <tr>
+				<td><a href="../6%20PageDisplay/ex_SeriesList.php"><img src="../../../Images/icn_filePHP.gif" width="24" height="31" border="0"></a></td>
+                <td><a href="../6%20PageDisplay/ex_SeriesEdit.php"><img src="../../../Images/icn_filePHP.gif" width="24" height="31" border="0"></a></td>
+                </tr>
+            <tr>
+                <td><a href="../6%20PageDisplay/ex_SeriesList.php">ex_SeriesList.php</a></td>
+                <td><a href="../6%20PageDisplay/ex_SeriesEdit.php">ex_SeriesEdit.php</a></td>
+                </tr>
+        </table>
+		<p class="content_text" >&nbsp;</p>
+            <!-- InstanceEndEditable -->
+            <hr size="1" noshade>
+		 </td>
+    </tr>
+	<tr><td><table width="100%"  border="0" cellspacing="0" cellpadding="0">
+    <tr>
+        <td class="content_text"><!-- InstanceBeginEditable name="prevButtonBottom" --><a href="6_0_PageDisplay.htm">Previous</a><!-- InstanceEndEditable --></td>
+        <td class="content_text"><div align="right"><!-- InstanceBeginEditable name="nextButtonBottom" --><a href="6_02_IsDataValid.htm">Next</a><!-- InstanceEndEditable --></div></td>
+    </tr>
+</table></td>
+	</tr>
+</table>
+</center>
+
+</body>
+<!-- InstanceEnd --></html>

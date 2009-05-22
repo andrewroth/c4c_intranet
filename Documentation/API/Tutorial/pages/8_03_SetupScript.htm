@@ -1,0 +1,177 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html><!-- InstanceBegin template="/Templates/documentation_tutorialContent.dwt.php" codeOutsideHTMLIsLocked="false" -->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<!-- InstanceBeginEditable name="doctitle" -->
+<title>Untitled Document</title>
+<!-- InstanceEndEditable --><link href="../../../Data/CSS/documentation.css" rel="stylesheet" type="text/css">
+<!-- InstanceBeginEditable name="head" --><!-- InstanceEndEditable -->
+</head>
+
+<body>
+<center>
+<table width="680" border="0" cellspacing="0" cellpadding="0">
+    <tr>
+        <td><table width="100%"  border="0" cellspacing="0" cellpadding="0">
+    <tr>
+        <td><img src="../../../Images/page_header.gif"></td>
+		<td width="200">&nbsp;</td>
+    </tr>
+    <tr>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+    </tr>
+</table>
+</td>
+    </tr>
+    <tr>
+        <td bgcolor="#CCCCCC">&nbsp;</td>
+    </tr>
+    <tr>
+        <td class="text_navbar"><? 
+			/*
+			 * Find the path to the Documentation Root ...
+			 */
+			$pathToRoot = ''; 
+			for ( $indx=0; $indx<20 && !file_exists( $pathToRoot.'Data/CSS/documentation.css'); $indx++ ) {
+				$pathToRoot .= '../';
+			}
+
+		echo '<a href="'.$pathToRoot.'index.php" target="_top">AI Doc</a> &gt; <a href="'.$pathToRoot.'/API/index.html">API</a>';
+			
+		?><!-- InstanceBeginEditable name="NavBar" --><a href="intro.htm">Tutorial</a> &gt; <a href="8_00_Modules.htm">Modules</a> &gt; Setup
+                Script<!-- InstanceEndEditable --></td>
+    </tr>
+	<tr><td>&nbsp;</td></tr>
+    <tr>
+        <td><table width="100%"  border="0" cellspacing="0" cellpadding="0">
+    <tr>
+        <td class="content_text"><!-- InstanceBeginEditable name="prevButtonTop" --><a href="8_02_Includes.htm">Previous</a><!-- InstanceEndEditable --></td>
+        <td class="content_text"><div align="right"><!-- InstanceBeginEditable name="nextButtonTop" --><a href="9_00_Multilingual.htm">Next</a><!-- InstanceEndEditable --></div></td>
+    </tr>
+</table>
+</td>
+    </tr>
+    <tr>
+        <td class="content_text" ><hr size="1" noshade >
+            <!-- InstanceBeginEditable name="Content" -->
+		<h1>Modules - Setup Script </h1>
+		<p class="content_text" >Just because you copy your files into a directory
+		    in the site, doesn't mean the site knows your module is out there,
+		    or that your databases have been created. </p>
+		<p class="content_text" >In this step, we will create a script that will install
+		    your module into the site.</p>
+		<h4>What To Do</h4>
+		<p class="content_text" >Copy the attached <a href="../8%20Modules/tool_setup.php">tool_setup.php</a> script into your
+		    module directory.</p>
+		<p>Do a find and replace to replace the tag <em>[ModuleName]</em> with the name of your
+		    module ( &quot;TVAddicts&quot; ).</p>
+		<p>Now scan down to the section where we load the RowManager_siteModuleManager():</p>
+		<span class="sourcecodebox" ><pre>
+    /*
+     * Modules Table
+     *
+     * Setup the Page Modules Table to include a proper entry for this app.
+     */
+    $module = new RowManager_siteModuleManager();
+
+
+    $module->loadByKey( module[ModuleName]::MODULE_KEY );
+    $module->setKey( module[ModuleName]::MODULE_KEY );
+    $module->setPath( 'modules/app_[ModuleName]/' );
+    $module->setApplicationFile( 'app_[ModuleName].php' );
+    $module->setIncludeFile( 'incl_[ModuleName].php' );
+    $module->setName( 'module[ModuleName]' );
+    $module->setParameters( '' );
+    $module->setSystemAccessFile( 'objects_bl/obj_SystemAccess.php' );
+    $module->setSystemAccessObj( module[ModuleName]::MODULE_KEY.'Access' );</pre></span>
+		<p>Notice that there is a class constant that is expected to be defined in
+		    your AppController Object: <em>MODULE_KEY</em>. The value of this constant
+		    is usually the same as the name of your Module ( &quot;TVAddicts&quot; ). This
+		    is the value that is passed on the querystring to indicate which
+		    module/application to run (in our example: index.php?p_Mod=TVAddicts
+		    ). </p>
+		<p>Go  add this constant to your AppController.</p>
+		<p>Scroll down to the bottom where the labels are created:</p>
+		<span class="sourcecodebox" ><pre>
+    /*
+     *  Insert Labels in DB
+     */
+    // Create Application Upload Series
+    $labelManager = new  MultilingualManager();
+    $labelManager->addSeries( module[ModuleName]::MULTILINGUAL_SERIES_KEY );
+    
+    
+    // Create General Field labels for module[ModuleName] 
+    $labelManager->addPage( module[ModuleName]::MULTILINGUAL_PAGE_FIELDS );</pre></span>
+		<p>There are 2 more constants expected in your AppController: <em>MULTILINGUAL_SERIES_KEY</em>,
+		    <em>MULTILINGUAL_PAGE_FIELDS</em>. </p>
+		<p>We'll talk more about the multilingual label system later, for now just
+		    make sure your AppController has these constants defined as well.
+		    Their typical values are:</p>
+		<p>MULTILINGUAL_SERIES_KEY = &quot;module[ModuleName]&quot;<br>
+		MULTILINGUAL_PAGE_FIELDS = &quot;fields_[ModuleName]&quot;</p>
+		<p>Now, in between the Module section and the Labels section is the Tables
+		    section:</p>
+		<span class="sourcecodebox" ><pre>
+// check to see if the parameter 'skipTables' was provided
+$skipTables = isset($_REQUEST['skipTables']);
+
+// if NOT then reset the tables...
+if ( !$skipTables ) {
+
+
+/*[RAD_DAOBJ_TABLE]*/
+
+    
+
+} else {
+
+    echo 'Skipping Tables ... <br>';
+    
+} // end if !skipTables</pre></span>
+		<p>In this section, we are trying to get our RowManagers to create their tables.
+		    To do this, we simply add a series of statements like this:</p>
+		<span class="sourcecodebox" ><pre>
+    $seriesTable = new RowManager_SeriesManager();
+    $seriesTable->dropTable();
+    $seriesTable->createTable();</pre></span>
+		<p>Add a set of these statements for each of the row managers in your application.</p>
+		<p>Once you have done this, try to run the script in your browser: http://localhost/<em>[pathToSite]</em>/modules/app_TVAddicts/tool_setup.php</p>
+		<p>Check to make sure that each of your tables have been created in the site
+		    database.</p>
+		<p>Then try to run your application like this:<br>http://localhost/<em>[pathToSite]</em>/index.php?p_Mod=[ModuleKey]<br>
+		    <em>where [ModuleKey] = the value you put for the MODULE_KEY constant in your
+		    AppController.</em> </p>
+		<p>When you try this, the site will first make you login. Then it will pass
+		    you to your Application, but all the output will be wrapped in the
+		    site's template data. </p>
+		<p>Congratulations! You now have your first module.</p>
+		<p>&nbsp; </p>
+		<span class="sourcecodebox" ></span>
+		<h4>Links To Code Examples</h4>
+		<table width="100%"  border="0" cellspacing="0" cellpadding="0">
+            <tr>
+                <td><a href="../8%20Modules/tool_setup.php"><img src="../../../Images/icn_filePHP.gif" width="24" height="31" border="0"></a></td>
+                </tr>
+            <tr>
+                <td><a href="../8%20Modules/tool_setup.php">tool_setup.php</a></td>
+                </tr>
+        </table>
+		<p class="content_text" >&nbsp;</p>
+            <!-- InstanceEndEditable -->
+            <hr size="1" noshade>
+		 </td>
+    </tr>
+	<tr><td><table width="100%"  border="0" cellspacing="0" cellpadding="0">
+    <tr>
+        <td class="content_text"><!-- InstanceBeginEditable name="prevButtonBottom" --><a href="8_02_Includes.htm">Previous</a><!-- InstanceEndEditable --></td>
+        <td class="content_text"><div align="right"><!-- InstanceBeginEditable name="nextButtonBottom" --><a href="9_00_Multilingual.htm">Next</a><!-- InstanceEndEditable --></div></td>
+    </tr>
+</table></td>
+	</tr>
+</table>
+</center>
+
+</body>
+<!-- InstanceEnd --></html>

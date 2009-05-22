@@ -1,0 +1,166 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html><!-- InstanceBegin template="/Templates/documentation_tutorialContent.dwt.php" codeOutsideHTMLIsLocked="false" -->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<!-- InstanceBeginEditable name="doctitle" -->
+<title>Untitled Document</title>
+<!-- InstanceEndEditable --><link href="../../../Data/CSS/documentation.css" rel="stylesheet" type="text/css">
+<!-- InstanceBeginEditable name="head" --><!-- InstanceEndEditable -->
+</head>
+
+<body>
+<center>
+<table width="680" border="0" cellspacing="0" cellpadding="0">
+    <tr>
+        <td><table width="100%"  border="0" cellspacing="0" cellpadding="0">
+    <tr>
+        <td><img src="../../../Images/page_header.gif"></td>
+		<td width="200">&nbsp;</td>
+    </tr>
+    <tr>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+    </tr>
+</table>
+</td>
+    </tr>
+    <tr>
+        <td bgcolor="#CCCCCC">&nbsp;</td>
+    </tr>
+    <tr>
+        <td class="text_navbar"><? 
+			/*
+			 * Find the path to the Documentation Root ...
+			 */
+			$pathToRoot = ''; 
+			for ( $indx=0; $indx<20 && !file_exists( $pathToRoot.'Data/CSS/documentation.css'); $indx++ ) {
+				$pathToRoot .= '../';
+			}
+
+		echo '<a href="'.$pathToRoot.'index.php" target="_top">AI Doc</a> &gt; <a href="'.$pathToRoot.'/API/index.html">API</a>';
+			
+		?><!-- InstanceBeginEditable name="NavBar" --><a href="intro.htm">Tutorial</a> &gt; <a href="7_00_PageController.htm">AppController
+            Objects</a> &gt; Which Page?<!-- InstanceEndEditable --></td>
+    </tr>
+	<tr><td>&nbsp;</td></tr>
+    <tr>
+        <td><table width="100%"  border="0" cellspacing="0" cellpadding="0">
+    <tr>
+        <td class="content_text"><!-- InstanceBeginEditable name="prevButtonTop" --><a href="7_00_PageController.htm">Previous</a><!-- InstanceEndEditable --></td>
+        <td class="content_text"><div align="right"><!-- InstanceBeginEditable name="nextButtonTop" --><a href="7_02_Links.htm">Next</a><!-- InstanceEndEditable --></div></td>
+    </tr>
+</table>
+</td>
+    </tr>
+    <tr>
+        <td class="content_text" ><hr size="1" noshade >
+            <!-- InstanceBeginEditable name="Content" -->
+		<h1>AppController Objects - Which Page? </h1>
+		<p class="content_text" >The first step in converting our controller scripts
+		    into AppControllers is to create a way to determine which page your
+		    controller script wants to display. In this example, we will convert
+		    our controller scripts into a single script focusing on the addition
+		    of page state tracking.</p>
+		<p class="content_text" >Take the attached script and save it to your testing
+		    directory.</p>
+		<p class="content_text" >Lets look at some of the changes to the code: </p>
+		<p class="content_text" ><em><strong>ex_tvAddicts.php:</strong></em></p>
+		<span class="sourcecodebox" ><pre>
+require( 'SeriesManager.php' );
+require( 'page_SeriesList.php' );
+require( 'page_SeriesEdit.php' );</pre></span>
+		<p class="content_text" >To begin with, the PageController script needs to
+		    know all the PageDisplay objects that might be used.</p>
+		<p class="content_text" >&nbsp;</p>
+		<span class="sourcecodebox" ><pre>
+/*
+ * Define the State Variables
+ */
+// PAGE is the querystring variable used for indicating which page to display
+define( 'PAGE', 'page' );
+define( 'PAGE_SERIESLIST', 'SL' ); // the page value for the SeriesList page
+define( 'PAGE_SERIESEDIT', 'SE' ); // the page value for the SeriesEdit page</pre></span>
+		<p class="content_text" >Now we define the querystring parameters and their
+		    potential values for the page we want to display. In this definition,
+		    we have an addition querystring parameter ( page ) defined. So if
+		    we call our script like this: <span class="sourcecodebox">ex_tvAddicts.php?page=SL</span>, this will
+		    tell the script we want the SeriesList page. If we call our script
+		    like this: <span class="sourcecodebox">ex_tvAddicts.php?page=SE</span>, this will tell the script we
+		    want the SeriesEdit page.</p>
+		<p class="content_text" >&nbsp;</p>
+		<span class="sourcecodebox" ><pre>
+// Load in the PageController's state variables
+$page = PAGE_SERIESLIST;
+if ( isset( $_REQUEST[ PAGE ] ) ) {
+    $page = $_REQUEST[ PAGE ];
+}</pre></span>
+		<p class="content_text" >We need to load in the page state variable info. Notice
+		    that the default value is set to the <span class="sourcecodebox" >PAGE_SERIESLIST</span> page. So if we ever
+		    call the page without the additional page parameter, we will default
+		    to the SeriesList page. </p>
+		<p class="content_text" >&nbsp;</p>
+		<span class="sourcecodebox" ><pre>
+// now descide which PageDisplay object to load
+switch( $page ) {
+        
+    case PAGE_SERIESEDIT:
+        // mark the value of the call back 
+        $formAction = 'ex_tvAddicts.php?'.PAGE.'='.PAGE_SERIESEDIT.'&seriesID='.$seriesID;
+        
+        // Create our nifty new PageDisplay object
+        // The constructor acts like our old loadData() 
+        $pageDisplay = new page_SeriesEdit( '', null, $formAction, $seriesID );
+        break;
+        
+    case PAGE_SERIESLIST:
+    default:
+        // Create our nifty new PageDisplay object
+        // The constructor acts like our old loadData() 
+        $pageDisplay = new page_SeriesList( '', null, '');
+        
+        // our script is now responsible to know about the links of the 
+        // application. So it creates an array of links for the template
+        // to use.
+        $links[ 'edit' ] = 'ex_tvAddicts.php?'.PAGE.'='.PAGE_SERIESEDIT.'&seriesID=';
+        $pageDisplay->setLinks( $links );
+        break;
+}</pre></span>
+		<p class="content_text" >Now the load portion of the script needs to decide
+		    which PageDisplay object to load. Since we have already loaded the
+		    <span class="sourcecodebox">$page</span> state variable, we use that to decide. </p>
+		<p class="content_text" >Notice the links
+		        have been updated to add in the page information. </p>
+		<p class="content_text" >&nbsp;</p>
+		<h4>Note:</h4>
+		<p class="content_text" ><em><strong>Links</strong></em>: </p>
+		<p class="content_text" ><span class="sourcecodebox" >$formAction = 'ex_tvAddicts.php?'.PAGE.'='.PAGE_SERIESEDIT.'&seriesID='.$seriesID;<br>$links[ 'edit' ] = 'ex_tvAddicts.php?'.PAGE.'='.PAGE_SERIESEDIT.'&seriesID=';</span></p>
+		<p class="content_text" >You must make sure that the links now include
+		            the new page state variable and data in them. </p>
+		<h4>&nbsp;</h4>
+		<span class="sourcecodebox" ></span>
+		<h4>Links To Code Examples</h4>
+		<table width="100%"  border="0" cellspacing="0" cellpadding="0">
+            <tr>
+                <td><a href="../7%20PageController/ex_tvAddicts.php"><img src="../../../Images/icn_filePHP.gif" width="24" height="31" border="0"></a></td>
+                </tr>
+            <tr>
+                <td><a href="../7%20PageController/ex_tvAddicts.php">ex_tvAddicts.php</a></td>
+                </tr>
+        </table>
+		<p class="content_text" >&nbsp;</p>
+            <!-- InstanceEndEditable -->
+            <hr size="1" noshade>
+		 </td>
+    </tr>
+	<tr><td><table width="100%"  border="0" cellspacing="0" cellpadding="0">
+    <tr>
+        <td class="content_text"><!-- InstanceBeginEditable name="prevButtonBottom" --><a href="7_00_PageController.htm">Previous</a><!-- InstanceEndEditable --></td>
+        <td class="content_text"><div align="right"><!-- InstanceBeginEditable name="nextButtonBottom" --><a href="7_02_Links.htm">Next</a><!-- InstanceEndEditable --></div></td>
+    </tr>
+</table></td>
+	</tr>
+</table>
+</center>
+
+</body>
+<!-- InstanceEnd --></html>

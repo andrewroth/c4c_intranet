@@ -1,0 +1,137 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html><!-- InstanceBegin template="/Templates/documentation_tutorialContent.dwt.php" codeOutsideHTMLIsLocked="false" -->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<!-- InstanceBeginEditable name="doctitle" -->
+<title>Untitled Document</title>
+<!-- InstanceEndEditable --><link href="../../../Data/CSS/documentation.css" rel="stylesheet" type="text/css">
+<!-- InstanceBeginEditable name="head" --><!-- InstanceEndEditable -->
+</head>
+
+<body>
+<center>
+<table width="680" border="0" cellspacing="0" cellpadding="0">
+    <tr>
+        <td><table width="100%"  border="0" cellspacing="0" cellpadding="0">
+    <tr>
+        <td><img src="../../../Images/page_header.gif"></td>
+		<td width="200">&nbsp;</td>
+    </tr>
+    <tr>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+    </tr>
+</table>
+</td>
+    </tr>
+    <tr>
+        <td bgcolor="#CCCCCC">&nbsp;</td>
+    </tr>
+    <tr>
+        <td class="text_navbar"><? 
+			/*
+			 * Find the path to the Documentation Root ...
+			 */
+			$pathToRoot = ''; 
+			for ( $indx=0; $indx<20 && !file_exists( $pathToRoot.'Data/CSS/documentation.css'); $indx++ ) {
+				$pathToRoot .= '../';
+			}
+
+		echo '<a href="'.$pathToRoot.'index.php" target="_top">AI Doc</a> &gt; <a href="'.$pathToRoot.'/API/index.html">API</a>';
+			
+		?><!-- InstanceBeginEditable name="NavBar" --><a href="intro.htm">Tutorial</a> &gt; <a href="1_0_DataAccessManager.htm">Data
+                    Access Managers</a> &gt; <a href="1_1_0_RowManager.htm">RowManager</a> &gt; Selecting
+                    Multiple Rows <!-- InstanceEndEditable --></td>
+    </tr>
+	<tr><td>&nbsp;</td></tr>
+    <tr>
+        <td><table width="100%"  border="0" cellspacing="0" cellpadding="0">
+    <tr>
+        <td class="content_text"><!-- InstanceBeginEditable name="prevButtonTop" --><a href="1_1_2_UpdateEntry.htm">Previous</a><!-- InstanceEndEditable --></td>
+        <td class="content_text"><div align="right"><!-- InstanceBeginEditable name="nextButtonTop" --><a href="1_1_4_DeleteRows.htm">Next</a><!-- InstanceEndEditable --></div></td>
+    </tr>
+</table>
+</td>
+    </tr>
+    <tr>
+        <td class="content_text" ><hr size="1" noshade >
+            <!-- InstanceBeginEditable name="Content" -->
+		<h1>RowManager - Selecting Multiple Rows </h1>
+		<p class="content_text" >RowManagers are also used to select multiple rows
+		    from a table. Continue on with the ex_RowManager.php example for
+		    the following example.</p>
+		<p class="content_text" >In this section, we want to find the accountgroup_id
+		    value to insert into the ViewerManager entry we just created. We
+		    are going to look for the accountgroup that has the label of &quot;MC&quot;.
+		    These values are stored in another table, so we use the RowManager
+		    for that table to get the data:</p>
+		<span class="sourcecodebox" > <pre>$groupManager = new RowManager_AccountGroupManager();</pre></span>
+		<p class="content_text" >Each RowManager is able to return a ListIterator object
+		    that will contains a list of rows in that table. The ListIterator
+		    allows you the ability to step through each row and process it as
+		    needed:</p>
+		<span class="sourcecodebox" > <pre>
+$accountGroups = $groupManager-&gt;getListIterator();
+$accountGroups-&gt;setFirst();
+$groupID=-1;
+while( $group = $accountGroups-&gt;getNext() ) {
+	if ($group-&gt;getLabel() == &quot;MC&quot; ) {
+    	echo '---&gt; Found MC account group!&lt;br&gt;';
+    	$groupID = $group-&gt;getID();
+    }
+ }</pre></span>
+		<p class="content_text" >Once the proper groupID is found, you update the table
+		    with the net accountgroup_id:</p>
+			<span class="sourcecodebox" > <pre>$viewer->setAccountGroupID( $groupID );
+$viewer->updateDBTable();</pre></span>
+		<p class="content_text" >&nbsp;</p>
+		<h4>Notes</h4>
+		<p class="content_text" >In this example, we retrieved every row that was in
+		    the table. However you can use a RowManager to retrieve a subset
+		    of rows of a table, by setting values to it's member variables.</p>
+		<p class="content_text" >For example, suppose you want to retrieve a list of
+		    viewer accounts that all have the language_id=1. You would simply
+		    do:</p>
+		<span class="sourcecodebox" > <pre>
+$viewer = new RowManager_ViewerManager();
+$viewer->setLanguageID( 1 );
+$listViewers = $viewer->getListIterator();</pre></span>
+		<p class="content_text" >Or suppose you want all viewer accounts that have
+		    the language_id=2 AND are isActive=false:</p>
+		<span class="sourcecodebox" > <pre>
+$viewer = new RowManager_ViewerManager();
+$viewer->setLanguageID( 2 );
+$viewer->setIsActive( false );
+$listViewers = $viewer->getListIterator();</pre></span>
+<p class="content_text" >You can also add more complex statements as well. The
+    following example will return the viewer accounts that have language_id=2
+    AND isActive=false AND (accountgroup_id=2 OR accountgroup_id=5):</p>
+		<span class="sourcecodebox" > <pre>
+$viewer = new RowManager_ViewerManager();
+$viewer->setLanguageID( 2 );
+$viewer->setIsActive( false );
+
+$condition = $viewer->constructSearchCondition( $viewer->getGroupFieldName(), OP_EQUAL, 2);
+$condition .= ' OR ';
+$condition .= $viewer->constructSearchCondition( $viewer->getGroupFieldName(), OP_EQUAL, 5);
+$viewer->addSearchCondition( $condition );
+
+$listViewers = $viewer->getListIterator();</pre>
+		</span>
+		<p class="content_text" >&nbsp;</p>
+            <!-- InstanceEndEditable -->
+            <hr size="1" noshade>
+		 </td>
+    </tr>
+	<tr><td><table width="100%"  border="0" cellspacing="0" cellpadding="0">
+    <tr>
+        <td class="content_text"><!-- InstanceBeginEditable name="prevButtonBottom" --><a href="1_1_2_UpdateEntry.htm">Previous</a><!-- InstanceEndEditable --></td>
+        <td class="content_text"><div align="right"><!-- InstanceBeginEditable name="nextButtonBottom" --><a href="1_1_4_DeleteRows.htm">Next</a><!-- InstanceEndEditable --></div></td>
+    </tr>
+</table></td>
+	</tr>
+</table>
+</center>
+
+</body>
+<!-- InstanceEnd --></html>

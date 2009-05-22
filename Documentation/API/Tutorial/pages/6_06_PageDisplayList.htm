@@ -1,0 +1,289 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html><!-- InstanceBegin template="/Templates/documentation_tutorialContent.dwt.php" codeOutsideHTMLIsLocked="false" -->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<!-- InstanceBeginEditable name="doctitle" -->
+<title>Untitled Document</title>
+<!-- InstanceEndEditable --><link href="../../../Data/CSS/documentation.css" rel="stylesheet" type="text/css">
+<!-- InstanceBeginEditable name="head" --><!-- InstanceEndEditable -->
+</head>
+
+<body>
+<center>
+<table width="680" border="0" cellspacing="0" cellpadding="0">
+    <tr>
+        <td><table width="100%"  border="0" cellspacing="0" cellpadding="0">
+    <tr>
+        <td><img src="../../../Images/page_header.gif"></td>
+		<td width="200">&nbsp;</td>
+    </tr>
+    <tr>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+    </tr>
+</table>
+</td>
+    </tr>
+    <tr>
+        <td bgcolor="#CCCCCC">&nbsp;</td>
+    </tr>
+    <tr>
+        <td class="text_navbar"><? 
+			/*
+			 * Find the path to the Documentation Root ...
+			 */
+			$pathToRoot = ''; 
+			for ( $indx=0; $indx<20 && !file_exists( $pathToRoot.'Data/CSS/documentation.css'); $indx++ ) {
+				$pathToRoot .= '../';
+			}
+
+		echo '<a href="'.$pathToRoot.'index.php" target="_top">AI Doc</a> &gt; <a href="'.$pathToRoot.'/API/index.html">API</a>';
+			
+		?><!-- InstanceBeginEditable name="NavBar" --><a href="intro.htm">Tutorial</a> &gt; <a href="6_0_PageDisplay.htm">PageDisplay
+            Objects</a> &gt; SeriesEdit Object<!-- InstanceEndEditable --></td>
+    </tr>
+	<tr><td>&nbsp;</td></tr>
+    <tr>
+        <td><table width="100%"  border="0" cellspacing="0" cellpadding="0">
+    <tr>
+        <td class="content_text"><!-- InstanceBeginEditable name="prevButtonTop" --><a href="6_05_PageDisplayList.htm">Previous</a><!-- InstanceEndEditable --></td>
+        <td class="content_text"><div align="right"><!-- InstanceBeginEditable name="nextButtonTop" --><a href="7_00_PageController.htm">Next</a><!-- InstanceEndEditable --></div></td>
+    </tr>
+</table>
+</td>
+    </tr>
+    <tr>
+        <td class="content_text" ><hr size="1" noshade >
+            <!-- InstanceBeginEditable name="Content" -->
+		<h1>PageDisplay Objects
+                - SeriesEdit Object </h1>
+		<p class="content_text" >Now we will make a PageDisplay Object for the SeriesEdit
+		    page. </p>
+		<p class="content_text" >Copy the files below to your Testing directory. Make
+		    sure to copy the page_SeriesEdit.tpl template into
+		    a subdirectory named &quot;templates&quot; in
+		    your testing directory.</p>
+		<p class="content_text" >Lets cover some of the changes to our SeriesEdit code:</p>
+		<p class="content_text" >&nbsp;</p>
+		<p class="content_text" ><em><strong>ex_SeriesEdit_obj.php:</strong></em></p>
+		<span class="sourcecodebox" ><pre>
+// Load in the ID of the row we want to edit. 
+// Init to -1 if not given.
+$seriesID = -1;
+if ( isset( $_REQUEST[ 'seriesID' ] ) ) {
+    $seriesID = $_REQUEST[ 'seriesID' ];
+}
+
+// mark the value of the call back 
+$formAction = 'ex_SeriesEdit_obj.php?seriesID='.$seriesID;
+
+// Create our nifty new PageDisplay object
+// The constructor acts like our old loadData() 
+$pageDisplay = new page_SeriesEdit( '', null, $formAction, $seriesID );</pre></span>
+		<p class="content_text" >Since a form type of page has to know which row of
+		    data we are editing, we have a little more work to do at the beginning
+		    of our controller script. First we have to load in the StateVariable
+		    (see notes below) seriesID. In addition, we made the decision that
+		    the controller script is responsible for knowing how to build the
+		    links of an application (you will see why later on). So here we put
+		    together the link needed for the formAction. Finally we create our
+		    PageDiplay object.</p>
+		<p class="content_text" >&nbsp;</p>
+		<span class="sourcecodebox" ><pre>
+// be sure to load the form values if a form was submitted
+if ( isset( $_REQUEST['submit']) ) {
+    $pageDisplay->loadFromForm();
+}</pre></span>
+		<p class="content_text" >Remember, the constructor acts like our old <span class="sourcecodebox">loadData()</span>		    routine.
+		    We now use the constructor to load the initial data from the database
+		    into the RowManager. However, in a form type of PageDisplay object,
+		    there is also data to load from submitted form variables. The controller
+		    script now checks for this case and calls a <span class="sourcecodebox">loadFromForm()</span> method
+		    on our PageDisplay object.</p>
+		<p class="content_text" >&nbsp;</p>
+		<span class="sourcecodebox" ><pre>
+/*
+ * Process the Data
+ */
+
+// only need to processData() if this was a form Submission
+if ( isset( $_REQUEST['submit']) ) {
+
+    // if the form data was valid
+    if ( $pageDisplay->isDataValid() ) {
+    
+        // then process the data
+        $pageDisplay->processData();
+    }
+}
+
+/*
+ * now display the HTML
+ */
+echo $pageDisplay->getHTML();</pre></span>
+		<p class="content_text" >The driving of the PageDisplay object as well as the
+		    display of the HTML is similar to what we have had before, only now
+		    these are methods of our PageDisplay object.</p>
+		<p class="content_text" >&nbsp;</p>
+		<p class="content_text" ><em><strong>page_SeriesEdit.php:</strong></em></p>
+		<span class="sourcecodebox" ><pre>
+//CONSTANTS:
+
+/** The list of fields to be displayed */
+const FORM_FIELDS = 'series_title';</pre></span>
+		<p class="content_text" >As in previous examples, we need to define the list
+		    of fields we want displayed on our form.</p>
+		<p class="content_text" >&nbsp;</p>
+		<span class="sourcecodebox" ><pre>
+/** @var [STRING] HREF destination of page to receive form data. */
+protected $formAction;
+
+/** @var [ARRAY] Array of fields we are editing on the form. */
+protected $formFields;
+
+/** @var [ARRAY] Array of field values for the row we are editing. */
+protected $formValues;
+
+/** @var [ARRAY] Array of field value errors for the row we are editing. */
+protected $formErrors;</pre></span>
+		<p class="content_text" >The previous form variables (formAction, formFields,
+		    formValues, formErrors) are now member variables of your object.</p>
+		<p class="content_text" >&nbsp;</p>
+		<span class="sourcecodebox" ><pre>
+function __construct($pathModuleRoot, $viewer, $formAction, $initID ) 
+{
+	// save the passed in parameters
+	$this->pathModuleRoot = $pathModuleRoot;
+	$this->viewer = $viewer;
+	$this->formAction = $formAction;
+	
+	// now get array of fields we want to work with
+	$this->formFields = explode( ',', page_SeriesEdit::FORM_FIELDS);
+	
+	// create a RowManager initialized with the requested row
+	$this->dataManager = new RowManager_SeriesManager( $initID );
+	
+	$this->formValues = $this->dataManager->getArrayOfValues();
+
+	// mark errors as empty.
+	$this->formErrors = array();
+	
+}</pre></span>
+		<p class="content_text" >The constructor initializes all the member variables
+		    and loads the RowManager.</p>
+		<p class="content_text" >&nbsp;</p>
+		<span class="sourcecodebox" ><pre>
+//************************************************************************
+/**
+ * function loadFromForm
+ * &lt;pre>
+ * Loads the data from the submitted form.
+ * &lt;/pre>
+ * @return [void]
+ */
+function loadFromForm() 
+{
+	// for each form field we want to work with
+	for( $indx=0; $indx&lt;count($this-&gt;formFields); $indx++) {
+		$key = $this->formFields[ $indx ];
+		
+		// if value is found in form data
+		if (isset($_REQUEST[ $key ] ) ) {
+			
+			// store value in formValues
+			$this->formValues[ $key ] = $_REQUEST[ $key ];
+			
+		} else {
+			
+			// else store empty value in formValues
+			$this->formValues[ $key ] = '';
+		}
+	}
+	
+} // end loadFromForm()</pre></span>
+		<p class="content_text" ><span class="sourcecodebox">loadFromForm()</span> is a method specifically for loading
+		    the form values back into your <span class="sourcecodebox">formValues[]</span> array. Notice how it
+		    simply uses the list of formFields you have defined above.</p>
+		<p class="content_text" >&nbsp;</p>
+		<span class="sourcecodebox" ><pre>
+//************************************************************************
+/**
+ * function isDataValid
+ * &lt;pre>
+ * Verifies the returned data is valid.
+ * &lt;/pre>
+ * @return [BOOL]
+ */
+function isDataValid() 
+{
+	$isValid = true;
+
+	 // step through each field
+	for ($indx=0; $indx&lt;count( $this->formFields ); $indx++) {
+
+		$key = $this->formFields[ $indx ];
+		
+		// if field is empty then
+		if ( $this->formValues[ $key ] == '') {
+			
+			// mark the error
+			$isValid = false;
+			$this->formErrors[ $key ] = $key.' can\'t be empty';
+		}
+		
+	} // next field
+	
+	return $isValid;
+	
+}</pre></span>
+		<p class="content_text" >Like the previous example, isDataValid() checks to
+		    make sure all your formFields are not empty.</p>
+		<p class="content_text" >&nbsp;</p>
+		
+		<p class="content_text" ><span class="sourcecodebox">processData()</span> and <span class="sourcecodebox">getHTML()</span> are similar to previous
+		    versions with simple changes to the template names. </p>
+		<p class="content_text" >&nbsp;</p>
+		<h4>Your Turn: </h4>
+		<p class="content_text" >Once you understand the changes to the provided files,
+		    modify your files for the EpisodeEdit to have the same features. </p>
+		<p class="content_text" >&nbsp; </p>
+		<h4>Notes:</h4>
+		<p class="content_text" ><em>StateVariables:</em></p>
+		<p class="content_text" >For many of your web pages, you will need to know
+		    additional information for a page to properly display itself. In
+		    this case, an Edit form needs to know which row of the table you
+		    want to edit. This information is used to properly maintain the state
+		    of your application. The variables used to track this state info
+		    we call StateVariables.</p>
+		<p class="content_text" >&nbsp;</p>
+		<span class="sourcecodebox" ></span>
+		<h4>Links To Code Examples</h4>
+		<table width="100%"  border="0" cellspacing="0" cellpadding="0">
+            <tr>
+                <td><a href="../6%20PageDisplay/ex_SeriesEdit_obj.php"><img src="../../../Images/icn_filePHP.gif" width="24" height="31" border="0"></a></td>
+                <td><a href="../6%20PageDisplay/page_SeriesEdit.php"><img src="../../../Images/icn_filePHP.gif" width="24" height="31" border="0"></a></td>
+				<td><a href="../6%20PageDisplay/page_SeriesEdit.tpl"><img src="../../../Images/icn_filePHP.gif" width="24" height="31" border="0"></a></td>
+            </tr>
+            <tr>
+                <td><a href="../6%20PageDisplay/ex_SeriesEdit_obj.php">ex_SeriesEdit_obj.php</a></td>
+                <td><a href="../6%20PageDisplay/page_SeriesEdit.php">page_SeriesEdit.php</a></td>
+				<td><a href="../6%20PageDisplay/page_SeriesEdit.tpl">page_SeriesEdit.tpl</a></td>
+            </tr>
+        </table>
+		<p class="content_text" >&nbsp;</p>
+            <!-- InstanceEndEditable -->
+            <hr size="1" noshade>
+		 </td>
+    </tr>
+	<tr><td><table width="100%"  border="0" cellspacing="0" cellpadding="0">
+    <tr>
+        <td class="content_text"><!-- InstanceBeginEditable name="prevButtonBottom" --><a href="6_05_PageDisplayList.htm">Previous</a><!-- InstanceEndEditable --></td>
+        <td class="content_text"><div align="right"><!-- InstanceBeginEditable name="nextButtonBottom" --><a href="7_00_PageController.htm">Next</a><!-- InstanceEndEditable --></div></td>
+    </tr>
+</table></td>
+	</tr>
+</table>
+</center>
+
+</body>
+<!-- InstanceEnd --></html>

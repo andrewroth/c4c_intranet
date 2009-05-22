@@ -1,0 +1,115 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html><!-- InstanceBegin template="/Templates/documentation_tutorialContent.dwt.php" codeOutsideHTMLIsLocked="false" -->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<!-- InstanceBeginEditable name="doctitle" -->
+<title>Untitled Document</title>
+<!-- InstanceEndEditable --><link href="../../../Data/CSS/documentation.css" rel="stylesheet" type="text/css">
+<!-- InstanceBeginEditable name="head" --><!-- InstanceEndEditable -->
+</head>
+
+<body>
+<center>
+<table width="680" border="0" cellspacing="0" cellpadding="0">
+    <tr>
+        <td><table width="100%"  border="0" cellspacing="0" cellpadding="0">
+    <tr>
+        <td><img src="../../../Images/page_header.gif"></td>
+		<td width="200">&nbsp;</td>
+    </tr>
+    <tr>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+    </tr>
+</table>
+</td>
+    </tr>
+    <tr>
+        <td bgcolor="#CCCCCC">&nbsp;</td>
+    </tr>
+    <tr>
+        <td class="text_navbar"><? 
+			/*
+			 * Find the path to the Documentation Root ...
+			 */
+			$pathToRoot = ''; 
+			for ( $indx=0; $indx<20 && !file_exists( $pathToRoot.'Data/CSS/documentation.css'); $indx++ ) {
+				$pathToRoot .= '../';
+			}
+
+		echo '<a href="'.$pathToRoot.'index.php" target="_top">AI Doc</a> &gt; <a href="'.$pathToRoot.'/API/index.html">API</a>';
+			
+		?><!-- InstanceBeginEditable name="NavBar" --><a href="intro.htm">Tutorial</a> &gt; <a href="8_00_Modules.htm">Modules</a>                &gt; The
+                Layout <!-- InstanceEndEditable --></td>
+    </tr>
+	<tr><td>&nbsp;</td></tr>
+    <tr>
+        <td><table width="100%"  border="0" cellspacing="0" cellpadding="0">
+    <tr>
+        <td class="content_text"><!-- InstanceBeginEditable name="prevButtonTop" --><a href="8_00_Modules.htm">Previous</a><!-- InstanceEndEditable --></td>
+        <td class="content_text"><div align="right"><!-- InstanceBeginEditable name="nextButtonTop" --><a href="8_02_Includes.htm">Next</a><!-- InstanceEndEditable --></div></td>
+    </tr>
+</table>
+</td>
+    </tr>
+    <tr>
+        <td class="content_text" ><hr size="1" noshade >
+            <!-- InstanceBeginEditable name="Content" -->
+            <h1>Modules - The Layout </h1>
+		    <p class="content_text" >Ok, up to now, we've just been dumping all our
+		        files into a common directory. That's not too neat if you ask
+		        me. In this step, we are going to reorganize our code into a
+		        neat little package for our module.</p>
+		    <p class="content_text" >Take a look at the following example:</p>
+		    <p class="content_text" ><img src="../images/8_1_SiteLayout.gif" width="222" height="489"> </p>
+		    <p class="content_text" >The site framework provides a directory named
+		        &quot;modules&quot;.</p>
+		    <p class="content_text" >Your module will need to be packaged in it's own
+		        directory named: app_[ModuleName] where [ModuleName] = the name of
+		        your application. In our example so far we would create an app_TVAddicts
+		            directory.</p>
+		    <p class="content_text" >Your AppController definition file ( app_TVAddicts.php
+		        ) is stored in the top level of that directory. </p>
+		    <p class="content_text" >Included in your directory are the following sub
+		        directories:</p>
+		    <p class="content_text" ><em><strong>objects_bl:</strong></em> This directory
+		        is to hold any object you use to contain the <strong>b</strong>usiness <strong>l</strong>ogic
+		        (<strong>_bl</strong>) of your application. </p>
+		    <p class="content_text" >So far in our example, we have not
+		            created any of these objects. An example of such an object
+		        would be a person object in an HR database applicaiton. The person
+		        object would need to oversee the proper logic to make sure names
+		        are formatted properly, families are grouped properly, etc...
+		        The person object might need to reference several different RowManagers
+		        to gather all the necessary info for the person.</p>
+		    <p class="content_text" ><em><strong>objects_da:</strong></em> This directory
+		        is to hold any objects used for <strong>d</strong>ata <strong>a</strong>ccess
+		        (<strong>_da</strong>). This is where your RowManagers are located. </p>
+		    <p class="content_text" ><em><strong>objects_pages:</strong></em> This directory holds the PageDisplay
+		        objects of your application.</p>
+		    <p class="content_text" ><em><strong>templates:</strong></em> This directory holds any special templates
+		        used  in your application. </p>
+		    <h4>What To Do</h4>
+		<p class="content_text" >Now I want you to create this directory structure
+		    for the files generated in your tvAddicts application. The above
+		    example already shows you how/where to store the files related to
+		    the series info.</p>
+		<p class="content_text" >When you have done that, continue on to the next step
+		    ... </p>
+		<h4>&nbsp;</h4>
+		<!-- InstanceEndEditable -->
+            <hr size="1" noshade>
+		 </td>
+    </tr>
+	<tr><td><table width="100%"  border="0" cellspacing="0" cellpadding="0">
+    <tr>
+        <td class="content_text"><!-- InstanceBeginEditable name="prevButtonBottom" --><a href="8_00_Modules.htm">Previous</a><!-- InstanceEndEditable --></td>
+        <td class="content_text"><div align="right"><!-- InstanceBeginEditable name="nextButtonBottom" --><a href="8_02_Includes.htm">Next</a><!-- InstanceEndEditable --></div></td>
+    </tr>
+</table></td>
+	</tr>
+</table>
+</center>
+
+</body>
+<!-- InstanceEnd --></html>

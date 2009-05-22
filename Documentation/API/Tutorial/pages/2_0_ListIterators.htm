@@ -1,0 +1,122 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html><!-- InstanceBegin template="/Templates/documentation_tutorialContent.dwt.php" codeOutsideHTMLIsLocked="false" -->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<!-- InstanceBeginEditable name="doctitle" -->
+<title>Untitled Document</title>
+<!-- InstanceEndEditable --><link href="../../../Data/CSS/documentation.css" rel="stylesheet" type="text/css">
+<!-- InstanceBeginEditable name="head" --><!-- InstanceEndEditable -->
+</head>
+
+<body>
+<center>
+<table width="680" border="0" cellspacing="0" cellpadding="0">
+    <tr>
+        <td><table width="100%"  border="0" cellspacing="0" cellpadding="0">
+    <tr>
+        <td><img src="../../../Images/page_header.gif"></td>
+		<td width="200">&nbsp;</td>
+    </tr>
+    <tr>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+    </tr>
+</table>
+</td>
+    </tr>
+    <tr>
+        <td bgcolor="#CCCCCC">&nbsp;</td>
+    </tr>
+    <tr>
+        <td class="text_navbar"><? 
+			/*
+			 * Find the path to the Documentation Root ...
+			 */
+			$pathToRoot = ''; 
+			for ( $indx=0; $indx<20 && !file_exists( $pathToRoot.'Data/CSS/documentation.css'); $indx++ ) {
+				$pathToRoot .= '../';
+			}
+
+		echo '<a href="'.$pathToRoot.'index.php" target="_top">AI Doc</a> &gt; <a href="'.$pathToRoot.'/API/index.html">API</a>';
+			
+		?><!-- InstanceBeginEditable name="NavBar" --><a href="intro.htm">Tutorial</a> &gt; ListIterators<!-- InstanceEndEditable --></td>
+    </tr>
+	<tr><td>&nbsp;</td></tr>
+    <tr>
+        <td><table width="100%"  border="0" cellspacing="0" cellpadding="0">
+    <tr>
+        <td class="content_text"><!-- InstanceBeginEditable name="prevButtonTop" --><a href="1_3_3_StudyParent.htm">Previous</a><!-- InstanceEndEditable --></td>
+        <td class="content_text"><div align="right"><!-- InstanceBeginEditable name="nextButtonTop" --><a href="2_1_NowYouDoIt.htm">Next</a><!-- InstanceEndEditable --></div></td>
+    </tr>
+</table>
+</td>
+    </tr>
+    <tr>
+        <td class="content_text" ><hr size="1" noshade >
+            <!-- InstanceBeginEditable name="Content" -->
+            <h1>List Iterators </h1>
+		    <p class="content_text" >In a <a href="1_1_3_SelectRows.htm">previous example</a>, we showed you how to use
+		        a ListIterator to select and parse through each row in a table.</p>
+		    <p class="content_text" >In this example, we will build on our previous
+		        example to create a web page that displayes each row of data
+		        in an HTML table. </p>
+		    <p class="content_text" >(use included example for this part) </p>
+		    <p class="content_text" >At the point that the table is displayed, we create
+		        a new SeriesManager, request a ListIterator containing all the
+		        row in the table, and then echo out a new HTML row with the title
+		        of the series as the content:</p>
+		    <span class="sourcecodebox" ><pre>
+&lt;body>
+ &lt;p>Current TV Addictions:&lt;/p>
+ &lt;table width="100" border="0" cellspacing="2" cellpadding="2">
+     &lt;tr>
+         &lt;td bgcolor="#666666">&lt;span class="text_white">Series&lt;/span>&lt;/td>
+     &lt;/tr>
+&lt;?php
+
+    // Now create a new series manager
+    $seriesManager = new RowManager_SeriesManager();
+    
+    // get all the rows in this table
+    $list = $seriesManager->getListIterator();
+    
+    // for each row
+    $list->setFirst();
+    while( $series = $list->getNext() ) {
+    
+        // echo out a new table row with title as contents
+        echo '&lt;tr>
+         &lt;td>' . $series->getTitle() . '&lt;/td>
+     &lt;/tr>';
+     
+    } // next row
+    
+?>
+ &lt;/table>
+&lt;/body></pre></span>
+		<p class="content_text" >Run the included sample file to verify it works for you.</p>
+		<h4>Links To Code Examples</h4>
+		<table width="100%"  border="0" cellspacing="0" cellpadding="0">
+            <tr>
+                <td><a href="../2%20ListIterators/ex_DataList.php"><img src="../../../Images/icn_filePHP.gif" width="24" height="31" border="0"></a></td>
+                </tr>
+            <tr>
+                <td><a href="../2%20ListIterators/ex_DataList.php">ex_DataList.php</a></td>
+                </tr>
+        </table>
+		
+            <!-- InstanceEndEditable --><hr size="1" noshade>
+		 </td>
+    </tr>
+	<tr><td><table width="100%"  border="0" cellspacing="0" cellpadding="0">
+    <tr>
+        <td class="content_text"><!-- InstanceBeginEditable name="prevButtonBottom" --><a href="1_3_3_StudyParent.htm">Previous</a><!-- InstanceEndEditable --></td>
+        <td class="content_text"><div align="right"><!-- InstanceBeginEditable name="nextButtonBottom" --><a href="2_1_NowYouDoIt.htm">Next</a><!-- InstanceEndEditable --></div></td>
+    </tr>
+</table></td>
+	</tr>
+</table>
+</center>
+
+</body>
+<!-- InstanceEnd --></html>

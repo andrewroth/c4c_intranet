@@ -1,0 +1,353 @@
+<?php
+/**
+ * @package AccountAdmin
+ */ 
+/**
+ * class page_AccountList 
+ * <pre> 
+ * Displays the current accounts on the system.
+ * </pre>
+ * @author Johnny Hausman
+ * Date:   21 Mar 2005
+ */
+class  page_AccountList {
+
+	//CONSTANTS:
+	
+	/** The list of fields to be displayed */
+    const DISPLAY_FIELDS = 'viewer_userID,language_id,viewer_isActive,viewer_lastLogin';
+    
+    /** The Multilingual Page Key for labels on this page */
+    const MULTILINGUAL_PAGE_KEY = 'page_AccountList';
+    
+
+	//VARIABLES:
+	
+	/** @var [OBJECT] The viewer object. */
+	protected $viewer;
+	
+    /** @var [STRING] The path to this module's root directory. */
+	protected $pathModuleRoot;
+	
+    /** @var [OBJECT] The labels object for this page of info. */
+	protected $labels;
+	
+	/** @var [ARRAY] The HREF values the links on this page. */
+	protected $linkValues;
+	
+	/** @var [ARRAY] The labels for the links on this page. */
+	protected $linkLabels;
+	
+	/** @var [ARRAY] Additional columns in the data list that are links. */
+	protected $linkColumns;
+	
+	/** @var [INTEGER] The initilization value for the listManager. */
+//	protected $managerInit;
+    /** @var [STRING] The initialization variable for the dataList */
+    protected $accountgroup_id;
+	
+	/** @var [OBJECT] The object for generating the data list. */
+	protected $listManager;
+	
+	
+	//CLASS CONSTRUCTOR
+	//************************************************************************
+	/**
+	 * function __construct
+	 * <pre>
+	 * Initialize the object.
+	 * </pre>
+	 * @param $pathModuleRoot [STRING] The path to the module's root dir.
+	 * @param $viewer [OBJECT] The viewer object.
+	 * @param $sortBy [STRING] Field data to sort listManager by.
+     * @param $managerInit [INTEGER] Initialization value for the listManager.
+	 * @param $accountgroup_id [STRING] The init data for the dataList obj
+	 * @return [void]
+	 */
+    function __construct($pathModuleRoot, $viewer, $sortBy, $accountgroup_id="" ) 
+    {
+
+        $this->pathModuleRoot = $pathModuleRoot;
+        $this->viewer = $viewer;
+        $this->linkValues = array();
+        $this->linkLabels = array();
+        $this->linkColumns = array();
+                
+//        $this->managerInit = $managerInit;
+        // if not accountgroup is given, then default to viewer's account
+        // group.
+        if ($accountgroup_id == "") {
+            $accountgroup_id = $this->viewer->getAccountGroupID();
+        }
+        $this->accountgroup_id = $accountgroup_id;
+        
+        if ($sortBy == '') {
+            $sortBy = 'viewer_userID';
+        }
+
+        $this->listManager = new ViewerList( $this->accountgroup_id, $sortBy );
+
+         // now initialize the labels for this page
+         // start by loading the default field labels for this Module
+         $languageID = $viewer->getLanguageID();
+         $seriesKey = moduleAccountAdmin::MULTILINGUAL_SERIES_KEY;
+         $pageKey = moduleAccountAdmin::MULTILINGUAL_PAGE_FIELDS;
+         $this->labels = new MultilingualManager( $languageID, $seriesKey, $pageKey );
+         
+         // then load the page specific labels for this page
+         $pageKey = page_AccountList::MULTILINGUAL_PAGE_KEY;
+         $this->labels->loadPageLabels( $pageKey );
+         
+         $this->labels->setSeriesKey( SITE_LABEL_SERIES_SITE );
+         $this->labels->loadPageLabels( SITE_LABEL_PAGE_FORM_LINKS );
+         
+         // add Site YES/NO labels
+        $pageKey = SITE_LABEL_PAGE_LIST_YESNO;
+        $this->labels->loadPageLabels( $pageKey );
+         
+    }
+
+
+
+	//CLASS FUNCTIONS:
+	//************************************************************************
+	/**
+	 * function classMethod
+	 * <pre>
+	 * [classFunction Description]
+	 * </pre>
+	 * <pre><code>
+	 * [Put PseudoCode Here]
+	 * </code></pre>
+	 * @param $param1 [$param1 type][optional description of $param1]
+	 * @param $param2 [$param2 type][optional description of $param2]
+	 * @return [returnValue, can be void]
+	 */
+    function classMethod($param1, $param2) 
+    {
+        // CODE
+    }	   
+    
+    
+    
+    //************************************************************************
+	/**
+	 * function loadFromForm
+	 * <pre>
+	 * This is a required function for a page object.
+	 * </pre>
+	 * @return [void]
+	 */
+    function loadFromForm() 
+    {
+
+    } 	   
+    
+    
+    
+    //************************************************************************
+	/**
+	 * function isDataValid
+	 * <pre>
+	 * This is a required function for a page object.
+	 * </pre>
+	 * @return [void]
+	 */
+    function isDataValid() 
+    {
+
+    } 	   
+    
+    
+    
+    //************************************************************************
+	/**
+	 * function processData
+	 * <pre>
+	 * This is a required function for a page object.
+	 * </pre>
+	 * @return [void]
+	 */
+    function processData() 
+    {
+
+    } 
+    
+    
+    
+    //************************************************************************
+	/**
+	 * function getHTML
+	 * <pre>
+	 * This method returns the HTML data generated by this object.
+	 * </pre>
+	 * @return [STRING] HTML Display data.
+	 */
+    function getHTML() 
+    {
+    
+        // Make a new Template object
+        $path = SITE_PATH_TEMPLATES;
+        // Replace $path with the following line if you want to create a
+        // template tailored for this page:
+        //$path = $this->pathModuleRoot.'templates/';
+        
+        $this->template = new Template( $path );
+        
+        // store the Row Manager's XML Node Name
+        $this->template->set( 'rowManagerXMLNodeName', RowManager_ViewerManager::XML_NODE_NAME );
+        
+        // store the field names being displayed
+        $fieldNames = explode(',', page_AccountList::DISPLAY_FIELDS);
+        $this->template->set( 'dataFieldList', $fieldNames);
+        
+        // store the primary key field name for the data being displayed
+        $this->template->set( 'primaryKeyFieldName', 'viewer_id');
+        
+        // store the link values
+        // $this->linkValues[ 'view' ] = 'add/new/href/data/here';
+        $this->template->set( 'linkValues', $this->linkValues );
+        
+        // store the link labels
+        $this->linkLabels[ 'add' ] = $this->labels->getLabel( '[Add]' );
+        $this->linkLabels[ 'edit' ] = $this->labels->getLabel( '[Edit]' );
+        $this->linkLabels[ 'del'  ] = $this->labels->getLabel( '[Delete]' );
+        $this->linkLabels[ 'cont' ] = $this->labels->getLabel( '[Continue]');
+        // $this->linkLabels[ 'view' ] = 'new link label here';
+        $this->template->set( 'linkLabels', $this->linkLabels );
+        
+        // store any additional link Columns
+        // example:
+        $title = $this->labels->getLabel( '[title_passWord]');
+        $columnLabel = $this->labels->getLabel( '[change]');
+        $link = $this->linkValues[ 'passWord' ];
+        $fieldName = 'viewer_id';
+        $this->addLinkColumn( $title, $columnLabel, $link, $fieldName);
+        
+        $title = $this->labels->getLabel( '[title_access]');
+        $columnLabel = $this->labels->getLabel( '[change]');
+        $link = $this->linkValues[ 'accessLink' ];
+        $fieldName = 'viewer_id';
+        $this->addLinkColumn( $title, $columnLabel, $link, $fieldName);
+
+        $this->template->set( 'linkColumns', $this->linkColumns);
+        
+        // store the page labels
+        // NOTE: use this location to update any label tags ...
+        // example:
+            // $name = $user->getName();
+            // $this->labels->setLabelTag( '[Title]', '[userName]', $name);
+        $this->template->setXML( 'pageLabels', $this->labels->getLabelXML() );
+        
+        // store XML List of Applicants ...
+        $this->template->setXML( 'dataList', $this->listManager->getXML() );
+        
+
+        /*
+         *  Set up any additional data transfer to the Template here...
+         */
+        // NOTE: Here we tell the templat to NOT display the Title & Instr
+        // fields.  So we can display them in our own template later on...
+        $this->template->set( 'disableHeading', true);
+         
+        // store language list for display
+        //$languageList = new LanguageList();
+        $languageManager = new RowManager_LanguageManager( );
+        $seriesKey = moduleAccountAdmin::MULTILINGUAL_SERIES_KEY;
+        $pageKey = $languageManager->getXMLNodeName();
+        $multiLingualManager = new MultilingualManager( $this->viewer->getLanguageID(), $seriesKey, $pageKey );
+        $bridgeManager = new LanguageLabelBridge($languageManager, $multiLingualManager );
+        
+        $languageList = $bridgeManager->getListIterator();
+        $languageArray = $languageList->getDropListArray( );
+
+        $this->template->set( 'list_language_id', $languageArray );
+        
+        $isActiveList = array();
+        $isActiveList[ '1' ] = $this->labels->getLabel( '[yes]' );
+        $isActiveList[ '0' ] = '&nbsp;'; //$this->labels->getLabel( '[no]' );
+        $this->template->set( 'list_viewer_isActive', $isActiveList );
+        
+   
+        $templateName = 'siteDataList.php';
+		// if you are creating a custom template for this page then 
+		// replace $templateName with the following:
+		//$templateName = 'page_AccountList.php';
+		
+		$pageAccountList = $this->template->fetch( $templateName );
+        
+        
+        // Now create an instance of the page_AccountList template
+        // and add the account List to it.
+        $path = $this->pathModuleRoot.'templates/';
+        $template = new Template( $path ); 
+        
+        $template->setXML( 'pageLabels', $this->labels->getLabelXML() );
+
+        $template->set( 'pageContent', $pageAccountList );
+        
+        // now add the data for the Account Group JumpList
+        $groupMgr = new RowManager_AccountGroupManager();
+        $seriesKey = moduleAccountAdmin::MULTILINGUAL_SERIES_KEY;
+        $pageKey = $groupMgr->getXMLNodeName();
+        $groupMultiLingualManager = new MultilingualManager( $this->viewer->getLanguageID(), $seriesKey, $pageKey );
+        $bridgeManager = new RowLabelBridge( $groupMgr, $groupMultiLingualManager);
+        $groupList = $bridgeManager->getListIterator();       
+
+        $jumpLink = $this->linkValues['jumpLink'];
+        $list = $groupList->getDropListArray( null, $jumpLink);
+        $template->set( 'jumpList', $list  );
+        
+        $template->set( 'accountGroup', $jumpLink.$this->accountgroup_id );
+        
+        // return template data.
+        $templateName = 'page_AccountList.php';
+        return $template->fetch( $templateName );
+
+    }
+    
+    
+    
+    //************************************************************************
+	/**
+	 * function addLinkColumn
+	 * <pre>
+	 * Adds a value to the linkColumn array.
+	 * </pre>
+	 * @param $title [STRING] The label to display for the column title
+	 * @param $label [STRING] The label to display for the link
+	 * @param $link  [STRING] the href value for the link
+	 * @param $fieldName [STRING] the name of the field used to complete 
+	 * the link
+	 * @return [void]
+	 */
+    function addLinkColumn($title, $label, $link, $fieldName ) 
+    {
+        $entry = array();
+        $entry[ 'title' ] = $title;
+        $entry[ 'label' ] = $label;
+        $entry[ 'link' ] = $link;
+        $entry[ 'field' ] = $fieldName;
+        
+        $this->linkColumns[] = $entry;
+    }
+    
+    
+    
+    //************************************************************************
+	/**
+	 * function setLinks
+	 * <pre>
+	 * Sets the value of the linkValues array.
+	 * </pre>
+	 * @param $links [ARRAY] Array of Link Values
+	 * @return [void]
+	 */
+    function setLinks($links) 
+    {
+        $this->linkValues = $links;
+    }
+	
+}
+
+?>

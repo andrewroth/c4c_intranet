@@ -1,0 +1,173 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html><!-- InstanceBegin template="/Templates/documentation_tutorialContent.dwt.php" codeOutsideHTMLIsLocked="false" -->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<!-- InstanceBeginEditable name="doctitle" -->
+<title>Untitled Document</title>
+<!-- InstanceEndEditable --><link href="../../../Data/CSS/documentation.css" rel="stylesheet" type="text/css">
+<!-- InstanceBeginEditable name="head" --><!-- InstanceEndEditable -->
+</head>
+
+<body>
+<center>
+<table width="680" border="0" cellspacing="0" cellpadding="0">
+    <tr>
+        <td><table width="100%"  border="0" cellspacing="0" cellpadding="0">
+    <tr>
+        <td><img src="../../../Images/page_header.gif"></td>
+		<td width="200">&nbsp;</td>
+    </tr>
+    <tr>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+    </tr>
+</table>
+</td>
+    </tr>
+    <tr>
+        <td bgcolor="#CCCCCC">&nbsp;</td>
+    </tr>
+    <tr>
+        <td class="text_navbar"><? 
+			/*
+			 * Find the path to the Documentation Root ...
+			 */
+			$pathToRoot = ''; 
+			for ( $indx=0; $indx<20 && !file_exists( $pathToRoot.'Data/CSS/documentation.css'); $indx++ ) {
+				$pathToRoot .= '../';
+			}
+
+		echo '<a href="'.$pathToRoot.'index.php" target="_top">AI Doc</a> &gt; <a href="'.$pathToRoot.'/API/index.html">API</a>';
+			
+		?><!-- InstanceBeginEditable name="NavBar" --><a href="intro.htm">Tutorial</a> &gt; <a href="1_0_DataAccessManager.htm">Data
+                    Access Managers</a> &gt; <a href="1_3_0_BuildYourOwn.htm">RowManager
+            Build Your Own</a> &gt; Methods<!-- InstanceEndEditable --></td>
+    </tr>
+	<tr><td>&nbsp;</td></tr>
+    <tr>
+        <td><table width="100%"  border="0" cellspacing="0" cellpadding="0">
+    <tr>
+        <td class="content_text"><!-- InstanceBeginEditable name="prevButtonTop" --><a href="#">Previous</a><!-- InstanceEndEditable --></td>
+        <td class="content_text"><div align="right"><!-- InstanceBeginEditable name="nextButtonTop" --><a href="1_3_1_TestIt.htm">Next</a><!-- InstanceEndEditable --></div></td>
+    </tr>
+</table>
+</td>
+    </tr>
+    <tr>
+        <td class="content_text" ><hr size="1" noshade >
+            <!-- InstanceBeginEditable name="Content" -->
+		<h1>RowManager - Build Your Own </h1>
+		<p class="content_text" >Now it is time to get your hands dirty and start writing
+		    your own RowManagers.</p>
+		<p class="content_text" >We will start by creating our own tvaddicts application.
+		    This application will manage 3 tables:</p>
+		<p class="content_text" ><em><strong>Series Table:</strong></em></p>
+		<table width="196" height="52" border="1" cellpadding="0" cellspacing="0">
+    <tr>
+        <td colspan="2">tvaddicts_series</td>
+    </tr>
+	<tr>
+        <td >series_id</td>
+        <td >series_title</td>
+    </tr>
+    <tr>
+        <td>int (11) </td>
+        <td>varchar(50)</td>
+    </tr>
+</table>
+		<p class="content_text" >To manage the different tv series we waste our lives
+		    away watching faithfully </p>
+		<p class="content_text" >&nbsp;</p>
+		<p class="content_text" ><strong><em>Season Table:</em></strong></p>
+		<table width="196" height="52" border="1" cellpadding="0" cellspacing="0">
+    <tr>
+        <td colspan="3">tvaddicts_season</td>
+    </tr>
+	<tr>
+        <td >season_id</td>
+        <td >series_id</td>
+		<td >season_num</td>
+    </tr>
+    <tr>
+        <td>int(11)</td>
+        <td>int(11)</td>
+		<td>int(1)</td>
+    </tr>
+</table>
+		<p class="content_text" >To keep track of the different seasons of each series.</p>
+		<p class="content_text" >&nbsp;</p>
+		<p class="content_text" ><strong><em>Episodes Table:</em></strong></p>
+<table height="52" width="500" border="1" cellpadding="0" cellspacing="0">
+    <tr>
+        <td colspan="5">tvaddicts_episode</td>
+    </tr>
+	<tr>
+        <td  >episode_id</td>
+        <td  >season_id</td>
+		<td  >episode_title</td>
+		<td  >episode_airDate</td>
+		<td  >episode_numberTimesWatched</td>
+    </tr>
+    <tr valign="top">
+        <td>int(11)</td>
+        <td>int(11)</td>
+		<td>varchar(50)</td>
+		<td>date</td>
+		<td>int(2) <br>
+		    (2 byte int ... we are addicts you know) </td>
+    </tr>
+</table>
+		<p class="content_text" >To track the specific episodes we watched, the first
+		    time they were aired, and the number of times we watched it. </p>
+		<p class="content_text" >&nbsp; </p>
+		<h4>What To Do</h4>
+		<p class="content_text" >Use the attached template to create 3 new RowManagers
+		    to manage these tables. Save each file in your testing directory
+		    as SeriesManager, SeasonManager, and EpisodeManager. The template has
+		    several tags that should make it easy to tailor the data to your
+		    RowManager:</p><ul><li>[TableName] : the name of your table with a Capital Letter (Episode)</li>
+		        <li>[description] : a description of the purpose of this row manager</li>
+		        <li>[author] : your name</li>
+		        <li>[application] : the name of your application (tvaddicts)</li>
+		        <li>[tableName] : the name of your table with lowercase first letter
+		            (episode)</li>
+		        </ul>
+		    
+            <p class="content_text">Be	sure	to fill in the specific DB description constants.</p>
+            <p class="content_text">Then add methods for getting and setting the individual fields. </p>
+            <p class="content_text">Once you have then created, then copy the
+                test_CreateTables.php file to your testing directory and run
+                it in your browser: <span class="sourcecodebox">http://localhost/~accountName/siteDirectory/testDirectory/test_CreateTables.php</span></p>
+            <p class="content_text">Once all the errors are debugged, and it
+                runs successfully, then look in the DB to find your new tables.</p>
+            <p class="content_text">Continue on to the next step.  </p>
+            <h4>&nbsp;</h4>
+		<span class="sourcecodebox" ></span>
+		<h4>Links To Code Examples</h4>
+		<table width="100%"  border="0" cellspacing="0" cellpadding="0">
+            <tr>
+                <td><a href="../1%20RowManager/tmpl_RowManager.php"><img src="../../../Images/icn_filePHP.gif" width="24" height="31" border="0"></a></td>
+                <td><a href="../1%20RowManager/test_CreateTables.php"><img src="../../../Images/icn_filePHP.gif" width="24" height="31" border="0"></a></td>
+            </tr>
+            <tr>
+                <td><a href="../1%20RowManager/tmpl_RowManager.php">tmpl_RowManager.php</a></td>
+                <td><a href="../1%20RowManager/test_CreateTables.php">test_CreateTables.php</a></td>
+            </tr>
+        </table>
+		<p class="content_text" >&nbsp;</p>
+            <!-- InstanceEndEditable -->
+            <hr size="1" noshade>
+		 </td>
+    </tr>
+	<tr><td><table width="100%"  border="0" cellspacing="0" cellpadding="0">
+    <tr>
+        <td class="content_text"><!-- InstanceBeginEditable name="prevButtonBottom" --><a href="#">Previous</a><!-- InstanceEndEditable --></td>
+        <td class="content_text"><div align="right"><!-- InstanceBeginEditable name="nextButtonBottom" --><a href="1_3_1_TestIt.htm">Next</a><!-- InstanceEndEditable --></div></td>
+    </tr>
+</table></td>
+	</tr>
+</table>
+</center>
+
+</body>
+<!-- InstanceEnd --></html>

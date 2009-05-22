@@ -1,0 +1,738 @@
+<?xml version="1.0"?>
+<Report>
+    <CAMPUS_REPORT>
+        <Activity>
+            <morestats_id><![CDATA[13]]></morestats_id>
+            <morestats_exp><![CDATA[700]]></morestats_exp>
+            <morestats_notes></morestats_notes>
+            <week_id><![CDATA[18]]></week_id>
+            <campus_id><![CDATA[57]]></campus_id>
+            <exposuretype_id><![CDATA[3]]></exposuretype_id>
+            <campus_desc><![CDATA[York University]]></campus_desc>
+            <campus_shortDesc><![CDATA[York]]></campus_shortDesc>
+            <accountgroup_id><![CDATA[10]]></accountgroup_id>
+            <week_endDate><![CDATA[2006-09-16]]></week_endDate>
+            <semester_id><![CDATA[1]]></semester_id>
+            <exposuretype_desc><![CDATA[RLK (Frosh Week)]]></exposuretype_desc>
+        </Activity>
+        <Activity>
+            <morestats_id><![CDATA[4]]></morestats_id>
+            <morestats_exp><![CDATA[500]]></morestats_exp>
+            <morestats_notes><![CDATA[250 Tues + 250 Wed]]></morestats_notes>
+            <week_id><![CDATA[17]]></week_id>
+            <campus_id><![CDATA[49]]></campus_id>
+            <exposuretype_id><![CDATA[3]]></exposuretype_id>
+            <campus_desc><![CDATA[Ryerson University]]></campus_desc>
+            <campus_shortDesc><![CDATA[Ryerson]]></campus_shortDesc>
+            <accountgroup_id><![CDATA[10]]></accountgroup_id>
+            <week_endDate><![CDATA[2006-09-09]]></week_endDate>
+            <semester_id><![CDATA[1]]></semester_id>
+            <exposuretype_desc><![CDATA[RLK (Frosh Week)]]></exposuretype_desc>
+        </Activity>
+        <Activity>
+            <morestats_id><![CDATA[5]]></morestats_id>
+            <morestats_exp><![CDATA[329]]></morestats_exp>
+            <morestats_notes><![CDATA[Booth & Cafe (Tues)]]></morestats_notes>
+            <week_id><![CDATA[17]]></week_id>
+            <campus_id><![CDATA[49]]></campus_id>
+            <exposuretype_id><![CDATA[2]]></exposuretype_id>
+            <campus_desc><![CDATA[Ryerson University]]></campus_desc>
+            <campus_shortDesc><![CDATA[Ryerson]]></campus_shortDesc>
+            <accountgroup_id><![CDATA[10]]></accountgroup_id>
+            <week_endDate><![CDATA[2006-09-09]]></week_endDate>
+            <semester_id><![CDATA[1]]></semester_id>
+            <exposuretype_desc><![CDATA[SIQ]]></exposuretype_desc>
+        </Activity>
+        <Activity>
+            <morestats_id><![CDATA[10]]></morestats_id>
+            <morestats_exp><![CDATA[30]]></morestats_exp>
+            <morestats_notes><![CDATA[How to get better grades and have more fun talk by Kirsten -- frosh academic event]]></morestats_notes>
+            <week_id><![CDATA[17]]></week_id>
+            <campus_id><![CDATA[51]]></campus_id>
+            <exposuretype_id><![CDATA[6]]></exposuretype_id>
+            <campus_desc><![CDATA[University of Guelph]]></campus_desc>
+            <campus_shortDesc><![CDATA[UofG]]></campus_shortDesc>
+            <accountgroup_id><![CDATA[10]]></accountgroup_id>
+            <week_endDate><![CDATA[2006-09-09]]></week_endDate>
+            <semester_id><![CDATA[1]]></semester_id>
+            <exposuretype_desc><![CDATA[Campus Wide Event]]></exposuretype_desc>
+        </Activity>
+        <Activity>
+            <morestats_id><![CDATA[11]]></morestats_id>
+            <morestats_exp><![CDATA[1200]]></morestats_exp>
+            <morestats_notes></morestats_notes>
+            <week_id><![CDATA[17]]></week_id>
+            <campus_id><![CDATA[7]]></campus_id>
+            <exposuretype_id><![CDATA[3]]></exposuretype_id>
+            <campus_desc><![CDATA[University of Alberta]]></campus_desc>
+            <campus_shortDesc><![CDATA[UofA]]></campus_shortDesc>
+            <accountgroup_id><![CDATA[11]]></accountgroup_id>
+            <week_endDate><![CDATA[2006-09-09]]></week_endDate>
+            <semester_id><![CDATA[1]]></semester_id>
+            <exposuretype_desc><![CDATA[RLK (Frosh Week)]]></exposuretype_desc>
+        </Activity>
+        <Activity>
+            <morestats_id><![CDATA[12]]></morestats_id>
+            <morestats_exp><![CDATA[100]]></morestats_exp>
+            <morestats_notes><![CDATA[Case for Christ/Faith]]></morestats_notes>
+            <week_id><![CDATA[17]]></week_id>
+            <campus_id><![CDATA[7]]></campus_id>
+            <exposuretype_id><![CDATA[7]]></exposuretype_id>
+            <campus_desc><![CDATA[University of Alberta]]></campus_desc>
+            <campus_shortDesc><![CDATA[UofA]]></campus_shortDesc>
+            <accountgroup_id><![CDATA[11]]></accountgroup_id>
+            <week_endDate><![CDATA[2006-09-09]]></week_endDate>
+            <semester_id><![CDATA[1]]></semester_id>
+            <exposuretype_desc><![CDATA[Other Evangelistic Materials]]></exposuretype_desc>
+        </Activity>
+        <Activity>
+            <morestats_id><![CDATA[14]]></morestats_id>
+            <morestats_exp><![CDATA[600]]></morestats_exp>
+            <morestats_notes></morestats_notes>
+            <week_id><![CDATA[18]]></week_id>
+            <campus_id><![CDATA[57]]></campus_id>
+            <exposuretype_id><![CDATA[2]]></exposuretype_id>
+            <campus_desc><![CDATA[York University]]></campus_desc>
+            <campus_shortDesc><![CDATA[York]]></campus_shortDesc>
+            <accountgroup_id><![CDATA[10]]></accountgroup_id>
+            <week_endDate><![CDATA[2006-09-16]]></week_endDate>
+            <semester_id><![CDATA[1]]></semester_id>
+            <exposuretype_desc><![CDATA[SIQ]]></exposuretype_desc>
+        </Activity>
+        <Activity>
+            <morestats_id><![CDATA[15]]></morestats_id>
+            <morestats_exp><![CDATA[200]]></morestats_exp>
+            <morestats_notes><![CDATA[SIQ @ clubs day booth]]></morestats_notes>
+            <week_id><![CDATA[17]]></week_id>
+            <campus_id><![CDATA[49]]></campus_id>
+            <exposuretype_id><![CDATA[2]]></exposuretype_id>
+            <campus_desc><![CDATA[Ryerson University]]></campus_desc>
+            <campus_shortDesc><![CDATA[Ryerson]]></campus_shortDesc>
+            <accountgroup_id><![CDATA[10]]></accountgroup_id>
+            <week_endDate><![CDATA[2006-09-09]]></week_endDate>
+            <semester_id><![CDATA[1]]></semester_id>
+            <exposuretype_desc><![CDATA[SIQ]]></exposuretype_desc>
+        </Activity>
+        <Activity>
+            <morestats_id><![CDATA[16]]></morestats_id>
+            <morestats_exp><![CDATA[5]]></morestats_exp>
+            <morestats_notes><![CDATA[Weekly Meeting]]></morestats_notes>
+            <week_id><![CDATA[18]]></week_id>
+            <campus_id><![CDATA[57]]></campus_id>
+            <exposuretype_id><![CDATA[6]]></exposuretype_id>
+            <campus_desc><![CDATA[York University]]></campus_desc>
+            <campus_shortDesc><![CDATA[York]]></campus_shortDesc>
+            <accountgroup_id><![CDATA[10]]></accountgroup_id>
+            <week_endDate><![CDATA[2006-09-16]]></week_endDate>
+            <semester_id><![CDATA[1]]></semester_id>
+            <exposuretype_desc><![CDATA[Campus Wide Event]]></exposuretype_desc>
+        </Activity>
+        <Activity>
+            <morestats_id><![CDATA[17]]></morestats_id>
+            <morestats_exp><![CDATA[400]]></morestats_exp>
+            <morestats_notes></morestats_notes>
+            <week_id><![CDATA[18]]></week_id>
+            <campus_id><![CDATA[54]]></campus_id>
+            <exposuretype_id><![CDATA[3]]></exposuretype_id>
+            <campus_desc><![CDATA[University of Toronto]]></campus_desc>
+            <campus_shortDesc><![CDATA[UofT]]></campus_shortDesc>
+            <accountgroup_id><![CDATA[10]]></accountgroup_id>
+            <week_endDate><![CDATA[2006-09-16]]></week_endDate>
+            <semester_id><![CDATA[1]]></semester_id>
+            <exposuretype_desc><![CDATA[RLK (Frosh Week)]]></exposuretype_desc>
+        </Activity>
+        <Activity>
+            <morestats_id><![CDATA[18]]></morestats_id>
+            <morestats_exp><![CDATA[200]]></morestats_exp>
+            <morestats_notes></morestats_notes>
+            <week_id><![CDATA[18]]></week_id>
+            <campus_id><![CDATA[54]]></campus_id>
+            <exposuretype_id><![CDATA[2]]></exposuretype_id>
+            <campus_desc><![CDATA[University of Toronto]]></campus_desc>
+            <campus_shortDesc><![CDATA[UofT]]></campus_shortDesc>
+            <accountgroup_id><![CDATA[10]]></accountgroup_id>
+            <week_endDate><![CDATA[2006-09-16]]></week_endDate>
+            <semester_id><![CDATA[1]]></semester_id>
+            <exposuretype_desc><![CDATA[SIQ]]></exposuretype_desc>
+        </Activity>
+        <Activity>
+            <morestats_id><![CDATA[19]]></morestats_id>
+            <morestats_exp><![CDATA[5]]></morestats_exp>
+            <morestats_notes><![CDATA[Info Meeting]]></morestats_notes>
+            <week_id><![CDATA[18]]></week_id>
+            <campus_id><![CDATA[54]]></campus_id>
+            <exposuretype_id><![CDATA[6]]></exposuretype_id>
+            <campus_desc><![CDATA[University of Toronto]]></campus_desc>
+            <campus_shortDesc><![CDATA[UofT]]></campus_shortDesc>
+            <accountgroup_id><![CDATA[10]]></accountgroup_id>
+            <week_endDate><![CDATA[2006-09-16]]></week_endDate>
+            <semester_id><![CDATA[1]]></semester_id>
+            <exposuretype_desc><![CDATA[Campus Wide Event]]></exposuretype_desc>
+        </Activity>
+        <Activity>
+            <morestats_id><![CDATA[20]]></morestats_id>
+            <morestats_exp><![CDATA[1500]]></morestats_exp>
+            <morestats_notes><![CDATA[RLKs at Talbot, Perth, Essex, Saugeen]]></morestats_notes>
+            <week_id><![CDATA[18]]></week_id>
+            <campus_id><![CDATA[2]]></campus_id>
+            <exposuretype_id><![CDATA[3]]></exposuretype_id>
+            <campus_desc><![CDATA[University of Western Ontario]]></campus_desc>
+            <campus_shortDesc><![CDATA[UWO]]></campus_shortDesc>
+            <accountgroup_id><![CDATA[10]]></accountgroup_id>
+            <week_endDate><![CDATA[2006-09-16]]></week_endDate>
+            <semester_id><![CDATA[1]]></semester_id>
+            <exposuretype_desc><![CDATA[RLK (Frosh Week)]]></exposuretype_desc>
+        </Activity>
+        <Activity>
+            <morestats_id><![CDATA[21]]></morestats_id>
+            <morestats_exp><![CDATA[548]]></morestats_exp>
+            <morestats_notes></morestats_notes>
+            <week_id><![CDATA[17]]></week_id>
+            <campus_id><![CDATA[37]]></campus_id>
+            <exposuretype_id><![CDATA[3]]></exposuretype_id>
+            <campus_desc><![CDATA[Dalhousie University]]></campus_desc>
+            <campus_shortDesc><![CDATA[Dal]]></campus_shortDesc>
+            <accountgroup_id><![CDATA[10]]></accountgroup_id>
+            <week_endDate><![CDATA[2006-09-09]]></week_endDate>
+            <semester_id><![CDATA[1]]></semester_id>
+            <exposuretype_desc><![CDATA[RLK (Frosh Week)]]></exposuretype_desc>
+        </Activity>
+        <Activity>
+            <morestats_id><![CDATA[22]]></morestats_id>
+            <morestats_exp><![CDATA[750]]></morestats_exp>
+            <morestats_notes><![CDATA[-distribution de V3]]></morestats_notes>
+            <week_id><![CDATA[18]]></week_id>
+            <campus_id><![CDATA[65]]></campus_id>
+            <exposuretype_id><![CDATA[3]]></exposuretype_id>
+            <campus_desc><![CDATA[Universite Laval]]></campus_desc>
+            <campus_shortDesc><![CDATA[Laval]]></campus_shortDesc>
+            <accountgroup_id><![CDATA[12]]></accountgroup_id>
+            <week_endDate><![CDATA[2006-09-16]]></week_endDate>
+            <semester_id><![CDATA[1]]></semester_id>
+            <exposuretype_desc><![CDATA[RLK (Frosh Week)]]></exposuretype_desc>
+        </Activity>
+        <Activity>
+            <morestats_id><![CDATA[23]]></morestats_id>
+            <morestats_exp><![CDATA[45]]></morestats_exp>
+            <morestats_notes><![CDATA[Spirit-filled life presentation at Weekly Meeting]]></morestats_notes>
+            <week_id><![CDATA[19]]></week_id>
+            <campus_id><![CDATA[7]]></campus_id>
+            <exposuretype_id><![CDATA[6]]></exposuretype_id>
+            <campus_desc><![CDATA[University of Alberta]]></campus_desc>
+            <campus_shortDesc><![CDATA[UofA]]></campus_shortDesc>
+            <accountgroup_id><![CDATA[11]]></accountgroup_id>
+            <week_endDate><![CDATA[2006-09-23]]></week_endDate>
+            <semester_id><![CDATA[1]]></semester_id>
+            <exposuretype_desc><![CDATA[Campus Wide Event]]></exposuretype_desc>
+        </Activity>
+        <Activity>
+            <morestats_id><![CDATA[24]]></morestats_id>
+            <morestats_exp><![CDATA[1400]]></morestats_exp>
+            <morestats_notes><![CDATA[given out at Clubsfest (Frosh Week)]]></morestats_notes>
+            <week_id><![CDATA[17]]></week_id>
+            <campus_id><![CDATA[46]]></campus_id>
+            <exposuretype_id><![CDATA[3]]></exposuretype_id>
+            <campus_desc><![CDATA[McMaster University]]></campus_desc>
+            <campus_shortDesc><![CDATA[MAC]]></campus_shortDesc>
+            <accountgroup_id><![CDATA[10]]></accountgroup_id>
+            <week_endDate><![CDATA[2006-09-09]]></week_endDate>
+            <semester_id><![CDATA[1]]></semester_id>
+            <exposuretype_desc><![CDATA[RLK (Frosh Week)]]></exposuretype_desc>
+        </Activity>
+        <Activity>
+            <morestats_id><![CDATA[25]]></morestats_id>
+            <morestats_exp><![CDATA[350]]></morestats_exp>
+            <morestats_notes></morestats_notes>
+            <week_id><![CDATA[17]]></week_id>
+            <campus_id><![CDATA[40]]></campus_id>
+            <exposuretype_id><![CDATA[3]]></exposuretype_id>
+            <campus_desc><![CDATA[Saint Mary's University]]></campus_desc>
+            <campus_shortDesc><![CDATA[SMU]]></campus_shortDesc>
+            <accountgroup_id><![CDATA[10]]></accountgroup_id>
+            <week_endDate><![CDATA[2006-09-09]]></week_endDate>
+            <semester_id><![CDATA[1]]></semester_id>
+            <exposuretype_desc><![CDATA[RLK (Frosh Week)]]></exposuretype_desc>
+        </Activity>
+        <Activity>
+            <morestats_id><![CDATA[26]]></morestats_id>
+            <morestats_exp><![CDATA[100]]></morestats_exp>
+            <morestats_notes><![CDATA[Campus Craze Days in the Residence, had RLK give aways]]></morestats_notes>
+            <week_id><![CDATA[20]]></week_id>
+            <campus_id><![CDATA[19]]></campus_id>
+            <exposuretype_id><![CDATA[3]]></exposuretype_id>
+            <campus_desc><![CDATA[University of British Columbia]]></campus_desc>
+            <campus_shortDesc><![CDATA[UBC]]></campus_shortDesc>
+            <accountgroup_id><![CDATA[11]]></accountgroup_id>
+            <week_endDate><![CDATA[2006-09-30]]></week_endDate>
+            <semester_id><![CDATA[1]]></semester_id>
+            <exposuretype_desc><![CDATA[RLK (Frosh Week)]]></exposuretype_desc>
+        </Activity>
+        <Activity>
+            <morestats_id><![CDATA[27]]></morestats_id>
+            <morestats_exp><![CDATA[1000]]></morestats_exp>
+            <morestats_notes><![CDATA[1st Year Engineering classes]]></morestats_notes>
+            <week_id><![CDATA[18]]></week_id>
+            <campus_id><![CDATA[19]]></campus_id>
+            <exposuretype_id><![CDATA[2]]></exposuretype_id>
+            <campus_desc><![CDATA[University of British Columbia]]></campus_desc>
+            <campus_shortDesc><![CDATA[UBC]]></campus_shortDesc>
+            <accountgroup_id><![CDATA[11]]></accountgroup_id>
+            <week_endDate><![CDATA[2006-09-16]]></week_endDate>
+            <semester_id><![CDATA[1]]></semester_id>
+            <exposuretype_desc><![CDATA[SIQ]]></exposuretype_desc>
+        </Activity>
+        <Activity>
+            <morestats_id><![CDATA[28]]></morestats_id>
+            <morestats_exp><![CDATA[2500]]></morestats_exp>
+            <morestats_notes><![CDATA[1st year classes]]></morestats_notes>
+            <week_id><![CDATA[17]]></week_id>
+            <campus_id><![CDATA[19]]></campus_id>
+            <exposuretype_id><![CDATA[2]]></exposuretype_id>
+            <campus_desc><![CDATA[University of British Columbia]]></campus_desc>
+            <campus_shortDesc><![CDATA[UBC]]></campus_shortDesc>
+            <accountgroup_id><![CDATA[11]]></accountgroup_id>
+            <week_endDate><![CDATA[2006-09-09]]></week_endDate>
+            <semester_id><![CDATA[1]]></semester_id>
+            <exposuretype_desc><![CDATA[SIQ]]></exposuretype_desc>
+        </Activity>
+        <Activity>
+            <morestats_id><![CDATA[29]]></morestats_id>
+            <morestats_exp><![CDATA[34]]></morestats_exp>
+            <morestats_notes></morestats_notes>
+            <week_id><![CDATA[21]]></week_id>
+            <campus_id><![CDATA[51]]></campus_id>
+            <exposuretype_id><![CDATA[2]]></exposuretype_id>
+            <campus_desc><![CDATA[University of Guelph]]></campus_desc>
+            <campus_shortDesc><![CDATA[UofG]]></campus_shortDesc>
+            <accountgroup_id><![CDATA[10]]></accountgroup_id>
+            <week_endDate><![CDATA[2006-10-07]]></week_endDate>
+            <semester_id><![CDATA[1]]></semester_id>
+            <exposuretype_desc><![CDATA[SIQ]]></exposuretype_desc>
+        </Activity>
+        <Activity>
+            <morestats_id><![CDATA[30]]></morestats_id>
+            <morestats_exp><![CDATA[4]]></morestats_exp>
+            <morestats_notes><![CDATA[Weekly Meeting]]></morestats_notes>
+            <week_id><![CDATA[21]]></week_id>
+            <campus_id><![CDATA[57]]></campus_id>
+            <exposuretype_id><![CDATA[6]]></exposuretype_id>
+            <campus_desc><![CDATA[York University]]></campus_desc>
+            <campus_shortDesc><![CDATA[York]]></campus_shortDesc>
+            <accountgroup_id><![CDATA[10]]></accountgroup_id>
+            <week_endDate><![CDATA[2006-10-07]]></week_endDate>
+            <semester_id><![CDATA[1]]></semester_id>
+            <exposuretype_desc><![CDATA[Campus Wide Event]]></exposuretype_desc>
+        </Activity>
+        <Activity>
+            <morestats_id><![CDATA[31]]></morestats_id>
+            <morestats_exp><![CDATA[5]]></morestats_exp>
+            <morestats_notes><![CDATA[Weekly Meeting]]></morestats_notes>
+            <week_id><![CDATA[20]]></week_id>
+            <campus_id><![CDATA[57]]></campus_id>
+            <exposuretype_id><![CDATA[6]]></exposuretype_id>
+            <campus_desc><![CDATA[York University]]></campus_desc>
+            <campus_shortDesc><![CDATA[York]]></campus_shortDesc>
+            <accountgroup_id><![CDATA[10]]></accountgroup_id>
+            <week_endDate><![CDATA[2006-09-30]]></week_endDate>
+            <semester_id><![CDATA[1]]></semester_id>
+            <exposuretype_desc><![CDATA[Campus Wide Event]]></exposuretype_desc>
+        </Activity>
+        <Activity>
+            <morestats_id><![CDATA[32]]></morestats_id>
+            <morestats_exp><![CDATA[1250]]></morestats_exp>
+            <morestats_notes><![CDATA[Booth during frosh orientation]]></morestats_notes>
+            <week_id><![CDATA[22]]></week_id>
+            <campus_id><![CDATA[68]]></campus_id>
+            <exposuretype_id><![CDATA[3]]></exposuretype_id>
+            <campus_desc><![CDATA[University of Saskatchewan]]></campus_desc>
+            <campus_shortDesc><![CDATA[UofS]]></campus_shortDesc>
+            <accountgroup_id><![CDATA[11]]></accountgroup_id>
+            <week_endDate><![CDATA[2006-10-14]]></week_endDate>
+            <semester_id><![CDATA[1]]></semester_id>
+            <exposuretype_desc><![CDATA[RLK (Frosh Week)]]></exposuretype_desc>
+        </Activity>
+        <Activity>
+            <morestats_id><![CDATA[33]]></morestats_id>
+            <morestats_exp><![CDATA[1375]]></morestats_exp>
+            <morestats_notes><![CDATA[Booth During Frosh Orientation]]></morestats_notes>
+            <week_id><![CDATA[17]]></week_id>
+            <campus_id><![CDATA[68]]></campus_id>
+            <exposuretype_id><![CDATA[3]]></exposuretype_id>
+            <campus_desc><![CDATA[University of Saskatchewan]]></campus_desc>
+            <campus_shortDesc><![CDATA[UofS]]></campus_shortDesc>
+            <accountgroup_id><![CDATA[11]]></accountgroup_id>
+            <week_endDate><![CDATA[2006-09-09]]></week_endDate>
+            <semester_id><![CDATA[1]]></semester_id>
+            <exposuretype_desc><![CDATA[RLK (Frosh Week)]]></exposuretype_desc>
+        </Activity>
+        <Activity>
+            <morestats_id><![CDATA[34]]></morestats_id>
+            <morestats_exp><![CDATA[75]]></morestats_exp>
+            <morestats_notes><![CDATA[Booth in Agriculture College]]></morestats_notes>
+            <week_id><![CDATA[18]]></week_id>
+            <campus_id><![CDATA[68]]></campus_id>
+            <exposuretype_id><![CDATA[3]]></exposuretype_id>
+            <campus_desc><![CDATA[University of Saskatchewan]]></campus_desc>
+            <campus_shortDesc><![CDATA[UofS]]></campus_shortDesc>
+            <accountgroup_id><![CDATA[11]]></accountgroup_id>
+            <week_endDate><![CDATA[2006-09-16]]></week_endDate>
+            <semester_id><![CDATA[1]]></semester_id>
+            <exposuretype_desc><![CDATA[RLK (Frosh Week)]]></exposuretype_desc>
+        </Activity>
+        <Activity>
+            <morestats_id><![CDATA[35]]></morestats_id>
+            <morestats_exp><![CDATA[60]]></morestats_exp>
+            <morestats_notes><![CDATA[Booth in Arts Tunnel]]></morestats_notes>
+            <week_id><![CDATA[19]]></week_id>
+            <campus_id><![CDATA[68]]></campus_id>
+            <exposuretype_id><![CDATA[3]]></exposuretype_id>
+            <campus_desc><![CDATA[University of Saskatchewan]]></campus_desc>
+            <campus_shortDesc><![CDATA[UofS]]></campus_shortDesc>
+            <accountgroup_id><![CDATA[11]]></accountgroup_id>
+            <week_endDate><![CDATA[2006-09-23]]></week_endDate>
+            <semester_id><![CDATA[1]]></semester_id>
+            <exposuretype_desc><![CDATA[RLK (Frosh Week)]]></exposuretype_desc>
+        </Activity>
+        <Activity>
+            <morestats_id><![CDATA[36]]></morestats_id>
+            <morestats_exp><![CDATA[1600]]></morestats_exp>
+            <morestats_notes><![CDATA[I accidentally put this under additional stats instead of this heading]]></morestats_notes>
+            <week_id><![CDATA[17]]></week_id>
+            <campus_id><![CDATA[8]]></campus_id>
+            <exposuretype_id><![CDATA[3]]></exposuretype_id>
+            <campus_desc><![CDATA[University of Calgary]]></campus_desc>
+            <campus_shortDesc><![CDATA[UofC]]></campus_shortDesc>
+            <accountgroup_id><![CDATA[11]]></accountgroup_id>
+            <week_endDate><![CDATA[2006-09-09]]></week_endDate>
+            <semester_id><![CDATA[1]]></semester_id>
+            <exposuretype_desc><![CDATA[RLK (Frosh Week)]]></exposuretype_desc>
+        </Activity>
+        <Activity>
+            <morestats_id><![CDATA[37]]></morestats_id>
+            <morestats_exp><![CDATA[150]]></morestats_exp>
+            <morestats_notes><![CDATA[This was an Free food give away with RLKS.]]></morestats_notes>
+            <week_id><![CDATA[18]]></week_id>
+            <campus_id><![CDATA[8]]></campus_id>
+            <exposuretype_id><![CDATA[6]]></exposuretype_id>
+            <campus_desc><![CDATA[University of Calgary]]></campus_desc>
+            <campus_shortDesc><![CDATA[UofC]]></campus_shortDesc>
+            <accountgroup_id><![CDATA[11]]></accountgroup_id>
+            <week_endDate><![CDATA[2006-09-16]]></week_endDate>
+            <semester_id><![CDATA[1]]></semester_id>
+            <exposuretype_desc><![CDATA[Campus Wide Event]]></exposuretype_desc>
+        </Activity>
+        <Activity>
+            <morestats_id><![CDATA[38]]></morestats_id>
+            <morestats_exp><![CDATA[205]]></morestats_exp>
+            <morestats_notes><![CDATA[1st yr agriculture- 45
+1st yr computer science- 20
+1st yr biology- 100
+agriculture booth- 40]]></morestats_notes>
+            <week_id><![CDATA[18]]></week_id>
+            <campus_id><![CDATA[68]]></campus_id>
+            <exposuretype_id><![CDATA[2]]></exposuretype_id>
+            <campus_desc><![CDATA[University of Saskatchewan]]></campus_desc>
+            <campus_shortDesc><![CDATA[UofS]]></campus_shortDesc>
+            <accountgroup_id><![CDATA[11]]></accountgroup_id>
+            <week_endDate><![CDATA[2006-09-16]]></week_endDate>
+            <semester_id><![CDATA[1]]></semester_id>
+            <exposuretype_desc><![CDATA[SIQ]]></exposuretype_desc>
+        </Activity>
+        <Activity>
+            <morestats_id><![CDATA[39]]></morestats_id>
+            <morestats_exp><![CDATA[1300]]></morestats_exp>
+            <morestats_notes><![CDATA[frosh orientation]]></morestats_notes>
+            <week_id><![CDATA[17]]></week_id>
+            <campus_id><![CDATA[68]]></campus_id>
+            <exposuretype_id><![CDATA[2]]></exposuretype_id>
+            <campus_desc><![CDATA[University of Saskatchewan]]></campus_desc>
+            <campus_shortDesc><![CDATA[UofS]]></campus_shortDesc>
+            <accountgroup_id><![CDATA[11]]></accountgroup_id>
+            <week_endDate><![CDATA[2006-09-09]]></week_endDate>
+            <semester_id><![CDATA[1]]></semester_id>
+            <exposuretype_desc><![CDATA[SIQ]]></exposuretype_desc>
+        </Activity>
+        <Activity>
+            <morestats_id><![CDATA[40]]></morestats_id>
+            <morestats_exp><![CDATA[520]]></morestats_exp>
+            <morestats_notes><![CDATA[1st year Engineering- 120
+1st year Psychology- 200
+booth in Arts Tunnel- 125]]></morestats_notes>
+            <week_id><![CDATA[19]]></week_id>
+            <campus_id><![CDATA[68]]></campus_id>
+            <exposuretype_id><![CDATA[2]]></exposuretype_id>
+            <campus_desc><![CDATA[University of Saskatchewan]]></campus_desc>
+            <campus_shortDesc><![CDATA[UofS]]></campus_shortDesc>
+            <accountgroup_id><![CDATA[11]]></accountgroup_id>
+            <week_endDate><![CDATA[2006-09-23]]></week_endDate>
+            <semester_id><![CDATA[1]]></semester_id>
+            <exposuretype_desc><![CDATA[SIQ]]></exposuretype_desc>
+        </Activity>
+        <Activity>
+            <morestats_id><![CDATA[41]]></morestats_id>
+            <morestats_exp><![CDATA[300]]></morestats_exp>
+            <morestats_notes><![CDATA[1st yr Psychology Class]]></morestats_notes>
+            <week_id><![CDATA[20]]></week_id>
+            <campus_id><![CDATA[68]]></campus_id>
+            <exposuretype_id><![CDATA[2]]></exposuretype_id>
+            <campus_desc><![CDATA[University of Saskatchewan]]></campus_desc>
+            <campus_shortDesc><![CDATA[UofS]]></campus_shortDesc>
+            <accountgroup_id><![CDATA[11]]></accountgroup_id>
+            <week_endDate><![CDATA[2006-09-30]]></week_endDate>
+            <semester_id><![CDATA[1]]></semester_id>
+            <exposuretype_desc><![CDATA[SIQ]]></exposuretype_desc>
+        </Activity>
+        <Activity>
+            <morestats_id><![CDATA[42]]></morestats_id>
+            <morestats_exp><![CDATA[25]]></morestats_exp>
+            <morestats_notes><![CDATA[Case for Faith- Given away in student's class]]></morestats_notes>
+            <week_id><![CDATA[21]]></week_id>
+            <campus_id><![CDATA[68]]></campus_id>
+            <exposuretype_id><![CDATA[7]]></exposuretype_id>
+            <campus_desc><![CDATA[University of Saskatchewan]]></campus_desc>
+            <campus_shortDesc><![CDATA[UofS]]></campus_shortDesc>
+            <accountgroup_id><![CDATA[11]]></accountgroup_id>
+            <week_endDate><![CDATA[2006-10-07]]></week_endDate>
+            <semester_id><![CDATA[1]]></semester_id>
+            <exposuretype_desc><![CDATA[Other Evangelistic Materials]]></exposuretype_desc>
+        </Activity>
+        <Activity>
+            <morestats_id><![CDATA[43]]></morestats_id>
+            <morestats_exp><![CDATA[20]]></morestats_exp>
+            <morestats_notes><![CDATA[More then a Carpenter- Given away in student's class]]></morestats_notes>
+            <week_id><![CDATA[21]]></week_id>
+            <campus_id><![CDATA[68]]></campus_id>
+            <exposuretype_id><![CDATA[7]]></exposuretype_id>
+            <campus_desc><![CDATA[University of Saskatchewan]]></campus_desc>
+            <campus_shortDesc><![CDATA[UofS]]></campus_shortDesc>
+            <accountgroup_id><![CDATA[11]]></accountgroup_id>
+            <week_endDate><![CDATA[2006-10-07]]></week_endDate>
+            <semester_id><![CDATA[1]]></semester_id>
+            <exposuretype_desc><![CDATA[Other Evangelistic Materials]]></exposuretype_desc>
+        </Activity>
+        <Activity>
+            <morestats_id><![CDATA[44]]></morestats_id>
+            <morestats_exp><![CDATA[900]]></morestats_exp>
+            <morestats_notes></morestats_notes>
+            <week_id><![CDATA[17]]></week_id>
+            <campus_id><![CDATA[1]]></campus_id>
+            <exposuretype_id><![CDATA[3]]></exposuretype_id>
+            <campus_desc><![CDATA[University of Waterloo]]></campus_desc>
+            <campus_shortDesc><![CDATA[UW]]></campus_shortDesc>
+            <accountgroup_id><![CDATA[10]]></accountgroup_id>
+            <week_endDate><![CDATA[2006-09-09]]></week_endDate>
+            <semester_id><![CDATA[1]]></semester_id>
+            <exposuretype_desc><![CDATA[RLK (Frosh Week)]]></exposuretype_desc>
+        </Activity>
+        <Activity>
+            <morestats_id><![CDATA[46]]></morestats_id>
+            <morestats_exp><![CDATA[3]]></morestats_exp>
+            <morestats_notes><![CDATA[Weekly Meeting]]></morestats_notes>
+            <week_id><![CDATA[23]]></week_id>
+            <campus_id><![CDATA[57]]></campus_id>
+            <exposuretype_id><![CDATA[6]]></exposuretype_id>
+            <campus_desc><![CDATA[York University]]></campus_desc>
+            <campus_shortDesc><![CDATA[York]]></campus_shortDesc>
+            <accountgroup_id><![CDATA[10]]></accountgroup_id>
+            <week_endDate><![CDATA[2006-10-21]]></week_endDate>
+            <semester_id><![CDATA[1]]></semester_id>
+            <exposuretype_desc><![CDATA[Campus Wide Event]]></exposuretype_desc>
+        </Activity>
+        <Activity>
+            <morestats_id><![CDATA[47]]></morestats_id>
+            <morestats_exp><![CDATA[400]]></morestats_exp>
+            <morestats_notes><![CDATA[Does God Exist debate with Joe Boot and Dr. Hitchcock]]></morestats_notes>
+            <week_id><![CDATA[23]]></week_id>
+            <campus_id><![CDATA[46]]></campus_id>
+            <exposuretype_id><![CDATA[6]]></exposuretype_id>
+            <campus_desc><![CDATA[McMaster University]]></campus_desc>
+            <campus_shortDesc><![CDATA[MAC]]></campus_shortDesc>
+            <accountgroup_id><![CDATA[10]]></accountgroup_id>
+            <week_endDate><![CDATA[2006-10-21]]></week_endDate>
+            <semester_id><![CDATA[1]]></semester_id>
+            <exposuretype_desc><![CDATA[Campus Wide Event]]></exposuretype_desc>
+        </Activity>
+        <Activity>
+            <morestats_id><![CDATA[48]]></morestats_id>
+            <morestats_exp><![CDATA[150]]></morestats_exp>
+            <morestats_notes><![CDATA[Does God Exist? Why Does It Matter? with Graham Watt]]></morestats_notes>
+            <week_id><![CDATA[23]]></week_id>
+            <campus_id><![CDATA[46]]></campus_id>
+            <exposuretype_id><![CDATA[6]]></exposuretype_id>
+            <campus_desc><![CDATA[McMaster University]]></campus_desc>
+            <campus_shortDesc><![CDATA[MAC]]></campus_shortDesc>
+            <accountgroup_id><![CDATA[10]]></accountgroup_id>
+            <week_endDate><![CDATA[2006-10-21]]></week_endDate>
+            <semester_id><![CDATA[1]]></semester_id>
+            <exposuretype_desc><![CDATA[Campus Wide Event]]></exposuretype_desc>
+        </Activity>
+        <Activity>
+            <morestats_id><![CDATA[49]]></morestats_id>
+            <morestats_exp><![CDATA[520]]></morestats_exp>
+            <morestats_notes><![CDATA[Joe Boot debate.  Joe shared the Gospel throughout his presentation and was more bold at a debate than in I have seen a debater share at any previous debate]]></morestats_notes>
+            <week_id><![CDATA[24]]></week_id>
+            <campus_id><![CDATA[51]]></campus_id>
+            <exposuretype_id><![CDATA[6]]></exposuretype_id>
+            <campus_desc><![CDATA[University of Guelph]]></campus_desc>
+            <campus_shortDesc><![CDATA[UofG]]></campus_shortDesc>
+            <accountgroup_id><![CDATA[10]]></accountgroup_id>
+            <week_endDate><![CDATA[2006-10-28]]></week_endDate>
+            <semester_id><![CDATA[1]]></semester_id>
+            <exposuretype_desc><![CDATA[Campus Wide Event]]></exposuretype_desc>
+        </Activity>
+        <Activity>
+            <morestats_id><![CDATA[50]]></morestats_id>
+            <morestats_exp><![CDATA[46]]></morestats_exp>
+            <morestats_notes><![CDATA[Kirk Durston outreach on Can a Scientist Believe in God (follow up event from the debate)  Kirk shared the Gospel]]></morestats_notes>
+            <week_id><![CDATA[24]]></week_id>
+            <campus_id><![CDATA[51]]></campus_id>
+            <exposuretype_id><![CDATA[6]]></exposuretype_id>
+            <campus_desc><![CDATA[University of Guelph]]></campus_desc>
+            <campus_shortDesc><![CDATA[UofG]]></campus_shortDesc>
+            <accountgroup_id><![CDATA[10]]></accountgroup_id>
+            <week_endDate><![CDATA[2006-10-28]]></week_endDate>
+            <semester_id><![CDATA[1]]></semester_id>
+            <exposuretype_desc><![CDATA[Campus Wide Event]]></exposuretype_desc>
+        </Activity>
+        <Activity>
+            <morestats_id><![CDATA[51]]></morestats_id>
+            <morestats_exp><![CDATA[3000]]></morestats_exp>
+            <morestats_notes></morestats_notes>
+            <week_id><![CDATA[17]]></week_id>
+            <campus_id><![CDATA[7]]></campus_id>
+            <exposuretype_id><![CDATA[2]]></exposuretype_id>
+            <campus_desc><![CDATA[University of Alberta]]></campus_desc>
+            <campus_shortDesc><![CDATA[UofA]]></campus_shortDesc>
+            <accountgroup_id><![CDATA[11]]></accountgroup_id>
+            <week_endDate><![CDATA[2006-09-09]]></week_endDate>
+            <semester_id><![CDATA[1]]></semester_id>
+            <exposuretype_desc><![CDATA[SIQ]]></exposuretype_desc>
+        </Activity>
+        <Activity>
+            <morestats_id><![CDATA[52]]></morestats_id>
+            <morestats_exp><![CDATA[3]]></morestats_exp>
+            <morestats_notes><![CDATA[Speaker - Tony Costa clear gospel presentation]]></morestats_notes>
+            <week_id><![CDATA[25]]></week_id>
+            <campus_id><![CDATA[54]]></campus_id>
+            <exposuretype_id><![CDATA[8]]></exposuretype_id>
+            <campus_desc><![CDATA[University of Toronto]]></campus_desc>
+            <campus_shortDesc><![CDATA[UofT]]></campus_shortDesc>
+            <accountgroup_id><![CDATA[10]]></accountgroup_id>
+            <week_endDate><![CDATA[2006-11-04]]></week_endDate>
+            <semester_id><![CDATA[1]]></semester_id>
+            <exposuretype_desc><![CDATA[Weekly Meeting]]></exposuretype_desc>
+        </Activity>
+        <Activity>
+            <morestats_id><![CDATA[53]]></morestats_id>
+            <morestats_exp><![CDATA[60]]></morestats_exp>
+            <morestats_notes><![CDATA[World Religions Panel]]></morestats_notes>
+            <week_id><![CDATA[26]]></week_id>
+            <campus_id><![CDATA[61]]></campus_id>
+            <exposuretype_id><![CDATA[6]]></exposuretype_id>
+            <campus_desc><![CDATA[McGill University]]></campus_desc>
+            <campus_shortDesc><![CDATA[McGill]]></campus_shortDesc>
+            <accountgroup_id><![CDATA[12]]></accountgroup_id>
+            <week_endDate><![CDATA[2006-11-11]]></week_endDate>
+            <semester_id><![CDATA[1]]></semester_id>
+            <exposuretype_desc><![CDATA[Campus Wide Event]]></exposuretype_desc>
+        </Activity>
+        <Activity>
+            <morestats_id><![CDATA[54]]></morestats_id>
+            <morestats_exp><![CDATA[300]]></morestats_exp>
+            <morestats_notes><![CDATA[THIS WAS A LARGE SCALE OUTREACH WITH MIKE HORNER.4 LECTURES & AND A SEMINAR SERIES.]]></morestats_notes>
+            <week_id><![CDATA[25]]></week_id>
+            <campus_id><![CDATA[8]]></campus_id>
+            <exposuretype_id><![CDATA[6]]></exposuretype_id>
+            <campus_desc><![CDATA[University of Calgary]]></campus_desc>
+            <campus_shortDesc><![CDATA[UofC]]></campus_shortDesc>
+            <accountgroup_id><![CDATA[11]]></accountgroup_id>
+            <week_endDate><![CDATA[2006-11-04]]></week_endDate>
+            <semester_id><![CDATA[1]]></semester_id>
+            <exposuretype_desc><![CDATA[Campus Wide Event]]></exposuretype_desc>
+        </Activity>
+        <Activity>
+            <morestats_id><![CDATA[55]]></morestats_id>
+            <morestats_exp><![CDATA[60]]></morestats_exp>
+            <morestats_notes></morestats_notes>
+            <week_id><![CDATA[26]]></week_id>
+            <campus_id><![CDATA[54]]></campus_id>
+            <exposuretype_id><![CDATA[3]]></exposuretype_id>
+            <campus_desc><![CDATA[University of Toronto]]></campus_desc>
+            <campus_shortDesc><![CDATA[UofT]]></campus_shortDesc>
+            <accountgroup_id><![CDATA[10]]></accountgroup_id>
+            <week_endDate><![CDATA[2006-11-11]]></week_endDate>
+            <semester_id><![CDATA[1]]></semester_id>
+            <exposuretype_desc><![CDATA[RLK (Frosh Week)]]></exposuretype_desc>
+        </Activity>
+        <Activity>
+            <morestats_id><![CDATA[56]]></morestats_id>
+            <morestats_exp><![CDATA[60]]></morestats_exp>
+            <morestats_notes></morestats_notes>
+            <week_id><![CDATA[26]]></week_id>
+            <campus_id><![CDATA[54]]></campus_id>
+            <exposuretype_id><![CDATA[2]]></exposuretype_id>
+            <campus_desc><![CDATA[University of Toronto]]></campus_desc>
+            <campus_shortDesc><![CDATA[UofT]]></campus_shortDesc>
+            <accountgroup_id><![CDATA[10]]></accountgroup_id>
+            <week_endDate><![CDATA[2006-11-11]]></week_endDate>
+            <semester_id><![CDATA[1]]></semester_id>
+            <exposuretype_desc><![CDATA[SIQ]]></exposuretype_desc>
+        </Activity>
+        <Activity>
+            <morestats_id><![CDATA[57]]></morestats_id>
+            <morestats_exp><![CDATA[4]]></morestats_exp>
+            <morestats_notes></morestats_notes>
+            <week_id><![CDATA[27]]></week_id>
+            <campus_id><![CDATA[57]]></campus_id>
+            <exposuretype_id><![CDATA[8]]></exposuretype_id>
+            <campus_desc><![CDATA[York University]]></campus_desc>
+            <campus_shortDesc><![CDATA[York]]></campus_shortDesc>
+            <accountgroup_id><![CDATA[10]]></accountgroup_id>
+            <week_endDate><![CDATA[2006-11-18]]></week_endDate>
+            <semester_id><![CDATA[1]]></semester_id>
+            <exposuretype_desc><![CDATA[Weekly Meeting]]></exposuretype_desc>
+        </Activity>
+        <Activity>
+            <morestats_id><![CDATA[58]]></morestats_id>
+            <morestats_exp><![CDATA[10]]></morestats_exp>
+            <morestats_notes></morestats_notes>
+            <week_id><![CDATA[28]]></week_id>
+            <campus_id><![CDATA[40]]></campus_id>
+            <exposuretype_id><![CDATA[8]]></exposuretype_id>
+            <campus_desc><![CDATA[Saint Mary's University]]></campus_desc>
+            <campus_shortDesc><![CDATA[SMU]]></campus_shortDesc>
+            <accountgroup_id><![CDATA[10]]></accountgroup_id>
+            <week_endDate><![CDATA[2006-11-25]]></week_endDate>
+            <semester_id><![CDATA[1]]></semester_id>
+            <exposuretype_desc><![CDATA[Weekly Meeting]]></exposuretype_desc>
+        </Activity>
+        <Activity>
+            <morestats_id><![CDATA[59]]></morestats_id>
+            <morestats_exp><![CDATA[25]]></morestats_exp>
+            <morestats_notes><![CDATA[Leonard Buhler spoke on success in Agriculture at an Agriculture students MDA outreach ]]></morestats_notes>
+            <week_id><![CDATA[27]]></week_id>
+            <campus_id><![CDATA[68]]></campus_id>
+            <exposuretype_id><![CDATA[7]]></exposuretype_id>
+            <campus_desc><![CDATA[University of Saskatchewan]]></campus_desc>
+            <campus_shortDesc><![CDATA[UofS]]></campus_shortDesc>
+            <accountgroup_id><![CDATA[11]]></accountgroup_id>
+            <week_endDate><![CDATA[2006-11-18]]></week_endDate>
+            <semester_id><![CDATA[1]]></semester_id>
+            <exposuretype_desc><![CDATA[Other Evangelistic Materials]]></exposuretype_desc>
+        </Activity>
+        <Activity>
+            <morestats_id><![CDATA[60]]></morestats_id>
+            <morestats_exp><![CDATA[1]]></morestats_exp>
+            <morestats_notes><![CDATA[Clear Gospel Presentation, 1 non-believer]]></morestats_notes>
+            <week_id><![CDATA[29]]></week_id>
+            <campus_id><![CDATA[54]]></campus_id>
+            <exposuretype_id><![CDATA[8]]></exposuretype_id>
+            <campus_desc><![CDATA[University of Toronto]]></campus_desc>
+            <campus_shortDesc><![CDATA[UofT]]></campus_shortDesc>
+            <accountgroup_id><![CDATA[10]]></accountgroup_id>
+            <week_endDate><![CDATA[2006-12-02]]></week_endDate>
+            <semester_id><![CDATA[1]]></semester_id>
+            <exposuretype_desc><![CDATA[Weekly Meeting]]></exposuretype_desc>
+        </Activity>
+    </CAMPUS_REPORT>
+</Report>
