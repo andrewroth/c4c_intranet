@@ -143,6 +143,7 @@ class moduleLogin extends XMLObject_PageContent {
             case moduleLogin::MODE_LOGOUT:
                 
                 $this->viewer->deleteSession();
+                CASUser::logout();
                 
                 // now redirect the page BACK to the LOGIN page
                 header( "Location:".Page::getLoginURL() );

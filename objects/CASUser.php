@@ -1,44 +1,52 @@
 <?php
 
-class CASUser 
+class CASUser
 {
-	function setup()
-	{
-phpCAS::setDebug();
-		//Set up as a proxy, doesn't consume any tickets this way
-		phpCAS::proxy(SITE_CAS_VERSION, SITE_CAS_HOSTNAME, SITE_CAS_PORT, SITE_CAS_PATH, SITE_CAS_SESSION);
-		
-		//Not worried about the validity of the SSL cert
-		phpCAS::setNoCasServerValidation();
-	}
+    function setup()
+    {
+        //Only setup if we haven't already
+        global $PHPCAS_CLIENT;
+        if ( !is_object($PHPCAS_CLIENT))
+        {
+            phpCAS::setDebug();
+            //Set up as a proxy, doesn't consume any tickets this way
+            phpCAS::proxy(SITE_CAS_VERSION, SITE_CAS_HOSTNAME, SITE_CAS_PORT, SITE_CAS_PATH, SITE_CAS_SESSION);
+            
+            //Not worried about the validity of the SSL cert
+            phpCAS::setNoCasServerValidation();
+        }
+    }
 	
-	function login($ticket = null)
-	{
-		CASUser::setup();
+    function getLoginInfo($ticket = null)
+    {
+        CASUser::setup();
 
-		if(empty($ticket))
-		{
-			CASUser::forceAuth();
-		}
-		else
-		{
-			/* If a ticket was sent to us, use it */
-			/* Note: This will find a GUID based on a ticket without causing the ticket to expire */
-			global $PHPCAS_CLIENT;
-			
-			/* Validate proxy ticket */
-			if($PHPCAS_CLIENT->validatePT($lnk, $txt, $tree))
-			{
-				$return = CASUser::extractInfo($txt);
-				$return['ticket'] = $PHPCAS_CLIENT->getPT();
-			}
-		}
-		
-		return $return;
-	}
+        if(!empty($ticket))
+        {
+            /* If a ticket was sent to us, use it */
+            /* Note: This will find a GUID based on a ticket without causing the ticket to expire */
+            global $PHPCAS_CLIENT;
+            
+            /* Validate proxy ticket */
+            if($PHPCAS_CLIENT->validatePT($lnk, $txt, $tree))
+            {
+                $return = CASUser::extractInfo($txt);
+                $return['ticket'] = $PHPCAS_CLIENT->getPT();
+            }
+        }
+        $return = false;
+        return $return;
+    }
+
+    function login_link()
+    {
+        CASUser::setup();
+        return phpCAS::getServerLoginURL();
+    }
 	
     function isAuthenticated()
     {
+        CASUser::setup();
         return phpCAS::isAuthenticated();
     }
 
@@ -62,7 +70,7 @@ phpCAS::setDebug();
 	
 	function forceAuth()
 	{
-		if(!phpCAS::isAuthenticated())
+		if(!CASUser::isAuthenticated())
 		{
 			phpCAS::forceAuthentication();
 			return false;
@@ -76,7 +84,6 @@ phpCAS::setDebug();
 		CASUser::setup();
 		
 		phpCAS::logout();
-		exit();
 	}
 }
 

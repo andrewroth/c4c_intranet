@@ -78,64 +78,67 @@ class  Viewer {
   
   */
     function __construct( $isDestroySession=true, $dbName=SITE_DB_NAME, $dbPath=SITE_DB_PATH, $dbUser=SITE_DB_USER, $dbPassword=SITE_DB_PWORD) 
-    {		
-    CASUser::login($_REQUEST['ticket']);
-    // if no session ID is set then
-    if (!isset( $_SESSION[ SESSION_ID_ID ] ) ) {
-  
+    {
+        // if no session ID is set then
+        if (!isset( $_SESSION[ SESSION_ID_ID ] ) ) {
             // set the Session ID to empty string
-      $_SESSION[ SESSION_ID_ID ] = '';
-      
-    } // end if
+            $_SESSION[ SESSION_ID_ID ] = '';
+        }
 
-    // ************** I ADDED THIS (Andrew)
         if ($_SESSION[ SESSION_ID_ID ] == '') {
             $_SESSION[ SESSION_ID_ID ] = 0;
         }
+
         // Get current viewer ID from session ID
-    $this->viewerID = $_SESSION[ SESSION_ID_ID ]; 
-    
+        $this->viewerID = $_SESSION[ SESSION_ID_ID ];
+
         // attempt to load a viewerManager object with current viewerID
         $this->viewerManager = new RowManager_ViewerManager( $this->viewerID );
-        
-        // if viewerManager successfully loaded
+
         if ( $this->viewerManager->isLoaded() ) {
-        
+
             // Update current Session ID with current ViewerID
             $_SESSION[ SESSION_ID_ID ] = $this->viewerID;
-            
+
             if ($this->viewerManager->isActive() ) {
-            
-                // mark Viewer as properly authenticated
                 $this->isAuthenticated = true;
-            
             } else {
-            
-                // mark Viewer as not authenticated
                 $this->isAuthenticated = false;
             }
-            
-        } else {
-        
-            // mark Viewer as not authenticated
+
+        } else { // Info not stored in session, get from GCX
+
             $this->isAuthenticated = false;
+            if(isset($_REQUEST['ticket']))
+            {
+                $info = CASUser::getLoginInfo($_REQUEST['ticket']);
+
+                if($this->validateLogin($info['guid']))
+                {
+                    $this->isAuthenticated = true;
+                }
+            }
+            else
+            {
+                //Force auth
+                CASUser::forceAuth();
+            }
         }
-        
+
         // set hasSession
         $this->hasSession = ($this->viewerID != '');
-        
+
         // if no session  
-    if (!$this->hasSession) {
-      
-      // User Credentials are invalid so
-      // if they want me to destroy the session then
-      if ($isDestroySession == true ) {
-                // Remove session
-//                session_destroy();	
-      }
+        if (!$this->hasSession) {
+
+            // User Credentials are invalid so
+            // if they want me to destroy the session then
+            if ($isDestroySession == true ) {
+                    // Remove session
+                    // session_destroy();	
+            }
+        }
     }
-  
-  }
 
   //
   //	CLASS FUNCTIONS:

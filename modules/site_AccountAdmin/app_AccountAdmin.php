@@ -1037,8 +1037,8 @@ class moduleAccountAdmin extends XMLObject_PageContent {
         $links = array();
 
         //All viewers(users) can access this link to change their password.
-        $requestLink = $this->getCallBack( moduleAccountAdmin::PAGE_EDITPASSWORD, '' , '', '', '', '', '');
-        $links[ '[changeYourPassword]' ] = $requestLink;
+//        $requestLink = $this->getCallBack( moduleAccountAdmin::PAGE_EDITPASSWORD, '' , '', '', '', '', '');
+//        $links[ '[changeYourPassword]' ] = $requestLink;
 
         // all admins can access this link
         if (( $this->accessPrivManager->hasGroupPriv() ) || ($this->accessPrivManager->hasSitePriv()) ) {
