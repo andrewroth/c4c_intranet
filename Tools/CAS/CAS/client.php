@@ -441,7 +441,20 @@ class CASClient
 		{
 		return $this->_server['logout_url'] = $url;
 		}
-	
+
+	/**
+	 * An array to store extra curl options.
+	 */	
+	var $_curl_options = array();
+
+	/**
+	 * This method is used to set additional user curl options.
+	 */
+	function setExtraCurlOption($key, $value)
+	{
+		$this->_curl_options[$key] = $value;
+	}
+ 
 	/**
 	 * This method checks to see if the request is secured via HTTPS
 	 * @return true if https, false otherwise
@@ -484,8 +497,28 @@ class CASClient
 		
 		phpCAS::traceBegin();
 		
+		if (!$this->isLogoutRequest() && !empty($_GET['ticket']) && $start_session) {
+            // copy old session vars and destroy the current session
+            if (!isset($_SESSION)) {
+            	session_start();
+            }
+            $old_session = $_SESSION;
+            session_destroy();
+            // set up a new session, of name based on the ticket
+			$session_id = preg_replace('/[^\w]/','',$_GET['ticket']);
+			phpCAS::LOG("Session ID: " . $session_id);
+			session_id($session_id);
+            if (!isset($_SESSION)) {
+            	session_start();
+            }
+            // restore old session vars
+            $_SESSION = $old_session;
+            // Redirect to location without ticket.
+            header('Location: '.$this->getURL());
+		}
+		
 		//activate session mechanism if desired
-		if ($start_session && !session_id()) {
+		if (!$this->isLogoutRequest() && $start_session) {
 			session_start();
 		}
 		
@@ -790,7 +823,6 @@ class CASClient
 		else {
 			// no ticket given, not authenticated
 			phpCAS::trace('no ticket found');
-			// echo "no ticket given<br/>";
 		}
 		
 		phpCAS::traceEnd($res);
@@ -889,21 +921,47 @@ class CASClient
 		exit();
 	}
 
+//	/**
+//	 * This method is used to logout from CAS.
+//	 * @param $url a URL that will be transmitted to the CAS server (to come back to when logged out)
+//	 * @public
+//	 */
+//	function logout($url = "") {
+//		phpCAS::traceBegin();
+//		$cas_url = $this->getServerLogoutURL();
+//		// v0.4.14 sebastien.gougeon at univ-rennes1.fr
+//		// header('Location: '.$cas_url);
+//		if ( $url != "" ) {
+//			// Adam Moore 1.0.0RC2
+//			$url = '?service=' . $url . '&url=' . $url;
+//		}
+//		header('Location: '.$cas_url . $url);
+//		session_unset();
+//		session_destroy();
+//		$this->printHTMLHeader($this->getString(CAS_STR_LOGOUT));
+//		printf('<p>'.$this->getString(CAS_STR_SHOULD_HAVE_BEEN_REDIRECTED).'</p>',$cas_url);
+//		$this->printHTMLFooter();
+//		phpCAS::traceExit();
+//		exit();
+//	}
+	
 	/**
 	 * This method is used to logout from CAS.
-	 * @param $url a URL that will be transmitted to the CAS server (to come back to when logged out)
+	 * @params $params an array that contains the optional url and service parameters that will be passed to the CAS server
 	 * @public
 	 */
-	function logout($url = "")
-		{
+	function logout($params) {
 		phpCAS::traceBegin();
 		$cas_url = $this->getServerLogoutURL();
-		// v0.4.14 sebastien.gougeon at univ-rennes1.fr
-		// header('Location: '.$cas_url);
-		if ( $url != "" ) {
-			$url = '?service=' . $url;
+		$paramSeparator = '?';
+		if (isset($params['url'])) {
+			$cas_url = $cas_url . $paramSeparator . "url=" . urlencode($params['url']); 
+			$paramSeparator = '&';
 		}
-		header('Location: '.$cas_url . $url);
+		if (isset($params['service'])) {
+			$cas_url = $cas_url . $paramSeparator . "service=" . urlencode($params['service']); 
+		}
+		header('Location: '.$cas_url);
 		session_unset();
 		session_destroy();
 		$this->printHTMLHeader($this->getString(CAS_STR_LOGOUT));
@@ -911,7 +969,87 @@ class CASClient
 		$this->printHTMLFooter();
 		phpCAS::traceExit();
 		exit();
+	}
+	
+	/**
+	 * @return true if the current request is a logout request.
+	 * @private
+	 */
+	function isLogoutRequest() {
+		return !empty($_POST['logoutRequest']);
+	}
+	
+	/**
+	 * @return true if a logout request is allowed.
+	 * @private
+	 */
+	function isLogoutRequestAllowed() {
+	}
+	
+	/**
+	 * This method handles logout requests.
+	 * @param $check_client true to check the client bofore handling the request, 
+	 * false not to perform any access control. True by default.
+	 * @param $allowed_clients an array of host names allowed to send logout requests. 
+	 * By default, only the CAs server (declared in the constructor) will be allowed.
+	 * @public
+	 */
+	function handleLogoutRequests($check_client=true, $allowed_clients=false) {
+		phpCAS::traceBegin();
+		if (!$this->isLogoutRequest()) {
+			phpCAS::log("Not a logout request");
+			phpCAS::traceEnd();
+			return;
 		}
+		phpCAS::log("Logout requested");
+		phpCAS::log("SAML REQUEST: ".$_POST['logoutRequest']);
+		if ($check_client) {
+			if (!$allowed_clients) {
+				$allowed_clients = array( $this->getServerHostname() ); 
+			}
+			$client_ip = $_SERVER['REMOTE_ADDR'];
+			$client = gethostbyaddr($client_ip);
+			phpCAS::log("Client: ".$client);
+			$allowed = false;
+			foreach ($allowed_clients as $allowed_client) {
+				if ($client == $allowed_client) {
+					phpCAS::log("Allowed client '".$allowed_client."' matches, logout request is allowed");
+					$allowed = true;
+					break;
+				} else {
+					phpCAS::log("Allowed client '".$allowed_client."' does not match");
+				}
+			}
+			if (!$allowed) {
+				phpCAS::error("Unauthorized logout request from client '".$client."'");
+			    printf("Unauthorized!");
+				phpCAS::traceExit();
+				exit();
+			}
+		} else {
+			phpCAS::log("No access control set");
+		}
+		// Extract the ticket from the SAML Request
+		preg_match("|<samlp:SessionIndex>(.*)</samlp:SessionIndex>|", $_POST['logoutRequest'], $tick, PREG_OFFSET_CAPTURE, 3);
+		$wrappedSamlSessionIndex = preg_replace('|<samlp:SessionIndex>|','',$tick[0][0]);
+		$ticket2logout = preg_replace('|</samlp:SessionIndex>|','',$wrappedSamlSessionIndex);
+		phpCAS::log("Ticket to logout: ".$ticket2logout);
+		$session_id = preg_replace('/[^\w]/','',$ticket2logout);
+		phpCAS::log("Session id: ".$session_id);
+
+		// fix New session ID
+		session_id($session_id);
+		$_COOKIE[session_name()]=$session_id;
+		$_GET[session_name()]=$session_id;
+		
+		// Overwrite session
+		session_start();	
+		session_unset();
+	    session_destroy();
+	    printf("Disconnected!");
+		phpCAS::traceExit();
+		exit();
+	}
 	
 	/** @} */
 	
@@ -1669,6 +1807,15 @@ class CASClient
 		// initialize the CURL session
 		$ch = curl_init($url);
 		
+		if (version_compare(PHP_VERSION,'5.1.3','>=')) {
+			//only avaible in php5
+			curl_setopt_array($ch, $this->_curl_options);
+		} else {
+			foreach ($this->_curl_options as $key => $value) {
+				curl_setopt($ch, $key, $value);
+			}
+		}
+
 		if ($this->_cas_server_cert == '' && $this->_cas_server_ca_cert == '' && !$this->_no_cas_server_validation) {
 			phpCAS::error('one of the methods phpCAS::setCasServerCert(), phpCAS::setCasServerCACert() or phpCAS::setNoCasServerValidation() must be called.');
 		}
@@ -1685,8 +1832,9 @@ class CASClient
 		
 		// return the CURL output into a variable
 		curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-		// include the HTTP header with the body
-		curl_setopt($ch, CURLOPT_HEADER, 1);
+		// get the HTTP header with a callback
+		$this->_curl_headers = array(); // empty the headers array
+		curl_setopt($ch, CURLOPT_HEADERFUNCTION, array($this, '_curl_read_headers'));
 		// add cookies headers
 		if ( is_array($cookies) ) {
 			curl_setopt($ch,CURLOPT_COOKIE,implode(';',$cookies));
@@ -1703,37 +1851,24 @@ class CASClient
 			// close the CURL session
 			curl_close ($ch);
 			
-			// find the end of the headers
-			// note: strpos($str,"\n\r\n\r") does not work (?)
-			$pos = FALSE;
-			for ($i=0; $i<strlen($buf); $i++) {
-				if ( $buf[$i] == chr(13) ) 
-					if ( $buf[$i+1] == chr(10) ) 
-						if ( $buf[$i+2] == chr(13) ) 
-							if ( $buf[$i+3] == chr(10) ) {
-								// header found
-								$pos = $i;
-								break;
-							}
-			}
-			
-			if ( $pos === FALSE ) {
-				// end of header not found
-				$err_msg = 'no header found';
-				phpCAS::trace($err_msg);
-				$res = FALSE;
-			} else { 
-				// extract headers into an array
-				$headers = preg_split ("/[\n\r]+/",substr($buf,0,$pos));	  
-				// extract body into a string
-				$body = substr($buf,$pos+4);
-			}
+			$headers = $this->_curl_headers;
+			$body = $buf;
 		}
 		
 		phpCAS::traceEnd($res);
 		return $res;
-		}
+	}
 	
+	/**
+	 * This method is the callback used by readURL method to request HTTP headers.
+	 */
+	var $_curl_headers = array();
+	function _curl_read_headers($ch, $header)
+	{
+		$this->_curl_headers[] = $header;
+		return strlen($header);
+	}
+
 	/**
 	 * This method is used to access an HTTP[S] service.
 	 * 

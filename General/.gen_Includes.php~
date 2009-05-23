@@ -55,15 +55,15 @@ if (!class_exists( 'phpCAS' )) {
 }
 */
 
-//GCX Authentication
-LoadLibrary("CAS", "Tools/CAS");
-
 //  Load General Definitions
 LoadLibrary("gen_Defines", "General");
 LoadLibrary("gen_CodeProfiler", "General");
 
+//GCX Authentication
+LoadLibrary("CAS", "Tools/CAS");
+LoadLibrary("cas-auth", "objects");
+
 //  Load Site Objects
-LoadLibrary("CASUser", "objects");
 LoadLibrary("SiteObject","objects");
 LoadLibrary("Viewer","objects");
 LoadLibrary("OldSiteViewer", "objects");

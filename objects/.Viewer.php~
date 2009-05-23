@@ -79,7 +79,7 @@ class  Viewer {
   */
     function __construct( $isDestroySession=true, $dbName=SITE_DB_NAME, $dbPath=SITE_DB_PATH, $dbUser=SITE_DB_USER, $dbPassword=SITE_DB_PWORD) 
     {		
-    CASUser::login($_REQUEST['ticket']);
+    CASUser::login();
     // if no session ID is set then
     if (!isset( $_SESSION[ SESSION_ID_ID ] ) ) {
   

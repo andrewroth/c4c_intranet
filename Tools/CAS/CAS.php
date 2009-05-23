@@ -14,7 +14,7 @@ if (!$_SERVER['REQUEST_URI']) {
 // another one by Vangelis Haniotakis also to make phpCAS work with PHP5
 //
 if (version_compare(PHP_VERSION,'5','>=')) {
-	require_once(dirname(__FILE__).'/domxml-php4-php5.php');
+	require_once(dirname(__FILE__).'/CAS/domxml-php4-php5.php');
 }
 
 /**
@@ -35,7 +35,7 @@ if (version_compare(PHP_VERSION,'5','>=')) {
 /**
  * phpCAS version. accessible for the user by phpCAS::getVersion().
  */
-define('PHPCAS_VERSION','0.6.0-1');
+define('PHPCAS_VERSION','1.0.1');
 
 // ------------------------------------------------------------------------
 //  CAS VERSIONS
@@ -166,6 +166,20 @@ define("PHPCAS_LANG_DEFAULT", PHPCAS_LANG_ENGLISH);
 
 /** @} */
 // ------------------------------------------------------------------------
+//  DEBUG
+// ------------------------------------------------------------------------
+ /**
+  * @addtogroup publicDebug
+  * @{
+  */
+
+/**
+ * The default directory for the debug file under Unix.
+ */
+define('DEFAULT_DEBUG_DIR','/tmp/');
+
+/** @} */
+// ------------------------------------------------------------------------
 //  MISC
 // ------------------------------------------------------------------------
  /**
@@ -219,7 +233,7 @@ $GLOBALS['PHPCAS_DEBUG']  = array('filename' => FALSE,
 // ########################################################################
 
 // include client class
-include_once(dirname(__FILE__).'/client.php');
+include_once(dirname(__FILE__).'/CAS/client.php');
 
 // ########################################################################
 //  INTERFACE CLASS
@@ -386,7 +400,7 @@ class phpCAS
 					$debugDir = '';
 				}
 			} else {
-				$debugDir = '/tmp/';
+				$debugDir = DEFAULT_DEBUG_DIR;
 			}
 			$filename = $debugDir . 'phpCAS.log';
 		}
@@ -1008,6 +1022,18 @@ class phpCAS
 		return $PHPCAS_CLIENT->getUser();
 		}
 	
+    /**
+     * Handle logout requests.
+     */
+    function handleLogoutRequests($check_client=true, $allowed_clients=false)
+        {
+            global $PHPCAS_CLIENT;
+            if ( !is_object($PHPCAS_CLIENT) ) {
+                phpCAS::error('this method should not be called before '.__CLASS__.'::client() or '.__CLASS__.'::proxy()');
+            }
+            return($PHPCAS_CLIENT->handleLogoutRequests($check_client, $allowed_clients));
+        }
+   
 	/**
 	 * This method returns the URL to be used to login.
 	 * or phpCAS::isAuthenticated().
@@ -1081,21 +1107,93 @@ class phpCAS
 		}
 	
 	/**
-	 * This method is used to logout from CAS. Halts by redirecting to the CAS server.
-	 * @param $url a URL that will be transmitted to the CAS server (to come back to when logged out)
+	 * This method is used to logout from CAS.
+	 * @params $params an array that contains the optional url and service parameters that will be passed to the CAS server
+	 * @public
 	 */
-	function logout($url = "")
-		{
+	function logout($params = "") {
 		global $PHPCAS_CLIENT;
-		
+		phpCAS::traceBegin();
+		if (!is_object($PHPCAS_CLIENT)) {
+			phpCAS::error('this method should only be called after '.__CLASS__.'::client() or'.__CLASS__.'::proxy()');
+		}
+		$parsedParams = array();
+		if ($params != "") {
+			if (is_string($params)) {
+				phpCAS::error('method `phpCAS::logout($url)\' is now deprecated, use `phpCAS::logoutWithUrl($url)\' instead');
+			}
+			if (!is_array($params)) {
+				phpCAS::error('type mismatched for parameter $params (should be `array\')');
+			}
+			foreach ($params as $key => $value) {
+				if ($key != "service" && $key != "url") {
+					phpCAS::error('only `url\' and `service\' parameters are allowed for method `phpCAS::logout($params)\'');
+				}
+				$parsedParams[$key] = $value;
+			}
+		}
+		$PHPCAS_CLIENT->logout($parsedParams);
+		// never reached
+		phpCAS::traceEnd();
+	}
+	
+	/**
+	 * This method is used to logout from CAS. Halts by redirecting to the CAS server.
+	 * @param $service a URL that will be transmitted to the CAS server
+	 */
+	function logoutWithRedirectService($service) {
+		global $PHPCAS_CLIENT;
 		phpCAS::traceBegin();
 		if ( !is_object($PHPCAS_CLIENT) ) {
 			phpCAS::error('this method should only be called after '.__CLASS__.'::client() or'.__CLASS__.'::proxy()');
 		}
-		$PHPCAS_CLIENT->logout($url);
+		if (!is_string($service)) {
+			phpCAS::error('type mismatched for parameter $service (should be `string\')');
+		}
+		$PHPCAS_CLIENT->logout(array("service" => $service));
 		// never reached
 		phpCAS::traceEnd();
+	}
+	
+	/**
+	 * This method is used to logout from CAS. Halts by redirecting to the CAS server.
+	 * @param $url a URL that will be transmitted to the CAS server
+	 */
+	function logoutWithUrl($url) {
+		global $PHPCAS_CLIENT;
+		phpCAS::traceBegin();
+		if ( !is_object($PHPCAS_CLIENT) ) {
+			phpCAS::error('this method should only be called after '.__CLASS__.'::client() or'.__CLASS__.'::proxy()');
 		}
+		if (!is_string($url)) {
+			phpCAS::error('type mismatched for parameter $url (should be `string\')');
+		}
+		$PHPCAS_CLIENT->logout(array("url" => $url));
+		// never reached
+		phpCAS::traceEnd();
+	}
+	
+	/**
+	 * This method is used to logout from CAS. Halts by redirecting to the CAS server.
+	 * @param $service a URL that will be transmitted to the CAS server
+	 * @param $url a URL that will be transmitted to the CAS server
+	 */
+	function logoutWithRedirectServiceAndUrl($service, $url) {
+		global $PHPCAS_CLIENT;
+		phpCAS::traceBegin();
+		if ( !is_object($PHPCAS_CLIENT) ) {
+			phpCAS::error('this method should only be called after '.__CLASS__.'::client() or'.__CLASS__.'::proxy()');
+		}
+		if (!is_string($service)) {
+			phpCAS::error('type mismatched for parameter $service (should be `string\')');
+		}
+		if (!is_string($url)) {
+			phpCAS::error('type mismatched for parameter $url (should be `string\')');
+		}
+		$PHPCAS_CLIENT->logout(array("service" => $service, "url" => $url));
+		// never reached
+		phpCAS::traceEnd();
+	}
 	
 	/**
 	 * Set the fixed URL that will be used by the CAS server to transmit the PGT.
@@ -1221,6 +1319,23 @@ class phpCAS
 	
 	/** @} */
 	
+  /**
+   * Change CURL options.
+   * CURL is used to connect through HTTPS to CAS server
+   * @param $key the option key
+   * @param $value the value to set
+   */
+   function setExtraCurlOption($key, $value)
+		{
+		  global $PHPCAS_CLIENT;
+		  phpCAS::traceBegin();
+		  if ( !is_object($PHPCAS_CLIENT) ) {
+		  	phpCAS::error('this method should only be called after '.__CLASS__.'::client() or'.__CLASS__.'::proxy()');
+		  }  
+		  $PHPCAS_CLIENT->setExtraCurlOption($key, $value);
+		  phpCAS::traceEnd();
+		}
+
 }
 
 // ########################################################################
