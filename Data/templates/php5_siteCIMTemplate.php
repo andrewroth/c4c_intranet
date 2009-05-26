@@ -41,7 +41,7 @@ $pathToRoot = (string) $page->$pathToRootKey;
 	<body onLoad="MM_preloadImages('<?=$pathToRoot;?>Images/chinese-on.jpg','<?=$pathToRoot;?>Images/korean-on.jpg','<?=$pathToRoot;?>Images/english-on.jpg');" bgcolor="#FFFFFF" text="#000000" link="#003366" vlink="#003366" alink="#CCCCCC" leftmargin="3" topmargin="8" bottommargin="8" marginwidth="0" marginheight="0" ID="Bdy" >
 <table>
     <tr>
-        <td><? echo $GCX_ConnexionBar;?></td>
+        <td><? // echo $GCX_ConnexionBar;?></td>
     </tr>
 </table>
 

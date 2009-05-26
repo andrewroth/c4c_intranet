@@ -13,6 +13,21 @@
 	font-weight: bold;
 }
 .style6 {font-size: 12px}
+#links {
+    text-align: center;
+    margin-top: 10px;
+}
+#links a
+{
+    text-decoration: none;
+    margin-left: 15px;
+    color: blue;
+}
+
+#links a:hover
+{
+    color: green;
+}
 -->
 </style>
 
@@ -24,5 +39,7 @@
         </tr>
 </table>
 
-<a href="<?php print CASUser::login_link() ?>">Login Via GCX</a>
-<a href="https://signin.mygcx.org/sso/selfservice/ssoSignup.jsp">Get Started with GCX!</a>
+<div id="links">
+    <a href="<?php print CASUser::login_link() ?>">Login Via GCX</a>
+    <a href="https://signin.mygcx.org/sso/selfservice/ssoSignup.jsp">Get Started with GCX!</a>
+</div>
