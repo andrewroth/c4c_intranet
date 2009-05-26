@@ -1,5 +1,5 @@
 <?php
-
+ini_set("display_errors", 1);
 require("General/gen_Includes.php");
 
 // get the proper page template to use in displaying the data.

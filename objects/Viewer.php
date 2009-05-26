@@ -109,19 +109,20 @@ class  Viewer {
         } else { // Info not stored in session, get from GCX
 
             $this->isAuthenticated = false;
-            if(isset($_REQUEST['ticket']))
+            if(CASUser::checkAuth())
             {
-                $info = CASUser::getLoginInfo($_REQUEST['ticket']);
-
-                if($this->validateLogin($info['guid']))
+                if(!empty($_SESSION['CASUser']['guid']))
                 {
-                    $this->isAuthenticated = true;
+                    if($this->validateLogin($_SESSION['CASUser']['guid']))
+                    {
+                        $this->isAuthenticated = true;
+                    }
+                    //$info = CASUser::getLoginInfo($_REQUEST['ticket']);
                 }
             }
             else
             {
-                //Force auth
-                CASUser::forceAuth();
+
             }
         }
 

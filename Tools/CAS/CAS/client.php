@@ -3,6 +3,11 @@
 /**
  * @file CAS/client.php
  * Main class of the phpCAS library
+ * 
+ * Changelog
+ * Adam Kerr
+ * Modified validatePT for GUID tracking
+ * Added setGuid function
  */
 
 // include internationalization stuff
@@ -625,6 +630,7 @@ class CASClient
 	 * @private
 	 */
 	var $_user = '';
+
 	
 	/**
 	 * This method sets the CAS user's login name.
@@ -652,6 +658,43 @@ class CASClient
 		}
 		return $this->_user;
 		}
+
+    /**
+     * The Authenticated user. Written by CASClient::setGuid(), read by CASClient::getGuid().
+     * @attention client applications should use phpCAS::getGuid().
+     *
+     * @hideinitializer
+     * @private
+     */
+    var $_guid = '';
+
+    
+    /**
+     * This method sets the CAS user's unique identification number.
+     *
+     * @param $guid the unique identification number of the authenticated user.
+     *
+     * @private
+     */
+    function setGuid($guid)
+        {
+        $this->_guid = $guid;
+        }
+    
+    /**
+     * This method returns the CAS user's identification number.
+     * @warning should be called only after CASClient::forceAuthentication() or 
+     * CASClient::isAuthenticated(), otherwise halt with an error.
+     *
+     * @return the identification number of the authenticated user
+     */
+    function getGuid()
+        {
+        if ( empty($this->_guid) ) {
+            phpCAS::error('this method should be used only after '.__CLASS__.'::forceAuthentication() or '.__CLASS__.'::isAuthenticated()');
+        }
+        return $this->_guid;
+        }
 	
 	/**
 	 * This method is called to renew the authentication of the user
@@ -679,7 +722,7 @@ class CASClient
 	 * @return TRUE when the user is authenticated; otherwise halt.
 	 * @public
 	 */
-	function forceAuthentication()
+	function forceAuthentication($gateway = false)
 		{
 		phpCAS::traceBegin();
 		
@@ -692,7 +735,7 @@ class CASClient
 			if (isset($_SESSION['phpCAS']['auth_checked'])) {
 				unset($_SESSION['phpCAS']['auth_checked']);
 			}
-			$this->redirectToCas(FALSE/* no gateway */);	
+			$this->redirectToCas($gateway/* gateway */);	
 			// never reached
 			$res = FALSE;
 		}
@@ -805,6 +848,7 @@ class CASClient
 				$_SESSION['phpCAS']['pgt'] = $this->getPGT();
 			}
 			$_SESSION['phpCAS']['user'] = $this->getUser();
+            $_SESSION['phpCAS']['guid'] = $this->getGuid();
 			$res = TRUE;
 		}
 		elseif ( $this->hasPT() ) {
@@ -818,6 +862,7 @@ class CASClient
 				$_SESSION['phpCAS']['pgt'] = $this->getPGT();
 			}
 			$_SESSION['phpCAS']['user'] = $this->getUser();
+            $_SESSION['phpCAS']['guid'] = $this->getGuid();
 			$res = TRUE;
 		} 
 		else {
@@ -864,8 +909,10 @@ class CASClient
 			if ( $this->isSessionAuthenticated() && !empty($_SESSION['phpCAS']['pgt']) ) {
 				// authentication already done
 				$this->setUser($_SESSION['phpCAS']['user']);
+                $this->setGuid($_SESSION['phpCAS']['guid']);
 				$this->setPGT($_SESSION['phpCAS']['pgt']);
 				phpCAS::trace('user = `'.$_SESSION['phpCAS']['user'].'\', PGT = `'.$_SESSION['phpCAS']['pgt'].'\''); 
+                phpCAS::trace('guid = `'.$_SESSION['phpCAS']['guid'].'\'');
 				$auth = TRUE;
 			} elseif ( $this->isSessionAuthenticated() && empty($_SESSION['phpCAS']['pgt']) ) {
 				// these two variables should be empty or not empty at the same time
@@ -889,7 +936,9 @@ class CASClient
 			if ( $this->isSessionAuthenticated() ) {
 				// authentication already done
 				$this->setUser($_SESSION['phpCAS']['user']);
+                $this->setGuid($_SESSION['phpCAS']['guid']);
 				phpCAS::trace('user = `'.$_SESSION['phpCAS']['user'].'\''); 
+                phpCAS::trace('guid = `'.$_SESSION['phpCAS']['guid'].'\''); 
 				$auth = TRUE;
 			} else {
 				phpCAS::trace('no user found');
@@ -1255,9 +1304,24 @@ class CASClient
 							TRUE/*$bad_response*/,
 							$text_response);
 					}
-					$user = trim($user_elements[0]->get_content());
-					phpCAS::trace('user = `'.$user);
-					$this->setUser($user);
+
+                    $user = trim($user_elements[0]->get_content());
+                    phpCAS::trace('user = `'.$user);
+                    $this->setUser($user);
+
+                    /* Validate GUID */
+                    if ( sizeof($user_elements = $success_elements[0]->get_elements_by_tagname("ssoGuid")) == 0) {
+                        phpCAS::trace('<authenticationSuccess> found, but no <ssoguid>');
+                        $this->authError('ST not validated',
+                            $validate_url,
+                            FALSE/*$no_response*/,
+                            TRUE/*$bad_response*/,
+                            $text_response);
+                    }
+
+                    $user = trim($user_elements[0]->get_content());
+                    phpCAS::trace('guid = `'.$guid);
+                    $this->setGuid($guid);
 					
 				} else if ( sizeof($failure_elements = $tree_response->get_elements_by_tagname("authenticationFailure")) != 0) {
 					phpCAS::trace('<authenticationFailure> found');
@@ -1647,11 +1711,12 @@ class CASClient
 		if ( sizeof($arr = $tree_response->get_elements_by_tagname("proxyGrantingTicket")) == 0) {
 			phpCAS::trace('<proxyGrantingTicket> not found');
 			// authentication succeded, but no PGT Iou was transmitted
-			$this->authError('Ticket validated but no PGT Iou transmitted',
-				$validate_url,
-				FALSE/*$no_response*/,
-				FALSE/*$bad_response*/,
-				$text_response);
+            return true;
+		//	$this->authError('Ticket validated but no PGT Iou transmitted',
+			//	$validate_url,
+				//FALSE/*$no_response*/,
+				//FALSE/*$bad_response*/,
+				//$text_response);
 		} else {
 			// PGT Iou transmitted, extract it
 			$pgt_iou = trim($arr[0]->get_content());
@@ -2123,6 +2188,18 @@ class CASClient
 					$text_response);
 			}
 			$this->setUser(trim($arr[0]->get_content()));
+
+            // Moded to allow for GUID tracking
+            if ( sizeof($arr = $tree_response->get_elements_by_tagname("ssoGuid")) == 0) {
+                // no user specified => error
+                $this->authError('PT not validated',
+                    $validate_url,
+                    FALSE/*$no_response*/,
+                    TRUE/*$bad_response*/,
+                    $text_response);
+            }
+            
+            $this->setGuid(trim($arr[0]->get_content()));
 			
 		} else if ( sizeof($arr = $tree_response->get_elements_by_tagname("authenticationFailure")) != 0) {
 			// authentication succeded, extract the error code and message

@@ -9,9 +9,22 @@ class CASUser
         if ( !is_object($PHPCAS_CLIENT))
         {
             phpCAS::setDebug();
+
             //Set up as a proxy, doesn't consume any tickets this way
-            phpCAS::proxy(SITE_CAS_VERSION, SITE_CAS_HOSTNAME, SITE_CAS_PORT, SITE_CAS_PATH, SITE_CAS_SESSION);
-            
+            if(!isset($_REQUEST['ticket']))
+            {
+                phpCAS::client(SITE_CAS_VERSION, SITE_CAS_HOSTNAME, SITE_CAS_PORT, SITE_CAS_PATH, SITE_CAS_SESSION);
+
+/*                phpCAS::setPGTStorageFile('xml', '/var/www/campus/dev.intranet.campusforchrist.org/');
+                $PHPCAS_CLIENT->setPGT($PHPCAS_CLIENT->getURL());*/
+            }
+            else
+            {
+               phpCAS::client(SITE_CAS_VERSION, SITE_CAS_HOSTNAME, SITE_CAS_PORT, SITE_CAS_PATH, SITE_CAS_SESSION);
+
+/*phpCAS::setPGTStorageFile('xml', '/var/www/campus/dev.intranet.campusforchrist.org/');
+                $PHPCAS_CLIENT->setPGT($PHPCAS_CLIENT->getURL());*/
+            }
             //Not worried about the validity of the SSL cert
             phpCAS::setNoCasServerValidation();
         }
@@ -20,7 +33,7 @@ class CASUser
     function getLoginInfo($ticket = null)
     {
         CASUser::setup();
-
+        $return = false;
         if(!empty($ticket))
         {
             /* If a ticket was sent to us, use it */
@@ -34,7 +47,7 @@ class CASUser
                 $return['ticket'] = $PHPCAS_CLIENT->getPT();
             }
         }
-        $return = false;
+
         return $return;
     }
 
@@ -78,6 +91,25 @@ class CASUser
 		
 		return true;
 	}
+
+    function checkAuth()
+    {
+        CASUser::setup();
+        return phpCAS::checkAuthentication();
+        /*if(CASUser::isAuthenticated())
+        {
+            return true;
+        }
+        elseif(empty($_SESSION['CAS']['GatewayCheck']))
+        {
+            $_SESSION['CAS']['GatewayCheck'] = true;
+            phpCAS::forceAuthentication(true);
+        }
+
+        unset($_SESSION['CAS']['GatewayCheck']);
+
+        return false;*/
+    }
 	
 	function logout() 
 	{
