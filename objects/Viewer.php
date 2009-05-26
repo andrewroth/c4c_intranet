@@ -109,20 +109,16 @@ class  Viewer {
         } else { // Info not stored in session, get from GCX
 
             $this->isAuthenticated = false;
+
             if(CASUser::checkAuth())
             {
-                if(!empty($_SESSION['CASUser']['guid']))
+                if(!empty($_SESSION['phpCAS']['guid']))
                 {
-                    if($this->validateLogin($_SESSION['CASUser']['guid']))
+                    if($this->validateLogin($_SESSION['phpCAS']['guid']))
                     {
                         $this->isAuthenticated = true;
                     }
-                    //$info = CASUser::getLoginInfo($_REQUEST['ticket']);
                 }
-            }
-            else
-            {
-
             }
         }
 
@@ -190,7 +186,7 @@ class  Viewer {
   */
     function isAuthenticated() 
     {
-    return $this->isAuthenticated || CASUser::isAuthenticated(); // removed by RM on May 8, 2008
+    return $this->isAuthenticated; // removed by RM on May 8, 2008
         /*echo "this->isAuthenticated[".$this->isAuthenticated."]<br/>";
         echo "phpCAS::isAuthenticated()[".phpCAS::isAuthenticated()."]<br/>";
     return (($this->isAuthenticated) || (phpCAS::isAuthenticated()));*/

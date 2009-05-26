@@ -8,28 +8,16 @@ class CASUser
         global $PHPCAS_CLIENT;
         if ( !is_object($PHPCAS_CLIENT))
         {
-            phpCAS::setDebug();
+            //phpCAS::setDebug();
 
-            //Set up as a proxy, doesn't consume any tickets this way
-            if(!isset($_REQUEST['ticket']))
-            {
-                phpCAS::client(SITE_CAS_VERSION, SITE_CAS_HOSTNAME, SITE_CAS_PORT, SITE_CAS_PATH, SITE_CAS_SESSION);
+            phpCAS::client(SITE_CAS_VERSION, SITE_CAS_HOSTNAME, SITE_CAS_PORT, SITE_CAS_PATH, SITE_CAS_SESSION);
 
-/*                phpCAS::setPGTStorageFile('xml', '/var/www/campus/dev.intranet.campusforchrist.org/');
-                $PHPCAS_CLIENT->setPGT($PHPCAS_CLIENT->getURL());*/
-            }
-            else
-            {
-               phpCAS::client(SITE_CAS_VERSION, SITE_CAS_HOSTNAME, SITE_CAS_PORT, SITE_CAS_PATH, SITE_CAS_SESSION);
-
-/*phpCAS::setPGTStorageFile('xml', '/var/www/campus/dev.intranet.campusforchrist.org/');
-                $PHPCAS_CLIENT->setPGT($PHPCAS_CLIENT->getURL());*/
-            }
-            //Not worried about the validity of the SSL cert
+            //No SSL
             phpCAS::setNoCasServerValidation();
         }
     }
 	
+    /* For use with Proxy only */
     function getLoginInfo($ticket = null)
     {
         CASUser::setup();
@@ -92,23 +80,11 @@ class CASUser
 		return true;
 	}
 
+    // Doesn't force a login, uses gateway auth
     function checkAuth()
     {
         CASUser::setup();
         return phpCAS::checkAuthentication();
-        /*if(CASUser::isAuthenticated())
-        {
-            return true;
-        }
-        elseif(empty($_SESSION['CAS']['GatewayCheck']))
-        {
-            $_SESSION['CAS']['GatewayCheck'] = true;
-            phpCAS::forceAuthentication(true);
-        }
-
-        unset($_SESSION['CAS']['GatewayCheck']);
-
-        return false;*/
     }
 	
 	function logout() 
