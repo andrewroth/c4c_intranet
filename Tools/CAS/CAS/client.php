@@ -1711,12 +1711,11 @@ class CASClient
 		if ( sizeof($arr = $tree_response->get_elements_by_tagname("proxyGrantingTicket")) == 0) {
 			phpCAS::trace('<proxyGrantingTicket> not found');
 			// authentication succeded, but no PGT Iou was transmitted
-            return true;
-		//	$this->authError('Ticket validated but no PGT Iou transmitted',
-			//	$validate_url,
-				//FALSE/*$no_response*/,
-				//FALSE/*$bad_response*/,
-				//$text_response);
+    	$this->authError('Ticket validated but no PGT Iou transmitted',
+				$validate_url,
+				FALSE/*$no_response*/,
+				FALSE/*$bad_response*/,
+				$text_response);
 		} else {
 			// PGT Iou transmitted, extract it
 			$pgt_iou = trim($arr[0]->get_content());

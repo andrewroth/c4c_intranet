@@ -63,11 +63,14 @@ class CASUser
   {
     if ( CASUser::checkAuth() )
     {
-      phpCAS::setFixedCallbackURL('http://stageapp.mygcx.org/cnxbar/callback.php');
+      phpCAS::setFixedCallbackURL('http://dev.intranet.campusforchrist.org/index.php');
 
       $service = 'https://www.mygcx.org/global/module/omnibar/omnibar'; 
       phpCAS::serviceWeb($service,$err_code,$output); 
 print_r($output);
+print("<pre>");
+print_r($_SESSION['phpCAS']);
+print("</pre>");
 flush();
       return "";
       $xml = simplexml_load_string($output);
