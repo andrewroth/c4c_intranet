@@ -411,38 +411,11 @@ class  Page extends SiteObject {
 		
 		$template->set('userID', $this->viewer->getUserID());
 		
-		//// NEW CODE
+		// NEW CODE
 		
-		/*$gcxConnexionBar = "";
+		$template->set('GCX_ConnexionBar', CASUser::getConnexionBar());
 		
-        phpCAS::setDebug();
-        
-        // initialize phpCAS
-        phpCAS::client(CAS_VERSION_2_0,SITE_CAS_HOSTNAME,SITE_CAS_PORT,SITE_CAS_PATH);
-        
-        // no SSL validation for the CAS server
-        phpCAS::setNoCasServerValidation();
-        
-        // check CAS authentication
-        $auth = phpCAS::checkAuthentication();
-		
-		if ( $auth )
-		{
-		  $gcxConnexionBar = "GCX ConneXion Bar will go here... RM2 isAuth = true";
-		  $service = 'https://www.mygcx.org/Public/module/omnibar/omnibar'; 
-		  phpCAS::serviceWeb($service,$err_code,$output); 
-		  preg_match('/<reportdata>(.*)<\\/reportdata>/', $output, $matches); 
-		  $gcxConnexionBar = $matches[1]; 
-
-		}
-		else
-		{
-		  $gcxConnexionBar = "NOT authenticated";
-		}
-		
-		$template->set('GCX_ConnexionBar', $gcxConnexionBar);
-		
-		//// END NEW CODE*/
+		// END NEW CODE
         
         // Get Template HTML
         // display HTML
