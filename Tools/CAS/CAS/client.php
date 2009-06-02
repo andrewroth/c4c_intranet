@@ -502,6 +502,11 @@ class CASClient
 		
 		phpCAS::traceBegin();
 		
+		// the redirect header() call and DOM parsing code from domxml-php4-php5.php won't work in PHP4 compatibility mode
+		if (version_compare(PHP_VERSION,'5','>=') && ini_get('zend.ze1_compatibility_mode')) {
+			phpCAS::error('phpCAS cannot support zend.ze1_compatibility_mode. Sorry.');
+		}
+
 		if (!$this->isLogoutRequest() && !empty($_GET['ticket']) && $start_session) {
             // copy old session vars and destroy the current session
             if (!isset($_SESSION)) {
@@ -509,6 +514,7 @@ class CASClient
             }
             $old_session = $_SESSION;
             session_destroy();
+            
             // set up a new session, of name based on the ticket
 			$session_id = preg_replace('/[^\w]/','',$_GET['ticket']);
 			phpCAS::LOG("Session ID: " . $session_id);
@@ -518,15 +524,15 @@ class CASClient
             }
             // restore old session vars
             $_SESSION = $old_session;
-            // Redirect to location without ticket.
-            header('Location: '.$this->getURL());
+            
 		}
 		
-		//activate session mechanism if desired
+		// activate session mechanism if desired
 		if (!$this->isLogoutRequest() && $start_session) {
 			session_start();
 		}
 		
+		// are we in proxy mode ?
 		$this->_proxy = $proxy;
 		
 		//check version
@@ -546,29 +552,29 @@ class CASClient
 		}
 		$this->_server['version'] = $server_version;
 		
-		//check hostname
+		// check hostname
 		if ( empty($server_hostname) 
 				|| !preg_match('/[\.\d\-abcdefghijklmnopqrstuvwxyz]*/',$server_hostname) ) {
 			phpCAS::error('bad CAS server hostname (`'.$server_hostname.'\')');
 		}
 		$this->_server['hostname'] = $server_hostname;
 		
-		//check port
+		// check port
 		if ( $server_port == 0 
 			|| !is_int($server_port) ) {
 			phpCAS::error('bad CAS server port (`'.$server_hostname.'\')');
 		}
 		$this->_server['port'] = $server_port;
 		
-		//check URI
+		// check URI
 		if ( !preg_match('/[\.\d\-_abcdefghijklmnopqrstuvwxyz\/]*/',$server_uri) ) {
 			phpCAS::error('bad CAS server URI (`'.$server_uri.'\')');
 		}
-		//add leading and trailing `/' and remove doubles      
+		// add leading and trailing `/' and remove doubles      
 		$server_uri = preg_replace('/\/\//','/','/'.$server_uri.'/');
 		$this->_server['uri'] = $server_uri;
 		
-		//set to callback mode if PgtIou and PgtId CGI GET parameters are provided 
+		// set to callback mode if PgtIou and PgtId CGI GET parameters are provided 
 		if ( $this->isProxy() ) {
 			$this->setCallbackMode(!empty($_GET['pgtIou'])&&!empty($_GET['pgtId']));
 		}
@@ -576,7 +582,7 @@ class CASClient
 		if ( $this->isCallbackMode() ) {
 			//callback mode: check that phpCAS is secured
 			if ( !$this->isHttps() ) {
-				phpCAS::error('CAS proxies must be secured to use phpCAS; PGT\'s will not be received from the CAS server');
+//				phpCAS::error('CAS proxies must be secured to use phpCAS; PGT\'s will not be received from the CAS server');
 			}
 		} else {
 			//normal mode: get ticket and remove it from CGI parameters for developpers
@@ -630,7 +636,6 @@ class CASClient
 	 * @private
 	 */
 	var $_user = '';
-
 	
 	/**
 	 * This method sets the CAS user's login name.
@@ -722,7 +727,7 @@ class CASClient
 	 * @return TRUE when the user is authenticated; otherwise halt.
 	 * @public
 	 */
-	function forceAuthentication($gateway = false)
+	function forceAuthentication()
 		{
 		phpCAS::traceBegin();
 		
@@ -735,7 +740,7 @@ class CASClient
 			if (isset($_SESSION['phpCAS']['auth_checked'])) {
 				unset($_SESSION['phpCAS']['auth_checked']);
 			}
-			$this->redirectToCas($gateway/* gateway */);	
+			$this->redirectToCas(FALSE/* no gateway */);	
 			// never reached
 			$res = FALSE;
 		}
@@ -966,6 +971,7 @@ class CASClient
 		
 		printf('<p>'.$this->getString(CAS_STR_SHOULD_HAVE_BEEN_REDIRECTED).'</p>',$cas_url);
 		$this->printHTMLFooter();
+		
 		phpCAS::traceExit();
 		exit();
 	}
@@ -1011,11 +1017,15 @@ class CASClient
 			$cas_url = $cas_url . $paramSeparator . "service=" . urlencode($params['service']); 
 		}
 		header('Location: '.$cas_url);
+		phpCAS::log( "Prepare redirect to : ".$cas_url );
+ 
 		session_unset();
 		session_destroy();
+		
 		$this->printHTMLHeader($this->getString(CAS_STR_LOGOUT));
 		printf('<p>'.$this->getString(CAS_STR_SHOULD_HAVE_BEEN_REDIRECTED).'</p>',$cas_url);
 		$this->printHTMLFooter();
+		
 		phpCAS::traceExit();
 		exit();
 	}
@@ -1559,6 +1569,7 @@ class CASClient
 		$this->storePGT($pgt,$pgt_iou);
 		$this->printHTMLFooter();
 		phpCAS::traceExit();
+		exit();
 		}
 	
 	/** @} */
@@ -1707,11 +1718,12 @@ class CASClient
 	 */
 	function validatePGT(&$validate_url,$text_response,$tree_response)
 		{
-		phpCAS::traceBegin();
+		// here cannot use phpCAS::traceBegin(); alongside domxml-php4-to-php5.php
+		phpCAS::log('start validatePGT()');
 		if ( sizeof($arr = $tree_response->get_elements_by_tagname("proxyGrantingTicket")) == 0) {
 			phpCAS::trace('<proxyGrantingTicket> not found');
 			// authentication succeded, but no PGT Iou was transmitted
-    	$this->authError('Ticket validated but no PGT Iou transmitted',
+			$this->authError('Ticket validated but no PGT Iou transmitted',
 				$validate_url,
 				FALSE/*$no_response*/,
 				FALSE/*$bad_response*/,
@@ -1730,7 +1742,8 @@ class CASClient
 			}
 			$this->setPGT($pgt);
 		}
-		phpCAS::traceEnd(TRUE);
+		// here, cannot use	phpCAS::traceEnd(TRUE); alongside domxml-php4-to-php5.php
+		phpCAS::log('end validatePGT()');
 		return TRUE;
 		}
 	
@@ -1963,7 +1976,8 @@ class CASClient
 			$res = FALSE;
 		} else {
 			// add cookies if necessary
-			if ( is_array($_SESSION['phpCAS']['services'][$url]['cookies']) ) {
+			$cookies = Array();
+			if ( @is_array($_SESSION['phpCAS']['services'][$url]['cookies']) ) {
 				foreach ( $_SESSION['phpCAS']['services'][$url]['cookies'] as $name => $val ) { 
 					$cookies[] = $name.'='.$val;
 				}
@@ -2015,6 +2029,7 @@ class CASClient
 	 * 
 	 * @param $url a string giving the URL of the service, including the mailing box
 	 * for IMAP URLs, as accepted by imap_open().
+	 * @param $service a string giving for CAS retrieve Proxy ticket
 	 * @param $flags options given to imap_open().
 	 * @param $err_code an error code Possible values are PHPCAS_SERVICE_OK (on
 	 * success), PHPCAS_SERVICE_PT_NO_SERVER_RESPONSE, PHPCAS_SERVICE_PT_BAD_SERVER_RESPONSE,
@@ -2028,11 +2043,11 @@ class CASClient
 	 *
 	 * @public
 	 */
-	function serviceMail($url,$flags,&$err_code,&$err_msg,&$pt)
+	function serviceMail($url,$service,$flags,&$err_code,&$err_msg,&$pt)
 		{
 		phpCAS::traceBegin();
 		// at first retrieve a PT
-		$pt = $this->retrievePT($target_service,$err_code,$output);
+		$pt = $this->retrievePT($service,$err_code,$output);
 		
 		$stream = FALSE;
 		
@@ -2191,10 +2206,10 @@ class CASClient
             // Moded to allow for GUID tracking
             if ( sizeof($arr = $tree_response->get_elements_by_tagname("ssoGuid")) == 0) {
                 // no user specified => error
-                $this->authError('PT not validated',
+                $this->authError('PT not validated, no GUID',
                     $validate_url,
-                    FALSE/*$no_response*/,
-                    TRUE/*$bad_response*/,
+                    FALSE /*$no_response*/,
+                    TRUE /*$bad_response*/,
                     $text_response);
             }
             

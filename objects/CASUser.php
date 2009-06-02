@@ -1,5 +1,17 @@
 <?php
 
+//Relevant settings.  Declared globally in gen_Defines.php
+
+/*define( 'SITE_CAS_HOSTNAME',"signin.mygcx.org" );
+define( 'SITE_CAS_PORT',443 );
+define( 'SITE_CAS_PATH','/cas' );
+define("SITE_CAS_SESSION", 0);
+define("SITE_CAS_VERSION", CAS_VERSION_2_0);
+define("SITE_CAS_CONNEXIONBAR_URL", "https://www.mygcx.org/public/module/omnibar/omnibar");
+define("SITE_CAS_CALLBACK", "http://dev.intranet.campusforchrist.org/callback.php");
+define("SITE_CAS_PGT_STORE", "/var/www/campus/dev.intranet.campusforchrist.org/pgt");*/
+
+
 class CASUser
 {
     function setup()
@@ -8,14 +20,16 @@ class CASUser
         global $PHPCAS_CLIENT;
         if ( !is_object($PHPCAS_CLIENT))
         {
-            phpCAS::setDebug();
+//            phpCAS::setDebug();
 
             phpCAS::proxy(SITE_CAS_VERSION, SITE_CAS_HOSTNAME, SITE_CAS_PORT, SITE_CAS_PATH, SITE_CAS_SESSION);
+
+	    phpCAS::setFixedCallbackURL(SITE_CAS_CALLBACK);
 
             //No SSL
             phpCAS::setNoCasServerValidation();
 
-            phpCAS::setPGTStorageFile('xml',session_save_path());
+            phpCAS::setPGTStorageFile('xml', SITE_CAS_PGT_STORE);//session_save_path());
         }
     }
 	
@@ -63,37 +77,12 @@ class CASUser
   {
     if ( CASUser::checkAuth() )
     {
-      phpCAS::setFixedCallbackURL('http://dev.intranet.campusforchrist.org/index.php');
-
-      $service = 'https://www.mygcx.org/global/module/omnibar/omnibar'; 
+      $service = SITE_CAS_CONNEXIONBAR_URL; 
       phpCAS::serviceWeb($service,$err_code,$output); 
-print_r($output);
-print("<pre>");
-print_r($_SESSION['phpCAS']);
-print("</pre>");
-flush();
-      return "";
       $xml = simplexml_load_string($output);
       $result = $xml->xpath('/reportoutput/reportdata');
       return html_entity_decode($result[0]->asXML());
-
-/*      $gcxConnexionBar = "GCX ConneXion Bar will go here... RM2 isAuth = true";
-      $service = 'https://www.mygcx.org/Public/module/omnibar/omnibar'; 
-      phpCAS::serviceWeb($service,$err_code,$output); 
-      preg_match('/<reportdata>(.*)<\\/reportdata>/', $output, $matches); 
-      $gcxConnexionBar = $matches[1]; 
-
-  flush();
-  if ( phpCAS::serviceWeb($cnxbar,$err_code,$output) ) {
-    $xml = simplexml_load_string($output);
-    $result = $xml->xpath('/reportoutput/reportdata');
-    echo html_entity_decode($result[0]->asXML());
   }
-  else {
-    echo "Error Loading";
-  }*/
-
-    }
     else
     {
       return "NOT authenticated";

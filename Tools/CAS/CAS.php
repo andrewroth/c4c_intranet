@@ -14,7 +14,7 @@ if (!$_SERVER['REQUEST_URI']) {
 // another one by Vangelis Haniotakis also to make phpCAS work with PHP5
 //
 if (version_compare(PHP_VERSION,'5','>=')) {
-	require_once(dirname(__FILE__).'/CAS/domxml-php4-php5.php');
+	require_once(dirname(__FILE__).'/CAS/domxml-php4-to-php5.php');
 }
 
 /**
@@ -35,7 +35,7 @@ if (version_compare(PHP_VERSION,'5','>=')) {
 /**
  * phpCAS version. accessible for the user by phpCAS::getVersion().
  */
-define('PHPCAS_VERSION','1.0.1');
+define('PHPCAS_VERSION','${phpcas.version}');
 
 // ------------------------------------------------------------------------
 //  CAS VERSIONS
@@ -65,7 +65,7 @@ define("CAS_VERSION_2_0",'2.0');
  /**
   * Default path used when storing PGT's to file
   */
-define("CAS_PGT_STORAGE_FILE_DEFAULT_PATH",'/tmp/');
+define("CAS_PGT_STORAGE_FILE_DEFAULT_PATH",'/tmp');
 /**
  * phpCAS::setPGTStorageFile()'s 2nd parameter to write plain text files
  */
@@ -176,7 +176,6 @@ define("PHPCAS_LANG_DEFAULT", PHPCAS_LANG_ENGLISH);
 /**
  * The default directory for the debug file under Unix.
  */
-
 define('DEFAULT_DEBUG_DIR','/tmp/');
 
 /** @} */
@@ -305,7 +304,7 @@ class phpCAS
 			phpCAS::error('type mismatched for parameter $server_uri (should be `string\')');
 		}
 		
-		// store where the initialzer is called from
+		// store where the initializer is called from
 		$dbg = phpCAS::backtrace();
 		$PHPCAS_INIT_CALL = array('done' => TRUE,
 			'file' => $dbg[0]['file'],
@@ -798,6 +797,7 @@ class phpCAS
 	 * 
 	 * @param $url a string giving the URL of the service, including the mailing box
 	 * for IMAP URLs, as accepted by imap_open().
+	 * @param $service a string giving for CAS retrieve Proxy ticket
 	 * @param $flags options given to imap_open().
 	 * @param $err_code an error code Possible values are PHPCAS_SERVICE_OK (on
 	 * success), PHPCAS_SERVICE_PT_NO_SERVER_RESPONSE, PHPCAS_SERVICE_PT_BAD_SERVER_RESPONSE,
@@ -809,7 +809,7 @@ class phpCAS
 	 * @return an IMAP stream on success, FALSE otherwise (in this later case, $err_code
 	 * gives the reason why it failed and $err_msg contains an error message).
 	 */
-	function serviceMail($url,$flags,&$err_code,&$err_msg,&$pt)
+	function serviceMail($url,$service,$flags,&$err_code,&$err_msg,&$pt)
 		{
 		global $PHPCAS_CLIENT, $PHPCAS_AUTH_CHECK_CALL;
 		
@@ -834,7 +834,7 @@ class phpCAS
 			phpCAS::error('type mismatched for parameter $flags (should be `integer\')');
 		}
 		
-		$res = $PHPCAS_CLIENT->serviceMail($url,$flags,$err_code,$err_msg,$pt);
+		$res = $PHPCAS_CLIENT->serviceMail($url,$service,$flags,$err_code,$err_msg,$pt);
 		
 		phpCAS::traceEnd($res);
 		return $res;
