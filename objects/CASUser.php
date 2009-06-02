@@ -20,7 +20,7 @@ class CASUser
         global $PHPCAS_CLIENT;
         if ( !is_object($PHPCAS_CLIENT))
         {
-//            phpCAS::setDebug();
+            phpCAS::setDebug("/var/www/campus/dev.intranet.campusforchrist.org/cas.log");
 
             phpCAS::proxy(SITE_CAS_VERSION, SITE_CAS_HOSTNAME, SITE_CAS_PORT, SITE_CAS_PATH, SITE_CAS_SESSION);
 
@@ -30,7 +30,10 @@ class CASUser
             phpCAS::setNoCasServerValidation();
 
             phpCAS::setPGTStorageFile('xml', SITE_CAS_PGT_STORE);//session_save_path());
+
+	    return true;
         }
+	return false;
     }
 	
 
@@ -43,7 +46,7 @@ class CASUser
     function isAuthenticated()
     {
         CASUser::setup();
-        return phpCAS::isAuthenticated();
+	return phpCAS::isAuthenticated();
     }
 
 
@@ -62,8 +65,16 @@ class CASUser
     // Doesn't force a login, uses gateway auth
     function checkAuth()
     {
-        CASUser::setup();
-        return phpCAS::checkAuthentication();
+        if(CASUser::setup())
+	{
+	//Allow it to be called multiple times, and return the auth info
+	//Normally it will force a login if this isn't done
+	        return phpCAS::checkAuthentication();
+	}
+	else
+	{
+		return CASUser::isAuthenticated();
+	}
     }
 	
 	function logout() 
@@ -85,7 +96,7 @@ class CASUser
   }
     else
     {
-      return "NOT authenticated";
+      return "";
     }
   }
 
