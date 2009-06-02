@@ -27,6 +27,4 @@ $templateTools->loadPageLabels( $pageLabels );
 <p><span class="heading"><? echo $templateTools->getPageLabel('[Title]'); ?></span></p>
 <p><span class="text"><? echo $templateTools->getPageLabel('[Instr]'); ?></span></p>
 
-adfs 
-
 
