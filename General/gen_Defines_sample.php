@@ -86,7 +86,7 @@ if ( $isLocal )
    {
       define( "SITE_DB_NAME", "ciministry" );
       define( "SITE_DB_USER", "c4c_intranet");
-      define( "SITE_DB_PWORD", "dak9starnut");
+      define( "SITE_DB_PWORD", "");
    }
 }
 else
@@ -94,7 +94,7 @@ else
    define( 'ASP_DB_PATH', '' );
    define( "SITE_DB_PATH", "localhost");
    define( "SITE_DB_USER", "c4c_intranet");
-   define( "SITE_DB_PWORD", "dak9starnut");
+   define( "SITE_DB_PWORD", "");
    
    if ( $isDev )
    {
