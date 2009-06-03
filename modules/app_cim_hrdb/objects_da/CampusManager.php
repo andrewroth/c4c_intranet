@@ -30,11 +30,12 @@ class  RowManager_CampusManager extends RowManager {
   campus_website varchar (128) NOT NULL default '',
   campus_facebookgroup varchar (128) NOT NULL default '',
   campus_gcxnamespace varchar (128) NOT NULL default '',
+  province_id int(50) NOT NULL default '0',
   PRIMARY KEY (campus_id)
 ) TYPE=MyISAM";
     
     /** The fields in the DB Table this class manages. */
-    const FIELD_LIST = 'campus_id,campus_desc,campus_shortDesc,accountgroup_id,region_id,campus_website,campus_facebookgroup,campus_gcxnamespace';
+    const FIELD_LIST = 'campus_id,campus_desc,campus_shortDesc,accountgroup_id,region_id,campus_website,campus_facebookgroup,campus_gcxnamespace,province_id';
     
     /** The XML node name for this entry. */
     const XML_NODE_NAME = 'campus';
