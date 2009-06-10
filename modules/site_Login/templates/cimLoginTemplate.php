@@ -101,6 +101,7 @@ a:link, a:visited, a:focus, a:hover, a:active {
 	position: relative;
 	top: 150px;
 	color: #FFFFFF;
+	background-color: transparent;
 	text-align: right;
 	}
 
