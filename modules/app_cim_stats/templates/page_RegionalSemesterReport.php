@@ -55,7 +55,25 @@ echo "<table border=\"1\">";
 
         // display the header row
         echo generateHeaderRow( $campusInfoArray, $templateTools );
-    
+
+
+        foreach( $linksArray as $linkDescKey=>$linkValue )
+        {
+            echo '<tr>';
+            
+            echo '<td class="smalltext">'.$templateTools->getPageLabel($linkDescKey).'</td>';
+                foreach( $campusInfoArray as $key=>$campusInfoObj )
+                {
+                    echo '<td class="smalltext"><a href="'.$linkValue.$campusInfoObj->campusID.'">'.$templateTools->getPageLabel("[View]").'</a></td>';
+                } // foreach
+                
+                echo '<td>&nbsp;</td>';
+            
+            
+            
+            echo '</tr>';
+        }
+
         $count = 0;
         foreach( $fieldsArray as $index=>$fieldName )
         {
@@ -89,29 +107,8 @@ echo "<table border=\"1\">";
             
         } // foreach
         
-        foreach( $linksArray as $linkDescKey=>$linkValue )
-        {
-            echo '<tr>';
-            
-            echo '<td class="smalltext">'.$templateTools->getPageLabel($linkDescKey).'</td>';
-                foreach( $campusInfoArray as $key=>$campusInfoObj )
-                {
-                    echo '<td class="smalltext"><a href="'.$linkValue.$campusInfoObj->campusID.'">'.$templateTools->getPageLabel("[View]").'</a></td>';
-                } // foreach
-                
-                echo '<td>&nbsp;</td>';
-            
-            
-            
-            echo '</tr>';
-        }
-        
-        
         // display another header row for easier reading
         echo generateHeaderRow( $campusInfoArray, $templateTools );
-
-    
-    
 
 echo '</table>';
 

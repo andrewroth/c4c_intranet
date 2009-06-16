@@ -120,7 +120,7 @@ class  page_StaffSemesterReport extends PageDisplay {
         else
         {
             // set a default semester id
-            $this->semester_id = 4;
+            $this->semester_id = 10;
             // TODO set this properly
             
         }
@@ -318,7 +318,11 @@ class  page_StaffSemesterReport extends PageDisplay {
         while( $this->campusListIterator->moveNext() )
         {
             $campusObject = $this->campusListIterator->getCurrent(new RowManager_CampusManager());
-            $campusArray[$jumpLink.$campusObject->getID()] = $campusObject->getLabel();
+	    $region_id = $campusObject->getRegionID();
+	    if ( ($region_id == 1) || ($region_id == 2) || ($region_id == 3) )
+	    {
+            	$campusArray[$jumpLink.$campusObject->getID()] = $campusObject->getLabel();
+	    }
         }
         // echo '<pre>'.print_r($campusArray, true ).'</pre>';
         $this->template->set( 'list_campus_id', $campusArray );

@@ -62,7 +62,7 @@ class  page_RegionalSemesterReport extends PageDisplay {
         if ( $semesterID == "" )
         {
             // TODO set this properly
-            $this->semester_id = 4;
+            $this->semester_id = 10;
         }
         // echo 'semesterID['.$this->semester_id.']<br/>';
         
@@ -152,13 +152,19 @@ class  page_RegionalSemesterReport extends PageDisplay {
         $this->template->set( 'regionJumpLinkSelectedValue', $regionJumpLinkSelectedValue ); 
         $this->template->set( 'semesterJumpLinkSelectedValue', $semesterJumpLinkSelectedValue );
         
-        $fieldsOfInterest = "weeklyReport_1on1SpConv,weeklyReport_1on1SpConvStd,weeklyReport_1on1GosPres,weeklyReport_1on1GosPresStd,weeklyReport_1on1HsPres,weeklyReport_1on1HsPresStd,weeklyReport_7upCompleted,weeklyReport_7upCompletedStd,weeklyReport_cjVideo,weeklyReport_mda,weeklyReport_otherEVMats,weeklyReport_rlk,weeklyReport_siq";
+	// changed by RM on June 4, 2009 to reflect new reporting guidelines
+        // $fieldsOfInterest = "weeklyReport_1on1SpConv,weeklyReport_1on1SpConvStd,weeklyReport_1on1GosPres,weeklyReport_1on1GosPresStd,weeklyReport_1on1HsPres,weeklyReport_1on1HsPresStd,weeklyReport_7upCompleted,weeklyReport_7upCompletedStd,weeklyReport_cjVideo,weeklyReport_mda,weeklyReport_otherEVMats,weeklyReport_rlk,weeklyReport_siq";
+        $fieldsOfInterest = "weeklyReport_1on1SpConv,weeklyReport_1on1SpConvStd,weeklyReport_1on1GosPres,weeklyReport_1on1GosPresStd";
         $fieldsArray = explode(",", $fieldsOfInterest);
         
-        $semesterReportFields = 'semesterreport_avgPrayer,semesterreport_avgWklyMtg,semesterreport_numStaffChall,semesterreport_numInternChall,semesterreport_numFrosh,semesterreport_numStaffDG,semesterreport_numInStaffDG,semesterreport_numStudentDG,semesterreport_numInStudentDG,semesterreport_numSpMultStaffDG,semesterreport_numSpMultStdDG';
+	// changed by RM on June 4, 2009 to reflect new reporting guidelines, we are no longer collecting these measurements
+        // $semesterReportFields = 'semesterreport_avgPrayer,semesterreport_avgWklyMtg,semesterreport_numStaffChall,semesterreport_numInternChall,semesterreport_numFrosh,semesterreport_numStaffDG,semesterreport_numInStaffDG,semesterreport_numStudentDG,semesterreport_numInStudentDG,semesterreport_numSpMultStaffDG,semesterreport_numSpMultStdDG';
+        $semesterReportFields = '';
         $semesterReportFieldArray =  explode(",", $semesterReportFields );  
         
         // other 'weekly campus stats', based on exposure type
+	/*
+	// no longer need the exposure type fields of interest - RM June 4, 2009
         $exposureFieldsOfInterest = "";
         $exposureFieldsArray = array();
         $exposureTypePrefix = "expType";
@@ -179,8 +185,11 @@ class  page_RegionalSemesterReport extends PageDisplay {
             $exposureFieldsOfInterest .= $fieldName;
             $isFirst = false;
         } // while
-        
-        $fieldsOfInterest = 'prcTotal,'.$fieldsOfInterest . ',' . $semesterReportFields . ','. $exposureFieldsOfInterest;
+	*/
+       
+        // removed concatentation of $semesterReportFields and $exposureFieldsOfInterest - June 4, 2009 by RM
+        // $fieldsOfInterest = 'prcTotal,'.$fieldsOfInterest . ',' . $semesterReportFields . ','. $exposureFieldsOfInterest;
+        $fieldsOfInterest = 'prcTotal,'.$fieldsOfInterest;
         
         // get all the campuses for the given region
         $campusManager = new RowManager_CampusManager();
@@ -301,6 +310,11 @@ class  page_RegionalSemesterReport extends PageDisplay {
         
         $campusSummaryJumpLink = $this->linkValues['campusSummaryJumpLink'];
         $campusSummaryJumpLink = str_replace( 'SSS', $this->semester_id, $campusSummaryJumpLink ); // in case where semester was not provided (usual case)
+	// look up the year associated with this semester
+        $semObj = new RowManager_SemesterManager($this->semester_id);
+	$year_id = $semObj->getYearID();
+
+        $campusSummaryJumpLink = str_replace( 'YYY', $year_id, $campusSummaryJumpLink ); // in case where semester was not provided (usual case)
         
         /*$personalMinLink = $this->linkValues['campusPersonalJumpLink'];
         $personalMinLink = str_replace( 'SSS', $this->semester_id, $personalMinLink ); // in case where semester was not provided (usual case)

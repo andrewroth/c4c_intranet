@@ -70,12 +70,17 @@ echo $templateTools->showByFormType($itemType, $itemName, $itemValue, $itemError
                 echo createTable( $semesterArray, $templateTools, $prcArray, false, $indDecLink ); ?>
             
             <br/>
+
+	    <?
+	    /*
+	    // Removed by RM on June 4, 2009 to reflect new reporting guidlines
             <span class="text"><? echo $templateTools->getPageLabel('[CampusMin]'); ?></span><br/>
             
-            <? 
                 
-                echo createTable( $semesterArray, $templateTools, $campusTeamMinArray, false, $campusTeamLink, true, true ); ?>
+               // echo createTable( $semesterArray, $templateTools, $campusTeamMinArray, false, $campusTeamLink, true, true ); ?>
             <br/>
+	    */
+	    ?>
         </td>
     </tr>
     <tr> 

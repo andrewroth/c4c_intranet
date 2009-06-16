@@ -873,8 +873,11 @@ class modulecim_stats extends XMLObject_PageContent {
             // All staff can access this link
             $requestLink = $this->getCallBack( modulecim_stats::PAGE_STAFFWEEKLYREPORT, '' , $parameters);
             $links[ '[submitWeeklyStats]' ] = $requestLink;
-            $requestLink = $this->getCallBack( modulecim_stats::PAGE_STAFFADDITIONALWEEKLYSTATS, '' , $parameters);
-            $links[ '[submitMoreWeeklyStats]' ] = $requestLink;
+            
+	    // removed by RM on June 4, 2009 as we are no longer collecting these measurements
+	    // $requestLink = $this->getCallBack( modulecim_stats::PAGE_STAFFADDITIONALWEEKLYSTATS, '' , $parameters);
+            // $links[ '[submitMoreWeeklyStats]' ] = $requestLink;
+
             $requestLink = $this->getCallBack( modulecim_stats::PAGE_SELECTPRCSEMESTERCAMPUS, '' , $parameters);
             $links[ '[indicatedDecisions]' ] = $requestLink;
             $requestLink = $this->getCallBack( modulecim_stats::PAGE_STAFFSEMESTERREPORT, '' , $parameters);
@@ -889,14 +892,18 @@ class modulecim_stats extends XMLObject_PageContent {
         if ( $isStatsCoordinator || $isAllStaff )
         {
             // GROUP 2: CAMPUS STATS COORDINATORS
-            $requestLink = $this->getCallBack( modulecim_stats::PAGE_MORESTATS, '' , $parameters);
-            $coordinatorLinks[ '[campusWeeklyStats]' ] = $requestLink;
+
+	    // removed by RM on June 4, 2009 as we are no longer collecting these measurements
+            // $requestLink = $this->getCallBack( modulecim_stats::PAGE_MORESTATS, '' , $parameters);
+            // $coordinatorLinks[ '[campusWeeklyStats]' ] = $requestLink;
             
-            $requestLink = $this->getCallBack( modulecim_stats::PAGE_CAMPUSWEEKLYSTATSREPORT, '' , $parameters);
-            $coordinatorLinks[ '[campusWeeklyStatsReport]' ] = $requestLink;
+	    // removed by RM on June 4, 2009 as we are no longer collecting these measurements
+            // $requestLink = $this->getCallBack( modulecim_stats::PAGE_CAMPUSWEEKLYSTATSREPORT, '' , $parameters);
+            // $coordinatorLinks[ '[campusWeeklyStatsReport]' ] = $requestLink;
             
-            $requestLink = $this->getCallBack( modulecim_stats::PAGE_SEMESTERREPORT, '' , $parameters);
-            $coordinatorLinks[ '[submitSemesterStats]' ] = $requestLink;
+	    // removed by RM on June 4, 2009 as we are no longer collecting these measurements
+            // $requestLink = $this->getCallBack( modulecim_stats::PAGE_SEMESTERREPORT, '' , $parameters);
+            // $coordinatorLinks[ '[submitSemesterStats]' ] = $requestLink;
         }
         
         $cdLinks = array();
@@ -1459,7 +1466,7 @@ class modulecim_stats extends XMLObject_PageContent {
         // set the pageCallBack to be without any additional parameters
         // (an AdminBox needs this so Language Switching on a page doesn't
         // pass a previous operations)
-        $parameters = array('WEEK_ID'=>$this->WEEK_ID, 'STAFF_ID'=>$this->STAFF_ID, 'SEMESTER_ID'=>$this->SEMESTER_ID, 'CAMPUS_ID'=>$this->CAMPUS_ID, 'METHOD_ID'=>$this->METHOD_ID, 'PRC_ID'=>$this->PRC_ID, 'EXPOSURE_ID'=>$this->EXPOSURE_ID, 'MORESTATS_ID'=>$this->MORESTATS_ID, 'PRIV_ID'=>$this->PRIV_ID, 'ACCESS_ID'=>$this->ACCESS_ID, 'COORDINATOR_ID'=>$this->COORDINATOR_ID, 'REGION_ID'=>$this->REGION_ID);//[RAD_CALLBACK_PARAMS]
+        $parameters = array('WEEK_ID'=>$this->WEEK_ID, 'STAFF_ID'=>$this->STAFF_ID, 'SEMESTER_ID'=>$this->SEMESTER_ID, 'CAMPUS_ID'=>$this->CAMPUS_ID, 'METHOD_ID'=>$this->METHOD_ID, 'PRC_ID'=>$this->PRC_ID, 'EXPOSURE_ID'=>$this->EXPOSURE_ID, 'MORESTATS_ID'=>$this->MORESTATS_ID, 'PRIV_ID'=>$this->PRIV_ID, 'ACCESS_ID'=>$this->ACCESS_ID, 'COORDINATOR_ID'=>$this->COORDINATOR_ID, 'REGION_ID'=>$this->REGION_ID, 'YEAR_ID'=>$this->YEAR_ID);//[RAD_CALLBACK_PARAMS]
         $pageCallBack = $this->getCallBack(modulecim_stats::PAGE_REGIONALSEMESTERREPORT, $this->sortBy, $parameters);
         $this->setPageCallBack( $pageCallBack );
         
@@ -1468,7 +1475,7 @@ class modulecim_stats extends XMLObject_PageContent {
         
         $links = array();
         
-        $parameters = array( 'WEEK_ID'=>$this->WEEK_ID, 'STAFF_ID'=>$this->STAFF_ID, 'SEMESTER_ID'=>$this->SEMESTER_ID, 'CAMPUS_ID'=>$this->CAMPUS_ID, 'METHOD_ID'=>$this->METHOD_ID, 'PRC_ID'=>$this->PRC_ID, 'EXPOSURE_ID'=>$this->EXPOSURE_ID, 'MORESTATS_ID'=>$this->MORESTATS_ID, 'PRIV_ID'=>$this->PRIV_ID, 'ACCESS_ID'=>$this->ACCESS_ID, 'COORDINATOR_ID'=>$this->COORDINATOR_ID, 'REGION_ID'=>$this->REGION_ID);//[RAD_CALLBACK_PARAMS]
+        $parameters = array( 'WEEK_ID'=>$this->WEEK_ID, 'STAFF_ID'=>$this->STAFF_ID, 'SEMESTER_ID'=>$this->SEMESTER_ID, 'CAMPUS_ID'=>$this->CAMPUS_ID, 'METHOD_ID'=>$this->METHOD_ID, 'PRC_ID'=>$this->PRC_ID, 'EXPOSURE_ID'=>$this->EXPOSURE_ID, 'MORESTATS_ID'=>$this->MORESTATS_ID, 'PRIV_ID'=>$this->PRIV_ID, 'ACCESS_ID'=>$this->ACCESS_ID, 'COORDINATOR_ID'=>$this->COORDINATOR_ID, 'REGION_ID'=>$this->REGION_ID, 'YEAR_ID'=>$this->YEAR_ID);//[RAD_CALLBACK_PARAMS]
         $continueLink = $this->getCallBack( modulecim_stats::PAGE_STATSHOME, "", $parameters );
         $links["cont"] = $continueLink;
 
@@ -1490,8 +1497,12 @@ class modulecim_stats extends XMLObject_PageContent {
         {
             $this->SEMESTER_ID = 'SSS';
         }
+	if ( $this->YEAR_ID == '' )
+	{
+	    $this->YEAR_ID = 'YYY';
+	}
         
-        $parameters = array('SEMESTER_ID'=>$this->SEMESTER_ID);
+        $parameters = array('SEMESTER_ID'=>$this->SEMESTER_ID, 'YEAR_ID'=>$this->YEAR_ID);
         $campusSummaryJumpLink = $this->getCallBack( modulecim_stats::PAGE_CAMPUSYEARSUMMARY, $this->sortBy, $parameters);
         $campusSummaryJumpLink .= "&". modulecim_stats::CAMPUS_ID . "=";
         $links["campusSummaryJumpLink"] = $campusSummaryJumpLink;

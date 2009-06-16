@@ -122,7 +122,7 @@ class  page_CampusYearSummary extends PageDisplay {
         else
         {
             // set a default semester id
-            $this->year_id = 2;
+            $this->year_id = 4;
             // TODO set this properly
             
         }
@@ -187,11 +187,15 @@ class  page_CampusYearSummary extends PageDisplay {
         $semesterList = $semesterManager->getListIterator();
         $semesterArray = $semesterList->getDropListArray();
         // echo "<pre>".print_r( $semesterArray, true)."</pre>";
-        
-        $semStatsFieldsOfInterest = "semesterreport_avgPrayer,semesterreport_avgWklyMtg,semesterreport_numStaffChall,semesterreport_numInternChall,semesterreport_numFrosh,semesterreport_numStaffDG,semesterreport_numInStaffDG,semesterreport_numStudentDG,semesterreport_numInStudentDG,semesterreport_numSpMultStaffDG,semesterreport_numSpMultStdDG";
+       
+        // changed on June 4, 2009 by RM to reflect that we are now longer collecting certain fields
+        // $semStatsFieldsOfInterest = "semesterreport_avgPrayer,semesterreport_avgWklyMtg,semesterreport_numStaffChall,semesterreport_numInternChall,semesterreport_numFrosh,semesterreport_numStaffDG,semesterreport_numInStaffDG,semesterreport_numStudentDG,semesterreport_numInStudentDG,semesterreport_numSpMultStaffDG,semesterreport_numSpMultStdDG";
+        $semStatsFieldsOfInterest = "semesterreport_numStaffChall,semesterreport_numInternChall,semesterreport_numFrosh,semesterreport_numSpMultStaffDG,semesterreport_numSpMultStdDG";
         $semStatsFieldArray = explode(",", $semStatsFieldsOfInterest );
-        
-        $perStatsFieldsOfInterest = "weeklyReport_1on1SpConv,weeklyReport_1on1SpConvStd,weeklyReport_1on1GosPres,weeklyReport_1on1GosPresStd,weeklyReport_1on1HsPres,weeklyReport_1on1HsPresStd,weeklyReport_7upCompleted,weeklyReport_7upCompletedStd,weeklyReport_cjVideo,weeklyReport_mda,weeklyReport_otherEVMats,weeklyReport_rlk,weeklyReport_siq";
+       
+        // changed on June 4, 2009 by RM to reflect that we are no longer collecting certain fields
+        // $perStatsFieldsOfInterest = "weeklyReport_1on1SpConv,weeklyReport_1on1SpConvStd,weeklyReport_1on1GosPres,weeklyReport_1on1GosPresStd,weeklyReport_1on1HsPres,weeklyReport_1on1HsPresStd,weeklyReport_7upCompleted,weeklyReport_7upCompletedStd,weeklyReport_cjVideo,weeklyReport_mda,weeklyReport_otherEVMats,weeklyReport_rlk,weeklyReport_siq";
+        $perStatsFieldsOfInterest = "weeklyReport_1on1SpConv,weeklyReport_1on1SpConvStd,weeklyReport_1on1GosPres,weeklyReport_1on1GosPresStd";
         $perStatsFieldArray = explode(",", $perStatsFieldsOfInterest );
         
         $prcTotals = array();
@@ -333,7 +337,12 @@ class  page_CampusYearSummary extends PageDisplay {
         while( $this->campusListIterator->moveNext() )
         {
             $campusObject = $this->campusListIterator->getCurrent(new RowManager_CampusManager());
-            $campusArray[$jumpLink.$campusObject->getID()] = $campusObject->getLabel();
+	    $region_id = $campusObject->getRegionID();
+	    // only include Canadian campuses 
+	    if ( ($region_id == 1) || ($region_id == 2) || ($region_id == 3) )
+	    {
+            	$campusArray[$jumpLink.$campusObject->getID()] = $campusObject->getLabel();
+	    }
         }
         // echo '<pre>'.print_r($campusArray, true ).'</pre>';
         $this->template->set( 'list_campus_id', $campusArray );

@@ -34,14 +34,18 @@ class  FormProcessor_PRC extends PageDisplay_FormProcessor_AdminBox {
     //             invalid_value = A value that is considered incorrect for this
     //                             form field.  Leaving it blank is equivalent 
     //                             to form_value != '' 
-    const FORM_FIELDS = 'prc_firstName|T|,prc_witnessName|T|,prc_date|D|,prc_notes|T|<skip>,prcMethod_id|N|,prc_7upStarted|B|,prc_7upCompleted|B|,semester_id|T|<skip>,campus_id|T|<skip>';
+    // changed by RM on June 4, 2009 to reflect new measurements being collected
+    // will now map "completed follow-up" to "integrated believer"
+    // will no longer keep tracker of "started follow-up"
+    // const FORM_FIELDS = 'prc_firstName|T|,prc_witnessName|T|,prc_date|D|,prc_notes|T|<skip>,prcMethod_id|N|,prc_7upStarted|B|,prc_7upCompleted|B|,semester_id|T|<skip>,campus_id|T|<skip>';
+    const FORM_FIELDS = 'prc_firstName|T|,prc_witnessName|T|,prc_date|D|,prc_notes|T|<skip>,prcMethod_id|N|,prc_7upCompleted|B|,semester_id|T|<skip>,campus_id|T|<skip>';
     
     /** The list of field types to be displayed in the form */
     // NOTE: if a field isn't displayed, put a '-' for it's entry.
-    const FORM_FIELD_TYPES = 'textbox,textbox,datepicker,textarea,droplist,checkbox,checkbox,-,-';
+    const FORM_FIELD_TYPES = 'textbox,textbox,datepicker,textarea,droplist,checkbox,-,-';
     
     /** The list of fields to be displayed in the data list */
-    const DISPLAY_FIELDS = 'prc_firstName,prc_witnessName,prcMethod_id';
+    const DISPLAY_FIELDS = 'prc_firstName,prc_witnessName,prcMethod_id,prc_7upCompleted';
     
     /** The Querystring Field for which entry is currently being edited ... */
     const MULTILINGUAL_PAGE_KEY = 'FormProcessor_PRC';

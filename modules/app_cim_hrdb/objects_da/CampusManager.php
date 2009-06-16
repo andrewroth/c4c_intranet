@@ -186,6 +186,11 @@ class  RowManager_CampusManager extends RowManager {
         $this->setValueByFieldName('region_id', $regionID );
         return;
     }
+    function getRegionID()
+    {
+    	return $this->getValueByFieldName('region_id');
+    }
+
     /**
 	 * function getCampusID
 	 * <pre>

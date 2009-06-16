@@ -153,6 +153,11 @@ class  RowManager_SemesterManager extends RowManager {
         $this->setValueByFieldName( 'year_id', $id );
         return;
     }
+
+    function getYearID()
+    {
+    	return $this->getValueByFieldName('year_id');
+    }
     
     //************************************************************************
 	/**

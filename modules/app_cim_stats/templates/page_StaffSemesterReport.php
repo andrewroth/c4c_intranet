@@ -27,8 +27,10 @@ $templateTools->loadPageLabels( $pageLabels );
 <p><span class="text"><? echo $templateTools->getPageLabel('[Instr]'); ?></span></p>
 
 <?
-
-    $fieldsOfInterest = "weeklyReport_1on1SpConv,weeklyReport_1on1SpConvStd,weeklyReport_1on1GosPres,weeklyReport_1on1GosPresStd,weeklyReport_1on1HsPres,weeklyReport_1on1HsPresStd,weeklyReport_7upCompleted,weeklyReport_7upCompletedStd,weeklyReport_cjVideo,weeklyReport_mda,weeklyReport_otherEVMats,weeklyReport_rlk,weeklyReport_siq,SUBMIT";
+    // changed by RM on June 4, 2009
+    // no longer interested in "HS Presentations", "Completed Follow-up", "Jesus Videos", "MDA Event Exposures", "Other Evangelistic Materials", "RLKs", "SIQs"
+    // $fieldsOfInterest = "weeklyReport_1on1SpConv,weeklyReport_1on1SpConvStd,weeklyReport_1on1GosPres,weeklyReport_1on1GosPresStd,weeklyReport_1on1HsPres,weeklyReport_1on1HsPresStd,weeklyReport_7upCompleted,weeklyReport_7upCompletedStd,weeklyReport_cjVideo,weeklyReport_mda,weeklyReport_otherEVMats,weeklyReport_rlk,weeklyReport_siq,SUBMIT";
+    $fieldsOfInterest = "weeklyReport_1on1SpConv,weeklyReport_1on1SpConvStd,weeklyReport_1on1GosPres,weeklyReport_1on1GosPresStd,SUBMIT";
     $fieldsArray = explode(",", $fieldsOfInterest);
  
  $monthArray = array( 1=>"January", 2=>"February", 3=>"March", 4=>"April", 5=>"May", 6=>"June", 7=>"July", 8=>"August", 9=>"September", 10=>"October", 11=>"November", 12=>"December");   
