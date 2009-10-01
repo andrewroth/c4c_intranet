@@ -323,6 +323,11 @@ class  RowManager_UserManager extends RowManager {
     {
         return $this->getValueByFieldName( 'viewer_userID' );
     }
+
+    function getGUID()
+    {
+    	return $this->getValueByFieldName( 'guid' );
+    }
     
     
     
@@ -447,6 +452,12 @@ class  RowManager_UserManager extends RowManager {
         }
         
         $this->setValueByFieldName( 'viewer_lastLogin', $date );
+    }
+
+    function setGUID( $guid )
+    {
+    	$this->setValueByFieldName( 'guid', $guid );
+	return;
     }
     
     

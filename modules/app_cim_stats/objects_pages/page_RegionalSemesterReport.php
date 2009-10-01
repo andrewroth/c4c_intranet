@@ -154,7 +154,7 @@ class  page_RegionalSemesterReport extends PageDisplay {
         
 	// changed by RM on June 4, 2009 to reflect new reporting guidelines
         // $fieldsOfInterest = "weeklyReport_1on1SpConv,weeklyReport_1on1SpConvStd,weeklyReport_1on1GosPres,weeklyReport_1on1GosPresStd,weeklyReport_1on1HsPres,weeklyReport_1on1HsPresStd,weeklyReport_7upCompleted,weeklyReport_7upCompletedStd,weeklyReport_cjVideo,weeklyReport_mda,weeklyReport_otherEVMats,weeklyReport_rlk,weeklyReport_siq";
-        $fieldsOfInterest = "weeklyReport_1on1SpConv,weeklyReport_1on1SpConvStd,weeklyReport_1on1GosPres,weeklyReport_1on1GosPresStd";
+        $fieldsOfInterest = "weeklyReport_1on1SpConv,weeklyReport_1on1SpConvStd,weeklyReport_1on1GosPres,weeklyReport_1on1GosPresStd,weeklyReport_1on1HsPres";
         $fieldsArray = explode(",", $fieldsOfInterest);
         
 	// changed by RM on June 4, 2009 to reflect new reporting guidelines, we are no longer collecting these measurements

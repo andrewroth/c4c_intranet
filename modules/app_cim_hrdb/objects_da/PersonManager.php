@@ -119,6 +119,16 @@ class  RowManager_PersonManager extends RowManager {
         // CODE
         //return $this->getValueByFieldName( 'applicant_codename' );
     }
+
+    // added by Russ Martin September 12, 2009
+    function loadByEmail( $email )
+    {
+    	// calling constructSearchCondition ensures that quotes are added to the email address
+    	$condition = $this->constructSearchCondition( "person_email", "=", $email );
+
+	// will return whether this row manager was successfully loaded according to the condition
+	return $this->loadByCondition( $condition );
+    }
     
     //************************************************************************
 	/**

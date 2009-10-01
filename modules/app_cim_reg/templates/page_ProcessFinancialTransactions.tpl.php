@@ -145,7 +145,7 @@ if ( isset( $specialInfo ) )
 		<table width="75%" border="0">
 			<?	// TODO: remove this temporary message
 			$tempMsg = '<b>If you raised funds from a summer project to cover this event, '.
-'please indicate that you will pay cash to a staff and your scholarship will be applied before the event starts.</b>';
+'an event administrator will apply your scholarship shortly.  In the meantime your registration will be marked incomplete.  No further action is required on your part.</b>';
 			?>
              
           <tr><td colspan = "4"class="<? echo $boldStyle?>"><? echo $templateTools->getPageLabel('[Scholarships]'); ?></td></tr>

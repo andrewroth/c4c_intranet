@@ -116,10 +116,136 @@ class  Viewer {
                 {
                     if($this->validateLogin($_SESSION['phpCAS']['guid']))
                     {
+		    	// a user with this GUID exists in our system
                         $this->isAuthenticated = true;
                     }
+		    else
+		    {
+		    	// code added by Russ September 11, 2009
+		    	// a user with this GUID does not exist in our system - create them
+			
+			$guid = $_SESSION['phpCAS']['guid'];
+			// echo "The GUID[".$guid."]<br/>";
+
+			$gcxUsername =  $_SESSION['phpCAS']['user'];
+			// echo "The gcxUsername[".$gcxUsername."]<br/>";
+			
+			// the gcxUsername is (supposed to be) an email
+			// check to see if there is a cim_hrdb_person record with this email
+			// the comparison needs to be case insensitive (since mysql is insensitive by default, no special doctoring is needed)
+
+			// search for person record
+			$personManager = new RowManager_PersonManager();
+			$foundPerson = $personManager->loadByEmail($gcxUsername);
+			
+			// get the personID of the person that was searched
+			$personID = $personManager->getID();
+			
+			// if record does not exist
+			// create one
+			// update the personID
+			if (!$foundPerson)
+			{
+			    // create a new person record
+			    $newpersonManager = new RowManager_PersonManager();
+			    $newpersonManager->setEmail( $gcxUsername );
+			    $newpersonManager->createNewEntry();
+			    $personID = $newpersonManager->getID();
+			}
+			
+			// link the personID to the GUID/viewer in the cim_hrdb_access table
+			// first, check to see if any entry already exists in the access table 
+			// if foundPerson is true above, it's possible (may have been linked to old viewer/username but not promoted to GCX account yet)
+
+			$accessManager = new RowManager_AccessManager();
+			$accessEntryFound = $accessManager->loadByPersonID($personID);
+			$viewerID = -1;
+			$createNewViewer = true;
+			if ( $accessEntryFound )
+			{
+			    $viewerID = $accessManager->getViewerID();
+        		    $viewerManager = new RowManager_ViewerManager($viewerID);
+
+			    // double check to make sure the viewer referenced in the access table actually exists
+			    $viewerAlreadyExists = $viewerManager->isLoaded();
+			    if ( $viewerAlreadyExists )
+			    {
+			    	// no need to create a new viewer
+			    	$createNewViewer = false;
+
+				// update the existing viewer with the GUID and gcxUsername
+				$viewerManager->setGUID($guid);
+				$viewerManager->setUserID($gcxUsername);
+				$viewerManager->setLastLogin();
+				$viewerManager->updateDBTable();
+			    } // viewerAlreadyExists
+			} // accessEntryFound
+
+			if ( $createNewViewer )	
+			{
+			    // create new viewer (user)
+        		    $newviewerManager = new RowManager_ViewerManager();
+	        	    $newviewerManager->setPassWord( 'xxx' );
+		            $newviewerManager->setUserID( $gcxUsername  );
+			    $newviewerManager->setLanguageID( 1 ); // english
+			    // TODO this value should not be hard-coded for the account group
+			    $newviewerManager->setAccountGroupID( 15 ); // the 'unknown' group
+			    $newviewerManager->setIsActive( true );
+			    $newviewerManager->setGUID($guid);
+			    $newviewerManager->setLastLogin();
+			    $newviewerManager->createNewEntry();
+			    $viewerID = $newviewerManager->getID(); // get the ID of the newly created viewer
+
+			    if ( $accessEntryFound )
+			    {
+			    	// update the access table to reference the newly created viewer for the persoa
+				// this is the case where an access table entry may have been orphaned due to the deletion of a viewer
+				$accessManager->setViewerID($viewerID);
+				$accessManager->updateDBTable();
+			    }
+			    else
+			    {
+			    	// create an access table entry
+				$newaccessManager = new RowManager_AccessManager();
+				$newaccessManager->setViewerID( $viewerID );
+				$newaccessManager->setPersonID( $personID );
+			        $newaccessManager->createNewEntry();
+			    }
+			}
+
+			// put into the 'all' access group
+		        $viewerAccessGroupManager = new RowManager_ViewerAccessGroupManager();
+			$viewerAccessGroupManager->setViewerID( $viewerID );
+			$viewerAccessGroupManager->setAccessGroupID( ALL_ACCESS_GROUP ); // add to the 'all' access group
+			$viewerAccessGroupManager->createNewEntry();
+
+		    	// Debugging code added by Russ Martin
+			// echo "validate login failed<br/>";
+			// echo "<pre>".print_r($_SESSION,true)."</pre>";
+
+			// try again to see if everything updated correctly
+			if ( $this->validateLogin($guid))
+			{
+			    // a user/viewer with this GUID now exists in our system
+                            $this->isAuthenticated = true;
+			}
+			else
+			{
+			    echo "Something has gone wrong: gcxUsername[".$gcxUsername."], guid[".$guid."]<br/>";
+			}
+		    }
                 }
+		else
+		{
+		    // Debugging code added by Russ Martin
+		    // echo "session variable for storing GUID is empty<br/>";
+		}
             }
+	    else
+	    {
+	    	// Debugging code added by Russ Martin
+	    	// echo "CASUser::checkAuth() failed<br/>";
+	    }
         }
 
         // set hasSession

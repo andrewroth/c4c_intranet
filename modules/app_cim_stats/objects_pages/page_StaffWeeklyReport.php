@@ -39,11 +39,11 @@ class  FormProcessor_StaffWeeklyReport extends PageDisplay_FormProcessor {
     // modified by Russ Martin on June 4, 2009
     // removed the fields of "HS Presentations" (student/staff) and "Completed Follow-up" (student/staff) as we are no longer measuring these
     // const FORM_FIELDS = 'staff_id|N|<skip>,week_id|N|<skip>,campus_id|N|<skip>,weeklyReport_1on1SpConv|N|,weeklyReport_1on1SpConvStd|N|,weeklyReport_1on1GosPres|N|,weeklyReport_1on1GosPresStd|N|,weeklyReport_1on1HsPres|N|,weeklyReport_1on1HsPresStd|N|,weeklyReport_7upCompleted|N|,weeklyReport_7upCompletedStd|N|';
-    const FORM_FIELDS = 'staff_id|N|<skip>,week_id|N|<skip>,campus_id|N|<skip>,weeklyReport_1on1SpConv|N|,weeklyReport_1on1SpConvStd|N|,weeklyReport_1on1GosPres|N|,weeklyReport_1on1GosPresStd|N|';
+    const FORM_FIELDS = 'staff_id|N|<skip>,week_id|N|<skip>,campus_id|N|<skip>,weeklyReport_1on1SpConv|N|,weeklyReport_1on1SpConvStd|N|,weeklyReport_1on1GosPres|N|,weeklyReport_1on1GosPresStd|N|,weeklyReport_1on1HsPres|N|';
     
     /** The list of field types to be displayed in the form */
     // NOTE: if a field isn't displayed, put a '-' for it's entry.
-    const FORM_FIELD_TYPES = '-,jumplist,jumplist,textbox,textbox,textbox,textbox';
+    const FORM_FIELD_TYPES = '-,jumplist,jumplist,textbox,textbox,textbox,textbox,textbox';
     
     /** The Multilingual Page Key for this page */
     const MULTILINGUAL_PAGE_KEY = 'FormProcessor_StaffWeeklyReport';

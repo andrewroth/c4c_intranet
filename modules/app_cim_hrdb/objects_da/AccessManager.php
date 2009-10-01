@@ -169,7 +169,7 @@ class  RowManager_AccessManager extends RowManager {
 	 */
     function loadByViewerID( $viewerID )
     {
-        $this->loadByCondition( 'viewer_id='.$viewerID );
+        return $this->loadByCondition( 'viewer_id='.$viewerID );
     }
     
     /**
@@ -181,7 +181,7 @@ class  RowManager_AccessManager extends RowManager {
 	 */
     function loadByPersonID( $personID )
     {
-        $this->loadByCondition( 'person_id='.$personID );
+        return $this->loadByCondition( 'person_id='.$personID );
     }
     /**
 	 * functionsetViewer

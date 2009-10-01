@@ -92,7 +92,7 @@ class CASUser
       phpCAS::serviceWeb($service,$err_code,$output); 
       $xml = simplexml_load_string($output);
       $result = $xml->xpath('/reportoutput/reportdata');
-      return html_entity_decode($result[0]->asXML());
+      return str_replace("https://signin.mygcx.org/cas/logout", "https://intranet.campusforchrist.org/index.php?p_Mod=Logout", html_entity_decode($result[0]->asXML()));
   }
     else
     {
