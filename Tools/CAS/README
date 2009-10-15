@@ -1,0 +1,34 @@
+The GCX ConneXion bar requires the system to be setup for doing PGT requests.  The way this works, is you need to have a callback url on the local server, for the GCX server to send a PGTIOU via GET.
+
+Callback Page ::
+<?php
+  include_once('CAS/CAS.php');
+  phpCAS::proxy(CAS_VERSION_2_0, 'signing.mygcx.org', 443, 'cas');
+  phpCAS::setFixedCallbackURL( ** Callback url, aka the link to this page **);
+  phpCAS::setNoCasServerValidation(); //remove requirement for SSL validation
+  phpCAS::setPGTStorageFile('xml', "some accessible directory to store PGTIOUs in");
+  phpCAS::forceAuthentication();
+?>
+
+
+
+Other Pages ::
+Same as above, plus the following:
+<?php
+  $cnxbar = 'http://www.mygcx.org/COMMUNITY/module/omnibar/omnibar'; // Replace COMMUNITY with the community name, if unsure public or global will work too.
+  if(phpCAS::serviceWeb($cnxbar, $err_code, $output)) {
+    $xml = simplexml_load_string($output);
+    $result = $xml->xpath('/reportoutput/reportdata');
+    $connexionbarcode = html_entity_decode($result[0]->asXML());
+  }
+  echo $connexionbarcode;
+?>
+
+
+Of note:
+You must use the proxy, and not the client.
+The callback URL needs to be accessible from the interweb
+The PGTStorageFile can also be done with a database, check the docs for more infor
+The PGTStorageFile must be readable and writable
+The GCX server is using a modified form of CAS.  For this to work, you must use the libraries that they have tweaked.  It relaxes some of the SSL requirements even further, among other things.
+The callback URL isn't necessarilly required, I think it will default to the page which made the request.
