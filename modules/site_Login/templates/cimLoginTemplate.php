@@ -72,19 +72,23 @@ body {
 	margin-right: 13px;
 	}
 
-#summitLogo {
+#wcLogo {
 	margin-left: 46px;
 	margin-top: 26px;
 	}
 
-#registerForSummit {
+#registerForWC {
   margin-top: 5px;
   margin-left: 35px;
   display: block;
   font-weight: bold;
 	font-size: 1.25em;
-	color: #008E28;
+	color: #000;
 	}
+
+#registerForWC #WCBlue {
+	color: #091863;
+}
 
 /* footer (placed directly below the white box) --------------------------*/
 #footer {
@@ -111,9 +115,9 @@ body {
 	
 	<!-- white box (with GCX login/get started buttons) begins -->
 	<div id="whitebox">
-		<img id="summitLogo" src="<?=$pageContent->pathToRoot;?>../../Images/loggin_screen_summitLogo.gif" alt="Summit Logo" />
-		<span id="registerForSummit">
-			Register for Summit:
+		<img id="wcLogo" src="<?=$pageContent->pathToRoot;?>../../Images/loggin_screen_wcLogo.gif" alt="Winter Conference Logo" />
+		<span id="registerForWC">
+			Register for <span id="WCBlue">Winter Conference:</span>
 		</span>
 		
 		<div id="gcxSection">

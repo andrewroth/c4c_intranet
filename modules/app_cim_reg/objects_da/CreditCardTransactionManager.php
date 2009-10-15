@@ -206,7 +206,7 @@ class  RowManager_CreditCardTransactionManager extends RowManager {
     function loadFromArray($values) 
     {
 	    $cardNum = $values['cctransaction_cardNum'];
-	    $values['cctransaction_cardNum'] = substr($cardNum, 0, 3).'****'.substr($cardNum, -3);
+	    $values['cctransaction_cardNum'] = substr($cardNum, 0, 4).'****'.substr($cardNum, -4);
 	    parent::loadFromArray($values);
 	    
 	    

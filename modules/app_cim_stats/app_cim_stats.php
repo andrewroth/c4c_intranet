@@ -912,6 +912,9 @@ class modulecim_stats extends XMLObject_PageContent {
             // GROUP 3: CAMPUS DIRECTORS
             $requestLink = $this->getCallBack( modulecim_stats::PAGE_STAFFSEMESTERREPORT, '' , $parameters);
             $cdLinks[ '[semesterGlance]' ] = $requestLink;
+
+	    $requestLink ='http://dev.intranet.campusforchrist.org/modules/will/stats.php" target="_blank';
+	    $cdLinks[ '[monthlyReport]' ]= $requestLink;
         }
         
         $rtLinks = array();
@@ -920,6 +923,11 @@ class modulecim_stats extends XMLObject_PageContent {
             // GROUP 4: REGIONAL TEAM
             $requestLink = $this->getCallBack( modulecim_stats::PAGE_REGIONALSEMESTERREPORT, '' , $parameters);
             $rtLinks[ '[regionalPersonalMin]' ] = $requestLink;
+			
+	    $requestLink ='http://dev.intranet.campusforchrist.org/modules/will/regionalstats.php" target="_blank';
+	    $rtLinks[ '[regionalReport]' ]= $requestLink;
+	    $requestLink ='http://dev.intranet.campusforchrist.org/modules/will/weeklystats.php" target="_blank';
+	    $rtLinks[ '[regionalReportWeek]' ]= $requestLink;
         }        
         
         $ntLinks = array();

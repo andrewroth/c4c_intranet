@@ -24,11 +24,12 @@ class  RowManager_WeekManager extends RowManager {
   week_id int(10) NOT NULL  auto_increment,
   week_endDate date NOT NULL  default '0000-00-00',
   semester_id int(10) NOT NULL default 0,
+  month_id int(10) NOT NULL default 0,
   PRIMARY KEY (week_id)
 ) TYPE=MyISAM";
     
     /** The fields in the DB Table this class manages. */
-    const FIELD_LIST = 'week_id,week_endDate,semester_id';
+    const FIELD_LIST = 'week_id,week_endDate,semester_id,month_id';
     
     /** The XML node name for this entry. */
     const XML_NODE_NAME = 'week';
