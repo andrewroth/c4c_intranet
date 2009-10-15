@@ -37,7 +37,7 @@ $series->createNewEntry();
 
 // create a new season and link it to the series
 $season = new RowManager_SeasonManager();
-$season->setSeasonNum( 1 );
+$season->setNum( 1 );
 $season->setSeriesID( $series->getID() );
 $season->createNewEntry();
 

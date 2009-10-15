@@ -4,27 +4,27 @@ else _d.write("<scr"+"ipt language=JavaScript src="+aiPathToRoot+"Data/scripts/J
 
 _menuCloseDelay=500           // The time delay for menus to remain visible on mouse out
 _menuOpenDelay=50            // The time delay before menus open on mouse over
-_subOffsetTop=5               // Sub menu top offset
+_subOffsetTop=30              // Sub menu top offset
 _subOffsetLeft=-10            // Sub menu left offset
 
 
 
 with(barStyle=new mm_style()){
 //onbgcolor="#4F8EB6";
-oncolor="#ffffff";
+oncolor="#0D1C42";
 //offbgcolor="#DCE9F0";
-offcolor="#ffffff";
+offcolor="#0D1C42";
 //bordercolor="#296488";
 //borderstyle="solid";
-separatorcolor="#ffffff";
-separatorsize="1";
-valign="center"
-padding=4;
+separatorcolor="#0D1C42";
+separatorsize="2";
+valign="center";
+padding=5;
 itemheight=20;
-fontsize="7pt";
+fontsize="16pt";
 fontweight="bold";
 fontstyle="normal";
-fontfamily="Verdana, Arial, Helvetica, sans-serif";
+fontfamily="Lucida Grande, Verdana, sans-serif";
 //pagecolor="black";
 //pagebgcolor="#82B6D7";
 //headercolor="#000000";
@@ -36,21 +36,24 @@ fontfamily="Verdana, Arial, Helvetica, sans-serif";
 }
 
 with(menuStyle=new mm_style()){
-keepalive=1
-onbgcolor="#000080";
-oncolor="#ffffff";
-offbgcolor="#eeeeee";
-offcolor="#666666";
-bordercolor="#666666";
+position="absolute";
+top="30px";
+left="40px";
+keepalive=1;
+onbgcolor="#FFFFFF";
+oncolor="#0D1C42";
+offbgcolor="#FFFFFF";
+offcolor="#0D1C42";
+bordercolor="#FFFFFF";
 borderstyle="solid";
 borderwidth=1;
-separatorcolor="#ffffff";
+separatorcolor="#0D1C42";
 separatorsize="1";
 padding=5;
-itemheight=20;
-fontsize="7pt";
+itemheight=12;
+fontsize="10pt";
 fontstyle="normal";
-fontfamily="Verdana, Arial, Helvetica, sans-serif";
+fontfamily="Lucida Grande, Verdana, sans-serif";
 //pagecolor="black";
 //pagebgcolor="#82B6D7";
 //headercolor="#000000";
