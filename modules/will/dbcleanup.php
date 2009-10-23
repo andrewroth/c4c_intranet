@@ -16,6 +16,8 @@ define('DB_USER', 'ciministry');
 define('DB_PWD', 'sPlat91over');
 $db = new Database_MySQL();
 $db->connectToDB( DB_NAME, DB_PATH, DB_USER, DB_PWD);
+$db1 = new Database_MySQL();
+$db1->connectToDB( DB_NAME, DB_PATH, DB_USER, DB_PWD);
 //END IMPORTANT CODE
 
 //START
@@ -27,12 +29,21 @@ $total=$row['COUNT( guid )']; //First row is just the total of all guids...don't
 ?>
 <table cellpadding='5' cellspacing='0' style="border: 2px #000000 solid;">
 <tr>
-<td><strong>guid</strong></td><td># of Instances</td>
+<td><strong>guid</strong></td><td><strong># of Instances</strong></td>
 </tr>
 <?php
 while( $row=$db->retrieveRow() )
 {
-	echo "<tr><td>".$row['guid']."</td><td><center>".$row['COUNT( guid )']."</center></td></tr>";
+	echo "<tr><td>".$row['guid']."</td><td><center>".$row['COUNT( guid )']."</center></td><td>".$row['viewer_id']."</td></tr>";
+	//get viewer_id's
+	$sql = "SELECT viewer_id FROM accountadmin_viewer WHERE guid='".$row['guid']."'";
+	$db1->runSQL($sql);
+	echo "<tr><td colspan=2><center><strong>viewer_id's: </strong>";
+	while( $row1=$db1->retrieveRow() )
+	{
+		echo $row1['viewer_id']." ";
+	}
+	echo "</td></tr>";
 }	
 echo "</table>";
 echo "<br /><br />";
@@ -47,12 +58,21 @@ $total=$row['COUNT( person_id )']; //First row is just the total of all person_i
 ?>
 <table cellpadding='5' cellspacing='0' style="border: 2px #000000 solid;">
 <tr>
-<td><strong>person_id</strong></td><td># of Instances</td>
+<td><strong>person_id</strong></td><td><strong># of Instances</strong></td>
 </tr>
 <?php
 while( $row=$db->retrieveRow() )
 {
 	echo "<tr><td>".$row['person_id']."</td><td><center>".$row['COUNT( person_id )']."</center></td></tr>";
+	//get access_id's
+	$sql = "SELECT access_id FROM cim_hrdb_access WHERE person_id='".$row['person_id']."'";
+	$db1->runSQL($sql);
+	echo "<tr><td colspan=2><center><strong>access_id's: </strong>";
+	while( $row1=$db1->retrieveRow() )
+	{
+		echo $row1['access_id']." ";
+	}
+	echo "</td></tr>";
 }	
 echo "</table>";
 echo "<br /><br />";
@@ -73,6 +93,15 @@ $total=$row['COUNT( viewer_id )']; //First row is just the total of all viwer_id
 while( $row=$db->retrieveRow() )
 {
 	echo "<tr><td>".$row['viewer_id']."</td><td><center>".$row['COUNT( viewer_id )']."</center></td></tr>";
+	//get access_id's
+	$sql = "SELECT access_id FROM cim_hrdb_access WHERE viewer_id='".$row['viewer_id']."'";
+	$db1->runSQL($sql);
+	echo "<tr><td colspan=2><center><strong>access_id's: </strong>";
+	while( $row1=$db1->retrieveRow() )
+	{
+		echo $row1['access_id']." ";
+	}
+	echo "</td></tr>";
 }	
 echo "</table>";
 echo "<br /><br />";
@@ -93,6 +122,15 @@ $total=$row['COUNT( viewer_id )']; //First row is just the total of all person_i
 while( $row=$db->retrieveRow() )
 {
 	echo "<tr><td>".$row['person_id']."</td><td><center>".$row['COUNT( person_id )']."</center></td></tr>";
+	//get emerg_id's
+	$sql = "SELECT emerg_id FROM cim_hrdb_emerg WHERE person_id='".$row['person_id']."'";
+	$db1->runSQL($sql);
+	echo "<tr><td colspan=2><center><strong>emerg_id's: </strong>";
+	while( $row1=$db1->retrieveRow() )
+	{
+		echo $row1['emerg_id']." ";
+	}
+	echo "</td></tr>";
 }	
 echo "</table>";
 echo "<br /><br />";
@@ -113,6 +151,16 @@ $total=$row['COUNT( viewer_id )']; //First row is just the total of all person_i
 while( $row=$db->retrieveRow() )
 {
 	echo "<tr><td>".$row['person_id']."</td><td><center>".$row['COUNT( person_id )']."</center></td></tr>";
+	//get staff_id's
+	$sql = "SELECT staff_id FROM cim_hrdb_staff WHERE person_id='".$row['person_id']."'";
+	$db1->runSQL($sql);
+	echo "<tr><td colspan=2><center><strong>staff_id's: </strong>";
+	while( $row1=$db1->retrieveRow() )
+	{
+		echo $row1['staff_id']." ";
+	}
+	echo "</td></tr>";
+	
 }	
 echo "</table>";
 echo "<br /><br />";
