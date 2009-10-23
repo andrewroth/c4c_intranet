@@ -65,14 +65,14 @@ while( $row=$db->retrieveRow() )
 {
 	echo "<tr><td>".$row['person_id']."</td><td><center>".$row['COUNT( person_id )']."</center></td></tr>";
 	//get access_id's
-	$sql = "SELECT access_id FROM cim_hrdb_access WHERE person_id='".$row['person_id']."'";
+	$sql = "SELECT access_id, viewer_id FROM cim_hrdb_access WHERE person_id='".$row['person_id']."'";
 	$db1->runSQL($sql);
-	echo "<tr><td colspan=2><center><strong>access_id's: </strong>";
+	$i=1;
 	while( $row1=$db1->retrieveRow() )
 	{
-		echo $row1['access_id']." ";
+		echo "<tr><td colspan=2><center><strong>".$i.":</strong> access_id - ".$row1['access_id']." viewer_id - ".$row1['viewer_id']." </td></tr>";
+		$i+=1;
 	}
-	echo "</td></tr>";
 }	
 echo "</table>";
 echo "<br /><br />";
@@ -94,14 +94,14 @@ while( $row=$db->retrieveRow() )
 {
 	echo "<tr><td>".$row['viewer_id']."</td><td><center>".$row['COUNT( viewer_id )']."</center></td></tr>";
 	//get access_id's
-	$sql = "SELECT access_id FROM cim_hrdb_access WHERE viewer_id='".$row['viewer_id']."'";
+	$sql = "SELECT access_id,persion_id FROM cim_hrdb_access WHERE viewer_id='".$row['viewer_id']."'";
 	$db1->runSQL($sql);
-	echo "<tr><td colspan=2><center><strong>access_id's: </strong>";
+	$i=1;
 	while( $row1=$db1->retrieveRow() )
 	{
-		echo $row1['access_id']." ";
+		echo "<tr><td colspan=2><center><strong>".$i.":</strong> access_id - ".$row1['access_id']." person_id - ".$row1['person_id']." </td></tr>";
+		$i+=1;
 	}
-	echo "</td></tr>";
 }	
 echo "</table>";
 echo "<br /><br />";
@@ -168,7 +168,7 @@ echo "<br /><br />";
 
 //START
 echo "<h3>identify records in the cim_hrdb_emerg table that have birthdays that seem off either pre-1920 or after 1997</h3>";
-$sql = "SELECT person_id, emerg_birthdate FROM cim_hrdb_emerg WHERE emerg_birthdate > '1997-01-01' OR emerg_birthdate < '1920-01-01'";
+$sql = "SELECT person_id, emerg_birthdate FROM cim_hrdb_emerg WHERE emerg_birthdate > '1997-01-01' OR emerg_birthdate < '1920-01-01' AND emerg_birthdate <> '0000-00-00'";
 $db->runSQL($sql);
 $row=$db->retrieveRow();
 $total=$row['COUNT( viewer_id )']; //First row is just the total of all person_ids...don't display in table
