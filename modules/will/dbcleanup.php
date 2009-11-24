@@ -94,7 +94,7 @@ while( $row=$db->retrieveRow() )
 {
 	echo "<tr><td>".$row['viewer_id']."</td><td><center>".$row['COUNT( viewer_id )']."</center></td></tr>";
 	//get access_id's
-	$sql = "SELECT access_id,persion_id FROM cim_hrdb_access WHERE viewer_id='".$row['viewer_id']."'";
+	$sql = "SELECT access_id, person_id FROM cim_hrdb_access WHERE viewer_id='".$row['viewer_id']."'";
 	$db1->runSQL($sql);
 	$i=1;
 	while( $row1=$db1->retrieveRow() )

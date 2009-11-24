@@ -14,7 +14,6 @@ $templateTools->loadPageLabels( $pageLabels );
 
 ?>
 <p><span class="bold"><!-- <? echo $templateTools->getPageLabel('[General]'); ?> --></span></p>
-<img src="Images/sidebar.gif" width="170"/><br/>
 <?
   /*
    * Display SideBar Links

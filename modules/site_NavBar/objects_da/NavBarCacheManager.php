@@ -232,6 +232,7 @@ class  RowManager_NavBarCacheManager extends RowManager {
 
         // set isValid to true
         $this->setCacheValid();
+		//        $this->setCacheInValid(); // added by Will S. on November 24th for testing purposes
         $this->setViewerID( $viewerID );
         $this->setLanguageID( $languageID );
         

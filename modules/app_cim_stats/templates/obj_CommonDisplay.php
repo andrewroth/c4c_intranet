@@ -17,12 +17,12 @@
 
 
 
-<table width="730" border="0" cellpadding="10" cellspacing="0">
+<table width="612" border="0" cellpadding="10" cellspacing="0">
         <tr>
             <td colspan="2"><p class="text"> ViewerID: <b><? echo $viewerID; ?></b>&nbsp;&nbsp; AcessLevel: <b><? echo $accessLevel;?></b></p></td>
         </tr>
         <tr> 
-          <td width="730" height="10" colspan="2" valign="bottom"><?
+          <td width="612" height="10" colspan="2" valign="bottom"><?
 		      /*
 		       * Display Page Content here
 		       */
