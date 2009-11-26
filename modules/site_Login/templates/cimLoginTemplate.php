@@ -90,6 +90,34 @@ body {
 	color: #091863;
 }
 
+/* What is GCX section */
+#whatisgcxlink
+{
+	margin: 10px 0 0 0 5px;
+}
+
+#whatisgcxlogin
+{
+	position: relative;
+	z-index: 10;
+	left: 25px;
+	border: 2px dotted #FFC400;
+	width: 400px;
+	background: white;
+	padding: 10px;
+}
+
+.NotShowed
+{
+	display: none;
+}
+
+.Showed
+{
+	display: block;
+}
+
+
 /* footer (placed directly below the white box) --------------------------*/
 #footer {
 	width: 500px;
@@ -101,6 +129,16 @@ body {
 -->
 </style>
 
+<script>
+/* Script for the What is GCX box */
+function ShowWhatIsGCX()
+{
+	var divWIG = document.getElementById("whatisgcxlogin");
+	if(divWIG.className == "NotShowed") divWIG.className = "Showed";
+	else divWIG.className = "NotShowed";
+}
+
+</script>
 
 <!-- wrap begins -->
 <div id="wrap">
@@ -126,6 +164,21 @@ body {
 			<span id="createGcxAccount">
 				If you don't have an existing GCX identity: <a href="https://signin.mygcx.org/sso/selfservice/ssoSignup.jsp">Create an Account</a>
 			</span>
+			<a id='whatisgcxlink' href='javascript:ShowWhatIsGCX();'>What is GCX login?</a>
+			<div style='position: relative;'>
+				<div id='whatisgcxlogin' class='NotShowed'>
+					<div style="float:right"><a href='javascript:ShowWhatIsGCX();'>close</a></div><h2>What is GCX login?</h2>
+					GCX is a single sign on login that authenticates you to use Campus for Christ web applications including:
+					<ul>
+						<li><a target='_blank' href='https://pulse.campusforchrist.org/'>Pulse</a></li>
+						<li><a target='_blank' href='https://pat.powertochange.org/'>Project Application Tool</a></li>
+						<li><a target='_blank' href='http://intranet.campusforchrist.org/'>Registration/Intranet</a></li>
+						<li><a target='_blank' href='http://resources.campusforchrist.org/'>Resources</a></li>
+						<li><a target='_blank' href='http://mpdtool.powertochange.org/'>MPD Tool</a></li>
+					</ul>
+					Your GCX username will authenticate you to all these sites using one login.  You do not have to create a new one each time!  Contact us at <a href='mailto:helpdesk@c4c.ca'>helpdesk@c4c.ca</a> if you have any questions about your GCX username. <br/>Thank you!
+				</div>
+			</div>
 	  </div>
 	
 	</div><!-- white box ends -->

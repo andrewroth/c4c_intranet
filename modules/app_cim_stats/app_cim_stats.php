@@ -944,6 +944,9 @@ class modulecim_stats extends XMLObject_PageContent {
             
             $requestLink = $this->getCallBack( modulecim_stats::PAGE_PRC_REPORTBYCAMPUS, '' , $parameters);
             $ntLinks[ '[prcReportByCampus]' ] = $requestLink;
+			
+			$requestLink ='http://dev.intranet.campusforchrist.org/modules/will/idstats.php" target="_blank';
+			$ntLinks[ '[prcIDStats]' ]= $requestLink;
             
         }
 

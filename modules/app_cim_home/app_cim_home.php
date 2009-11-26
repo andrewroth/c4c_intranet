@@ -207,9 +207,9 @@ class modulecim_home extends XMLObject_PageContent {
         // store HTML content as this page's content Item
         $this->addContent( $content );
         
-        // add the sidebar content
-        $sideBarContent = $this->sideBar->getHTML();
-        $this->addSideBarContent( $sideBarContent );
+        // add the sidebar content - Turned off on November 24, 2009
+        //$sideBarContent = $this->sideBar->getHTML();
+        //$this->addSideBarContent( $sideBarContent );
          
         // Add any necessary javascripts for this page:
         switch( $this->page ) {

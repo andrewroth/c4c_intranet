@@ -1,6 +1,6 @@
 <table width="530" border="0" cellpadding="10" cellspacing="0">
         <tr>
-            <td colspan="2"><p class="bold">CIM HOME</p></td>
+            <td colspan="2"><p class="bold">HOME</p></td>
         </tr>
         <tr> 
           <td width="530" height="10" colspan="2" valign="bottom"><?
@@ -27,11 +27,12 @@
                 
             
          ?></td>
+		               <?
+            if ( !isset($continueHREF) ) {
+            ?>
           <td width="50%"> <div align="right"> 
               <p>&nbsp;</p>
               <?
-            if ( !isset($continueHREF) ) {
-            
                 $continueHREF = '#';
             }
             
