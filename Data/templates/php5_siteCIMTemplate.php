@@ -3,7 +3,9 @@ $pathToRootKey =  XMLObject_PageContent::ELEMENT_PATH_ROOT;
 $pathToRoot = (string) $page->$pathToRootKey;
 //$userID = "string";
 ?>
+<!--[if IE]>
  <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<![endif]-->
 <html>
     <head>
         <title>

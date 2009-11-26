@@ -2,7 +2,6 @@
 /*---------------------------------------------------------------------------*/
 body {
     font-family: Tahoma;
-    background-color: #FFFFFF;
 }
 
 *{
@@ -115,10 +114,6 @@ table.navbar {
     margin: 0;
 }
 
-#container tr {
-    background-color: #ffffff;
-}
-
 #sidebar {
     width: 150px;
     overflow: visible;
@@ -128,7 +123,7 @@ table.navbar {
     right: 24px;
     top: 0px;
     background-color: #e7e7e7;
-    color: #FFFFFF;
+    color: #000000;
     padding: 6px;
 }
 
@@ -141,8 +136,7 @@ table.navbar {
     overflow: visible;
     margin: 10px 0px 10px 20px;
     padding: 10px;
-    color: #FFFFFF;
-    background-color: transparent;
+    color: #000000;
     position: relative;
 }
 
@@ -252,13 +246,13 @@ td.t1 {
     color: #000000;
 }
 
-.smallText {
-    font-family: Tahoma;
-    font-size: 8pt;
-    font-style: normal;
-    font-weight: normal;
-    font-variant: normal;
-    color: #000000;
+.smalltext {
+color:#000000;
+font-family:Tahoma;
+font-size:8pt;
+font-style:normal;
+font-variant:normal;
+font-weight:normal;
 }
 
 .smallBold {
