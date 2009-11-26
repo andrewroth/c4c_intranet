@@ -29,6 +29,7 @@ $pathToRoot = (string) $page->$pathToRootKey;
 		This script sets the height of the menu bar (if exists) and the content to be the same
 		*/
             function SetHeight(){
+			if ( document.getElementById('sidebar') != null){
                 s = document.getElementById('sidebar');
                 c = document.getElementById('content');
                 
@@ -39,6 +40,8 @@ $pathToRoot = (string) $page->$pathToRootKey;
                     c.style.height = s.offsetHeight + "px";
                 }
             }
+			}
+			
         </script>
         <?
 		/*
@@ -95,7 +98,13 @@ $pathToRoot = (string) $page->$pathToRootKey;
         <div align="center">
             <table class="navbar">
                 <tr valign="top">
-                    <td>
+					<!--[if IE 7]>
+					<td width="20">&nbsp</td>
+					<![endif]-->
+					<!--[if IE 6]>
+					<td width="20">&nbsp</td>
+					<![endif]-->
+					<td>
                         <?
                             $nodeKey = XMLObject_PageContent::NODE_NAVBAR;
                             echo $page->$nodeKey;

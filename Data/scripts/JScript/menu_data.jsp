@@ -10,9 +10,9 @@ _subOffsetLeft=-10            // Sub menu left offset
 
 
 with(barStyle=new mm_style()){
-onbgcolor="#ffc400";
+//onbgcolor="#4F8EB6";
 oncolor="#ffffff";
-offbgcolor="#ffc400";
+//offbgcolor="#DCE9F0";
 offcolor="#ffffff";
 //bordercolor="#296488";
 //borderstyle="solid";
@@ -35,7 +35,6 @@ subimagepadding="2";
 }
 
 with(menuStyle=new mm_style()){
-top="30px";
 left="40px";
 keepalive=1;
 onbgcolor="#ffc400";
