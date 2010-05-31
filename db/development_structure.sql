@@ -66,7 +66,7 @@ CREATE TABLE `accountadmin_viewer` (
   KEY `ciministry.accountadmin_viewer_accountgroup_id_index` (`accountgroup_id`),
   KEY `ciministry.accountadmin_viewer_viewer_userID_index` (`viewer_userID`),
   CONSTRAINT `FK_viewer_grp` FOREIGN KEY (`accountgroup_id`) REFERENCES `accountadmin_accountgroup` (`accountgroup_id`) ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=10639 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=10580 DEFAULT CHARSET=latin1;
 
 CREATE TABLE `accountadmin_vieweraccessgroup` (
   `vieweraccessgroup_id` int(11) NOT NULL AUTO_INCREMENT,
@@ -75,7 +75,7 @@ CREATE TABLE `accountadmin_vieweraccessgroup` (
   PRIMARY KEY (`vieweraccessgroup_id`),
   KEY `ciministry.accountadmin_vieweraccessgroup_viewer_i` (`viewer_id`),
   KEY `ciministry.accountadmin_vieweraccessgroup_accessgr` (`accessgroup_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=24676 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=24618 DEFAULT CHARSET=latin1;
 
 CREATE TABLE `aia_greycup` (
   `registration_id` int(10) NOT NULL,
@@ -127,7 +127,7 @@ CREATE TABLE `cim_hrdb_access` (
   KEY `ciministry.cim_hrdb_access_viewer_id_index` (`viewer_id`),
   KEY `ciministry.cim_hrdb_access_person_id_index` (`person_id`),
   CONSTRAINT `FK_access_person` FOREIGN KEY (`person_id`) REFERENCES `cim_hrdb_person` (`person_id`) ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=10399 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=10345 DEFAULT CHARSET=latin1;
 
 CREATE TABLE `cim_hrdb_activityschedule` (
   `activityschedule_id` int(15) NOT NULL AUTO_INCREMENT,
@@ -169,7 +169,7 @@ CREATE TABLE `cim_hrdb_assignment` (
   KEY `ciministry.cim_hrdb_assignment_campus_id_index` (`campus_id`),
   CONSTRAINT `FK_assign_campus` FOREIGN KEY (`campus_id`) REFERENCES `cim_hrdb_campus` (`campus_id`) ON UPDATE CASCADE,
   CONSTRAINT `FK_assign_person` FOREIGN KEY (`person_id`) REFERENCES `cim_hrdb_person` (`person_id`) ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=8372 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=8343 DEFAULT CHARSET=latin1;
 
 CREATE TABLE `cim_hrdb_assignmentstatus` (
   `assignmentstatus_id` int(10) NOT NULL AUTO_INCREMENT,
@@ -191,7 +191,7 @@ CREATE TABLE `cim_hrdb_campus` (
   KEY `ciministry.cim_hrdb_campus_region_id_index` (`region_id`),
   KEY `ciministry.cim_hrdb_campus_accountgroup_id_index` (`accountgroup_id`),
   CONSTRAINT `FK_campus_region` FOREIGN KEY (`region_id`) REFERENCES `cim_hrdb_region` (`region_id`) ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=142 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=143 DEFAULT CHARSET=latin1;
 
 CREATE TABLE `cim_hrdb_campusadmin` (
   `campusadmin_id` int(20) NOT NULL AUTO_INCREMENT,
@@ -263,7 +263,7 @@ CREATE TABLE `cim_hrdb_emerg` (
   PRIMARY KEY (`emerg_id`),
   KEY `ciministry.cim_hrdb_emerg_person_id_index` (`person_id`),
   CONSTRAINT `FK_emerg_person` FOREIGN KEY (`person_id`) REFERENCES `cim_hrdb_person` (`person_id`) ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=3537 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=3469 DEFAULT CHARSET=latin1;
 
 CREATE TABLE `cim_hrdb_fieldgroup` (
   `fieldgroup_id` int(10) NOT NULL AUTO_INCREMENT,
@@ -352,7 +352,7 @@ CREATE TABLE `cim_hrdb_person` (
   PRIMARY KEY (`person_id`),
   KEY `ciministry.cim_hrdb_person_gender_id_index` (`gender_id`),
   KEY `ciministry.cim_hrdb_person_province_id_index` (`province_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=12559 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=12504 DEFAULT CHARSET=latin1;
 
 CREATE TABLE `cim_hrdb_person_year` (
   `personyear_id` int(50) NOT NULL AUTO_INCREMENT,
@@ -364,7 +364,7 @@ CREATE TABLE `cim_hrdb_person_year` (
   KEY `1` (`year_id`),
   CONSTRAINT `1` FOREIGN KEY (`year_id`) REFERENCES `cim_hrdb_year_in_school` (`year_id`),
   CONSTRAINT `FK_year_person` FOREIGN KEY (`person_id`) REFERENCES `cim_hrdb_person` (`person_id`) ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=2946 DEFAULT CHARSET=latin1 ROW_FORMAT=DYNAMIC;
+) ENGINE=InnoDB AUTO_INCREMENT=2915 DEFAULT CHARSET=latin1 ROW_FORMAT=DYNAMIC;
 
 CREATE TABLE `cim_hrdb_priv` (
   `priv_id` int(20) NOT NULL AUTO_INCREMENT,
@@ -526,7 +526,7 @@ CREATE TABLE `cim_reg_cctransaction` (
   KEY `FK_cctrans_ccid` (`cctype_id`),
   CONSTRAINT `FK_cctrans_ccid` FOREIGN KEY (`cctype_id`) REFERENCES `cim_reg_cctype` (`cctype_id`) ON UPDATE CASCADE,
   CONSTRAINT `FK_cctrans_reg` FOREIGN KEY (`reg_id`) REFERENCES `cim_reg_registration` (`registration_id`) ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=5174 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=5161 DEFAULT CHARSET=latin1;
 
 CREATE TABLE `cim_reg_cctype` (
   `cctype_id` int(16) NOT NULL AUTO_INCREMENT,
@@ -655,7 +655,7 @@ CREATE TABLE `cim_reg_registration` (
   KEY `FK_reg_status` (`registration_status`),
   CONSTRAINT `FK_reg_person` FOREIGN KEY (`person_id`) REFERENCES `cim_hrdb_person` (`person_id`) ON UPDATE CASCADE,
   CONSTRAINT `FK_reg_status` FOREIGN KEY (`registration_status`) REFERENCES `cim_reg_status` (`status_id`) ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=9542 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=9530 DEFAULT CHARSET=latin1;
 
 CREATE TABLE `cim_reg_scholarship` (
   `scholarship_id` int(16) NOT NULL AUTO_INCREMENT,
@@ -778,7 +778,7 @@ CREATE TABLE `cim_stats_prc` (
   `prc_7upStarted` int(10) NOT NULL DEFAULT '0',
   `prc_date` date NOT NULL DEFAULT '0000-00-00',
   PRIMARY KEY (`prc_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=809 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=779 DEFAULT CHARSET=latin1;
 
 CREATE TABLE `cim_stats_prcmethod` (
   `prcMethod_id` int(10) NOT NULL AUTO_INCREMENT,
@@ -815,8 +815,9 @@ CREATE TABLE `cim_stats_semesterreport` (
   `semesterreport_numSpMultStdDG` int(10) NOT NULL DEFAULT '0',
   `semester_id` int(10) NOT NULL DEFAULT '0',
   `campus_id` int(10) NOT NULL DEFAULT '0',
+  `month_id` int(11) DEFAULT NULL,
   PRIMARY KEY (`semesterreport_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=110 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=109 DEFAULT CHARSET=latin1;
 
 CREATE TABLE `cim_stats_week` (
   `week_id` int(50) NOT NULL AUTO_INCREMENT,
@@ -846,7 +847,7 @@ CREATE TABLE `cim_stats_weeklyreport` (
   `weeklyReport_siq` int(10) NOT NULL DEFAULT '0',
   `weeklyReport_notes` text NOT NULL,
   PRIMARY KEY (`weeklyReport_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=7859 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=7387 DEFAULT CHARSET=latin1;
 
 CREATE TABLE `cim_stats_year` (
   `year_id` int(8) NOT NULL AUTO_INCREMENT,
@@ -1001,7 +1002,7 @@ CREATE TABLE `navbar_navbarcache` (
   `navbarcache_cache` text NOT NULL,
   `navbarcache_isValid` int(1) NOT NULL DEFAULT '0',
   PRIMARY KEY (`navbarcache_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=144917 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=144420 DEFAULT CHARSET=latin1;
 
 CREATE TABLE `navbar_navbargroup` (
   `navbargroup_id` int(11) NOT NULL AUTO_INCREMENT,
@@ -1304,7 +1305,7 @@ CREATE TABLE `wp_comments` (
   KEY `comment_post_ID` (`comment_post_ID`),
   KEY `comment_approved_date_gmt` (`comment_approved`,`comment_date_gmt`),
   KEY `comment_date_gmt` (`comment_date_gmt`)
-) ENGINE=MyISAM AUTO_INCREMENT=40463 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=40035 DEFAULT CHARSET=utf8;
 
 CREATE TABLE `wp_formbuilder_fields` (
   `id` bigint(20) NOT NULL AUTO_INCREMENT,
