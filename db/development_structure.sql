@@ -65,7 +65,6 @@ CREATE TABLE `accountadmin_viewer` (
   PRIMARY KEY (`viewer_id`),
   KEY `ciministry.accountadmin_viewer_accountgroup_id_index` (`accountgroup_id`),
   KEY `ciministry.accountadmin_viewer_viewer_userID_index` (`viewer_userID`),
-  CONSTRAINT `FK_viewer_grp` FOREIGN KEY (`accountgroup_id`) REFERENCES `accountadmin_accountgroup` (`accountgroup_id`) ON UPDATE CASCADE
 ) ENGINE=InnoDB AUTO_INCREMENT=10639 DEFAULT CHARSET=latin1;
 
 CREATE TABLE `accountadmin_vieweraccessgroup` (
@@ -126,7 +125,6 @@ CREATE TABLE `cim_hrdb_access` (
   PRIMARY KEY (`access_id`),
   KEY `ciministry.cim_hrdb_access_viewer_id_index` (`viewer_id`),
   KEY `ciministry.cim_hrdb_access_person_id_index` (`person_id`),
-  CONSTRAINT `FK_access_person` FOREIGN KEY (`person_id`) REFERENCES `cim_hrdb_person` (`person_id`) ON UPDATE CASCADE
 ) ENGINE=InnoDB AUTO_INCREMENT=10399 DEFAULT CHARSET=latin1;
 
 CREATE TABLE `cim_hrdb_activityschedule` (
@@ -136,8 +134,6 @@ CREATE TABLE `cim_hrdb_activityschedule` (
   PRIMARY KEY (`activityschedule_id`),
   KEY `FK_activity_schedule` (`staffschedule_id`),
   KEY `FK_schedule_activity` (`staffactivity_id`),
-  CONSTRAINT `FK_activity_schedule` FOREIGN KEY (`staffschedule_id`) REFERENCES `cim_hrdb_staffschedule` (`staffschedule_id`) ON UPDATE CASCADE,
-  CONSTRAINT `FK_schedule_activity` FOREIGN KEY (`staffactivity_id`) REFERENCES `cim_hrdb_staffactivity` (`staffactivity_id`) ON UPDATE CASCADE
 ) ENGINE=InnoDB AUTO_INCREMENT=815 DEFAULT CHARSET=latin1 COLLATE=latin1_general_ci;
 
 CREATE TABLE `cim_hrdb_activitytype` (
@@ -155,8 +151,6 @@ CREATE TABLE `cim_hrdb_admin` (
   PRIMARY KEY (`admin_id`),
   KEY `FK_hrdbadmin_person` (`person_id`),
   KEY `FK_admin_priv` (`priv_id`),
-  CONSTRAINT `FK_admin_priv` FOREIGN KEY (`priv_id`) REFERENCES `cim_hrdb_priv` (`priv_id`) ON UPDATE CASCADE,
-  CONSTRAINT `FK_hrdbadmin_person` FOREIGN KEY (`person_id`) REFERENCES `cim_hrdb_person` (`person_id`) ON UPDATE CASCADE
 ) ENGINE=InnoDB AUTO_INCREMENT=19 DEFAULT CHARSET=latin1;
 
 CREATE TABLE `cim_hrdb_assignment` (
@@ -167,8 +161,6 @@ CREATE TABLE `cim_hrdb_assignment` (
   PRIMARY KEY (`assignment_id`),
   KEY `ciministry.cim_hrdb_assignment_person_id_index` (`person_id`),
   KEY `ciministry.cim_hrdb_assignment_campus_id_index` (`campus_id`),
-  CONSTRAINT `FK_assign_campus` FOREIGN KEY (`campus_id`) REFERENCES `cim_hrdb_campus` (`campus_id`) ON UPDATE CASCADE,
-  CONSTRAINT `FK_assign_person` FOREIGN KEY (`person_id`) REFERENCES `cim_hrdb_person` (`person_id`) ON UPDATE CASCADE
 ) ENGINE=InnoDB AUTO_INCREMENT=8372 DEFAULT CHARSET=latin1;
 
 CREATE TABLE `cim_hrdb_assignmentstatus` (
@@ -190,7 +182,6 @@ CREATE TABLE `cim_hrdb_campus` (
   PRIMARY KEY (`campus_id`),
   KEY `ciministry.cim_hrdb_campus_region_id_index` (`region_id`),
   KEY `ciministry.cim_hrdb_campus_accountgroup_id_index` (`accountgroup_id`),
-  CONSTRAINT `FK_campus_region` FOREIGN KEY (`region_id`) REFERENCES `cim_hrdb_region` (`region_id`) ON UPDATE CASCADE
 ) ENGINE=InnoDB AUTO_INCREMENT=142 DEFAULT CHARSET=latin1;
 
 CREATE TABLE `cim_hrdb_campusadmin` (
@@ -200,8 +191,6 @@ CREATE TABLE `cim_hrdb_campusadmin` (
   PRIMARY KEY (`campusadmin_id`),
   KEY `ciministry.cim_hrdb_campusadmin_admin_id_index` (`admin_id`),
   KEY `ciministry.cim_hrdb_campusadmin_campus_id_index` (`campus_id`),
-  CONSTRAINT `FK_campusadmin_campus` FOREIGN KEY (`campus_id`) REFERENCES `cim_hrdb_campus` (`campus_id`) ON UPDATE CASCADE,
-  CONSTRAINT `FK_campus_hrdbadmin` FOREIGN KEY (`admin_id`) REFERENCES `cim_hrdb_admin` (`admin_id`) ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 CREATE TABLE `cim_hrdb_country` (
@@ -218,8 +207,6 @@ CREATE TABLE `cim_hrdb_customfields` (
   PRIMARY KEY (`customfields_id`),
   KEY `FK_fields_report` (`report_id`),
   KEY `FK_report_field` (`fields_id`),
-  CONSTRAINT `FK_fields_report` FOREIGN KEY (`report_id`) REFERENCES `cim_hrdb_customreports` (`report_id`) ON UPDATE CASCADE,
-  CONSTRAINT `FK_report_field` FOREIGN KEY (`fields_id`) REFERENCES `cim_hrdb_fields` (`fields_id`) ON UPDATE CASCADE
 ) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1 COLLATE=latin1_general_ci;
 
 CREATE TABLE `cim_hrdb_customreports` (
@@ -262,7 +249,6 @@ CREATE TABLE `cim_hrdb_emerg` (
   `blood_rh_factor` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`emerg_id`),
   KEY `ciministry.cim_hrdb_emerg_person_id_index` (`person_id`),
-  CONSTRAINT `FK_emerg_person` FOREIGN KEY (`person_id`) REFERENCES `cim_hrdb_person` (`person_id`) ON UPDATE CASCADE
 ) ENGINE=InnoDB AUTO_INCREMENT=3537 DEFAULT CHARSET=latin1;
 
 CREATE TABLE `cim_hrdb_fieldgroup` (
@@ -294,9 +280,6 @@ CREATE TABLE `cim_hrdb_fields` (
   KEY `FK_fields_types2` (`fieldtype_id`),
   KEY `FK_fields_form` (`staffscheduletype_id`),
   KEY `FK_fields_dtype2` (`datatypes_id`),
-  CONSTRAINT `FK_fields_dtype2` FOREIGN KEY (`datatypes_id`) REFERENCES `cim_reg_datatypes` (`datatypes_id`) ON UPDATE CASCADE,
-  CONSTRAINT `FK_fields_form` FOREIGN KEY (`staffscheduletype_id`) REFERENCES `cim_hrdb_staffscheduletype` (`staffscheduletype_id`) ON UPDATE CASCADE,
-  CONSTRAINT `FK_fields_types2` FOREIGN KEY (`fieldtype_id`) REFERENCES `cim_reg_fieldtypes` (`fieldtypes_id`) ON UPDATE CASCADE
 ) ENGINE=InnoDB AUTO_INCREMENT=40 DEFAULT CHARSET=latin1;
 
 CREATE TABLE `cim_hrdb_fieldvalues` (
@@ -308,8 +291,6 @@ CREATE TABLE `cim_hrdb_fieldvalues` (
   PRIMARY KEY (`fieldvalues_id`),
   KEY `FK_fieldvals_person` (`person_id`),
   KEY `FK_fieldvals_field2` (`fields_id`),
-  CONSTRAINT `FK_fieldvals_field2` FOREIGN KEY (`fields_id`) REFERENCES `cim_hrdb_fields` (`fields_id`) ON UPDATE CASCADE,
-  CONSTRAINT `FK_fieldvals_person` FOREIGN KEY (`person_id`) REFERENCES `cim_hrdb_person` (`person_id`) ON UPDATE CASCADE
 ) ENGINE=InnoDB AUTO_INCREMENT=1839 DEFAULT CHARSET=latin1;
 
 CREATE TABLE `cim_hrdb_gender` (
@@ -362,8 +343,6 @@ CREATE TABLE `cim_hrdb_person_year` (
   PRIMARY KEY (`personyear_id`),
   KEY `FK_cim_hrdb_person_year` (`person_id`),
   KEY `1` (`year_id`),
-  CONSTRAINT `1` FOREIGN KEY (`year_id`) REFERENCES `cim_hrdb_year_in_school` (`year_id`),
-  CONSTRAINT `FK_year_person` FOREIGN KEY (`person_id`) REFERENCES `cim_hrdb_person` (`person_id`) ON UPDATE CASCADE
 ) ENGINE=InnoDB AUTO_INCREMENT=2946 DEFAULT CHARSET=latin1 ROW_FORMAT=DYNAMIC;
 
 CREATE TABLE `cim_hrdb_priv` (
@@ -386,7 +365,6 @@ CREATE TABLE `cim_hrdb_region` (
   `country_id` int(50) NOT NULL DEFAULT '0',
   PRIMARY KEY (`region_id`),
   KEY `FK_region_country` (`country_id`),
-  CONSTRAINT `FK_region_country` FOREIGN KEY (`country_id`) REFERENCES `cim_hrdb_country` (`country_id`) ON UPDATE CASCADE
 ) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=latin1;
 
 CREATE TABLE `cim_hrdb_staff` (
@@ -395,7 +373,6 @@ CREATE TABLE `cim_hrdb_staff` (
   `is_active` int(1) NOT NULL DEFAULT '1',
   PRIMARY KEY (`staff_id`),
   KEY `ciministry.cim_hrdb_staff_person_id_index` (`person_id`),
-  CONSTRAINT `FK_staff_person` FOREIGN KEY (`person_id`) REFERENCES `cim_hrdb_person` (`person_id`) ON UPDATE CASCADE
 ) ENGINE=InnoDB AUTO_INCREMENT=357 DEFAULT CHARSET=latin1;
 
 CREATE TABLE `cim_hrdb_staffactivity` (
@@ -408,8 +385,6 @@ CREATE TABLE `cim_hrdb_staffactivity` (
   PRIMARY KEY (`staffactivity_id`),
   KEY `FK_activity_type` (`activitytype_id`),
   KEY `FK_activity_person` (`person_id`),
-  CONSTRAINT `FK_activity_person` FOREIGN KEY (`person_id`) REFERENCES `cim_hrdb_person` (`person_id`) ON UPDATE CASCADE,
-  CONSTRAINT `FK_activity_type` FOREIGN KEY (`activitytype_id`) REFERENCES `cim_hrdb_activitytype` (`activitytype_id`) ON UPDATE CASCADE
 ) ENGINE=InnoDB AUTO_INCREMENT=818 DEFAULT CHARSET=latin1 COLLATE=latin1_general_ci;
 
 CREATE TABLE `cim_hrdb_staffdirector` (
@@ -419,8 +394,6 @@ CREATE TABLE `cim_hrdb_staffdirector` (
   PRIMARY KEY (`staffdirector_id`),
   KEY `FK_director_staff` (`director_id`),
   KEY `FK_staff_staff1` (`staff_id`),
-  CONSTRAINT `FK_director_staff` FOREIGN KEY (`director_id`) REFERENCES `cim_hrdb_staff` (`staff_id`) ON UPDATE CASCADE,
-  CONSTRAINT `FK_staff_staff1` FOREIGN KEY (`staff_id`) REFERENCES `cim_hrdb_staff` (`staff_id`) ON UPDATE CASCADE
 ) ENGINE=InnoDB AUTO_INCREMENT=234 DEFAULT CHARSET=latin1 COLLATE=latin1_general_ci;
 
 CREATE TABLE `cim_hrdb_staffschedule` (
@@ -435,8 +408,6 @@ CREATE TABLE `cim_hrdb_staffschedule` (
   PRIMARY KEY (`staffschedule_id`),
   KEY `FK_schedule_type` (`staffscheduletype_id`),
   KEY `FK_schedule_person1` (`person_id`),
-  CONSTRAINT `FK_schedule_person1` FOREIGN KEY (`person_id`) REFERENCES `cim_hrdb_person` (`person_id`) ON UPDATE CASCADE,
-  CONSTRAINT `FK_schedule_type` FOREIGN KEY (`staffscheduletype_id`) REFERENCES `cim_hrdb_staffscheduletype` (`staffscheduletype_id`) ON UPDATE CASCADE
 ) ENGINE=InnoDB AUTO_INCREMENT=202 DEFAULT CHARSET=latin1 COLLATE=latin1_general_ci;
 
 CREATE TABLE `cim_hrdb_staffscheduleinstr` (
@@ -444,7 +415,6 @@ CREATE TABLE `cim_hrdb_staffscheduleinstr` (
   `staffscheduleinstr_toptext` text COLLATE latin1_general_ci NOT NULL,
   `staffscheduleinstr_bottomtext` text COLLATE latin1_general_ci NOT NULL,
   PRIMARY KEY (`staffscheduletype_id`),
-  CONSTRAINT `FK_instr_schedtype` FOREIGN KEY (`staffscheduletype_id`) REFERENCES `cim_hrdb_staffscheduletype` (`staffscheduletype_id`) ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_general_ci;
 
 CREATE TABLE `cim_hrdb_staffscheduletype` (
@@ -495,7 +465,6 @@ CREATE TABLE `cim_reg_cashtransaction` (
   `cashtransaction_moddate` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`cashtransaction_id`),
   KEY `FK_cashtrans_reg` (`reg_id`),
-  CONSTRAINT `FK_cashtrans_reg` FOREIGN KEY (`reg_id`) REFERENCES `cim_reg_registration` (`registration_id`) ON UPDATE CASCADE
 ) ENGINE=InnoDB AUTO_INCREMENT=4821 DEFAULT CHARSET=latin1;
 
 CREATE TABLE `cim_reg_ccreceipt` (
@@ -506,7 +475,6 @@ CREATE TABLE `cim_reg_ccreceipt` (
   `ccreceipt_moddate` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `cctransaction_id` int(10) NOT NULL DEFAULT '0',
   PRIMARY KEY (`cctransaction_id`),
-  CONSTRAINT `FK_receipt_cctrans` FOREIGN KEY (`cctransaction_id`) REFERENCES `cim_reg_cctransaction` (`cctransaction_id`) ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 CREATE TABLE `cim_reg_cctransaction` (
@@ -524,8 +492,6 @@ CREATE TABLE `cim_reg_cctransaction` (
   PRIMARY KEY (`cctransaction_id`),
   KEY `FK_cctrans_reg` (`reg_id`),
   KEY `FK_cctrans_ccid` (`cctype_id`),
-  CONSTRAINT `FK_cctrans_ccid` FOREIGN KEY (`cctype_id`) REFERENCES `cim_reg_cctype` (`cctype_id`) ON UPDATE CASCADE,
-  CONSTRAINT `FK_cctrans_reg` FOREIGN KEY (`reg_id`) REFERENCES `cim_reg_registration` (`registration_id`) ON UPDATE CASCADE
 ) ENGINE=InnoDB AUTO_INCREMENT=5174 DEFAULT CHARSET=latin1;
 
 CREATE TABLE `cim_reg_cctype` (
@@ -572,9 +538,6 @@ CREATE TABLE `cim_reg_eventadmin` (
   KEY `FK_admin_event` (`event_id`),
   KEY `FK_admin_viewer` (`viewer_id`),
   KEY `FK_evadmin_priv` (`priv_id`),
-  CONSTRAINT `FK_admin_event` FOREIGN KEY (`event_id`) REFERENCES `cim_reg_event` (`event_id`) ON UPDATE CASCADE,
-  CONSTRAINT `FK_admin_viewer` FOREIGN KEY (`viewer_id`) REFERENCES `accountadmin_viewer` (`viewer_id`) ON UPDATE CASCADE,
-  CONSTRAINT `FK_evadmin_priv` FOREIGN KEY (`priv_id`) REFERENCES `cim_reg_priv` (`priv_id`) ON UPDATE CASCADE
 ) ENGINE=InnoDB AUTO_INCREMENT=404 DEFAULT CHARSET=latin1;
 
 CREATE TABLE `cim_reg_fields` (
@@ -591,9 +554,6 @@ CREATE TABLE `cim_reg_fields` (
   KEY `FK_fields_types` (`fieldtype_id`),
   KEY `FK_fields_event` (`event_id`),
   KEY `FK_fields_dtype` (`datatypes_id`),
-  CONSTRAINT `FK_fields_dtype` FOREIGN KEY (`datatypes_id`) REFERENCES `cim_reg_datatypes` (`datatypes_id`) ON UPDATE CASCADE,
-  CONSTRAINT `FK_fields_event` FOREIGN KEY (`event_id`) REFERENCES `cim_reg_event` (`event_id`) ON UPDATE CASCADE,
-  CONSTRAINT `FK_fields_types` FOREIGN KEY (`fieldtype_id`) REFERENCES `cim_reg_fieldtypes` (`fieldtypes_id`) ON UPDATE CASCADE
 ) ENGINE=InnoDB AUTO_INCREMENT=216 DEFAULT CHARSET=latin1;
 
 CREATE TABLE `cim_reg_fieldtypes` (
@@ -611,8 +571,6 @@ CREATE TABLE `cim_reg_fieldvalues` (
   PRIMARY KEY (`fieldvalues_id`),
   KEY `FK_fieldvals_reg` (`registration_id`),
   KEY `FK_fieldvals_field` (`fields_id`),
-  CONSTRAINT `FK_fieldvals_field` FOREIGN KEY (`fields_id`) REFERENCES `cim_reg_fields` (`fields_id`) ON UPDATE CASCADE,
-  CONSTRAINT `FK_fieldvals_reg` FOREIGN KEY (`registration_id`) REFERENCES `cim_reg_registration` (`registration_id`) ON UPDATE CASCADE
 ) ENGINE=InnoDB AUTO_INCREMENT=45881 DEFAULT CHARSET=latin1;
 
 CREATE TABLE `cim_reg_pricerules` (
@@ -626,8 +584,6 @@ CREATE TABLE `cim_reg_pricerules` (
   PRIMARY KEY (`pricerules_id`),
   KEY `FK_prules_event` (`event_id`),
   KEY `FK_prules_type` (`priceruletypes_id`),
-  CONSTRAINT `FK_prules_event` FOREIGN KEY (`event_id`) REFERENCES `cim_reg_event` (`event_id`) ON UPDATE CASCADE,
-  CONSTRAINT `FK_prules_type` FOREIGN KEY (`priceruletypes_id`) REFERENCES `cim_reg_priceruletypes` (`priceruletypes_id`) ON UPDATE CASCADE
 ) ENGINE=InnoDB AUTO_INCREMENT=85 DEFAULT CHARSET=latin1;
 
 CREATE TABLE `cim_reg_priceruletypes` (
@@ -653,8 +609,6 @@ CREATE TABLE `cim_reg_registration` (
   PRIMARY KEY (`registration_id`),
   KEY `FK_reg_person` (`person_id`),
   KEY `FK_reg_status` (`registration_status`),
-  CONSTRAINT `FK_reg_person` FOREIGN KEY (`person_id`) REFERENCES `cim_hrdb_person` (`person_id`) ON UPDATE CASCADE,
-  CONSTRAINT `FK_reg_status` FOREIGN KEY (`registration_status`) REFERENCES `cim_reg_status` (`status_id`) ON UPDATE CASCADE
 ) ENGINE=InnoDB AUTO_INCREMENT=9542 DEFAULT CHARSET=latin1;
 
 CREATE TABLE `cim_reg_scholarship` (
@@ -665,7 +619,6 @@ CREATE TABLE `cim_reg_scholarship` (
   `scholarship_sourceDesc` varchar(128) NOT NULL DEFAULT '',
   PRIMARY KEY (`scholarship_id`),
   KEY `FK_scholarship_reg` (`registration_id`),
-  CONSTRAINT `FK_scholarship_reg` FOREIGN KEY (`registration_id`) REFERENCES `cim_reg_registration` (`registration_id`) ON UPDATE CASCADE
 ) ENGINE=InnoDB AUTO_INCREMENT=2271 DEFAULT CHARSET=latin1;
 
 CREATE TABLE `cim_reg_status` (
@@ -679,7 +632,6 @@ CREATE TABLE `cim_reg_superadmin` (
   `viewer_id` int(16) NOT NULL DEFAULT '0',
   PRIMARY KEY (`superadmin_id`),
   KEY `FK_viewer_regsuperadmin` (`viewer_id`),
-  CONSTRAINT `FK_viewer_regsuperadmin` FOREIGN KEY (`viewer_id`) REFERENCES `accountadmin_viewer` (`viewer_id`) ON UPDATE CASCADE
 ) ENGINE=InnoDB AUTO_INCREMENT=24 DEFAULT CHARSET=latin1;
 
 CREATE TABLE `cim_sch_group` (
@@ -689,7 +641,6 @@ CREATE TABLE `cim_sch_group` (
   `group_desc` varchar(255) NOT NULL,
   PRIMARY KEY (`group_id`),
   KEY `FK_group_type` (`groupType_id`),
-  CONSTRAINT `FK_group_type` FOREIGN KEY (`groupType_id`) REFERENCES `cim_sch_grouptype` (`groupType_id`) ON UPDATE CASCADE
 ) ENGINE=InnoDB AUTO_INCREMENT=427 DEFAULT CHARSET=latin1;
 
 CREATE TABLE `cim_sch_groupType` (
@@ -706,8 +657,6 @@ CREATE TABLE `cim_sch_schedule` (
   PRIMARY KEY (`schedule_id`),
   KEY `FK_sched_person` (`person_id`),
   KEY `FK_sched_tzone` (`timezones_id`),
-  CONSTRAINT `FK_sched_person` FOREIGN KEY (`person_id`) REFERENCES `cim_hrdb_person` (`person_id`) ON UPDATE CASCADE,
-  CONSTRAINT `FK_sched_tzone` FOREIGN KEY (`timezones_id`) REFERENCES `cim_sch_timezones` (`timezones_id`) ON UPDATE CASCADE
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
 
 CREATE TABLE `cim_sch_scheduleBlocks` (
@@ -716,7 +665,6 @@ CREATE TABLE `cim_sch_scheduleBlocks` (
   `scheduleBlocks_timeblock` int(11) DEFAULT NULL,
   PRIMARY KEY (`scheduleBlocks_id`),
   KEY `FK_schblock_sched` (`schedule_id`),
-  CONSTRAINT `FK_schblock_sched` FOREIGN KEY (`schedule_id`) REFERENCES `cim_sch_schedule` (`schedule_id`) ON UPDATE CASCADE
 ) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
 
 CREATE TABLE `cim_sch_timezones` (
@@ -862,9 +810,6 @@ CREATE TABLE `mt_evt_access` (
   PRIMARY KEY (`viewer_id`,`role`,`event_id`),
   KEY `event_id` (`event_id`),
   KEY `role` (`role`),
-  CONSTRAINT `mt_evt_access_ibfk_2` FOREIGN KEY (`event_id`) REFERENCES `cim_reg_event` (`event_id`),
-  CONSTRAINT `mt_evt_access_ibfk_3` FOREIGN KEY (`viewer_id`) REFERENCES `accountadmin_viewer` (`viewer_id`),
-  CONSTRAINT `mt_evt_access_ibfk_4` FOREIGN KEY (`role`) REFERENCES `mt_evt_role` (`role`) ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 CREATE TABLE `mt_evt_assign` (
@@ -872,8 +817,6 @@ CREATE TABLE `mt_evt_assign` (
   `viewer_id` int(50) NOT NULL DEFAULT '0',
   PRIMARY KEY (`job_id`,`viewer_id`),
   KEY `viewer_id` (`viewer_id`),
-  CONSTRAINT `mt_evt_assign_ibfk_1` FOREIGN KEY (`job_id`) REFERENCES `mt_evt_job` (`job_id`) ON UPDATE CASCADE,
-  CONSTRAINT `mt_evt_assign_ibfk_2` FOREIGN KEY (`viewer_id`) REFERENCES `mt_evt_access` (`viewer_id`) ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 CREATE TABLE `mt_evt_job` (
@@ -884,7 +827,6 @@ CREATE TABLE `mt_evt_job` (
   `job_weight` int(11) NOT NULL DEFAULT '1',
   PRIMARY KEY (`job_id`),
   KEY `set_id` (`set_id`),
-  CONSTRAINT `mt_evt_job_ibfk_1` FOREIGN KEY (`set_id`) REFERENCES `mt_evt_job_set` (`set_id`) ON UPDATE CASCADE
 ) ENGINE=InnoDB AUTO_INCREMENT=202 DEFAULT CHARSET=latin1;
 
 CREATE TABLE `mt_evt_job_container` (
@@ -893,7 +835,6 @@ CREATE TABLE `mt_evt_job_container` (
   `event_id` int(50) DEFAULT NULL,
   PRIMARY KEY (`container_id`),
   KEY `event_id` (`event_id`),
-  CONSTRAINT `mt_evt_job_container_ibfk_1` FOREIGN KEY (`event_id`) REFERENCES `cim_reg_event` (`event_id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=latin1;
 
 CREATE TABLE `mt_evt_job_set` (
@@ -902,14 +843,12 @@ CREATE TABLE `mt_evt_job_set` (
   `container_id` int(11) DEFAULT NULL,
   PRIMARY KEY (`set_id`),
   KEY `container_id` (`container_id`),
-  CONSTRAINT `mt_evt_job_set_ibfk_1` FOREIGN KEY (`container_id`) REFERENCES `mt_evt_job_container` (`container_id`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=latin1;
 
 CREATE TABLE `mt_evt_motd` (
   `event_id` int(50) NOT NULL,
   `motd` text NOT NULL,
   PRIMARY KEY (`event_id`),
-  CONSTRAINT `mt_evt_motd_ibfk_1` FOREIGN KEY (`event_id`) REFERENCES `cim_reg_event` (`event_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 CREATE TABLE `mt_evt_role` (
@@ -1235,7 +1174,6 @@ CREATE TABLE `uwo_bb_extended_info` (
   `person_id` int(50) NOT NULL DEFAULT '0',
   `person_major` varchar(128) DEFAULT NULL,
   PRIMARY KEY (`person_id`),
-  CONSTRAINT `uwo_bb_extended_info_ibfk_1` FOREIGN KEY (`person_id`) REFERENCES `cim_hrdb_person` (`person_id`) ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 CREATE TABLE `uwo_bb_group` (
@@ -1245,7 +1183,6 @@ CREATE TABLE `uwo_bb_group` (
   `group_type_id` int(50) NOT NULL,
   PRIMARY KEY (`group_id`),
   KEY `group_type_id` (`group_type_id`),
-  CONSTRAINT `uwo_bb_group_ibfk_1` FOREIGN KEY (`group_type_id`) REFERENCES `uwo_bb_group_type` (`group_type_id`) ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 CREATE TABLE `uwo_bb_group_assignment` (
@@ -1256,9 +1193,6 @@ CREATE TABLE `uwo_bb_group_assignment` (
   PRIMARY KEY (`person_id`,`group_id`),
   KEY `group_id` (`group_id`),
   KEY `group_assignment_type_id` (`group_assignment_type_id`),
-  CONSTRAINT `uwo_bb_group_assignment_ibfk_1` FOREIGN KEY (`person_id`) REFERENCES `cim_hrdb_person` (`person_id`) ON UPDATE CASCADE,
-  CONSTRAINT `uwo_bb_group_assignment_ibfk_2` FOREIGN KEY (`group_id`) REFERENCES `uwo_bb_group` (`group_id`) ON UPDATE CASCADE,
-  CONSTRAINT `uwo_bb_group_assignment_ibfk_3` FOREIGN KEY (`group_assignment_type_id`) REFERENCES `uwo_bb_group_assignment_type` (`group_assignment_type_id`) ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 CREATE TABLE `uwo_bb_group_assignment_type` (
@@ -1279,8 +1213,6 @@ CREATE TABLE `uwo_bb_login` (
   `login_write` int(4) NOT NULL DEFAULT '0',
   PRIMARY KEY (`person_id`,`campus_id`),
   KEY `campus_id` (`campus_id`),
-  CONSTRAINT `uwo_bb_login_ibfk_1` FOREIGN KEY (`person_id`) REFERENCES `cim_hrdb_person` (`person_id`) ON UPDATE CASCADE,
-  CONSTRAINT `uwo_bb_login_ibfk_2` FOREIGN KEY (`campus_id`) REFERENCES `cim_hrdb_campus` (`campus_id`) ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 CREATE TABLE `wp_comments` (
@@ -1473,4 +1405,3 @@ CREATE TABLE `wp_users` (
   KEY `user_login_key` (`user_login`),
   KEY `user_nicename` (`user_nicename`)
 ) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
-

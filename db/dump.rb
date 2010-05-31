@@ -11,5 +11,8 @@ connection = ActiveRecord::Base.establish_connection(
 )
 
 File.open("development_structure.sql", "w+") { |f| 
-  f << ActiveRecord::Base.connection.structure_dump
+  for line in ActiveRecord::Base.connection.structure_dump.split("\n")
+    next if line["CONSTRAINT"]
+    f << line + "\n"
+  end
 }
