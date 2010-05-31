@@ -40,7 +40,7 @@ with(milonic=new menuname("'.$menuName.'")){
             // Add mainMenu Entry()
             $subMenuName = str_replace(' ', '', $item->getText()).'_menu';
             $text = $item->getText();
-            $menu .= '   aI("text='.$text.';showmenu='.$subMenuName.'");';
+            $menu .= '   aI("text='    .$text.';showmenu='.$subMenuName.'");';
             
             // get list of Entries
             $entries = $item->getItems();
@@ -55,7 +55,7 @@ with(milonic=new menuname("'.$menuName.'")){
             $text = $item->getText();
             $url = $pathToRoot.$item->getURL();
             $title = $item->getTitle();
-            $menu .= '  aI("text='.$text.';url='.$url.';title='.$title.';");';
+            $menu .= '  aI("text='    .$text.';url='.$url.';title='.$title.';");';
             
         }// end if
         
