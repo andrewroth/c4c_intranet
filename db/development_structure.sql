@@ -1,42 +1,10 @@
--- MySQL dump 10.13  Distrib 5.1.32, for apple-darwin9.5.0 (i386)
---
--- Host: localhost    Database: c4c_intranet_dev
--- ------------------------------------------------------
--- Server version	5.1.32
-
-/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
-/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
-/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8 */;
-/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
-/*!40103 SET TIME_ZONE='+00:00' */;
-/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
-/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
-/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
-/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
-
---
--- Table structure for table `08_staff_survey`
---
-
-DROP TABLE IF EXISTS `08_staff_survey`;
-SET @saved_cs_client     = @@character_set_client;
-SET character_set_client = utf8;
 CREATE TABLE `08_staff_survey` (
   `survey_id` int(10) NOT NULL AUTO_INCREMENT,
   `survey_name` varchar(128) NOT NULL DEFAULT '',
   `survey_email` varchar(128) NOT NULL DEFAULT '',
   PRIMARY KEY (`survey_id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=115 DEFAULT CHARSET=latin1;
-SET character_set_client = @saved_cs_client;
 
---
--- Table structure for table `accountadmin_accesscategory`
---
-
-DROP TABLE IF EXISTS `accountadmin_accesscategory`;
-SET @saved_cs_client     = @@character_set_client;
-SET character_set_client = utf8;
 CREATE TABLE `accountadmin_accesscategory` (
   `accesscategory_id` int(11) NOT NULL AUTO_INCREMENT,
   `accesscategory_key` varchar(50) NOT NULL DEFAULT '',
@@ -44,15 +12,7 @@ CREATE TABLE `accountadmin_accesscategory` (
   PRIMARY KEY (`accesscategory_id`),
   KEY `ciministry.accountadmin_accesscategory_accesscateg` (`accesscategory_key`)
 ) ENGINE=MyISAM AUTO_INCREMENT=10 DEFAULT CHARSET=latin1;
-SET character_set_client = @saved_cs_client;
 
---
--- Table structure for table `accountadmin_accessgroup`
---
-
-DROP TABLE IF EXISTS `accountadmin_accessgroup`;
-SET @saved_cs_client     = @@character_set_client;
-SET character_set_client = utf8;
 CREATE TABLE `accountadmin_accessgroup` (
   `accessgroup_id` int(11) NOT NULL AUTO_INCREMENT,
   `accesscategory_id` int(11) NOT NULL DEFAULT '0',
@@ -61,15 +21,7 @@ CREATE TABLE `accountadmin_accessgroup` (
   PRIMARY KEY (`accessgroup_id`),
   KEY `ciministry.accountadmin_accessgroup_accessgroup_ke` (`accessgroup_key`)
 ) ENGINE=MyISAM AUTO_INCREMENT=53 DEFAULT CHARSET=latin1;
-SET character_set_client = @saved_cs_client;
 
---
--- Table structure for table `accountadmin_accountadminaccess`
---
-
-DROP TABLE IF EXISTS `accountadmin_accountadminaccess`;
-SET @saved_cs_client     = @@character_set_client;
-SET character_set_client = utf8;
 CREATE TABLE `accountadmin_accountadminaccess` (
   `accountadminaccess_id` int(11) NOT NULL AUTO_INCREMENT,
   `viewer_id` int(11) NOT NULL DEFAULT '0',
@@ -78,15 +30,7 @@ CREATE TABLE `accountadmin_accountadminaccess` (
   KEY `ciministry.accountadmin_accountadminaccess_viewer_` (`viewer_id`),
   KEY `ciministry.accountadmin_accountadminaccess_account` (`accountadminaccess_privilege`)
 ) ENGINE=MyISAM AUTO_INCREMENT=19 DEFAULT CHARSET=latin1;
-SET character_set_client = @saved_cs_client;
 
---
--- Table structure for table `accountadmin_accountgroup`
---
-
-DROP TABLE IF EXISTS `accountadmin_accountgroup`;
-SET @saved_cs_client     = @@character_set_client;
-SET character_set_client = utf8;
 CREATE TABLE `accountadmin_accountgroup` (
   `accountgroup_id` int(11) NOT NULL AUTO_INCREMENT,
   `accountgroup_key` varchar(50) NOT NULL DEFAULT '',
@@ -94,15 +38,7 @@ CREATE TABLE `accountadmin_accountgroup` (
   `english_value` text,
   PRIMARY KEY (`accountgroup_id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=23 DEFAULT CHARSET=latin1;
-SET character_set_client = @saved_cs_client;
 
---
--- Table structure for table `accountadmin_language`
---
-
-DROP TABLE IF EXISTS `accountadmin_language`;
-SET @saved_cs_client     = @@character_set_client;
-SET character_set_client = utf8;
 CREATE TABLE `accountadmin_language` (
   `language_id` int(11) NOT NULL AUTO_INCREMENT,
   `language_key` varchar(25) NOT NULL DEFAULT '',
@@ -110,15 +46,7 @@ CREATE TABLE `accountadmin_language` (
   `english_value` text,
   PRIMARY KEY (`language_id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
-SET character_set_client = @saved_cs_client;
 
---
--- Table structure for table `accountadmin_viewer`
---
-
-DROP TABLE IF EXISTS `accountadmin_viewer`;
-SET @saved_cs_client     = @@character_set_client;
-SET character_set_client = utf8;
 CREATE TABLE `accountadmin_viewer` (
   `viewer_id` int(11) NOT NULL AUTO_INCREMENT,
   `guid` varchar(64) NOT NULL,
@@ -138,16 +66,8 @@ CREATE TABLE `accountadmin_viewer` (
   KEY `ciministry.accountadmin_viewer_accountgroup_id_index` (`accountgroup_id`),
   KEY `ciministry.accountadmin_viewer_viewer_userID_index` (`viewer_userID`),
   CONSTRAINT `FK_viewer_grp` FOREIGN KEY (`accountgroup_id`) REFERENCES `accountadmin_accountgroup` (`accountgroup_id`) ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=10580 DEFAULT CHARSET=latin1;
-SET character_set_client = @saved_cs_client;
+) ENGINE=InnoDB AUTO_INCREMENT=10639 DEFAULT CHARSET=latin1;
 
---
--- Table structure for table `accountadmin_vieweraccessgroup`
---
-
-DROP TABLE IF EXISTS `accountadmin_vieweraccessgroup`;
-SET @saved_cs_client     = @@character_set_client;
-SET character_set_client = utf8;
 CREATE TABLE `accountadmin_vieweraccessgroup` (
   `vieweraccessgroup_id` int(11) NOT NULL AUTO_INCREMENT,
   `viewer_id` int(11) NOT NULL DEFAULT '0',
@@ -155,31 +75,15 @@ CREATE TABLE `accountadmin_vieweraccessgroup` (
   PRIMARY KEY (`vieweraccessgroup_id`),
   KEY `ciministry.accountadmin_vieweraccessgroup_viewer_i` (`viewer_id`),
   KEY `ciministry.accountadmin_vieweraccessgroup_accessgr` (`accessgroup_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=24618 DEFAULT CHARSET=latin1;
-SET character_set_client = @saved_cs_client;
+) ENGINE=MyISAM AUTO_INCREMENT=24676 DEFAULT CHARSET=latin1;
 
---
--- Table structure for table `aia_greycup`
---
-
-DROP TABLE IF EXISTS `aia_greycup`;
-SET @saved_cs_client     = @@character_set_client;
-SET character_set_client = utf8;
 CREATE TABLE `aia_greycup` (
   `registration_id` int(10) NOT NULL,
   `num_tickets` int(5) NOT NULL DEFAULT '0',
   `to_survey` int(1) NOT NULL DEFAULT '0',
   PRIMARY KEY (`registration_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_general_ci;
-SET character_set_client = @saved_cs_client;
 
---
--- Table structure for table `cim_c4cwebsite_page`
---
-
-DROP TABLE IF EXISTS `cim_c4cwebsite_page`;
-SET @saved_cs_client     = @@character_set_client;
-SET character_set_client = utf8;
 CREATE TABLE `cim_c4cwebsite_page` (
   `page_id` int(8) NOT NULL AUTO_INCREMENT,
   `page_parentID` int(8) NOT NULL DEFAULT '0',
@@ -190,15 +94,7 @@ CREATE TABLE `cim_c4cwebsite_page` (
   `page_keywords` text NOT NULL,
   PRIMARY KEY (`page_id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=193 DEFAULT CHARSET=latin1;
-SET character_set_client = @saved_cs_client;
 
---
--- Table structure for table `cim_c4cwebsite_projects`
---
-
-DROP TABLE IF EXISTS `cim_c4cwebsite_projects`;
-SET @saved_cs_client     = @@character_set_client;
-SET character_set_client = utf8;
 CREATE TABLE `cim_c4cwebsite_projects` (
   `projects_id` int(10) NOT NULL AUTO_INCREMENT,
   `projects_desc` varchar(50) NOT NULL DEFAULT '',
@@ -206,15 +102,7 @@ CREATE TABLE `cim_c4cwebsite_projects` (
   `project_name` varchar(50) DEFAULT NULL,
   PRIMARY KEY (`projects_id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=13 DEFAULT CHARSET=latin1;
-SET character_set_client = @saved_cs_client;
 
---
--- Table structure for table `cim_downhere`
---
-
-DROP TABLE IF EXISTS `cim_downhere`;
-SET @saved_cs_client     = @@character_set_client;
-SET character_set_client = utf8;
 CREATE TABLE `cim_downhere` (
   `dh_id` int(16) NOT NULL AUTO_INCREMENT,
   `cctransaction_cardName` varchar(64) NOT NULL DEFAULT '',
@@ -230,15 +118,7 @@ CREATE TABLE `cim_downhere` (
   `dh_church` varchar(128) NOT NULL DEFAULT '',
   PRIMARY KEY (`dh_id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=14 DEFAULT CHARSET=latin1;
-SET character_set_client = @saved_cs_client;
 
---
--- Table structure for table `cim_hrdb_access`
---
-
-DROP TABLE IF EXISTS `cim_hrdb_access`;
-SET @saved_cs_client     = @@character_set_client;
-SET character_set_client = utf8;
 CREATE TABLE `cim_hrdb_access` (
   `access_id` int(50) NOT NULL AUTO_INCREMENT,
   `viewer_id` int(50) NOT NULL DEFAULT '0',
@@ -247,16 +127,8 @@ CREATE TABLE `cim_hrdb_access` (
   KEY `ciministry.cim_hrdb_access_viewer_id_index` (`viewer_id`),
   KEY `ciministry.cim_hrdb_access_person_id_index` (`person_id`),
   CONSTRAINT `FK_access_person` FOREIGN KEY (`person_id`) REFERENCES `cim_hrdb_person` (`person_id`) ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=10345 DEFAULT CHARSET=latin1;
-SET character_set_client = @saved_cs_client;
+) ENGINE=InnoDB AUTO_INCREMENT=10399 DEFAULT CHARSET=latin1;
 
---
--- Table structure for table `cim_hrdb_activityschedule`
---
-
-DROP TABLE IF EXISTS `cim_hrdb_activityschedule`;
-SET @saved_cs_client     = @@character_set_client;
-SET character_set_client = utf8;
 CREATE TABLE `cim_hrdb_activityschedule` (
   `activityschedule_id` int(15) NOT NULL AUTO_INCREMENT,
   `staffactivity_id` int(15) NOT NULL DEFAULT '0',
@@ -267,15 +139,7 @@ CREATE TABLE `cim_hrdb_activityschedule` (
   CONSTRAINT `FK_activity_schedule` FOREIGN KEY (`staffschedule_id`) REFERENCES `cim_hrdb_staffschedule` (`staffschedule_id`) ON UPDATE CASCADE,
   CONSTRAINT `FK_schedule_activity` FOREIGN KEY (`staffactivity_id`) REFERENCES `cim_hrdb_staffactivity` (`staffactivity_id`) ON UPDATE CASCADE
 ) ENGINE=InnoDB AUTO_INCREMENT=815 DEFAULT CHARSET=latin1 COLLATE=latin1_general_ci;
-SET character_set_client = @saved_cs_client;
 
---
--- Table structure for table `cim_hrdb_activitytype`
---
-
-DROP TABLE IF EXISTS `cim_hrdb_activitytype`;
-SET @saved_cs_client     = @@character_set_client;
-SET character_set_client = utf8;
 CREATE TABLE `cim_hrdb_activitytype` (
   `activitytype_id` int(10) NOT NULL AUTO_INCREMENT,
   `activitytype_desc` varchar(75) COLLATE latin1_general_ci NOT NULL DEFAULT '',
@@ -283,15 +147,7 @@ CREATE TABLE `cim_hrdb_activitytype` (
   `activitytype_color` varchar(7) COLLATE latin1_general_ci NOT NULL DEFAULT '#0000FF',
   PRIMARY KEY (`activitytype_id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=latin1 COLLATE=latin1_general_ci;
-SET character_set_client = @saved_cs_client;
 
---
--- Table structure for table `cim_hrdb_admin`
---
-
-DROP TABLE IF EXISTS `cim_hrdb_admin`;
-SET @saved_cs_client     = @@character_set_client;
-SET character_set_client = utf8;
 CREATE TABLE `cim_hrdb_admin` (
   `admin_id` int(1) NOT NULL AUTO_INCREMENT,
   `person_id` int(50) NOT NULL DEFAULT '0',
@@ -302,15 +158,7 @@ CREATE TABLE `cim_hrdb_admin` (
   CONSTRAINT `FK_admin_priv` FOREIGN KEY (`priv_id`) REFERENCES `cim_hrdb_priv` (`priv_id`) ON UPDATE CASCADE,
   CONSTRAINT `FK_hrdbadmin_person` FOREIGN KEY (`person_id`) REFERENCES `cim_hrdb_person` (`person_id`) ON UPDATE CASCADE
 ) ENGINE=InnoDB AUTO_INCREMENT=19 DEFAULT CHARSET=latin1;
-SET character_set_client = @saved_cs_client;
 
---
--- Table structure for table `cim_hrdb_assignment`
---
-
-DROP TABLE IF EXISTS `cim_hrdb_assignment`;
-SET @saved_cs_client     = @@character_set_client;
-SET character_set_client = utf8;
 CREATE TABLE `cim_hrdb_assignment` (
   `assignment_id` int(50) NOT NULL AUTO_INCREMENT,
   `person_id` int(50) NOT NULL DEFAULT '0',
@@ -321,30 +169,14 @@ CREATE TABLE `cim_hrdb_assignment` (
   KEY `ciministry.cim_hrdb_assignment_campus_id_index` (`campus_id`),
   CONSTRAINT `FK_assign_campus` FOREIGN KEY (`campus_id`) REFERENCES `cim_hrdb_campus` (`campus_id`) ON UPDATE CASCADE,
   CONSTRAINT `FK_assign_person` FOREIGN KEY (`person_id`) REFERENCES `cim_hrdb_person` (`person_id`) ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=8343 DEFAULT CHARSET=latin1;
-SET character_set_client = @saved_cs_client;
+) ENGINE=InnoDB AUTO_INCREMENT=8372 DEFAULT CHARSET=latin1;
 
---
--- Table structure for table `cim_hrdb_assignmentstatus`
---
-
-DROP TABLE IF EXISTS `cim_hrdb_assignmentstatus`;
-SET @saved_cs_client     = @@character_set_client;
-SET character_set_client = utf8;
 CREATE TABLE `cim_hrdb_assignmentstatus` (
   `assignmentstatus_id` int(10) NOT NULL AUTO_INCREMENT,
   `assignmentstatus_desc` varchar(64) COLLATE latin1_general_ci NOT NULL DEFAULT '',
   PRIMARY KEY (`assignmentstatus_id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=7 DEFAULT CHARSET=latin1 COLLATE=latin1_general_ci;
-SET character_set_client = @saved_cs_client;
 
---
--- Table structure for table `cim_hrdb_campus`
---
-
-DROP TABLE IF EXISTS `cim_hrdb_campus`;
-SET @saved_cs_client     = @@character_set_client;
-SET character_set_client = utf8;
 CREATE TABLE `cim_hrdb_campus` (
   `campus_id` int(50) NOT NULL AUTO_INCREMENT,
   `campus_desc` varchar(128) NOT NULL DEFAULT '',
@@ -359,16 +191,8 @@ CREATE TABLE `cim_hrdb_campus` (
   KEY `ciministry.cim_hrdb_campus_region_id_index` (`region_id`),
   KEY `ciministry.cim_hrdb_campus_accountgroup_id_index` (`accountgroup_id`),
   CONSTRAINT `FK_campus_region` FOREIGN KEY (`region_id`) REFERENCES `cim_hrdb_region` (`region_id`) ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=143 DEFAULT CHARSET=latin1;
-SET character_set_client = @saved_cs_client;
+) ENGINE=InnoDB AUTO_INCREMENT=142 DEFAULT CHARSET=latin1;
 
---
--- Table structure for table `cim_hrdb_campusadmin`
---
-
-DROP TABLE IF EXISTS `cim_hrdb_campusadmin`;
-SET @saved_cs_client     = @@character_set_client;
-SET character_set_client = utf8;
 CREATE TABLE `cim_hrdb_campusadmin` (
   `campusadmin_id` int(20) NOT NULL AUTO_INCREMENT,
   `admin_id` int(20) NOT NULL DEFAULT '0',
@@ -379,30 +203,14 @@ CREATE TABLE `cim_hrdb_campusadmin` (
   CONSTRAINT `FK_campusadmin_campus` FOREIGN KEY (`campus_id`) REFERENCES `cim_hrdb_campus` (`campus_id`) ON UPDATE CASCADE,
   CONSTRAINT `FK_campus_hrdbadmin` FOREIGN KEY (`admin_id`) REFERENCES `cim_hrdb_admin` (`admin_id`) ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-SET character_set_client = @saved_cs_client;
 
---
--- Table structure for table `cim_hrdb_country`
---
-
-DROP TABLE IF EXISTS `cim_hrdb_country`;
-SET @saved_cs_client     = @@character_set_client;
-SET character_set_client = utf8;
 CREATE TABLE `cim_hrdb_country` (
   `country_id` int(50) NOT NULL AUTO_INCREMENT,
   `country_desc` varchar(50) COLLATE latin1_general_ci NOT NULL DEFAULT '',
   `country_shortDesc` varchar(50) COLLATE latin1_general_ci NOT NULL DEFAULT '',
   PRIMARY KEY (`country_id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1 COLLATE=latin1_general_ci;
-SET character_set_client = @saved_cs_client;
 
---
--- Table structure for table `cim_hrdb_customfields`
---
-
-DROP TABLE IF EXISTS `cim_hrdb_customfields`;
-SET @saved_cs_client     = @@character_set_client;
-SET character_set_client = utf8;
 CREATE TABLE `cim_hrdb_customfields` (
   `customfields_id` int(16) unsigned NOT NULL AUTO_INCREMENT,
   `report_id` int(10) unsigned NOT NULL,
@@ -413,30 +221,14 @@ CREATE TABLE `cim_hrdb_customfields` (
   CONSTRAINT `FK_fields_report` FOREIGN KEY (`report_id`) REFERENCES `cim_hrdb_customreports` (`report_id`) ON UPDATE CASCADE,
   CONSTRAINT `FK_report_field` FOREIGN KEY (`fields_id`) REFERENCES `cim_hrdb_fields` (`fields_id`) ON UPDATE CASCADE
 ) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1 COLLATE=latin1_general_ci;
-SET character_set_client = @saved_cs_client;
 
---
--- Table structure for table `cim_hrdb_customreports`
---
-
-DROP TABLE IF EXISTS `cim_hrdb_customreports`;
-SET @saved_cs_client     = @@character_set_client;
-SET character_set_client = utf8;
 CREATE TABLE `cim_hrdb_customreports` (
   `report_id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `report_name` varchar(64) COLLATE latin1_general_ci NOT NULL,
   `report_is_shown` int(1) NOT NULL DEFAULT '0',
   PRIMARY KEY (`report_id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1 COLLATE=latin1_general_ci;
-SET character_set_client = @saved_cs_client;
 
---
--- Table structure for table `cim_hrdb_emerg`
---
-
-DROP TABLE IF EXISTS `cim_hrdb_emerg`;
-SET @saved_cs_client     = @@character_set_client;
-SET character_set_client = utf8;
 CREATE TABLE `cim_hrdb_emerg` (
   `emerg_id` int(16) NOT NULL AUTO_INCREMENT,
   `person_id` int(16) NOT NULL DEFAULT '0',
@@ -471,45 +263,21 @@ CREATE TABLE `cim_hrdb_emerg` (
   PRIMARY KEY (`emerg_id`),
   KEY `ciministry.cim_hrdb_emerg_person_id_index` (`person_id`),
   CONSTRAINT `FK_emerg_person` FOREIGN KEY (`person_id`) REFERENCES `cim_hrdb_person` (`person_id`) ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=3469 DEFAULT CHARSET=latin1;
-SET character_set_client = @saved_cs_client;
+) ENGINE=InnoDB AUTO_INCREMENT=3537 DEFAULT CHARSET=latin1;
 
---
--- Table structure for table `cim_hrdb_fieldgroup`
---
-
-DROP TABLE IF EXISTS `cim_hrdb_fieldgroup`;
-SET @saved_cs_client     = @@character_set_client;
-SET character_set_client = utf8;
 CREATE TABLE `cim_hrdb_fieldgroup` (
   `fieldgroup_id` int(10) NOT NULL AUTO_INCREMENT,
   `fieldgroup_desc` varchar(75) COLLATE latin1_general_ci NOT NULL,
   PRIMARY KEY (`fieldgroup_id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=latin1 COLLATE=latin1_general_ci;
-SET character_set_client = @saved_cs_client;
 
---
--- Table structure for table `cim_hrdb_fieldgroup_matches`
---
-
-DROP TABLE IF EXISTS `cim_hrdb_fieldgroup_matches`;
-SET @saved_cs_client     = @@character_set_client;
-SET character_set_client = utf8;
 CREATE TABLE `cim_hrdb_fieldgroup_matches` (
   `fieldgroup_matches_id` int(20) NOT NULL AUTO_INCREMENT,
   `fieldgroup_id` int(10) NOT NULL DEFAULT '0',
   `fields_id` int(16) NOT NULL DEFAULT '0',
   PRIMARY KEY (`fieldgroup_matches_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_general_ci;
-SET character_set_client = @saved_cs_client;
 
---
--- Table structure for table `cim_hrdb_fields`
---
-
-DROP TABLE IF EXISTS `cim_hrdb_fields`;
-SET @saved_cs_client     = @@character_set_client;
-SET character_set_client = utf8;
 CREATE TABLE `cim_hrdb_fields` (
   `fields_id` int(16) NOT NULL AUTO_INCREMENT,
   `fieldtype_id` int(16) NOT NULL DEFAULT '0',
@@ -530,15 +298,7 @@ CREATE TABLE `cim_hrdb_fields` (
   CONSTRAINT `FK_fields_form` FOREIGN KEY (`staffscheduletype_id`) REFERENCES `cim_hrdb_staffscheduletype` (`staffscheduletype_id`) ON UPDATE CASCADE,
   CONSTRAINT `FK_fields_types2` FOREIGN KEY (`fieldtype_id`) REFERENCES `cim_reg_fieldtypes` (`fieldtypes_id`) ON UPDATE CASCADE
 ) ENGINE=InnoDB AUTO_INCREMENT=40 DEFAULT CHARSET=latin1;
-SET character_set_client = @saved_cs_client;
 
---
--- Table structure for table `cim_hrdb_fieldvalues`
---
-
-DROP TABLE IF EXISTS `cim_hrdb_fieldvalues`;
-SET @saved_cs_client     = @@character_set_client;
-SET character_set_client = utf8;
 CREATE TABLE `cim_hrdb_fieldvalues` (
   `fieldvalues_id` int(16) NOT NULL AUTO_INCREMENT,
   `fields_id` int(16) NOT NULL DEFAULT '0',
@@ -551,44 +311,20 @@ CREATE TABLE `cim_hrdb_fieldvalues` (
   CONSTRAINT `FK_fieldvals_field2` FOREIGN KEY (`fields_id`) REFERENCES `cim_hrdb_fields` (`fields_id`) ON UPDATE CASCADE,
   CONSTRAINT `FK_fieldvals_person` FOREIGN KEY (`person_id`) REFERENCES `cim_hrdb_person` (`person_id`) ON UPDATE CASCADE
 ) ENGINE=InnoDB AUTO_INCREMENT=1839 DEFAULT CHARSET=latin1;
-SET character_set_client = @saved_cs_client;
 
---
--- Table structure for table `cim_hrdb_gender`
---
-
-DROP TABLE IF EXISTS `cim_hrdb_gender`;
-SET @saved_cs_client     = @@character_set_client;
-SET character_set_client = utf8;
 CREATE TABLE `cim_hrdb_gender` (
   `gender_id` int(50) NOT NULL AUTO_INCREMENT,
   `gender_desc` varchar(50) NOT NULL DEFAULT '',
   PRIMARY KEY (`gender_id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
-SET character_set_client = @saved_cs_client;
 
---
--- Table structure for table `cim_hrdb_ministry`
---
-
-DROP TABLE IF EXISTS `cim_hrdb_ministry`;
-SET @saved_cs_client     = @@character_set_client;
-SET character_set_client = utf8;
 CREATE TABLE `cim_hrdb_ministry` (
   `ministry_id` int(20) unsigned NOT NULL AUTO_INCREMENT,
   `ministry_name` varchar(64) COLLATE latin1_general_ci NOT NULL,
   `ministry_abbrev` varchar(16) COLLATE latin1_general_ci NOT NULL,
   PRIMARY KEY (`ministry_id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=latin1 COLLATE=latin1_general_ci;
-SET character_set_client = @saved_cs_client;
 
---
--- Table structure for table `cim_hrdb_person`
---
-
-DROP TABLE IF EXISTS `cim_hrdb_person`;
-SET @saved_cs_client     = @@character_set_client;
-SET character_set_client = utf8;
 CREATE TABLE `cim_hrdb_person` (
   `person_id` int(50) NOT NULL AUTO_INCREMENT,
   `person_fname` varchar(50) NOT NULL DEFAULT '',
@@ -616,16 +352,8 @@ CREATE TABLE `cim_hrdb_person` (
   PRIMARY KEY (`person_id`),
   KEY `ciministry.cim_hrdb_person_gender_id_index` (`gender_id`),
   KEY `ciministry.cim_hrdb_person_province_id_index` (`province_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=12504 DEFAULT CHARSET=latin1;
-SET character_set_client = @saved_cs_client;
+) ENGINE=InnoDB AUTO_INCREMENT=12559 DEFAULT CHARSET=latin1;
 
---
--- Table structure for table `cim_hrdb_person_year`
---
-
-DROP TABLE IF EXISTS `cim_hrdb_person_year`;
-SET @saved_cs_client     = @@character_set_client;
-SET character_set_client = utf8;
 CREATE TABLE `cim_hrdb_person_year` (
   `personyear_id` int(50) NOT NULL AUTO_INCREMENT,
   `person_id` int(50) NOT NULL DEFAULT '0',
@@ -636,30 +364,14 @@ CREATE TABLE `cim_hrdb_person_year` (
   KEY `1` (`year_id`),
   CONSTRAINT `1` FOREIGN KEY (`year_id`) REFERENCES `cim_hrdb_year_in_school` (`year_id`),
   CONSTRAINT `FK_year_person` FOREIGN KEY (`person_id`) REFERENCES `cim_hrdb_person` (`person_id`) ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=2915 DEFAULT CHARSET=latin1 ROW_FORMAT=DYNAMIC;
-SET character_set_client = @saved_cs_client;
+) ENGINE=InnoDB AUTO_INCREMENT=2946 DEFAULT CHARSET=latin1 ROW_FORMAT=DYNAMIC;
 
---
--- Table structure for table `cim_hrdb_priv`
---
-
-DROP TABLE IF EXISTS `cim_hrdb_priv`;
-SET @saved_cs_client     = @@character_set_client;
-SET character_set_client = utf8;
 CREATE TABLE `cim_hrdb_priv` (
   `priv_id` int(20) NOT NULL AUTO_INCREMENT,
   `priv_accesslevel` varchar(100) NOT NULL DEFAULT '',
   PRIMARY KEY (`priv_id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
-SET character_set_client = @saved_cs_client;
 
---
--- Table structure for table `cim_hrdb_province`
---
-
-DROP TABLE IF EXISTS `cim_hrdb_province`;
-SET @saved_cs_client     = @@character_set_client;
-SET character_set_client = utf8;
 CREATE TABLE `cim_hrdb_province` (
   `province_id` int(50) NOT NULL AUTO_INCREMENT,
   `province_desc` varchar(50) NOT NULL DEFAULT '',
@@ -667,15 +379,7 @@ CREATE TABLE `cim_hrdb_province` (
   `country_id` int(11) DEFAULT NULL,
   PRIMARY KEY (`province_id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=77 DEFAULT CHARSET=latin1;
-SET character_set_client = @saved_cs_client;
 
---
--- Table structure for table `cim_hrdb_region`
---
-
-DROP TABLE IF EXISTS `cim_hrdb_region`;
-SET @saved_cs_client     = @@character_set_client;
-SET character_set_client = utf8;
 CREATE TABLE `cim_hrdb_region` (
   `region_id` int(50) NOT NULL AUTO_INCREMENT,
   `reg_desc` varchar(64) NOT NULL DEFAULT '',
@@ -684,15 +388,7 @@ CREATE TABLE `cim_hrdb_region` (
   KEY `FK_region_country` (`country_id`),
   CONSTRAINT `FK_region_country` FOREIGN KEY (`country_id`) REFERENCES `cim_hrdb_country` (`country_id`) ON UPDATE CASCADE
 ) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=latin1;
-SET character_set_client = @saved_cs_client;
 
---
--- Table structure for table `cim_hrdb_staff`
---
-
-DROP TABLE IF EXISTS `cim_hrdb_staff`;
-SET @saved_cs_client     = @@character_set_client;
-SET character_set_client = utf8;
 CREATE TABLE `cim_hrdb_staff` (
   `staff_id` int(50) NOT NULL AUTO_INCREMENT,
   `person_id` int(50) NOT NULL DEFAULT '0',
@@ -701,15 +397,7 @@ CREATE TABLE `cim_hrdb_staff` (
   KEY `ciministry.cim_hrdb_staff_person_id_index` (`person_id`),
   CONSTRAINT `FK_staff_person` FOREIGN KEY (`person_id`) REFERENCES `cim_hrdb_person` (`person_id`) ON UPDATE CASCADE
 ) ENGINE=InnoDB AUTO_INCREMENT=357 DEFAULT CHARSET=latin1;
-SET character_set_client = @saved_cs_client;
 
---
--- Table structure for table `cim_hrdb_staffactivity`
---
-
-DROP TABLE IF EXISTS `cim_hrdb_staffactivity`;
-SET @saved_cs_client     = @@character_set_client;
-SET character_set_client = utf8;
 CREATE TABLE `cim_hrdb_staffactivity` (
   `staffactivity_id` int(15) NOT NULL AUTO_INCREMENT,
   `person_id` int(50) NOT NULL DEFAULT '0',
@@ -723,15 +411,7 @@ CREATE TABLE `cim_hrdb_staffactivity` (
   CONSTRAINT `FK_activity_person` FOREIGN KEY (`person_id`) REFERENCES `cim_hrdb_person` (`person_id`) ON UPDATE CASCADE,
   CONSTRAINT `FK_activity_type` FOREIGN KEY (`activitytype_id`) REFERENCES `cim_hrdb_activitytype` (`activitytype_id`) ON UPDATE CASCADE
 ) ENGINE=InnoDB AUTO_INCREMENT=818 DEFAULT CHARSET=latin1 COLLATE=latin1_general_ci;
-SET character_set_client = @saved_cs_client;
 
---
--- Table structure for table `cim_hrdb_staffdirector`
---
-
-DROP TABLE IF EXISTS `cim_hrdb_staffdirector`;
-SET @saved_cs_client     = @@character_set_client;
-SET character_set_client = utf8;
 CREATE TABLE `cim_hrdb_staffdirector` (
   `staffdirector_id` int(60) unsigned NOT NULL AUTO_INCREMENT,
   `staff_id` int(50) NOT NULL,
@@ -742,15 +422,7 @@ CREATE TABLE `cim_hrdb_staffdirector` (
   CONSTRAINT `FK_director_staff` FOREIGN KEY (`director_id`) REFERENCES `cim_hrdb_staff` (`staff_id`) ON UPDATE CASCADE,
   CONSTRAINT `FK_staff_staff1` FOREIGN KEY (`staff_id`) REFERENCES `cim_hrdb_staff` (`staff_id`) ON UPDATE CASCADE
 ) ENGINE=InnoDB AUTO_INCREMENT=234 DEFAULT CHARSET=latin1 COLLATE=latin1_general_ci;
-SET character_set_client = @saved_cs_client;
 
---
--- Table structure for table `cim_hrdb_staffschedule`
---
-
-DROP TABLE IF EXISTS `cim_hrdb_staffschedule`;
-SET @saved_cs_client     = @@character_set_client;
-SET character_set_client = utf8;
 CREATE TABLE `cim_hrdb_staffschedule` (
   `staffschedule_id` int(15) NOT NULL AUTO_INCREMENT,
   `person_id` int(50) NOT NULL DEFAULT '0',
@@ -766,15 +438,7 @@ CREATE TABLE `cim_hrdb_staffschedule` (
   CONSTRAINT `FK_schedule_person1` FOREIGN KEY (`person_id`) REFERENCES `cim_hrdb_person` (`person_id`) ON UPDATE CASCADE,
   CONSTRAINT `FK_schedule_type` FOREIGN KEY (`staffscheduletype_id`) REFERENCES `cim_hrdb_staffscheduletype` (`staffscheduletype_id`) ON UPDATE CASCADE
 ) ENGINE=InnoDB AUTO_INCREMENT=202 DEFAULT CHARSET=latin1 COLLATE=latin1_general_ci;
-SET character_set_client = @saved_cs_client;
 
---
--- Table structure for table `cim_hrdb_staffscheduleinstr`
---
-
-DROP TABLE IF EXISTS `cim_hrdb_staffscheduleinstr`;
-SET @saved_cs_client     = @@character_set_client;
-SET character_set_client = utf8;
 CREATE TABLE `cim_hrdb_staffscheduleinstr` (
   `staffscheduletype_id` int(15) NOT NULL,
   `staffscheduleinstr_toptext` text COLLATE latin1_general_ci NOT NULL,
@@ -782,15 +446,7 @@ CREATE TABLE `cim_hrdb_staffscheduleinstr` (
   PRIMARY KEY (`staffscheduletype_id`),
   CONSTRAINT `FK_instr_schedtype` FOREIGN KEY (`staffscheduletype_id`) REFERENCES `cim_hrdb_staffscheduletype` (`staffscheduletype_id`) ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_general_ci;
-SET character_set_client = @saved_cs_client;
 
---
--- Table structure for table `cim_hrdb_staffscheduletype`
---
-
-DROP TABLE IF EXISTS `cim_hrdb_staffscheduletype`;
-SET @saved_cs_client     = @@character_set_client;
-SET character_set_client = utf8;
 CREATE TABLE `cim_hrdb_staffscheduletype` (
   `staffscheduletype_id` int(15) NOT NULL AUTO_INCREMENT,
   `staffscheduletype_desc` varchar(75) COLLATE latin1_general_ci NOT NULL,
@@ -802,74 +458,34 @@ CREATE TABLE `cim_hrdb_staffscheduletype` (
   `staffscheduletype_is_shown` int(2) NOT NULL DEFAULT '0',
   PRIMARY KEY (`staffscheduletype_id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1 COLLATE=latin1_general_ci;
-SET character_set_client = @saved_cs_client;
 
---
--- Table structure for table `cim_hrdb_title`
---
-
-DROP TABLE IF EXISTS `cim_hrdb_title`;
-SET @saved_cs_client     = @@character_set_client;
-SET character_set_client = utf8;
 CREATE TABLE `cim_hrdb_title` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `desc` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
-SET character_set_client = @saved_cs_client;
 
---
--- Table structure for table `cim_hrdb_year_in_school`
---
-
-DROP TABLE IF EXISTS `cim_hrdb_year_in_school`;
-SET @saved_cs_client     = @@character_set_client;
-SET character_set_client = utf8;
 CREATE TABLE `cim_hrdb_year_in_school` (
   `year_id` int(11) NOT NULL AUTO_INCREMENT,
   `year_desc` char(50) NOT NULL DEFAULT '',
   `position` int(11) DEFAULT NULL,
   PRIMARY KEY (`year_id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=latin1;
-SET character_set_client = @saved_cs_client;
 
---
--- Table structure for table `cim_reg_activerules`
---
-
-DROP TABLE IF EXISTS `cim_reg_activerules`;
-SET @saved_cs_client     = @@character_set_client;
-SET character_set_client = utf8;
 CREATE TABLE `cim_reg_activerules` (
   `pricerules_id` int(16) NOT NULL DEFAULT '0',
   `is_active` int(1) NOT NULL DEFAULT '0',
   `is_recalculated` int(1) NOT NULL DEFAULT '1',
   PRIMARY KEY (`pricerules_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
-SET character_set_client = @saved_cs_client;
 
---
--- Table structure for table `cim_reg_campusaccess`
---
-
-DROP TABLE IF EXISTS `cim_reg_campusaccess`;
-SET @saved_cs_client     = @@character_set_client;
-SET character_set_client = utf8;
 CREATE TABLE `cim_reg_campusaccess` (
   `campusaccess_id` int(16) NOT NULL AUTO_INCREMENT,
   `eventadmin_id` int(16) NOT NULL DEFAULT '0',
   `campus_id` int(16) NOT NULL DEFAULT '0',
   PRIMARY KEY (`campusaccess_id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=217 DEFAULT CHARSET=latin1;
-SET character_set_client = @saved_cs_client;
 
---
--- Table structure for table `cim_reg_cashtransaction`
---
-
-DROP TABLE IF EXISTS `cim_reg_cashtransaction`;
-SET @saved_cs_client     = @@character_set_client;
-SET character_set_client = utf8;
 CREATE TABLE `cim_reg_cashtransaction` (
   `cashtransaction_id` int(16) NOT NULL AUTO_INCREMENT,
   `reg_id` int(16) NOT NULL DEFAULT '0',
@@ -881,15 +497,7 @@ CREATE TABLE `cim_reg_cashtransaction` (
   KEY `FK_cashtrans_reg` (`reg_id`),
   CONSTRAINT `FK_cashtrans_reg` FOREIGN KEY (`reg_id`) REFERENCES `cim_reg_registration` (`registration_id`) ON UPDATE CASCADE
 ) ENGINE=InnoDB AUTO_INCREMENT=4821 DEFAULT CHARSET=latin1;
-SET character_set_client = @saved_cs_client;
 
---
--- Table structure for table `cim_reg_ccreceipt`
---
-
-DROP TABLE IF EXISTS `cim_reg_ccreceipt`;
-SET @saved_cs_client     = @@character_set_client;
-SET character_set_client = utf8;
 CREATE TABLE `cim_reg_ccreceipt` (
   `ccreceipt_sequencenum` varchar(18) NOT NULL,
   `ccreceipt_authcode` varchar(8) DEFAULT NULL,
@@ -900,15 +508,7 @@ CREATE TABLE `cim_reg_ccreceipt` (
   PRIMARY KEY (`cctransaction_id`),
   CONSTRAINT `FK_receipt_cctrans` FOREIGN KEY (`cctransaction_id`) REFERENCES `cim_reg_cctransaction` (`cctransaction_id`) ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-SET character_set_client = @saved_cs_client;
 
---
--- Table structure for table `cim_reg_cctransaction`
---
-
-DROP TABLE IF EXISTS `cim_reg_cctransaction`;
-SET @saved_cs_client     = @@character_set_client;
-SET character_set_client = utf8;
 CREATE TABLE `cim_reg_cctransaction` (
   `cctransaction_id` int(16) NOT NULL AUTO_INCREMENT,
   `reg_id` int(16) NOT NULL DEFAULT '0',
@@ -926,45 +526,21 @@ CREATE TABLE `cim_reg_cctransaction` (
   KEY `FK_cctrans_ccid` (`cctype_id`),
   CONSTRAINT `FK_cctrans_ccid` FOREIGN KEY (`cctype_id`) REFERENCES `cim_reg_cctype` (`cctype_id`) ON UPDATE CASCADE,
   CONSTRAINT `FK_cctrans_reg` FOREIGN KEY (`reg_id`) REFERENCES `cim_reg_registration` (`registration_id`) ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=5161 DEFAULT CHARSET=latin1;
-SET character_set_client = @saved_cs_client;
+) ENGINE=InnoDB AUTO_INCREMENT=5174 DEFAULT CHARSET=latin1;
 
---
--- Table structure for table `cim_reg_cctype`
---
-
-DROP TABLE IF EXISTS `cim_reg_cctype`;
-SET @saved_cs_client     = @@character_set_client;
-SET character_set_client = utf8;
 CREATE TABLE `cim_reg_cctype` (
   `cctype_id` int(16) NOT NULL AUTO_INCREMENT,
   `cctype_desc` varchar(32) NOT NULL DEFAULT '',
   PRIMARY KEY (`cctype_id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
-SET character_set_client = @saved_cs_client;
 
---
--- Table structure for table `cim_reg_datatypes`
---
-
-DROP TABLE IF EXISTS `cim_reg_datatypes`;
-SET @saved_cs_client     = @@character_set_client;
-SET character_set_client = utf8;
 CREATE TABLE `cim_reg_datatypes` (
   `datatypes_id` int(4) NOT NULL AUTO_INCREMENT,
   `datatypes_key` varchar(8) COLLATE latin1_general_ci NOT NULL DEFAULT '',
   `datatypes_desc` varchar(64) COLLATE latin1_general_ci NOT NULL DEFAULT '',
   PRIMARY KEY (`datatypes_id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=latin1 COLLATE=latin1_general_ci;
-SET character_set_client = @saved_cs_client;
 
---
--- Table structure for table `cim_reg_event`
---
-
-DROP TABLE IF EXISTS `cim_reg_event`;
-SET @saved_cs_client     = @@character_set_client;
-SET character_set_client = utf8;
 CREATE TABLE `cim_reg_event` (
   `event_id` int(50) NOT NULL AUTO_INCREMENT,
   `country_id` int(50) NOT NULL DEFAULT '0',
@@ -986,15 +562,7 @@ CREATE TABLE `cim_reg_event` (
   `event_allowCash` int(1) NOT NULL DEFAULT '0',
   PRIMARY KEY (`event_id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=62 DEFAULT CHARSET=utf8;
-SET character_set_client = @saved_cs_client;
 
---
--- Table structure for table `cim_reg_eventadmin`
---
-
-DROP TABLE IF EXISTS `cim_reg_eventadmin`;
-SET @saved_cs_client     = @@character_set_client;
-SET character_set_client = utf8;
 CREATE TABLE `cim_reg_eventadmin` (
   `eventadmin_id` int(16) NOT NULL AUTO_INCREMENT,
   `event_id` int(16) NOT NULL DEFAULT '0',
@@ -1008,15 +576,7 @@ CREATE TABLE `cim_reg_eventadmin` (
   CONSTRAINT `FK_admin_viewer` FOREIGN KEY (`viewer_id`) REFERENCES `accountadmin_viewer` (`viewer_id`) ON UPDATE CASCADE,
   CONSTRAINT `FK_evadmin_priv` FOREIGN KEY (`priv_id`) REFERENCES `cim_reg_priv` (`priv_id`) ON UPDATE CASCADE
 ) ENGINE=InnoDB AUTO_INCREMENT=404 DEFAULT CHARSET=latin1;
-SET character_set_client = @saved_cs_client;
 
---
--- Table structure for table `cim_reg_fields`
---
-
-DROP TABLE IF EXISTS `cim_reg_fields`;
-SET @saved_cs_client     = @@character_set_client;
-SET character_set_client = utf8;
 CREATE TABLE `cim_reg_fields` (
   `fields_id` int(16) NOT NULL AUTO_INCREMENT,
   `fieldtype_id` int(16) NOT NULL DEFAULT '0',
@@ -1035,29 +595,13 @@ CREATE TABLE `cim_reg_fields` (
   CONSTRAINT `FK_fields_event` FOREIGN KEY (`event_id`) REFERENCES `cim_reg_event` (`event_id`) ON UPDATE CASCADE,
   CONSTRAINT `FK_fields_types` FOREIGN KEY (`fieldtype_id`) REFERENCES `cim_reg_fieldtypes` (`fieldtypes_id`) ON UPDATE CASCADE
 ) ENGINE=InnoDB AUTO_INCREMENT=216 DEFAULT CHARSET=latin1;
-SET character_set_client = @saved_cs_client;
 
---
--- Table structure for table `cim_reg_fieldtypes`
---
-
-DROP TABLE IF EXISTS `cim_reg_fieldtypes`;
-SET @saved_cs_client     = @@character_set_client;
-SET character_set_client = utf8;
 CREATE TABLE `cim_reg_fieldtypes` (
   `fieldtypes_id` int(16) NOT NULL AUTO_INCREMENT,
   `fieldtypes_desc` varchar(128) NOT NULL DEFAULT '',
   PRIMARY KEY (`fieldtypes_id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
-SET character_set_client = @saved_cs_client;
 
---
--- Table structure for table `cim_reg_fieldvalues`
---
-
-DROP TABLE IF EXISTS `cim_reg_fieldvalues`;
-SET @saved_cs_client     = @@character_set_client;
-SET character_set_client = utf8;
 CREATE TABLE `cim_reg_fieldvalues` (
   `fieldvalues_id` int(16) NOT NULL AUTO_INCREMENT,
   `fields_id` int(16) NOT NULL DEFAULT '0',
@@ -1070,15 +614,7 @@ CREATE TABLE `cim_reg_fieldvalues` (
   CONSTRAINT `FK_fieldvals_field` FOREIGN KEY (`fields_id`) REFERENCES `cim_reg_fields` (`fields_id`) ON UPDATE CASCADE,
   CONSTRAINT `FK_fieldvals_reg` FOREIGN KEY (`registration_id`) REFERENCES `cim_reg_registration` (`registration_id`) ON UPDATE CASCADE
 ) ENGINE=InnoDB AUTO_INCREMENT=45881 DEFAULT CHARSET=latin1;
-SET character_set_client = @saved_cs_client;
 
---
--- Table structure for table `cim_reg_pricerules`
---
-
-DROP TABLE IF EXISTS `cim_reg_pricerules`;
-SET @saved_cs_client     = @@character_set_client;
-SET character_set_client = utf8;
 CREATE TABLE `cim_reg_pricerules` (
   `pricerules_id` int(16) NOT NULL AUTO_INCREMENT,
   `event_id` int(16) NOT NULL DEFAULT '0',
@@ -1093,43 +629,19 @@ CREATE TABLE `cim_reg_pricerules` (
   CONSTRAINT `FK_prules_event` FOREIGN KEY (`event_id`) REFERENCES `cim_reg_event` (`event_id`) ON UPDATE CASCADE,
   CONSTRAINT `FK_prules_type` FOREIGN KEY (`priceruletypes_id`) REFERENCES `cim_reg_priceruletypes` (`priceruletypes_id`) ON UPDATE CASCADE
 ) ENGINE=InnoDB AUTO_INCREMENT=85 DEFAULT CHARSET=latin1;
-SET character_set_client = @saved_cs_client;
 
---
--- Table structure for table `cim_reg_priceruletypes`
---
-
-DROP TABLE IF EXISTS `cim_reg_priceruletypes`;
-SET @saved_cs_client     = @@character_set_client;
-SET character_set_client = utf8;
 CREATE TABLE `cim_reg_priceruletypes` (
   `priceruletypes_id` int(16) NOT NULL AUTO_INCREMENT,
   `priceruletypes_desc` varchar(128) NOT NULL DEFAULT '',
   PRIMARY KEY (`priceruletypes_id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
-SET character_set_client = @saved_cs_client;
 
---
--- Table structure for table `cim_reg_priv`
---
-
-DROP TABLE IF EXISTS `cim_reg_priv`;
-SET @saved_cs_client     = @@character_set_client;
-SET character_set_client = utf8;
 CREATE TABLE `cim_reg_priv` (
   `priv_id` int(10) NOT NULL AUTO_INCREMENT,
   `priv_desc` varchar(64) NOT NULL DEFAULT '',
   PRIMARY KEY (`priv_id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
-SET character_set_client = @saved_cs_client;
 
---
--- Table structure for table `cim_reg_registration`
---
-
-DROP TABLE IF EXISTS `cim_reg_registration`;
-SET @saved_cs_client     = @@character_set_client;
-SET character_set_client = utf8;
 CREATE TABLE `cim_reg_registration` (
   `registration_id` int(50) NOT NULL AUTO_INCREMENT,
   `event_id` int(50) NOT NULL DEFAULT '0',
@@ -1143,16 +655,8 @@ CREATE TABLE `cim_reg_registration` (
   KEY `FK_reg_status` (`registration_status`),
   CONSTRAINT `FK_reg_person` FOREIGN KEY (`person_id`) REFERENCES `cim_hrdb_person` (`person_id`) ON UPDATE CASCADE,
   CONSTRAINT `FK_reg_status` FOREIGN KEY (`registration_status`) REFERENCES `cim_reg_status` (`status_id`) ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=9530 DEFAULT CHARSET=latin1;
-SET character_set_client = @saved_cs_client;
+) ENGINE=InnoDB AUTO_INCREMENT=9542 DEFAULT CHARSET=latin1;
 
---
--- Table structure for table `cim_reg_scholarship`
---
-
-DROP TABLE IF EXISTS `cim_reg_scholarship`;
-SET @saved_cs_client     = @@character_set_client;
-SET character_set_client = utf8;
 CREATE TABLE `cim_reg_scholarship` (
   `scholarship_id` int(16) NOT NULL AUTO_INCREMENT,
   `registration_id` int(16) NOT NULL DEFAULT '0',
@@ -1163,29 +667,13 @@ CREATE TABLE `cim_reg_scholarship` (
   KEY `FK_scholarship_reg` (`registration_id`),
   CONSTRAINT `FK_scholarship_reg` FOREIGN KEY (`registration_id`) REFERENCES `cim_reg_registration` (`registration_id`) ON UPDATE CASCADE
 ) ENGINE=InnoDB AUTO_INCREMENT=2271 DEFAULT CHARSET=latin1;
-SET character_set_client = @saved_cs_client;
 
---
--- Table structure for table `cim_reg_status`
---
-
-DROP TABLE IF EXISTS `cim_reg_status`;
-SET @saved_cs_client     = @@character_set_client;
-SET character_set_client = utf8;
 CREATE TABLE `cim_reg_status` (
   `status_id` int(10) NOT NULL,
   `status_desc` varchar(32) NOT NULL DEFAULT '',
   PRIMARY KEY (`status_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-SET character_set_client = @saved_cs_client;
 
---
--- Table structure for table `cim_reg_superadmin`
---
-
-DROP TABLE IF EXISTS `cim_reg_superadmin`;
-SET @saved_cs_client     = @@character_set_client;
-SET character_set_client = utf8;
 CREATE TABLE `cim_reg_superadmin` (
   `superadmin_id` int(16) NOT NULL AUTO_INCREMENT,
   `viewer_id` int(16) NOT NULL DEFAULT '0',
@@ -1193,15 +681,7 @@ CREATE TABLE `cim_reg_superadmin` (
   KEY `FK_viewer_regsuperadmin` (`viewer_id`),
   CONSTRAINT `FK_viewer_regsuperadmin` FOREIGN KEY (`viewer_id`) REFERENCES `accountadmin_viewer` (`viewer_id`) ON UPDATE CASCADE
 ) ENGINE=InnoDB AUTO_INCREMENT=24 DEFAULT CHARSET=latin1;
-SET character_set_client = @saved_cs_client;
 
---
--- Table structure for table `cim_sch_group`
---
-
-DROP TABLE IF EXISTS `cim_sch_group`;
-SET @saved_cs_client     = @@character_set_client;
-SET character_set_client = utf8;
 CREATE TABLE `cim_sch_group` (
   `group_id` int(11) NOT NULL AUTO_INCREMENT,
   `groupType_id` int(11) DEFAULT NULL,
@@ -1211,29 +691,13 @@ CREATE TABLE `cim_sch_group` (
   KEY `FK_group_type` (`groupType_id`),
   CONSTRAINT `FK_group_type` FOREIGN KEY (`groupType_id`) REFERENCES `cim_sch_grouptype` (`groupType_id`) ON UPDATE CASCADE
 ) ENGINE=InnoDB AUTO_INCREMENT=427 DEFAULT CHARSET=latin1;
-SET character_set_client = @saved_cs_client;
 
---
--- Table structure for table `cim_sch_groupType`
---
-
-DROP TABLE IF EXISTS `cim_sch_groupType`;
-SET @saved_cs_client     = @@character_set_client;
-SET character_set_client = utf8;
 CREATE TABLE `cim_sch_groupType` (
   `groupType_id` int(11) NOT NULL AUTO_INCREMENT,
   `groupType_desc` varchar(20) DEFAULT NULL,
   PRIMARY KEY (`groupType_id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=latin1;
-SET character_set_client = @saved_cs_client;
 
---
--- Table structure for table `cim_sch_schedule`
---
-
-DROP TABLE IF EXISTS `cim_sch_schedule`;
-SET @saved_cs_client     = @@character_set_client;
-SET character_set_client = utf8;
 CREATE TABLE `cim_sch_schedule` (
   `schedule_id` int(11) NOT NULL AUTO_INCREMENT,
   `person_id` int(11) DEFAULT NULL,
@@ -1245,15 +709,7 @@ CREATE TABLE `cim_sch_schedule` (
   CONSTRAINT `FK_sched_person` FOREIGN KEY (`person_id`) REFERENCES `cim_hrdb_person` (`person_id`) ON UPDATE CASCADE,
   CONSTRAINT `FK_sched_tzone` FOREIGN KEY (`timezones_id`) REFERENCES `cim_sch_timezones` (`timezones_id`) ON UPDATE CASCADE
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
-SET character_set_client = @saved_cs_client;
 
---
--- Table structure for table `cim_sch_scheduleBlocks`
---
-
-DROP TABLE IF EXISTS `cim_sch_scheduleBlocks`;
-SET @saved_cs_client     = @@character_set_client;
-SET character_set_client = utf8;
 CREATE TABLE `cim_sch_scheduleBlocks` (
   `scheduleBlocks_id` int(11) NOT NULL AUTO_INCREMENT,
   `schedule_id` int(11) DEFAULT NULL,
@@ -1262,74 +718,34 @@ CREATE TABLE `cim_sch_scheduleBlocks` (
   KEY `FK_schblock_sched` (`schedule_id`),
   CONSTRAINT `FK_schblock_sched` FOREIGN KEY (`schedule_id`) REFERENCES `cim_sch_schedule` (`schedule_id`) ON UPDATE CASCADE
 ) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
-SET character_set_client = @saved_cs_client;
 
---
--- Table structure for table `cim_sch_timezones`
---
-
-DROP TABLE IF EXISTS `cim_sch_timezones`;
-SET @saved_cs_client     = @@character_set_client;
-SET character_set_client = utf8;
 CREATE TABLE `cim_sch_timezones` (
   `timezones_id` int(11) NOT NULL AUTO_INCREMENT,
   `timezones_desc` varchar(32) DEFAULT NULL,
   `timezones_offset` int(11) DEFAULT NULL,
   PRIMARY KEY (`timezones_id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
-SET character_set_client = @saved_cs_client;
 
---
--- Table structure for table `cim_stats_access`
---
-
-DROP TABLE IF EXISTS `cim_stats_access`;
-SET @saved_cs_client     = @@character_set_client;
-SET character_set_client = utf8;
 CREATE TABLE `cim_stats_access` (
   `access_id` int(16) NOT NULL AUTO_INCREMENT,
   `staff_id` int(16) NOT NULL DEFAULT '0',
   `priv_id` int(16) NOT NULL DEFAULT '0',
   PRIMARY KEY (`access_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
-SET character_set_client = @saved_cs_client;
 
---
--- Table structure for table `cim_stats_coordinator`
---
-
-DROP TABLE IF EXISTS `cim_stats_coordinator`;
-SET @saved_cs_client     = @@character_set_client;
-SET character_set_client = utf8;
 CREATE TABLE `cim_stats_coordinator` (
   `coordinator_id` int(16) NOT NULL AUTO_INCREMENT,
   `access_id` int(16) NOT NULL DEFAULT '0',
   `campus_id` int(16) NOT NULL DEFAULT '0',
   PRIMARY KEY (`coordinator_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
-SET character_set_client = @saved_cs_client;
 
---
--- Table structure for table `cim_stats_exposuretype`
---
-
-DROP TABLE IF EXISTS `cim_stats_exposuretype`;
-SET @saved_cs_client     = @@character_set_client;
-SET character_set_client = utf8;
 CREATE TABLE `cim_stats_exposuretype` (
   `exposuretype_id` int(10) NOT NULL AUTO_INCREMENT,
   `exposuretype_desc` varchar(64) NOT NULL DEFAULT '',
   PRIMARY KEY (`exposuretype_id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=9 DEFAULT CHARSET=latin1;
-SET character_set_client = @saved_cs_client;
 
---
--- Table structure for table `cim_stats_month`
---
-
-DROP TABLE IF EXISTS `cim_stats_month`;
-SET @saved_cs_client     = @@character_set_client;
-SET character_set_client = utf8;
 CREATE TABLE `cim_stats_month` (
   `month_id` int(10) NOT NULL AUTO_INCREMENT,
   `month_desc` varchar(64) NOT NULL DEFAULT '',
@@ -1339,15 +755,7 @@ CREATE TABLE `cim_stats_month` (
   `semester_id` int(10) DEFAULT NULL,
   PRIMARY KEY (`month_id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=53 DEFAULT CHARSET=latin1;
-SET character_set_client = @saved_cs_client;
 
---
--- Table structure for table `cim_stats_morestats`
---
-
-DROP TABLE IF EXISTS `cim_stats_morestats`;
-SET @saved_cs_client     = @@character_set_client;
-SET character_set_client = utf8;
 CREATE TABLE `cim_stats_morestats` (
   `morestats_id` int(10) NOT NULL AUTO_INCREMENT,
   `morestats_exp` int(10) NOT NULL DEFAULT '0',
@@ -1357,15 +765,7 @@ CREATE TABLE `cim_stats_morestats` (
   `exposuretype_id` int(10) NOT NULL DEFAULT '0',
   PRIMARY KEY (`morestats_id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=579 DEFAULT CHARSET=latin1;
-SET character_set_client = @saved_cs_client;
 
---
--- Table structure for table `cim_stats_prc`
---
-
-DROP TABLE IF EXISTS `cim_stats_prc`;
-SET @saved_cs_client     = @@character_set_client;
-SET character_set_client = utf8;
 CREATE TABLE `cim_stats_prc` (
   `prc_id` int(10) NOT NULL AUTO_INCREMENT,
   `prc_firstName` varchar(128) NOT NULL DEFAULT '',
@@ -1378,44 +778,20 @@ CREATE TABLE `cim_stats_prc` (
   `prc_7upStarted` int(10) NOT NULL DEFAULT '0',
   `prc_date` date NOT NULL DEFAULT '0000-00-00',
   PRIMARY KEY (`prc_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=779 DEFAULT CHARSET=latin1;
-SET character_set_client = @saved_cs_client;
+) ENGINE=MyISAM AUTO_INCREMENT=809 DEFAULT CHARSET=latin1;
 
---
--- Table structure for table `cim_stats_prcmethod`
---
-
-DROP TABLE IF EXISTS `cim_stats_prcmethod`;
-SET @saved_cs_client     = @@character_set_client;
-SET character_set_client = utf8;
 CREATE TABLE `cim_stats_prcmethod` (
   `prcMethod_id` int(10) NOT NULL AUTO_INCREMENT,
   `prcMethod_desc` varchar(64) NOT NULL DEFAULT '',
   PRIMARY KEY (`prcMethod_id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=14 DEFAULT CHARSET=latin1;
-SET character_set_client = @saved_cs_client;
 
---
--- Table structure for table `cim_stats_priv`
---
-
-DROP TABLE IF EXISTS `cim_stats_priv`;
-SET @saved_cs_client     = @@character_set_client;
-SET character_set_client = utf8;
 CREATE TABLE `cim_stats_priv` (
   `priv_id` int(16) NOT NULL AUTO_INCREMENT,
   `priv_desc` varchar(64) NOT NULL DEFAULT '',
   PRIMARY KEY (`priv_id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
-SET character_set_client = @saved_cs_client;
 
---
--- Table structure for table `cim_stats_semester`
---
-
-DROP TABLE IF EXISTS `cim_stats_semester`;
-SET @saved_cs_client     = @@character_set_client;
-SET character_set_client = utf8;
 CREATE TABLE `cim_stats_semester` (
   `semester_id` int(10) NOT NULL AUTO_INCREMENT,
   `semester_desc` varchar(64) NOT NULL DEFAULT '',
@@ -1423,15 +799,7 @@ CREATE TABLE `cim_stats_semester` (
   `year_id` int(8) NOT NULL DEFAULT '0',
   PRIMARY KEY (`semester_id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=16 DEFAULT CHARSET=latin1;
-SET character_set_client = @saved_cs_client;
 
---
--- Table structure for table `cim_stats_semesterreport`
---
-
-DROP TABLE IF EXISTS `cim_stats_semesterreport`;
-SET @saved_cs_client     = @@character_set_client;
-SET character_set_client = utf8;
 CREATE TABLE `cim_stats_semesterreport` (
   `semesterreport_id` int(10) NOT NULL AUTO_INCREMENT,
   `semesterreport_avgPrayer` int(10) NOT NULL DEFAULT '0',
@@ -1447,18 +815,9 @@ CREATE TABLE `cim_stats_semesterreport` (
   `semesterreport_numSpMultStdDG` int(10) NOT NULL DEFAULT '0',
   `semester_id` int(10) NOT NULL DEFAULT '0',
   `campus_id` int(10) NOT NULL DEFAULT '0',
-  `month_id` int(11) DEFAULT NULL,
   PRIMARY KEY (`semesterreport_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=109 DEFAULT CHARSET=latin1;
-SET character_set_client = @saved_cs_client;
+) ENGINE=MyISAM AUTO_INCREMENT=110 DEFAULT CHARSET=latin1;
 
---
--- Table structure for table `cim_stats_week`
---
-
-DROP TABLE IF EXISTS `cim_stats_week`;
-SET @saved_cs_client     = @@character_set_client;
-SET character_set_client = utf8;
 CREATE TABLE `cim_stats_week` (
   `week_id` int(50) NOT NULL AUTO_INCREMENT,
   `week_endDate` date NOT NULL DEFAULT '0000-00-00',
@@ -1466,15 +825,7 @@ CREATE TABLE `cim_stats_week` (
   `month_id` int(11) NOT NULL,
   PRIMARY KEY (`week_id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=204 DEFAULT CHARSET=latin1;
-SET character_set_client = @saved_cs_client;
 
---
--- Table structure for table `cim_stats_weeklyreport`
---
-
-DROP TABLE IF EXISTS `cim_stats_weeklyreport`;
-SET @saved_cs_client     = @@character_set_client;
-SET character_set_client = utf8;
 CREATE TABLE `cim_stats_weeklyreport` (
   `weeklyReport_id` int(10) NOT NULL AUTO_INCREMENT,
   `weeklyReport_1on1SpConv` int(10) NOT NULL DEFAULT '0',
@@ -1495,30 +846,14 @@ CREATE TABLE `cim_stats_weeklyreport` (
   `weeklyReport_siq` int(10) NOT NULL DEFAULT '0',
   `weeklyReport_notes` text NOT NULL,
   PRIMARY KEY (`weeklyReport_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=7387 DEFAULT CHARSET=latin1;
-SET character_set_client = @saved_cs_client;
+) ENGINE=MyISAM AUTO_INCREMENT=7859 DEFAULT CHARSET=latin1;
 
---
--- Table structure for table `cim_stats_year`
---
-
-DROP TABLE IF EXISTS `cim_stats_year`;
-SET @saved_cs_client     = @@character_set_client;
-SET character_set_client = utf8;
 CREATE TABLE `cim_stats_year` (
   `year_id` int(8) NOT NULL AUTO_INCREMENT,
   `year_desc` varchar(32) NOT NULL DEFAULT '',
   PRIMARY KEY (`year_id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
-SET character_set_client = @saved_cs_client;
 
---
--- Table structure for table `mt_evt_access`
---
-
-DROP TABLE IF EXISTS `mt_evt_access`;
-SET @saved_cs_client     = @@character_set_client;
-SET character_set_client = utf8;
 CREATE TABLE `mt_evt_access` (
   `viewer_id` int(50) NOT NULL,
   `role` char(50) NOT NULL,
@@ -1531,15 +866,7 @@ CREATE TABLE `mt_evt_access` (
   CONSTRAINT `mt_evt_access_ibfk_3` FOREIGN KEY (`viewer_id`) REFERENCES `accountadmin_viewer` (`viewer_id`),
   CONSTRAINT `mt_evt_access_ibfk_4` FOREIGN KEY (`role`) REFERENCES `mt_evt_role` (`role`) ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-SET character_set_client = @saved_cs_client;
 
---
--- Table structure for table `mt_evt_assign`
---
-
-DROP TABLE IF EXISTS `mt_evt_assign`;
-SET @saved_cs_client     = @@character_set_client;
-SET character_set_client = utf8;
 CREATE TABLE `mt_evt_assign` (
   `job_id` int(11) NOT NULL DEFAULT '0',
   `viewer_id` int(50) NOT NULL DEFAULT '0',
@@ -1548,15 +875,7 @@ CREATE TABLE `mt_evt_assign` (
   CONSTRAINT `mt_evt_assign_ibfk_1` FOREIGN KEY (`job_id`) REFERENCES `mt_evt_job` (`job_id`) ON UPDATE CASCADE,
   CONSTRAINT `mt_evt_assign_ibfk_2` FOREIGN KEY (`viewer_id`) REFERENCES `mt_evt_access` (`viewer_id`) ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-SET character_set_client = @saved_cs_client;
 
---
--- Table structure for table `mt_evt_job`
---
-
-DROP TABLE IF EXISTS `mt_evt_job`;
-SET @saved_cs_client     = @@character_set_client;
-SET character_set_client = utf8;
 CREATE TABLE `mt_evt_job` (
   `job_id` int(11) NOT NULL AUTO_INCREMENT,
   `job_name` varchar(256) DEFAULT NULL,
@@ -1567,15 +886,7 @@ CREATE TABLE `mt_evt_job` (
   KEY `set_id` (`set_id`),
   CONSTRAINT `mt_evt_job_ibfk_1` FOREIGN KEY (`set_id`) REFERENCES `mt_evt_job_set` (`set_id`) ON UPDATE CASCADE
 ) ENGINE=InnoDB AUTO_INCREMENT=202 DEFAULT CHARSET=latin1;
-SET character_set_client = @saved_cs_client;
 
---
--- Table structure for table `mt_evt_job_container`
---
-
-DROP TABLE IF EXISTS `mt_evt_job_container`;
-SET @saved_cs_client     = @@character_set_client;
-SET character_set_client = utf8;
 CREATE TABLE `mt_evt_job_container` (
   `container_id` int(11) NOT NULL AUTO_INCREMENT,
   `container_name` varchar(256) DEFAULT NULL,
@@ -1584,15 +895,7 @@ CREATE TABLE `mt_evt_job_container` (
   KEY `event_id` (`event_id`),
   CONSTRAINT `mt_evt_job_container_ibfk_1` FOREIGN KEY (`event_id`) REFERENCES `cim_reg_event` (`event_id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=latin1;
-SET character_set_client = @saved_cs_client;
 
---
--- Table structure for table `mt_evt_job_set`
---
-
-DROP TABLE IF EXISTS `mt_evt_job_set`;
-SET @saved_cs_client     = @@character_set_client;
-SET character_set_client = utf8;
 CREATE TABLE `mt_evt_job_set` (
   `set_id` int(11) NOT NULL AUTO_INCREMENT,
   `set_name` varchar(256) DEFAULT NULL,
@@ -1601,43 +904,19 @@ CREATE TABLE `mt_evt_job_set` (
   KEY `container_id` (`container_id`),
   CONSTRAINT `mt_evt_job_set_ibfk_1` FOREIGN KEY (`container_id`) REFERENCES `mt_evt_job_container` (`container_id`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=latin1;
-SET character_set_client = @saved_cs_client;
 
---
--- Table structure for table `mt_evt_motd`
---
-
-DROP TABLE IF EXISTS `mt_evt_motd`;
-SET @saved_cs_client     = @@character_set_client;
-SET character_set_client = utf8;
 CREATE TABLE `mt_evt_motd` (
   `event_id` int(50) NOT NULL,
   `motd` text NOT NULL,
   PRIMARY KEY (`event_id`),
   CONSTRAINT `mt_evt_motd_ibfk_1` FOREIGN KEY (`event_id`) REFERENCES `cim_reg_event` (`event_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-SET character_set_client = @saved_cs_client;
 
---
--- Table structure for table `mt_evt_role`
---
-
-DROP TABLE IF EXISTS `mt_evt_role`;
-SET @saved_cs_client     = @@character_set_client;
-SET character_set_client = utf8;
 CREATE TABLE `mt_evt_role` (
   `role` char(50) NOT NULL,
   PRIMARY KEY (`role`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-SET character_set_client = @saved_cs_client;
 
---
--- Table structure for table `multi_gen_buttons`
---
-
-DROP TABLE IF EXISTS `multi_gen_buttons`;
-SET @saved_cs_client     = @@character_set_client;
-SET character_set_client = utf8;
 CREATE TABLE `multi_gen_buttons` (
   `button_id` int(11) NOT NULL AUTO_INCREMENT,
   `site_id` int(11) NOT NULL DEFAULT '0',
@@ -1646,15 +925,7 @@ CREATE TABLE `multi_gen_buttons` (
   `language_id` int(4) NOT NULL DEFAULT '1',
   PRIMARY KEY (`button_id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=25 DEFAULT CHARSET=latin1;
-SET character_set_client = @saved_cs_client;
 
---
--- Table structure for table `multi_labels`
---
-
-DROP TABLE IF EXISTS `multi_labels`;
-SET @saved_cs_client     = @@character_set_client;
-SET character_set_client = utf8;
 CREATE TABLE `multi_labels` (
   `labels_id` int(11) NOT NULL AUTO_INCREMENT,
   `page_id` int(11) NOT NULL DEFAULT '0',
@@ -1666,88 +937,40 @@ CREATE TABLE `multi_labels` (
   KEY `page_id` (`page_id`),
   KEY `language_id` (`language_id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=26304 DEFAULT CHARSET=utf8;
-SET character_set_client = @saved_cs_client;
 
---
--- Table structure for table `multi_languages`
---
-
-DROP TABLE IF EXISTS `multi_languages`;
-SET @saved_cs_client     = @@character_set_client;
-SET character_set_client = utf8;
 CREATE TABLE `multi_languages` (
   `language_id` int(11) NOT NULL AUTO_INCREMENT,
   `language_label` varchar(128) NOT NULL DEFAULT '',
   `labels_key` varchar(128) NOT NULL DEFAULT '',
   PRIMARY KEY (`language_id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
-SET character_set_client = @saved_cs_client;
 
---
--- Table structure for table `multi_page`
---
-
-DROP TABLE IF EXISTS `multi_page`;
-SET @saved_cs_client     = @@character_set_client;
-SET character_set_client = utf8;
 CREATE TABLE `multi_page` (
   `page_id` int(11) NOT NULL AUTO_INCREMENT,
   `series_id` int(11) NOT NULL DEFAULT '0',
   `page_label` varchar(50) NOT NULL DEFAULT '',
   PRIMARY KEY (`page_id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=1685 DEFAULT CHARSET=latin1;
-SET character_set_client = @saved_cs_client;
 
---
--- Table structure for table `multi_series`
---
-
-DROP TABLE IF EXISTS `multi_series`;
-SET @saved_cs_client     = @@character_set_client;
-SET character_set_client = utf8;
 CREATE TABLE `multi_series` (
   `series_id` int(11) NOT NULL AUTO_INCREMENT,
   `site_id` int(11) NOT NULL DEFAULT '0',
   `series_label` varchar(50) NOT NULL DEFAULT '',
   PRIMARY KEY (`series_id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=71 DEFAULT CHARSET=latin1;
-SET character_set_client = @saved_cs_client;
 
---
--- Table structure for table `multi_site`
---
-
-DROP TABLE IF EXISTS `multi_site`;
-SET @saved_cs_client     = @@character_set_client;
-SET character_set_client = utf8;
 CREATE TABLE `multi_site` (
   `site_id` int(11) NOT NULL AUTO_INCREMENT,
   `site_label` varchar(128) NOT NULL DEFAULT '',
   PRIMARY KEY (`site_id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
-SET character_set_client = @saved_cs_client;
 
---
--- Table structure for table `national_day`
---
-
-DROP TABLE IF EXISTS `national_day`;
-SET @saved_cs_client     = @@character_set_client;
-SET character_set_client = utf8;
 CREATE TABLE `national_day` (
   `day_id` int(11) NOT NULL AUTO_INCREMENT,
   `day_date` date NOT NULL DEFAULT '0000-00-00',
   PRIMARY KEY (`day_id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=2018 DEFAULT CHARSET=latin1;
-SET character_set_client = @saved_cs_client;
 
---
--- Table structure for table `national_signup`
---
-
-DROP TABLE IF EXISTS `national_signup`;
-SET @saved_cs_client     = @@character_set_client;
-SET character_set_client = utf8;
 CREATE TABLE `national_signup` (
   `signup_id` int(11) NOT NULL AUTO_INCREMENT,
   `day_id` int(11) NOT NULL DEFAULT '0',
@@ -1757,44 +980,20 @@ CREATE TABLE `national_signup` (
   `signup_email` varchar(128) NOT NULL DEFAULT '',
   PRIMARY KEY (`signup_id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=5111 DEFAULT CHARSET=latin1;
-SET character_set_client = @saved_cs_client;
 
---
--- Table structure for table `national_time`
---
-
-DROP TABLE IF EXISTS `national_time`;
-SET @saved_cs_client     = @@character_set_client;
-SET character_set_client = utf8;
 CREATE TABLE `national_time` (
   `time_id` int(11) NOT NULL AUTO_INCREMENT,
   `time_time` time NOT NULL DEFAULT '00:00:00',
   PRIMARY KEY (`time_id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=241 DEFAULT CHARSET=latin1;
-SET character_set_client = @saved_cs_client;
 
---
--- Table structure for table `national_timezones`
---
-
-DROP TABLE IF EXISTS `national_timezones`;
-SET @saved_cs_client     = @@character_set_client;
-SET character_set_client = utf8;
 CREATE TABLE `national_timezones` (
   `timezones_id` int(11) NOT NULL AUTO_INCREMENT,
   `timezones_desc` varchar(32) NOT NULL DEFAULT '',
   `timezones_offset` int(11) NOT NULL DEFAULT '0',
   PRIMARY KEY (`timezones_id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
-SET character_set_client = @saved_cs_client;
 
---
--- Table structure for table `navbar_navbarcache`
---
-
-DROP TABLE IF EXISTS `navbar_navbarcache`;
-SET @saved_cs_client     = @@character_set_client;
-SET character_set_client = utf8;
 CREATE TABLE `navbar_navbarcache` (
   `navbarcache_id` int(11) NOT NULL AUTO_INCREMENT,
   `viewer_id` int(11) NOT NULL DEFAULT '0',
@@ -1802,31 +1001,15 @@ CREATE TABLE `navbar_navbarcache` (
   `navbarcache_cache` text NOT NULL,
   `navbarcache_isValid` int(1) NOT NULL DEFAULT '0',
   PRIMARY KEY (`navbarcache_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=144420 DEFAULT CHARSET=latin1;
-SET character_set_client = @saved_cs_client;
+) ENGINE=MyISAM AUTO_INCREMENT=144917 DEFAULT CHARSET=latin1;
 
---
--- Table structure for table `navbar_navbargroup`
---
-
-DROP TABLE IF EXISTS `navbar_navbargroup`;
-SET @saved_cs_client     = @@character_set_client;
-SET character_set_client = utf8;
 CREATE TABLE `navbar_navbargroup` (
   `navbargroup_id` int(11) NOT NULL AUTO_INCREMENT,
   `navbargroup_nameKey` varchar(50) NOT NULL DEFAULT '',
   `navbargroup_order` int(11) NOT NULL DEFAULT '0',
   PRIMARY KEY (`navbargroup_id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=14 DEFAULT CHARSET=latin1;
-SET character_set_client = @saved_cs_client;
 
---
--- Table structure for table `navbar_navbarlinks`
---
-
-DROP TABLE IF EXISTS `navbar_navbarlinks`;
-SET @saved_cs_client     = @@character_set_client;
-SET character_set_client = utf8;
 CREATE TABLE `navbar_navbarlinks` (
   `navbarlink_id` int(11) NOT NULL AUTO_INCREMENT,
   `navbargroup_id` int(11) NOT NULL DEFAULT '0',
@@ -1840,45 +1023,21 @@ CREATE TABLE `navbar_navbarlinks` (
   `navbarlink_endDateTime` datetime NOT NULL DEFAULT '9999-12-29 23:59:00',
   PRIMARY KEY (`navbarlink_id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=72 DEFAULT CHARSET=latin1;
-SET character_set_client = @saved_cs_client;
 
---
--- Table structure for table `navbar_navlinkaccessgroup`
---
-
-DROP TABLE IF EXISTS `navbar_navlinkaccessgroup`;
-SET @saved_cs_client     = @@character_set_client;
-SET character_set_client = utf8;
 CREATE TABLE `navbar_navlinkaccessgroup` (
   `navlinkaccessgroup_id` int(11) NOT NULL AUTO_INCREMENT,
   `navbarlink_id` int(11) NOT NULL DEFAULT '0',
   `accessgroup_id` int(11) NOT NULL DEFAULT '0',
   PRIMARY KEY (`navlinkaccessgroup_id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=111 DEFAULT CHARSET=latin1;
-SET character_set_client = @saved_cs_client;
 
---
--- Table structure for table `navbar_navlinkviewer`
---
-
-DROP TABLE IF EXISTS `navbar_navlinkviewer`;
-SET @saved_cs_client     = @@character_set_client;
-SET character_set_client = utf8;
 CREATE TABLE `navbar_navlinkviewer` (
   `navlinkviewer_id` int(11) NOT NULL AUTO_INCREMENT,
   `navbarlink_id` int(11) NOT NULL DEFAULT '0',
   `viewer_id` int(11) NOT NULL DEFAULT '0',
   PRIMARY KEY (`navlinkviewer_id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
-SET character_set_client = @saved_cs_client;
 
---
--- Table structure for table `rad_dafield`
---
-
-DROP TABLE IF EXISTS `rad_dafield`;
-SET @saved_cs_client     = @@character_set_client;
-SET character_set_client = utf8;
 CREATE TABLE `rad_dafield` (
   `dafield_id` int(11) NOT NULL AUTO_INCREMENT,
   `daobj_id` int(11) NOT NULL DEFAULT '0',
@@ -1902,15 +1061,7 @@ CREATE TABLE `rad_dafield` (
   `dafield_error` text NOT NULL,
   PRIMARY KEY (`dafield_id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=359 DEFAULT CHARSET=latin1;
-SET character_set_client = @saved_cs_client;
 
---
--- Table structure for table `rad_daobj`
---
-
-DROP TABLE IF EXISTS `rad_daobj`;
-SET @saved_cs_client     = @@character_set_client;
-SET character_set_client = utf8;
 CREATE TABLE `rad_daobj` (
   `daobj_id` int(11) NOT NULL AUTO_INCREMENT,
   `module_id` int(11) NOT NULL DEFAULT '0',
@@ -1923,15 +1074,7 @@ CREATE TABLE `rad_daobj` (
   `daobj_isUpdated` int(1) NOT NULL DEFAULT '0',
   PRIMARY KEY (`daobj_id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=81 DEFAULT CHARSET=latin1;
-SET character_set_client = @saved_cs_client;
 
---
--- Table structure for table `rad_module`
---
-
-DROP TABLE IF EXISTS `rad_module`;
-SET @saved_cs_client     = @@character_set_client;
-SET character_set_client = utf8;
 CREATE TABLE `rad_module` (
   `module_id` int(11) NOT NULL AUTO_INCREMENT,
   `module_name` varchar(50) NOT NULL DEFAULT '',
@@ -1942,15 +1085,7 @@ CREATE TABLE `rad_module` (
   `module_isCreated` int(1) NOT NULL DEFAULT '0',
   PRIMARY KEY (`module_id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=14 DEFAULT CHARSET=latin1;
-SET character_set_client = @saved_cs_client;
 
---
--- Table structure for table `rad_page`
---
-
-DROP TABLE IF EXISTS `rad_page`;
-SET @saved_cs_client     = @@character_set_client;
-SET character_set_client = utf8;
 CREATE TABLE `rad_page` (
   `page_id` int(11) NOT NULL AUTO_INCREMENT,
   `module_id` int(11) NOT NULL DEFAULT '0',
@@ -1964,15 +1099,7 @@ CREATE TABLE `rad_page` (
   `page_isDefault` int(1) NOT NULL DEFAULT '0',
   PRIMARY KEY (`page_id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=123 DEFAULT CHARSET=latin1;
-SET character_set_client = @saved_cs_client;
 
---
--- Table structure for table `rad_pagefield`
---
-
-DROP TABLE IF EXISTS `rad_pagefield`;
-SET @saved_cs_client     = @@character_set_client;
-SET character_set_client = utf8;
 CREATE TABLE `rad_pagefield` (
   `pagefield_id` int(11) NOT NULL AUTO_INCREMENT,
   `page_id` int(11) NOT NULL DEFAULT '0',
@@ -1981,15 +1108,7 @@ CREATE TABLE `rad_pagefield` (
   `pagefield_isForm` int(1) NOT NULL DEFAULT '0',
   PRIMARY KEY (`pagefield_id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=433 DEFAULT CHARSET=latin1;
-SET character_set_client = @saved_cs_client;
 
---
--- Table structure for table `rad_pagelabels`
---
-
-DROP TABLE IF EXISTS `rad_pagelabels`;
-SET @saved_cs_client     = @@character_set_client;
-SET character_set_client = utf8;
 CREATE TABLE `rad_pagelabels` (
   `pagelabel_id` int(11) NOT NULL AUTO_INCREMENT,
   `page_id` int(11) NOT NULL DEFAULT '0',
@@ -1999,15 +1118,7 @@ CREATE TABLE `rad_pagelabels` (
   `pagelabel_isCreated` int(1) NOT NULL DEFAULT '0',
   PRIMARY KEY (`pagelabel_id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=186 DEFAULT CHARSET=latin1;
-SET character_set_client = @saved_cs_client;
 
---
--- Table structure for table `rad_statevar`
---
-
-DROP TABLE IF EXISTS `rad_statevar`;
-SET @saved_cs_client     = @@character_set_client;
-SET character_set_client = utf8;
 CREATE TABLE `rad_statevar` (
   `statevar_id` int(11) NOT NULL AUTO_INCREMENT,
   `module_id` int(11) NOT NULL DEFAULT '0',
@@ -2019,15 +1130,7 @@ CREATE TABLE `rad_statevar` (
   `statevar_isUpdated` int(1) NOT NULL DEFAULT '0',
   PRIMARY KEY (`statevar_id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=97 DEFAULT CHARSET=latin1;
-SET character_set_client = @saved_cs_client;
 
---
--- Table structure for table `rad_transitions`
---
-
-DROP TABLE IF EXISTS `rad_transitions`;
-SET @saved_cs_client     = @@character_set_client;
-SET character_set_client = utf8;
 CREATE TABLE `rad_transitions` (
   `transition_id` int(11) NOT NULL AUTO_INCREMENT,
   `module_id` int(11) NOT NULL DEFAULT '0',
@@ -2037,15 +1140,7 @@ CREATE TABLE `rad_transitions` (
   `transition_isCreated` int(1) NOT NULL DEFAULT '0',
   PRIMARY KEY (`transition_id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=48 DEFAULT CHARSET=latin1;
-SET character_set_client = @saved_cs_client;
 
---
--- Table structure for table `site_logmanager`
---
-
-DROP TABLE IF EXISTS `site_logmanager`;
-SET @saved_cs_client     = @@character_set_client;
-SET character_set_client = utf8;
 CREATE TABLE `site_logmanager` (
   `log_id` int(11) NOT NULL AUTO_INCREMENT,
   `log_userID` varchar(50) NOT NULL DEFAULT '',
@@ -2057,15 +1152,7 @@ CREATE TABLE `site_logmanager` (
   `log_applicationKey` varchar(4) NOT NULL DEFAULT '',
   PRIMARY KEY (`log_id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=24 DEFAULT CHARSET=latin1;
-SET character_set_client = @saved_cs_client;
 
---
--- Table structure for table `site_multilingual_label`
---
-
-DROP TABLE IF EXISTS `site_multilingual_label`;
-SET @saved_cs_client     = @@character_set_client;
-SET character_set_client = utf8;
 CREATE TABLE `site_multilingual_label` (
   `label_id` int(11) NOT NULL AUTO_INCREMENT,
   `page_id` int(11) NOT NULL DEFAULT '0',
@@ -2078,44 +1165,20 @@ CREATE TABLE `site_multilingual_label` (
   KEY `ciministry.site_multilingual_label_label_key_index` (`label_key`),
   KEY `ciministry.site_multilingual_label_language_id_index` (`language_id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=4646 DEFAULT CHARSET=latin1;
-SET character_set_client = @saved_cs_client;
 
---
--- Table structure for table `site_multilingual_page`
---
-
-DROP TABLE IF EXISTS `site_multilingual_page`;
-SET @saved_cs_client     = @@character_set_client;
-SET character_set_client = utf8;
 CREATE TABLE `site_multilingual_page` (
   `page_id` int(11) NOT NULL AUTO_INCREMENT,
   `series_id` int(11) NOT NULL DEFAULT '0',
   `page_key` varchar(50) NOT NULL DEFAULT '',
   PRIMARY KEY (`page_id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=304 DEFAULT CHARSET=latin1;
-SET character_set_client = @saved_cs_client;
 
---
--- Table structure for table `site_multilingual_series`
---
-
-DROP TABLE IF EXISTS `site_multilingual_series`;
-SET @saved_cs_client     = @@character_set_client;
-SET character_set_client = utf8;
 CREATE TABLE `site_multilingual_series` (
   `series_id` int(11) NOT NULL AUTO_INCREMENT,
   `series_key` varchar(50) NOT NULL DEFAULT '',
   PRIMARY KEY (`series_id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=19 DEFAULT CHARSET=latin1;
-SET character_set_client = @saved_cs_client;
 
---
--- Table structure for table `site_multilingual_xlation`
---
-
-DROP TABLE IF EXISTS `site_multilingual_xlation`;
-SET @saved_cs_client     = @@character_set_client;
-SET character_set_client = utf8;
 CREATE TABLE `site_multilingual_xlation` (
   `xlation_id` int(11) NOT NULL AUTO_INCREMENT,
   `label_id` int(11) NOT NULL DEFAULT '0',
@@ -2124,15 +1187,7 @@ CREATE TABLE `site_multilingual_xlation` (
   KEY `language_id` (`language_id`),
   KEY `label_id` (`label_id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=5548 DEFAULT CHARSET=latin1;
-SET character_set_client = @saved_cs_client;
 
---
--- Table structure for table `site_page_modules`
---
-
-DROP TABLE IF EXISTS `site_page_modules`;
-SET @saved_cs_client     = @@character_set_client;
-SET character_set_client = utf8;
 CREATE TABLE `site_page_modules` (
   `module_id` int(11) NOT NULL AUTO_INCREMENT,
   `module_key` varchar(50) NOT NULL DEFAULT '',
@@ -2145,30 +1200,14 @@ CREATE TABLE `site_page_modules` (
   `module_systemAccessObj` varchar(50) NOT NULL DEFAULT '',
   PRIMARY KEY (`module_id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=20 DEFAULT CHARSET=latin1;
-SET character_set_client = @saved_cs_client;
 
---
--- Table structure for table `site_session`
---
-
-DROP TABLE IF EXISTS `site_session`;
-SET @saved_cs_client     = @@character_set_client;
-SET character_set_client = utf8;
 CREATE TABLE `site_session` (
   `session_id` varchar(32) NOT NULL DEFAULT '',
   `session_data` text NOT NULL,
   `session_expiration` int(11) NOT NULL DEFAULT '0',
   PRIMARY KEY (`session_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
-SET character_set_client = @saved_cs_client;
 
---
--- Table structure for table `spt_ticket`
---
-
-DROP TABLE IF EXISTS `spt_ticket`;
-SET @saved_cs_client     = @@character_set_client;
-SET character_set_client = utf8;
 CREATE TABLE `spt_ticket` (
   `ticket_id` int(8) NOT NULL AUTO_INCREMENT,
   `viewer_id` int(8) NOT NULL DEFAULT '0',
@@ -2176,41 +1215,17 @@ CREATE TABLE `spt_ticket` (
   `ticket_expiry` int(16) NOT NULL DEFAULT '0',
   PRIMARY KEY (`ticket_id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=13418 DEFAULT CHARSET=latin1;
-SET character_set_client = @saved_cs_client;
 
---
--- Table structure for table `temp_mb_early_frosh`
---
-
-DROP TABLE IF EXISTS `temp_mb_early_frosh`;
-SET @saved_cs_client     = @@character_set_client;
-SET character_set_client = utf8;
 CREATE TABLE `temp_mb_early_frosh` (
   `registration_id` int(10) NOT NULL,
   PRIMARY KEY (`registration_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_general_ci;
-SET character_set_client = @saved_cs_client;
 
---
--- Table structure for table `test_table`
---
-
-DROP TABLE IF EXISTS `test_table`;
-SET @saved_cs_client     = @@character_set_client;
-SET character_set_client = utf8;
 CREATE TABLE `test_table` (
   `test_id` int(50) NOT NULL AUTO_INCREMENT,
   PRIMARY KEY (`test_id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
-SET character_set_client = @saved_cs_client;
 
---
--- Table structure for table `uwo_bb_extended_info`
---
-
-DROP TABLE IF EXISTS `uwo_bb_extended_info`;
-SET @saved_cs_client     = @@character_set_client;
-SET character_set_client = utf8;
 CREATE TABLE `uwo_bb_extended_info` (
   `person_faculty` varchar(128) DEFAULT NULL,
   `person_verified` tinyint(1) DEFAULT '0',
@@ -2222,15 +1237,7 @@ CREATE TABLE `uwo_bb_extended_info` (
   PRIMARY KEY (`person_id`),
   CONSTRAINT `uwo_bb_extended_info_ibfk_1` FOREIGN KEY (`person_id`) REFERENCES `cim_hrdb_person` (`person_id`) ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-SET character_set_client = @saved_cs_client;
 
---
--- Table structure for table `uwo_bb_group`
---
-
-DROP TABLE IF EXISTS `uwo_bb_group`;
-SET @saved_cs_client     = @@character_set_client;
-SET character_set_client = utf8;
 CREATE TABLE `uwo_bb_group` (
   `group_id` int(50) NOT NULL AUTO_INCREMENT,
   `group_name` varchar(128) NOT NULL,
@@ -2240,15 +1247,7 @@ CREATE TABLE `uwo_bb_group` (
   KEY `group_type_id` (`group_type_id`),
   CONSTRAINT `uwo_bb_group_ibfk_1` FOREIGN KEY (`group_type_id`) REFERENCES `uwo_bb_group_type` (`group_type_id`) ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-SET character_set_client = @saved_cs_client;
 
---
--- Table structure for table `uwo_bb_group_assignment`
---
-
-DROP TABLE IF EXISTS `uwo_bb_group_assignment`;
-SET @saved_cs_client     = @@character_set_client;
-SET character_set_client = utf8;
 CREATE TABLE `uwo_bb_group_assignment` (
   `person_id` int(50) NOT NULL,
   `group_id` int(50) NOT NULL,
@@ -2261,43 +1260,19 @@ CREATE TABLE `uwo_bb_group_assignment` (
   CONSTRAINT `uwo_bb_group_assignment_ibfk_2` FOREIGN KEY (`group_id`) REFERENCES `uwo_bb_group` (`group_id`) ON UPDATE CASCADE,
   CONSTRAINT `uwo_bb_group_assignment_ibfk_3` FOREIGN KEY (`group_assignment_type_id`) REFERENCES `uwo_bb_group_assignment_type` (`group_assignment_type_id`) ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-SET character_set_client = @saved_cs_client;
 
---
--- Table structure for table `uwo_bb_group_assignment_type`
---
-
-DROP TABLE IF EXISTS `uwo_bb_group_assignment_type`;
-SET @saved_cs_client     = @@character_set_client;
-SET character_set_client = utf8;
 CREATE TABLE `uwo_bb_group_assignment_type` (
   `group_assignment_type_id` int(50) NOT NULL AUTO_INCREMENT,
   `group_assignment_title` varchar(128) NOT NULL,
   PRIMARY KEY (`group_assignment_type_id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
-SET character_set_client = @saved_cs_client;
 
---
--- Table structure for table `uwo_bb_group_type`
---
-
-DROP TABLE IF EXISTS `uwo_bb_group_type`;
-SET @saved_cs_client     = @@character_set_client;
-SET character_set_client = utf8;
 CREATE TABLE `uwo_bb_group_type` (
   `group_type_id` int(50) NOT NULL AUTO_INCREMENT,
   `group_type_name` varchar(128) NOT NULL,
   PRIMARY KEY (`group_type_id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
-SET character_set_client = @saved_cs_client;
 
---
--- Table structure for table `uwo_bb_login`
---
-
-DROP TABLE IF EXISTS `uwo_bb_login`;
-SET @saved_cs_client     = @@character_set_client;
-SET character_set_client = utf8;
 CREATE TABLE `uwo_bb_login` (
   `person_id` int(50) NOT NULL,
   `campus_id` int(50) NOT NULL,
@@ -2307,15 +1282,7 @@ CREATE TABLE `uwo_bb_login` (
   CONSTRAINT `uwo_bb_login_ibfk_1` FOREIGN KEY (`person_id`) REFERENCES `cim_hrdb_person` (`person_id`) ON UPDATE CASCADE,
   CONSTRAINT `uwo_bb_login_ibfk_2` FOREIGN KEY (`campus_id`) REFERENCES `cim_hrdb_campus` (`campus_id`) ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-SET character_set_client = @saved_cs_client;
 
---
--- Table structure for table `wp_comments`
---
-
-DROP TABLE IF EXISTS `wp_comments`;
-SET @saved_cs_client     = @@character_set_client;
-SET character_set_client = utf8;
 CREATE TABLE `wp_comments` (
   `comment_ID` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
   `comment_post_ID` int(11) NOT NULL DEFAULT '0',
@@ -2337,16 +1304,8 @@ CREATE TABLE `wp_comments` (
   KEY `comment_post_ID` (`comment_post_ID`),
   KEY `comment_approved_date_gmt` (`comment_approved`,`comment_date_gmt`),
   KEY `comment_date_gmt` (`comment_date_gmt`)
-) ENGINE=MyISAM AUTO_INCREMENT=40035 DEFAULT CHARSET=utf8;
-SET character_set_client = @saved_cs_client;
+) ENGINE=MyISAM AUTO_INCREMENT=40463 DEFAULT CHARSET=utf8;
 
---
--- Table structure for table `wp_formbuilder_fields`
---
-
-DROP TABLE IF EXISTS `wp_formbuilder_fields`;
-SET @saved_cs_client     = @@character_set_client;
-SET character_set_client = utf8;
 CREATE TABLE `wp_formbuilder_fields` (
   `id` bigint(20) NOT NULL AUTO_INCREMENT,
   `form_id` bigint(20) NOT NULL,
@@ -2359,15 +1318,7 @@ CREATE TABLE `wp_formbuilder_fields` (
   `error_message` blob NOT NULL,
   UNIQUE KEY `id` (`id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=59 DEFAULT CHARSET=latin1;
-SET character_set_client = @saved_cs_client;
 
---
--- Table structure for table `wp_formbuilder_forms`
---
-
-DROP TABLE IF EXISTS `wp_formbuilder_forms`;
-SET @saved_cs_client     = @@character_set_client;
-SET character_set_client = utf8;
 CREATE TABLE `wp_formbuilder_forms` (
   `id` bigint(20) NOT NULL AUTO_INCREMENT,
   `name` blob NOT NULL,
@@ -2379,30 +1330,14 @@ CREATE TABLE `wp_formbuilder_forms` (
   `autoresponse` bigint(20) NOT NULL,
   UNIQUE KEY `id` (`id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
-SET character_set_client = @saved_cs_client;
 
---
--- Table structure for table `wp_formbuilder_pages`
---
-
-DROP TABLE IF EXISTS `wp_formbuilder_pages`;
-SET @saved_cs_client     = @@character_set_client;
-SET character_set_client = utf8;
 CREATE TABLE `wp_formbuilder_pages` (
   `id` bigint(20) NOT NULL AUTO_INCREMENT,
   `post_id` bigint(20) NOT NULL,
   `form_id` bigint(20) NOT NULL,
   UNIQUE KEY `id` (`id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=25 DEFAULT CHARSET=latin1;
-SET character_set_client = @saved_cs_client;
 
---
--- Table structure for table `wp_formbuilder_responses`
---
-
-DROP TABLE IF EXISTS `wp_formbuilder_responses`;
-SET @saved_cs_client     = @@character_set_client;
-SET character_set_client = utf8;
 CREATE TABLE `wp_formbuilder_responses` (
   `id` bigint(20) NOT NULL AUTO_INCREMENT,
   `name` blob NOT NULL,
@@ -2412,15 +1347,7 @@ CREATE TABLE `wp_formbuilder_responses` (
   `from_email` varchar(255) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
-SET character_set_client = @saved_cs_client;
 
---
--- Table structure for table `wp_links`
---
-
-DROP TABLE IF EXISTS `wp_links`;
-SET @saved_cs_client     = @@character_set_client;
-SET character_set_client = utf8;
 CREATE TABLE `wp_links` (
   `link_id` bigint(20) NOT NULL AUTO_INCREMENT,
   `link_url` varchar(255) NOT NULL DEFAULT '',
@@ -2440,15 +1367,7 @@ CREATE TABLE `wp_links` (
   KEY `link_category` (`link_category`),
   KEY `link_visible` (`link_visible`)
 ) ENGINE=MyISAM AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
-SET character_set_client = @saved_cs_client;
 
---
--- Table structure for table `wp_options`
---
-
-DROP TABLE IF EXISTS `wp_options`;
-SET @saved_cs_client     = @@character_set_client;
-SET character_set_client = utf8;
 CREATE TABLE `wp_options` (
   `option_id` bigint(20) NOT NULL AUTO_INCREMENT,
   `blog_id` int(11) NOT NULL DEFAULT '0',
@@ -2458,15 +1377,7 @@ CREATE TABLE `wp_options` (
   PRIMARY KEY (`option_id`,`blog_id`,`option_name`),
   KEY `option_name` (`option_name`)
 ) ENGINE=MyISAM AUTO_INCREMENT=381 DEFAULT CHARSET=utf8;
-SET character_set_client = @saved_cs_client;
 
---
--- Table structure for table `wp_postmeta`
---
-
-DROP TABLE IF EXISTS `wp_postmeta`;
-SET @saved_cs_client     = @@character_set_client;
-SET character_set_client = utf8;
 CREATE TABLE `wp_postmeta` (
   `meta_id` bigint(20) NOT NULL AUTO_INCREMENT,
   `post_id` bigint(20) NOT NULL DEFAULT '0',
@@ -2476,15 +1387,7 @@ CREATE TABLE `wp_postmeta` (
   KEY `post_id` (`post_id`),
   KEY `meta_key` (`meta_key`)
 ) ENGINE=MyISAM AUTO_INCREMENT=119 DEFAULT CHARSET=utf8;
-SET character_set_client = @saved_cs_client;
 
---
--- Table structure for table `wp_posts`
---
-
-DROP TABLE IF EXISTS `wp_posts`;
-SET @saved_cs_client     = @@character_set_client;
-SET character_set_client = utf8;
 CREATE TABLE `wp_posts` (
   `ID` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
   `post_author` bigint(20) NOT NULL DEFAULT '0',
@@ -2515,15 +1418,7 @@ CREATE TABLE `wp_posts` (
   KEY `type_status_date` (`post_type`,`post_status`,`post_date`,`ID`),
   KEY `post_parent` (`post_parent`)
 ) ENGINE=MyISAM AUTO_INCREMENT=209 DEFAULT CHARSET=utf8;
-SET character_set_client = @saved_cs_client;
 
---
--- Table structure for table `wp_term_relationships`
---
-
-DROP TABLE IF EXISTS `wp_term_relationships`;
-SET @saved_cs_client     = @@character_set_client;
-SET character_set_client = utf8;
 CREATE TABLE `wp_term_relationships` (
   `object_id` bigint(20) NOT NULL DEFAULT '0',
   `term_taxonomy_id` bigint(20) NOT NULL DEFAULT '0',
@@ -2531,15 +1426,7 @@ CREATE TABLE `wp_term_relationships` (
   PRIMARY KEY (`object_id`,`term_taxonomy_id`),
   KEY `term_taxonomy_id` (`term_taxonomy_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
-SET character_set_client = @saved_cs_client;
 
---
--- Table structure for table `wp_term_taxonomy`
---
-
-DROP TABLE IF EXISTS `wp_term_taxonomy`;
-SET @saved_cs_client     = @@character_set_client;
-SET character_set_client = utf8;
 CREATE TABLE `wp_term_taxonomy` (
   `term_taxonomy_id` bigint(20) NOT NULL AUTO_INCREMENT,
   `term_id` bigint(20) NOT NULL DEFAULT '0',
@@ -2550,15 +1437,7 @@ CREATE TABLE `wp_term_taxonomy` (
   PRIMARY KEY (`term_taxonomy_id`),
   UNIQUE KEY `term_id_taxonomy` (`term_id`,`taxonomy`)
 ) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
-SET character_set_client = @saved_cs_client;
 
---
--- Table structure for table `wp_terms`
---
-
-DROP TABLE IF EXISTS `wp_terms`;
-SET @saved_cs_client     = @@character_set_client;
-SET character_set_client = utf8;
 CREATE TABLE `wp_terms` (
   `term_id` bigint(20) NOT NULL AUTO_INCREMENT,
   `name` varchar(200) NOT NULL DEFAULT '',
@@ -2568,15 +1447,7 @@ CREATE TABLE `wp_terms` (
   UNIQUE KEY `slug` (`slug`),
   KEY `name` (`name`)
 ) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
-SET character_set_client = @saved_cs_client;
 
---
--- Table structure for table `wp_usermeta`
---
-
-DROP TABLE IF EXISTS `wp_usermeta`;
-SET @saved_cs_client     = @@character_set_client;
-SET character_set_client = utf8;
 CREATE TABLE `wp_usermeta` (
   `umeta_id` bigint(20) NOT NULL AUTO_INCREMENT,
   `user_id` bigint(20) NOT NULL DEFAULT '0',
@@ -2586,15 +1457,7 @@ CREATE TABLE `wp_usermeta` (
   KEY `user_id` (`user_id`),
   KEY `meta_key` (`meta_key`)
 ) ENGINE=MyISAM AUTO_INCREMENT=51 DEFAULT CHARSET=utf8;
-SET character_set_client = @saved_cs_client;
 
---
--- Table structure for table `wp_users`
---
-
-DROP TABLE IF EXISTS `wp_users`;
-SET @saved_cs_client     = @@character_set_client;
-SET character_set_client = utf8;
 CREATE TABLE `wp_users` (
   `ID` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
   `user_login` varchar(60) NOT NULL DEFAULT '',
@@ -2610,15 +1473,4 @@ CREATE TABLE `wp_users` (
   KEY `user_login_key` (`user_login`),
   KEY `user_nicename` (`user_nicename`)
 ) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
-SET character_set_client = @saved_cs_client;
-/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
-/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
-/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
-/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
-/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
-/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
-/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
-
--- Dump completed on 2010-05-31 19:41:23
