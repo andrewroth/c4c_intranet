@@ -10,9 +10,17 @@ connection = ActiveRecord::Base.establish_connection(
   :database => ENV['db']
 )
 
-File.open("development_structure.sql", "w+") { |f| 
-  for line in ActiveRecord::Base.connection.structure_dump.split("\n")
-    next if line["CONSTRAINT"]
-    f << line + "\n"
+lines = ActiveRecord::Base.connection.structure_dump.split("\n")
+for i in (1..lines.length-1)
+  if lines[i] =~ /CONSTRAINT/
+    if lines[i-1] =~ /(.*),/
+      lines[i-1] = $1
+    end
   end
+end
+
+lines.delete_if{ |line| line =~ /CONSTRAINT/ }
+
+File.open("development_structure.sql", "w+") { |f| 
+  f << lines.join("\n")
 }
