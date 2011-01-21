@@ -1,11 +1,12 @@
+require 'rubygems'
 require 'active_record'
 
 puts "DB: #{ENV['db']}"
 
 connection = ActiveRecord::Base.establish_connection(
   :adapter => 'mysql',
-  :user => ENV['user'] || 'root',
-  :password => '',
+  :username => ENV['user'] || 'root',
+  :password => ENV['password'],
   :host => 'localhost',
   :database => ENV['db']
 )
