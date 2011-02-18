@@ -65,7 +65,7 @@ CREATE TABLE `accountadmin_viewer` (
   PRIMARY KEY (`viewer_id`),
   KEY `ciministry.accountadmin_viewer_accountgroup_id_index` (`accountgroup_id`),
   KEY `ciministry.accountadmin_viewer_viewer_userID_index` (`viewer_userID`)
-) ENGINE=InnoDB AUTO_INCREMENT=12477 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=12480 DEFAULT CHARSET=latin1;
 
 CREATE TABLE `accountadmin_vieweraccessgroup` (
   `vieweraccessgroup_id` int(11) NOT NULL AUTO_INCREMENT,
@@ -125,7 +125,7 @@ CREATE TABLE `cim_hrdb_access` (
   PRIMARY KEY (`access_id`),
   KEY `ciministry.cim_hrdb_access_viewer_id_index` (`viewer_id`),
   KEY `ciministry.cim_hrdb_access_person_id_index` (`person_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=12236 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=12239 DEFAULT CHARSET=latin1;
 
 CREATE TABLE `cim_hrdb_activityschedule` (
   `activityschedule_id` int(15) NOT NULL AUTO_INCREMENT,
@@ -249,7 +249,7 @@ CREATE TABLE `cim_hrdb_emerg` (
   `blood_rh_factor` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`emerg_id`),
   KEY `ciministry.cim_hrdb_emerg_person_id_index` (`person_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=5579 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=5582 DEFAULT CHARSET=latin1;
 
 CREATE TABLE `cim_hrdb_fieldgroup` (
   `fieldgroup_id` int(10) NOT NULL AUTO_INCREMENT,
@@ -330,11 +330,13 @@ CREATE TABLE `cim_hrdb_person` (
   `country_id` int(11) DEFAULT NULL,
   `person_local_country_id` int(11) DEFAULT NULL,
   `person_mname` varchar(255) DEFAULT NULL,
-  `person_mentor_id` int(11) DEFAULT '0',
+  `person_mentor_id` int(11) DEFAULT NULL,
+  `person_mentees_lft` int(11) DEFAULT NULL,
+  `person_mentees_rgt` int(11) DEFAULT NULL,
   PRIMARY KEY (`person_id`),
   KEY `ciministry.cim_hrdb_person_gender_id_index` (`gender_id`),
   KEY `ciministry.cim_hrdb_person_province_id_index` (`province_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=1295420552 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=1295420555 DEFAULT CHARSET=latin1;
 
 CREATE TABLE `cim_hrdb_person_year` (
   `personyear_id` int(50) NOT NULL AUTO_INCREMENT,
