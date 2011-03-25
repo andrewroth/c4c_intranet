@@ -1232,6 +1232,56 @@ CREATE TABLE `spt_ticket` (
   PRIMARY KEY (`ticket_id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=13418 DEFAULT CHARSET=latin1;
 
+CREATE TABLE `summer_report_assignments` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `assignment` varchar(255) DEFAULT NULL,
+  `created_at` datetime DEFAULT NULL,
+  `updated_at` datetime DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=latin1;
+
+CREATE TABLE `summer_report_reviewers` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `summer_report_id` int(11) DEFAULT NULL,
+  `person_id` int(11) DEFAULT NULL,
+  `reviewed` tinyint(1) DEFAULT NULL,
+  `approved` tinyint(1) DEFAULT NULL,
+  `review_notes` text,
+  `created_at` datetime DEFAULT NULL,
+  `updated_at` datetime DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=latin1;
+
+CREATE TABLE `summer_report_weeks` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `summer_report_id` int(11) DEFAULT NULL,
+  `week_id` int(11) DEFAULT NULL,
+  `summer_report_assignment_id` int(11) DEFAULT NULL,
+  `description` text,
+  `created_at` datetime DEFAULT NULL,
+  `updated_at` datetime DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=109 DEFAULT CHARSET=latin1;
+
+CREATE TABLE `summer_reports` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `person_id` int(11) DEFAULT NULL,
+  `year_id` int(11) DEFAULT NULL,
+  `joined_staff` varchar(255) DEFAULT NULL,
+  `weeks_of_holiday` varchar(255) DEFAULT NULL,
+  `monthly_goal` varchar(255) DEFAULT NULL,
+  `monthly_have` varchar(255) DEFAULT NULL,
+  `monthly_needed` varchar(255) DEFAULT NULL,
+  `num_weeks_of_mpd` int(11) DEFAULT NULL,
+  `num_weeks_of_mpm` int(11) DEFAULT NULL,
+  `support_coach` tinyint(1) DEFAULT NULL,
+  `accountability_partner` varchar(255) DEFAULT NULL,
+  `notes` text,
+  `created_at` datetime DEFAULT NULL,
+  `updated_at` datetime DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
+
 CREATE TABLE `temp_mb_early_frosh` (
   `registration_id` int(10) NOT NULL,
   PRIMARY KEY (`registration_id`)
