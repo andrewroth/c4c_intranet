@@ -49,13 +49,13 @@ CREATE TABLE `accountadmin_language` (
 
 CREATE TABLE `accountadmin_viewer` (
   `viewer_id` int(11) NOT NULL AUTO_INCREMENT,
-  `guid` varchar(64) NOT NULL,
+  `guid` varchar(64) DEFAULT '',
   `accountgroup_id` int(11) NOT NULL DEFAULT '0',
   `viewer_userID` varchar(50) NOT NULL DEFAULT '',
-  `viewer_passWord` varchar(50) NOT NULL DEFAULT '',
+  `viewer_passWord` varchar(50) DEFAULT '',
   `language_id` int(11) NOT NULL DEFAULT '0',
   `viewer_isActive` int(1) NOT NULL DEFAULT '0',
-  `viewer_lastLogin` date NOT NULL DEFAULT '0000-00-00',
+  `viewer_lastLogin` datetime DEFAULT NULL,
   `remember_token` varchar(255) DEFAULT NULL,
   `remember_token_expires_at` datetime DEFAULT NULL,
   `email_validated` tinyint(1) DEFAULT NULL,
@@ -65,7 +65,7 @@ CREATE TABLE `accountadmin_viewer` (
   PRIMARY KEY (`viewer_id`),
   KEY `ciministry.accountadmin_viewer_accountgroup_id_index` (`accountgroup_id`),
   KEY `ciministry.accountadmin_viewer_viewer_userID_index` (`viewer_userID`)
-) ENGINE=InnoDB AUTO_INCREMENT=10669 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=12601 DEFAULT CHARSET=latin1;
 
 CREATE TABLE `accountadmin_vieweraccessgroup` (
   `vieweraccessgroup_id` int(11) NOT NULL AUTO_INCREMENT,
@@ -74,7 +74,7 @@ CREATE TABLE `accountadmin_vieweraccessgroup` (
   PRIMARY KEY (`vieweraccessgroup_id`),
   KEY `ciministry.accountadmin_vieweraccessgroup_viewer_i` (`viewer_id`),
   KEY `ciministry.accountadmin_vieweraccessgroup_accessgr` (`accessgroup_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=24708 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=26105 DEFAULT CHARSET=latin1;
 
 CREATE TABLE `aia_greycup` (
   `registration_id` int(10) NOT NULL,
@@ -125,7 +125,7 @@ CREATE TABLE `cim_hrdb_access` (
   PRIMARY KEY (`access_id`),
   KEY `ciministry.cim_hrdb_access_viewer_id_index` (`viewer_id`),
   KEY `ciministry.cim_hrdb_access_person_id_index` (`person_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=10429 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=12360 DEFAULT CHARSET=latin1;
 
 CREATE TABLE `cim_hrdb_activityschedule` (
   `activityschedule_id` int(15) NOT NULL AUTO_INCREMENT,
@@ -151,7 +151,7 @@ CREATE TABLE `cim_hrdb_admin` (
   PRIMARY KEY (`admin_id`),
   KEY `FK_hrdbadmin_person` (`person_id`),
   KEY `FK_admin_priv` (`priv_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=19 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=20 DEFAULT CHARSET=latin1;
 
 CREATE TABLE `cim_hrdb_assignment` (
   `assignment_id` int(50) NOT NULL AUTO_INCREMENT,
@@ -161,7 +161,7 @@ CREATE TABLE `cim_hrdb_assignment` (
   PRIMARY KEY (`assignment_id`),
   KEY `ciministry.cim_hrdb_assignment_person_id_index` (`person_id`),
   KEY `ciministry.cim_hrdb_assignment_campus_id_index` (`campus_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=8377 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=8491 DEFAULT CHARSET=latin1;
 
 CREATE TABLE `cim_hrdb_assignmentstatus` (
   `assignmentstatus_id` int(10) NOT NULL AUTO_INCREMENT,
@@ -249,7 +249,7 @@ CREATE TABLE `cim_hrdb_emerg` (
   `blood_rh_factor` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`emerg_id`),
   KEY `ciministry.cim_hrdb_emerg_person_id_index` (`person_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3610 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=5696 DEFAULT CHARSET=latin1;
 
 CREATE TABLE `cim_hrdb_fieldgroup` (
   `fieldgroup_id` int(10) NOT NULL AUTO_INCREMENT,
@@ -330,10 +330,13 @@ CREATE TABLE `cim_hrdb_person` (
   `country_id` int(11) DEFAULT NULL,
   `person_local_country_id` int(11) DEFAULT NULL,
   `person_mname` varchar(255) DEFAULT NULL,
+  `person_mentees_lft` int(11) DEFAULT NULL,
+  `person_mentees_rgt` int(11) DEFAULT NULL,
+  `person_mentor_id` int(11) DEFAULT NULL,
   PRIMARY KEY (`person_id`),
   KEY `ciministry.cim_hrdb_person_gender_id_index` (`gender_id`),
   KEY `ciministry.cim_hrdb_person_province_id_index` (`province_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=12589 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=1297726300 DEFAULT CHARSET=latin1;
 
 CREATE TABLE `cim_hrdb_person_year` (
   `personyear_id` int(50) NOT NULL AUTO_INCREMENT,
@@ -343,7 +346,7 @@ CREATE TABLE `cim_hrdb_person_year` (
   PRIMARY KEY (`personyear_id`),
   KEY `FK_cim_hrdb_person_year` (`person_id`),
   KEY `1` (`year_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2955 DEFAULT CHARSET=latin1 ROW_FORMAT=DYNAMIC;
+) ENGINE=InnoDB AUTO_INCREMENT=3199 DEFAULT CHARSET=latin1 ROW_FORMAT=DYNAMIC;
 
 CREATE TABLE `cim_hrdb_priv` (
   `priv_id` int(20) NOT NULL AUTO_INCREMENT,
@@ -372,8 +375,9 @@ CREATE TABLE `cim_hrdb_staff` (
   `person_id` int(50) NOT NULL DEFAULT '0',
   `is_active` int(1) NOT NULL DEFAULT '1',
   PRIMARY KEY (`staff_id`),
+  UNIQUE KEY `unique_person` (`person_id`),
   KEY `ciministry.cim_hrdb_staff_person_id_index` (`person_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=358 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=389 DEFAULT CHARSET=latin1;
 
 CREATE TABLE `cim_hrdb_staffactivity` (
   `staffactivity_id` int(15) NOT NULL AUTO_INCREMENT,
@@ -492,7 +496,7 @@ CREATE TABLE `cim_reg_cctransaction` (
   PRIMARY KEY (`cctransaction_id`),
   KEY `FK_cctrans_reg` (`reg_id`),
   KEY `FK_cctrans_ccid` (`cctype_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=5176 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=5177 DEFAULT CHARSET=latin1;
 
 CREATE TABLE `cim_reg_cctype` (
   `cctype_id` int(16) NOT NULL AUTO_INCREMENT,
@@ -609,7 +613,7 @@ CREATE TABLE `cim_reg_registration` (
   PRIMARY KEY (`registration_id`),
   KEY `FK_reg_person` (`person_id`),
   KEY `FK_reg_status` (`registration_status`)
-) ENGINE=InnoDB AUTO_INCREMENT=9547 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=9550 DEFAULT CHARSET=latin1;
 
 CREATE TABLE `cim_reg_scholarship` (
   `scholarship_id` int(16) NOT NULL AUTO_INCREMENT,
@@ -632,7 +636,7 @@ CREATE TABLE `cim_reg_superadmin` (
   `viewer_id` int(16) NOT NULL DEFAULT '0',
   PRIMARY KEY (`superadmin_id`),
   KEY `FK_viewer_regsuperadmin` (`viewer_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=24 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=25 DEFAULT CHARSET=latin1;
 
 CREATE TABLE `cim_sch_group` (
   `group_id` int(11) NOT NULL AUTO_INCREMENT,
@@ -681,6 +685,40 @@ CREATE TABLE `cim_stats_access` (
   PRIMARY KEY (`access_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
+CREATE TABLE `cim_stats_annualgoalsreport` (
+  `annualGoalsReport_id` int(11) NOT NULL AUTO_INCREMENT,
+  `campus_id` int(11) DEFAULT NULL,
+  `year_id` int(11) DEFAULT NULL,
+  `annualGoalsReport_studInMin` int(11) DEFAULT '0',
+  `annualGoalsReport_sptMulti` int(11) DEFAULT '0',
+  `annualGoalsReport_firstYears` int(11) DEFAULT '0',
+  `annualGoalsReport_summitWent` int(11) DEFAULT '0',
+  `annualGoalsReport_wcWent` int(11) DEFAULT '0',
+  `annualGoalsReport_projWent` int(11) DEFAULT '0',
+  `annualGoalsReport_spConvTotal` int(11) DEFAULT '0',
+  `annualGoalsReport_gosPresTotal` int(11) DEFAULT '0',
+  `annualGoalsReport_hsPresTotal` int(11) DEFAULT '0',
+  `annualGoalsReport_prcTotal` int(11) DEFAULT '0',
+  `annualGoalsReport_integBelievers` int(11) DEFAULT '0',
+  `annualGoalsReport_lrgEventAttend` int(11) DEFAULT '0',
+  PRIMARY KEY (`annualGoalsReport_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=27 DEFAULT CHARSET=latin1;
+
+CREATE TABLE `cim_stats_annualreport` (
+  `annualReport_id` int(11) NOT NULL AUTO_INCREMENT,
+  `campus_id` int(11) DEFAULT NULL,
+  `year_id` int(11) DEFAULT NULL,
+  `annualReport_lnz_avgPrayer` int(11) DEFAULT '0',
+  `annualReport_lnz_numFrosh` int(11) DEFAULT '0',
+  `annualReport_lnz_totalStudentInDG` int(11) DEFAULT '0',
+  `annualReport_lnz_totalSpMult` int(11) DEFAULT '0',
+  `annualReport_lnz_totalCoreStudents` int(11) DEFAULT '0',
+  `annualreport_lnz_p2c_numInEvangStudies` int(11) DEFAULT '0',
+  `annualreport_lnz_p2c_numSharingInP2c` int(11) DEFAULT '0',
+  `annualreport_lnz_p2c_numSharingOutP2c` int(11) DEFAULT '0',
+  PRIMARY KEY (`annualReport_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=107 DEFAULT CHARSET=latin1;
+
 CREATE TABLE `cim_stats_coordinator` (
   `coordinator_id` int(16) NOT NULL AUTO_INCREMENT,
   `access_id` int(16) NOT NULL DEFAULT '0',
@@ -702,7 +740,7 @@ CREATE TABLE `cim_stats_month` (
   `month_calendaryear` int(10) NOT NULL,
   `semester_id` int(10) DEFAULT NULL,
   PRIMARY KEY (`month_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=73 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=121 DEFAULT CHARSET=latin1;
 
 CREATE TABLE `cim_stats_monthlyreport` (
   `monthlyreport_id` int(11) NOT NULL AUTO_INCREMENT,
@@ -722,9 +760,9 @@ CREATE TABLE `cim_stats_monthlyreport` (
   `montlyreport_p2c_numTrainedToShareOutP2c` int(11) DEFAULT '0',
   `montlyreport_p2c_numSharingInP2c` int(11) DEFAULT '0',
   `montlyreport_p2c_numSharingOutP2c` int(11) DEFAULT '0',
-  `montlyreport_p2c_numCommitFilledHS` int(11) DEFAULT '0',
+  `montlyreport_integratedNewBelievers` int(11) DEFAULT '0',
   PRIMARY KEY (`monthlyreport_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=113 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=302 DEFAULT CHARSET=latin1;
 
 CREATE TABLE `cim_stats_morestats` (
   `morestats_id` int(10) NOT NULL AUTO_INCREMENT,
@@ -748,7 +786,7 @@ CREATE TABLE `cim_stats_prc` (
   `prc_7upStarted` int(10) NOT NULL DEFAULT '0',
   `prc_date` date NOT NULL DEFAULT '0000-00-00',
   PRIMARY KEY (`prc_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=836 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=1035 DEFAULT CHARSET=latin1;
 
 CREATE TABLE `cim_stats_prcmethod` (
   `prcMethod_id` int(10) NOT NULL AUTO_INCREMENT,
@@ -768,7 +806,7 @@ CREATE TABLE `cim_stats_semester` (
   `semester_startDate` date NOT NULL DEFAULT '0000-00-00',
   `year_id` int(8) NOT NULL DEFAULT '0',
   PRIMARY KEY (`semester_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=19 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=31 DEFAULT CHARSET=latin1;
 
 CREATE TABLE `cim_stats_semesterreport` (
   `semesterreport_id` int(10) NOT NULL AUTO_INCREMENT,
@@ -790,8 +828,19 @@ CREATE TABLE `cim_stats_semesterreport` (
   `semesterreport_totalFullTimeP2cStaffNonC4c` int(11) DEFAULT '0',
   `semesterreport_totalPeopleOneYearInternship` int(11) DEFAULT '0',
   `semesterreport_totalPeopleOtherMinistry` int(11) DEFAULT '0',
+  `semesterreport_studentsSummit` int(11) DEFAULT '0',
+  `semesterreport_studentsWC` int(11) DEFAULT '0',
+  `semesterreport_studentsProjects` int(11) DEFAULT '0',
+  `semesterreport_lnz_avgPrayer` int(11) DEFAULT '0',
+  `semesterreport_lnz_numFrosh` int(11) DEFAULT '0',
+  `semesterreport_lnz_totalStudentInDG` int(11) DEFAULT '0',
+  `semesterreport_lnz_totalSpMult` int(11) DEFAULT '0',
+  `semesterreport_lnz_totalCoreStudents` int(11) DEFAULT '0',
+  `semesterreport_lnz_p2c_numInEvangStudies` int(11) DEFAULT '0',
+  `semesterreport_lnz_p2c_numSharingInP2c` int(11) DEFAULT '0',
+  `semesterreport_lnz_p2c_numSharingOutP2c` int(11) DEFAULT '0',
   PRIMARY KEY (`semesterreport_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=110 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=351 DEFAULT CHARSET=latin1;
 
 CREATE TABLE `cim_stats_week` (
   `week_id` int(50) NOT NULL AUTO_INCREMENT,
@@ -799,7 +848,7 @@ CREATE TABLE `cim_stats_week` (
   `semester_id` int(16) NOT NULL DEFAULT '0',
   `month_id` int(11) NOT NULL,
   PRIMARY KEY (`week_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=330 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=539 DEFAULT CHARSET=latin1;
 
 CREATE TABLE `cim_stats_weeklyreport` (
   `weeklyReport_id` int(10) NOT NULL AUTO_INCREMENT,
@@ -820,14 +869,15 @@ CREATE TABLE `cim_stats_weeklyreport` (
   `weeklyReport_rlk` int(10) NOT NULL DEFAULT '0',
   `weeklyReport_siq` int(10) NOT NULL DEFAULT '0',
   `weeklyReport_notes` text NOT NULL,
+  `weeklyReport_p2c_numCommitFilledHS` int(11) DEFAULT '0',
   PRIMARY KEY (`weeklyReport_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=8192 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=9771 DEFAULT CHARSET=latin1;
 
 CREATE TABLE `cim_stats_year` (
   `year_id` int(8) NOT NULL AUTO_INCREMENT,
   `year_desc` varchar(32) NOT NULL DEFAULT '',
   PRIMARY KEY (`year_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=11 DEFAULT CHARSET=latin1;
 
 CREATE TABLE `mt_evt_access` (
   `viewer_id` int(50) NOT NULL,
@@ -945,7 +995,7 @@ CREATE TABLE `national_signup` (
   `campus_id` int(11) NOT NULL DEFAULT '0',
   `signup_email` varchar(128) NOT NULL DEFAULT '',
   PRIMARY KEY (`signup_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=5111 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=5145 DEFAULT CHARSET=latin1;
 
 CREATE TABLE `national_time` (
   `time_id` int(11) NOT NULL AUTO_INCREMENT,
@@ -967,7 +1017,7 @@ CREATE TABLE `navbar_navbarcache` (
   `navbarcache_cache` text NOT NULL,
   `navbarcache_isValid` int(1) NOT NULL DEFAULT '0',
   PRIMARY KEY (`navbarcache_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=145435 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=146305 DEFAULT CHARSET=latin1;
 
 CREATE TABLE `navbar_navbargroup` (
   `navbargroup_id` int(11) NOT NULL AUTO_INCREMENT,
@@ -1200,7 +1250,7 @@ CREATE TABLE `summer_report_reviewers` (
   `created_at` datetime DEFAULT NULL,
   `updated_at` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 CREATE TABLE `summer_report_weeks` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
@@ -1211,7 +1261,7 @@ CREATE TABLE `summer_report_weeks` (
   `created_at` datetime DEFAULT NULL,
   `updated_at` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=109 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 CREATE TABLE `summer_reports` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
@@ -1223,14 +1273,13 @@ CREATE TABLE `summer_reports` (
   `monthly_have` varchar(255) DEFAULT NULL,
   `monthly_needed` varchar(255) DEFAULT NULL,
   `num_weeks_of_mpd` int(11) DEFAULT NULL,
-  `num_weeks_of_mpm` int(11) DEFAULT NULL,
   `support_coach` tinyint(1) DEFAULT NULL,
   `accountability_partner` varchar(255) DEFAULT NULL,
   `notes` text,
   `created_at` datetime DEFAULT NULL,
   `updated_at` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 CREATE TABLE `temp_mb_early_frosh` (
   `registration_id` int(10) NOT NULL,
