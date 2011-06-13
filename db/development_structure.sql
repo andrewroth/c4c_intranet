@@ -1218,7 +1218,7 @@ CREATE TABLE `summer_reports` (
   `person_id` int(11) DEFAULT NULL,
   `year_id` int(11) DEFAULT NULL,
   `joined_staff` varchar(255) DEFAULT NULL,
-  `weeks_of_holiday` varchar(255) DEFAULT NULL,
+  `days_of_holiday` varchar(255) DEFAULT NULL,
   `monthly_goal` varchar(255) DEFAULT NULL,
   `monthly_have` varchar(255) DEFAULT NULL,
   `monthly_needed` varchar(255) DEFAULT NULL,
