@@ -1,3 +1,4 @@
+require 'rubygems'
 require 'active_record'
 
 puts "DB: #{ENV['db']}"
