@@ -1273,6 +1273,7 @@ CREATE TABLE `summer_reports` (
   `monthly_have` varchar(255) DEFAULT NULL,
   `monthly_needed` varchar(255) DEFAULT NULL,
   `num_weeks_of_mpd` int(11) DEFAULT NULL,
+  `num_weeks_of_mpm` int(11) DEFAULT NULL,
   `support_coach` tinyint(1) DEFAULT NULL,
   `accountability_partner` varchar(255) DEFAULT NULL,
   `notes` text,
