@@ -876,6 +876,7 @@ CREATE TABLE `cim_stats_weeklyreport` (
 CREATE TABLE `cim_stats_year` (
   `year_id` int(8) NOT NULL AUTO_INCREMENT,
   `year_desc` varchar(32) NOT NULL DEFAULT '',
+  `year_number` int(11) DEFAULT NULL,
   PRIMARY KEY (`year_id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=11 DEFAULT CHARSET=latin1;
 
