@@ -739,6 +739,7 @@ CREATE TABLE `cim_stats_month` (
   `year_id` int(10) NOT NULL DEFAULT '0',
   `month_calendaryear` int(10) NOT NULL,
   `semester_id` int(10) DEFAULT NULL,
+  `month_literalyear` int(11) DEFAULT NULL,
   PRIMARY KEY (`month_id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=121 DEFAULT CHARSET=latin1;
 
