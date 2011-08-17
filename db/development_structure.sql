@@ -658,6 +658,7 @@ CREATE TABLE `cim_stats_month` (
   `year_id` int(10) NOT NULL DEFAULT '0',
   `month_calendaryear` int(10) NOT NULL,
   `semester_id` int(10) DEFAULT NULL,
+  `month_literalyear` int(11) DEFAULT NULL,
   PRIMARY KEY (`month_id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=121 DEFAULT CHARSET=latin1;
 
@@ -795,6 +796,7 @@ CREATE TABLE `cim_stats_weeklyreport` (
 CREATE TABLE `cim_stats_year` (
   `year_id` int(8) NOT NULL AUTO_INCREMENT,
   `year_desc` varchar(32) NOT NULL DEFAULT '',
+  `year_number` int(11) DEFAULT NULL,
   PRIMARY KEY (`year_id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=11 DEFAULT CHARSET=latin1;
 
