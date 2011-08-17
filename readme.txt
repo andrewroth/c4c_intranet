@@ -10,5 +10,3 @@ svn co svn+ssh://svn.james.crusade.org/campus/apps/phoenix/trunk/ .
 svn co svn+ssh://svn.james.crusade.org/campus/apps/phoenix/trunk/c4cwebsite .
 
 -------------------
-
-This is a test to see if Jon Baelde is set up :)
