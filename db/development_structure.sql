@@ -138,9 +138,13 @@ CREATE TABLE `cim_hrdb_campus` (
   `campus_facebookgroup` varchar(128) NOT NULL,
   `campus_gcxnamespace` varchar(128) NOT NULL,
   `province_id` int(11) DEFAULT NULL,
+  `longitude` decimal(10,6) DEFAULT NULL,
+  `latitude` decimal(10,6) DEFAULT NULL,
   PRIMARY KEY (`campus_id`),
   KEY `ciministry.cim_hrdb_campus_region_id_index` (`region_id`),
-  KEY `ciministry.cim_hrdb_campus_accountgroup_id_index` (`accountgroup_id`)
+  KEY `ciministry.cim_hrdb_campus_accountgroup_id_index` (`accountgroup_id`),
+  KEY `index_ciministry.cim_hrdb_campus_on_longitude` (`longitude`),
+  KEY `index_ciministry.cim_hrdb_campus_on_latitude` (`latitude`)
 ) ENGINE=InnoDB AUTO_INCREMENT=142 DEFAULT CHARSET=latin1;
 
 CREATE TABLE `cim_hrdb_campusadmin` (
